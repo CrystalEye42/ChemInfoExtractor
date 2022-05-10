@@ -10,7 +10,7 @@ import '@react-pdf-viewer/core/lib/styles/index.css';
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 // Import styles of default layout plugin
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
-import { base_url } from "./config";
+import { Extract } from "./components/extract";
 
 function App() {
 
@@ -23,6 +23,7 @@ function App() {
   // pdf file error state
   const [pdfError, setPdfError]=useState('');
 
+  const extractor = new Extract();
 
   // handle file onChange event
   const allowedFiles = ['application/pdf'];
@@ -31,25 +32,14 @@ function App() {
     // console.log(selectedFile.type);
     if(selectedFile){
       if(selectedFile&&allowedFiles.includes(selectedFile.type)){
-	// send post request containing pdf file
-	const formData = new FormData();
-	formData.append("file", selectedFile);
-	const request = new XMLHttpRequest();
-	console.log(base_url);
-	request.onreadystatechange = function() {
-	  if (request.readyState === 4) {
-	    console.log(request.response);
-	  }
-	}
-	request.open("POST", base_url+'/extract');
-	request.send(formData);	
-	console.log("sent post request");
 
         let reader = new FileReader();
         reader.readAsDataURL(selectedFile);
         reader.onloadend=(e)=>{
           setPdfError('');
           setPdfFile(e.target.result);
+
+	  extractor.pdfAvailable(pdfFile);
         }
       }
       else{
@@ -61,6 +51,7 @@ function App() {
       console.log('please select a PDF');
     }
   }
+  
 
   return (
     <div className="container">
@@ -96,7 +87,9 @@ function App() {
         {!pdfFile&&<>No file is selected yet</>}
 
       </div>
-
+      <div>
+	<Extract />
+      </div>
     </div>
   );
 }

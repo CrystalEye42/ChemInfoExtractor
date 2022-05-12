@@ -10,6 +10,9 @@ import '@react-pdf-viewer/core/lib/styles/index.css';
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 // Import styles of default layout plugin
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+// Import library for modifying pdf
+import { PDFDocument } from 'pdf-lib';
+// Import url for sending requests
 import { base_url } from "./config";
 
 function App() {
@@ -55,6 +58,10 @@ function App() {
     }
   }
 
+  const getSmiles = (response) => {
+    return response.reduce((prev, curr) => prev+"\n"+curr["smiles"].reduce((x, y) => x+"\n"+y), "SMILES found: \n");
+  }
+
   const extractFile = () => {
     // send post request containing pdf file
     const formData = new FormData();
@@ -66,8 +73,11 @@ function App() {
         console.log(request.response);
         setPdfError('');
         setPdfFile(pdfFile);
-        setExtractState('done');
-        setSmilesText('test');
+        const response = JSON.parse(request.response); 
+        const smilesString = getSmiles(response);
+	console.log(smilesString);
+        setSmilesText(smilesString);
+        setExtractState('done');	
       }
     }
     setPdfError('');

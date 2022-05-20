@@ -31,6 +31,8 @@ function App() {
 
   const [smilesText, setSmilesText] = useState('');
 
+  const [molImageAndTexts, setMolImageAndTexts] = useState([]);
+
   // handle file onChange event
   const allowedFiles = ['application/pdf'];
   const handleFile = (e) => {
@@ -60,7 +62,14 @@ function App() {
   }
 
   const getSmiles = (response) => {
-    return response.reduce((prev, curr) => prev+"\n"+curr["smiles"].reduce((x, y) => x+"\n"+y), "SMILES found: \n");
+    return response.filter(curr => curr["smiles"].length > 0)
+      .reduce((prev, curr) => prev + curr["smiles"].reduce((x, y) => x + "\n" + y, ""), "SMILES found: \n");
+  }
+
+  const setMoleculesAndSmiles = (response) => {
+    setMolImageAndTexts(response.reduce(
+      (arr, curr) => arr.concat(curr["images"]), [])
+    );
   }
 
   const extractFile = () => {
@@ -74,8 +83,9 @@ function App() {
         console.log(request.response);
         setPdfError('');
         setPdfFile(pdfFile);
-        const response = JSON.parse(request.response); 
+        const response = JSON.parse(request.response);
         const smilesString = getSmiles(response);
+        setMoleculesAndSmiles(response);
         console.log(smilesString);
         setSmilesText(smilesString);
         setExtractState('done');
@@ -111,28 +121,37 @@ function App() {
         {(extractState === 'ready') && <button type="button" onClick={extractFile}>Extract Info</button>}
 
         {(extractState === 'loading') && <div><div className="loader"></div>
-        <p>Getting SMILES representations, may take a few minutes...</p></div>}
+          <p>Getting SMILES representations, may take a few minutes...</p></div>}
 
         {(extractState === 'done') && <div className="display-linebreak">{smilesText}</div>}
       </div>
 
-      {/* View PDF */}
-      <h4>View PDF</h4>
-      <div className="viewer">
+      <div id="wrapper">
+        {/* View PDF */}
+        <h4>View PDF</h4>
+        <div className="viewer">
 
-        {/* render this if we have a pdf file */}
-        {pdfFile && (
-          <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.12.313/build/pdf.worker.min.js">
-            <Viewer fileUrl={pdfFile}
-              plugins={[defaultLayoutPluginInstance]}></Viewer>
-          </Worker>
-        )}
+          {/* render this if we have a pdf file */}
+          {pdfFile && (
+            <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.12.313/build/pdf.worker.min.js">
+              <Viewer fileUrl={pdfFile}
+                plugins={[defaultLayoutPluginInstance]}></Viewer>
+            </Worker>
+          )}
 
-        {/* render this if we have pdfFile state null   */}
-        {!pdfFile && <>No file is selected yet</>}
+          {/* render this if we have pdfFile state null   */}
+          {!pdfFile && <>No file is selected yet</>}
 
+        </div>
+
+        <div id="results">
+        {molImageAndTexts.map(([image, smiles]) => {
+            return (<div key={smiles}>
+                <img src={`data:image/jpeg;base64,${image}`} alt={smiles}/>
+                <p>{smiles}</p>
+              </div>);})}
+        </div>
       </div>
-
     </div>
   );
 }

@@ -4,6 +4,7 @@
 
 .display-linebreak {
   white-space: pre-line;
+  overflow-wrap: break-word;
 }
 
 .loader {
@@ -32,11 +33,26 @@ form{
   justify-content: center;
   align-items: center;
   height: 600px;
-  max-width: 70%;
+  width: 60%;
   overflow-y: auto;
   margin-bottom: 10px;
+  float: left;
 }
 
 span{
   margin-top: 3px;
+}
+
+#wrapper{
+  height: 600px;
+  overflow: hidden;
+}
+
+#results{
+  height: 500px;
+  width:36%;
+  overflow-y: auto;
+  overflow-wrap: break-word;
+  float:right;
+  border: 1px solid lightgray;
 }

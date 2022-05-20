@@ -111,11 +111,10 @@ class BmsModel:
         return encoder, decoder
 
 
-    def predict_image(self, image):
-        augmented = self.transform(image=image, keypoints=[])
-        image = augmented['image']
-
-        images = image.unsqueeze(0).to(self.device)
+    def predict_image(self, images):
+        augmented_imgs = [torch.unsqueeze(self.transform(image=image, keypoints=[])['image'], 0) for image in images]
+        augmented_imgs = torch.cat(augmented_imgs, 0)
+        images = augmented_imgs.to(self.device)
         with torch.no_grad():
             features, hiddens = self.encoder(images, {})
             preds, beam_preds = self.decoder.decode(features, hiddens, {})
@@ -126,7 +125,7 @@ class BmsModel:
         edges = preds['edges']
 
         post_smiles, molblock, r_success = postprocess_smiles(smiles, node_coords, node_symbols, edges, molblock=True)
-        return post_smiles[0], molblock[0]
+        return post_smiles, molblock
 
 
 

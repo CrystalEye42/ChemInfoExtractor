@@ -11,7 +11,8 @@ import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 // Import styles of default layout plugin
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 // Import library for modifying pdf
-import { PDFDocument } from 'pdf-lib';
+//import { PDFDocument } from 'pdf-lib';
+import './App.css';
 // Import url for sending requests
 import { base_url } from "./config";
 
@@ -75,9 +76,9 @@ function App() {
         setPdfFile(pdfFile);
         const response = JSON.parse(request.response); 
         const smilesString = getSmiles(response);
-	console.log(smilesString);
+        console.log(smilesString);
         setSmilesText(smilesString);
-        setExtractState('done');	
+        setExtractState('done');
       }
     }
     setPdfError('');
@@ -94,7 +95,7 @@ function App() {
       {/* Upload PDF */}
       <form>
 
-        <label><h5>Upload PDF</h5></label>
+        <label><h3>Upload PDF</h3></label>
         <br></br>
 
         <input type='file' className="form-control"
@@ -109,13 +110,14 @@ function App() {
       <div>
         {(extractState === 'ready') && <button type="button" onClick={extractFile}>Extract Info</button>}
 
-        {(extractState === 'loading') && <div class="loader"></div>}
+        {(extractState === 'loading') && <div><div className="loader"></div>
+        <p>Getting SMILES representations, may take a few minutes...</p></div>}
 
-        {(extractState === 'done') && <div class="display-linebreak">{smilesText}</div>}
+        {(extractState === 'done') && <div className="display-linebreak">{smilesText}</div>}
       </div>
 
       {/* View PDF */}
-      <h5>View PDF</h5>
+      <h4>View PDF</h4>
       <div className="viewer">
 
         {/* render this if we have a pdf file */}

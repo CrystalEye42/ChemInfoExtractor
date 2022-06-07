@@ -15,6 +15,7 @@ import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 import './App.css';
 // Import url for sending requests
 import { base_url } from "./config";
+import { FigureSelect } from './components/FigureSelect';
 
 function App() {
 
@@ -31,7 +32,11 @@ function App() {
 
   const [smilesText, setSmilesText] = useState('');
 
-  const [molImageAndTexts, setMolImageAndTexts] = useState([]);
+  //const [molImageAndTexts, setMolImageAndTexts] = useState([]);
+
+  const [figures, setFigures] = useState([]);
+
+  const [figureDetails, setFigureDetails] = useState(null);
 
   // handle file onChange event
   const allowedFiles = ['application/pdf'];
@@ -66,11 +71,33 @@ function App() {
       .reduce((prev, curr) => prev + curr["smiles"].reduce((x, y) => x + "\n" + y, ""), "SMILES found: \n");
   }
 
-  const setMoleculesAndSmiles = (response) => {
+  /*const setMoleculesAndSmiles = (response) => {
     setMolImageAndTexts(response.reduce(
       (arr, curr) => arr.concat(curr["images"]), [])
     );
+  }*/
+
+  const getFigureName = (path) => {
+    // expects image_path to be "{filename}_temp/figures-{figureType}-{figureNumber}.png"
+    const tokens = path.substring(0, path.length-4).split("-");
+    const result = tokens[tokens.length-2]+" "+tokens[tokens.length-1];
+    return result;
   }
+
+  const setFiguresFromResponse = (response) => {
+    setFigures(response.map(curr => {
+      return getFigureName(curr["image_path"]);
+    }));
+    setFigureDetails(response.reduce((dict, curr) => {
+      const key = getFigureName(curr["image_path"]);
+      dict[key] = {
+        "figure": curr["image"], 
+        "subfigures": curr["images"], 
+        "molblocks": curr["molblocks"]
+      };
+      return dict;
+    }, {}));
+  };
 
   const extractFile = () => {
     // send post request containing pdf file
@@ -85,7 +112,8 @@ function App() {
         setPdfFile(pdfFile);
         const response = JSON.parse(request.response);
         const smilesString = getSmiles(response);
-        setMoleculesAndSmiles(response);
+        //setMoleculesAndSmiles(response);
+        setFiguresFromResponse(response);
         console.log(smilesString);
         setSmilesText(smilesString);
         setExtractState('done');
@@ -125,7 +153,7 @@ function App() {
 
         {(extractState === 'done') && <div className="display-linebreak">{smilesText}</div>}
       </div>
-
+      
       <div id="wrapper">
         {/* View PDF */}
         <h4>View PDF</h4>
@@ -145,11 +173,7 @@ function App() {
         </div>
 
         <div id="results">
-        {molImageAndTexts.map(([image, smiles]) => {
-            return (<div key={smiles}>
-                <img src={`data:image/jpeg;base64,${image}`} alt={smiles}/>
-                <p>{smiles}</p>
-              </div>);})}
+            {(extractState === 'done') && <FigureSelect figures={figures} details={figureDetails} />}
         </div>
       </div>
     </div>

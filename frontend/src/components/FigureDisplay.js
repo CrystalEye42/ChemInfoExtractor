@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import { StandaloneStructServiceProvider } from 'ketcher-standalone'; 
-import { Editor } from 'ketcher-react'
-import './FigureDisplay.css'
+import { Editor } from 'ketcher-react';
+import { KetcherDisplay } from './KetcherDisplay';
+import './FigureDisplay.css';
 
 const structServiceProvider = new StandaloneStructServiceProvider();
 
@@ -89,10 +90,12 @@ export class FigureDisplay extends React.Component {
     render() {
         const details = this.props.details;
         this.ketchers = []
+        var i = -1;
         const subfigures = details["subfigures"].map(([image, smiles]) => {
+            i += 1;
             return (<div key={smiles}>
                 <img src={`data:image/jpeg;base64,${image}`} alt={smiles}/>
-                <iframe title="myiframe" id={smiles} src="./standalone/index.html" width="200" height="200"></iframe>
+                <KetcherDisplay molblock={details['molblocks'][i]} />
                 <p>{smiles}</p>
             </div>);
         });

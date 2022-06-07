@@ -30,8 +30,6 @@ function App() {
 
   const [extractState, setExtractState] = useState('unready');
 
-  const [smilesText, setSmilesText] = useState('');
-
   //const [molImageAndTexts, setMolImageAndTexts] = useState([]);
 
   const [figures, setFigures] = useState([]);
@@ -115,7 +113,6 @@ function App() {
         //setMoleculesAndSmiles(response);
         setFiguresFromResponse(response);
         console.log(smilesString);
-        setSmilesText(smilesString);
         setExtractState('done');
       }
     }
@@ -150,8 +147,6 @@ function App() {
 
         {(extractState === 'loading') && <div><div className="loader"></div>
           <p>Getting SMILES representations, may take a few minutes...</p></div>}
-
-        {(extractState === 'done') && <div className="display-linebreak">{smilesText}</div>}
       </div>
       
       <div id="wrapper">

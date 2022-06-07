@@ -1,3 +1,5 @@
+import io
+from base64 import encodebytes
 import os
 import time
 import json
@@ -40,8 +42,11 @@ def extract_figures_from_pdf(filename, temp_directory='', return_images=False):
                 'bb': image['ImageBB'],
                 'image_path': f'{temp_directory}/{prefix}-{image["Type"]}-{image["Number"]}.png'}
         if return_images:
-            image = Image.open(data['image_path'])
-            data['image'] = np.asarray(image)
+            image = Image.open(data['image_path'], mode='r')
+            byte_arr = io.BytesIO()
+            image.save(byte_arr, format='PNG')
+            encoded_img = encodebytes(byte_arr.getvalue()).decode('ascii')
+            data['image'] = encoded_img
         results.append(data)
     return results, temp_directory
 

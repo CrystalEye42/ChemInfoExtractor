@@ -63,17 +63,6 @@ class ReactionExtractorPix2Seq(LightningModule):
 
     def __init__(self, args, tokenizer):
         super(ReactionExtractorPix2Seq, self).__init__()
-        # setting device on GPU if available, else CPU
-        device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-        print('Using device:', device)
-        print()
-
-        #Additional Info when using cuda
-        if device.type == 'cuda':
-            print(torch.cuda.get_device_name(0))
-            print('Memory Usage:')
-            print('Allocated:', round(torch.cuda.memory_allocated(0)/1024**3,1), 'GB')
-            print('Cached:   ', round(torch.cuda.memory_reserved(0)/1024**3,1), 'GB')
         self.args = args
         self.tokenizer = tokenizer
         self.model = build_pix2seq_model(args)
@@ -84,7 +73,8 @@ class ReactionExtractorPix2Seq(LightningModule):
         data = [self.transform(image) for image in images]
         images = torch.stack([image for image, target in data]).cuda()
         targets = [target for image, target in data]
-        pred_logits = self.model(images)
+        with torch.no_grad():
+            pred_logits = self.model(images)
         predictions = []
         for i, logits in enumerate(pred_logits):
             probs = F.softmax(logits, dim=-1)

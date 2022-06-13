@@ -32,8 +32,8 @@ form{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 600px;
-  width: 60%;
+  height: 550px;
+  width: 600px;
   overflow-y: auto;
   margin-bottom: 10px;
   float: left;
@@ -44,15 +44,26 @@ span{
 }
 
 #wrapper{
-  height: 600px;
-  overflow: hidden;
+  width: 1250px;
+  white-space: nowrap;
+}
+
+#spacer{
+  width: 30px;
+  float: left;
+}
+
+#pdfselect{
+  float:left;
+  width: 600px;
 }
 
 #results{
-  height: 500px;
-  width:36%;
+  width: 600px;
+  height: 700px;
+  margin-top: 30px;
   overflow-y: auto;
   overflow-wrap: break-word;
-  float:right;
+  float: left;
   border: 1px solid lightgray;
 }

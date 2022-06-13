@@ -87,25 +87,68 @@ const KetcherComponent = () => {
 }
 
 export class FigureDisplay extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: -1,
+        };
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(event) {
+        this.setState({value: event.target.value});
+    }
+
     render() {
         const details = this.props.details;
         this.ketchers = []
-        var i = -1;
-        const subfigures = details["subfigures"].map(([image, smiles]) => {
-            i += 1;
-            return (<div key={smiles}>
-                <img src={`data:image/jpeg;base64,${image}`} alt={smiles}/>
-                <KetcherDisplay molblock={details['molblocks'][i]} />
-                <p>{smiles}</p>
-            </div>);
-        });
+
+        const figures = details["subfigures"];
+        const figuresList = figures.length > 0 && figures.map(([image, smiles], i) => {
+            return (
+                <option key={i} value={i}>{smiles}</option>
+            )
+        }, this);
+
+        // const ketcherList = details['molblocks'].length > 0 && details['molblocks'].map((molblock, i) => {
+        //     console.log(this.state.value === i.toString());
+        //     return (
+        //         this.state.value===i.toString() && <KetcherDisplay molblock={molblock} />
+        //     )
+        // }, this);
+        
+        var subfigure = <p></p>
+        if (this.state.value >= 0){
+            const [image, smiles] = details["subfigures"][this.state.value];
+            subfigure = (<div id="wrapper">
+                    <div id="original">
+                        <h5>Original</h5>
+                        <img src={`data:image/jpeg;base64,${image}`} width="200" alt={smiles}/>
+                    </div>
+                    <div id="prediction">
+                        <h5>Prediction</h5>
+                        <KetcherDisplay molblock={details['molblocks'][this.state.value]} />
+                    </div>
+                </div>);   
+        }
         
         return (
             <div>
                 <h3>Figure</h3>
-                <img src={`data:image/jpeg;base64,${details["figure"]}`} alt="main"/>
+                <div id="imagewrap">
+                    <div id="imagedisp">
+                        <img src={`data:image/jpeg;base64,${details["figure"]}`} id="mainimg" alt="main"/>
+                    </div>
+                </div>
                 <h4>Extracted Molecules</h4>
-                {subfigures}
+                <select onChange={this.handleChange}>
+                    <option value="" disabled selected>Select a molecule</option>
+                    {figuresList}
+                </select>
+
+                <div>
+                    {subfigure}
+                </div>
             </div>
         );
     }

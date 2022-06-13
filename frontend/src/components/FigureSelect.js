@@ -22,12 +22,20 @@ export class FigureSelect extends React.Component {
                 <option key={i} value={item}>{item}</option>
             )
         }, this);
+        const displayList = figures.length > 0 && figures.map((item, i) => {
+            return (
+                this.state.value===item && <FigureDisplay key={i} details={this.props.details[item]}/>
+            )
+        }, this);
         return (
             <div>
 			<select onChange={this.handleChange}>
+                <option value="" disabled selected>Select a figure</option>
 				{figuresList}
 			</select>
-            {this.state.value && <FigureDisplay details={this.props.details[this.state.value]}/>}
+            <div>
+                {displayList}
+            </div>
 		</div>
         );
     }

@@ -13,7 +13,7 @@ import torch
 
 from bms.dataset import get_transforms
 from bms.model import Encoder, Decoder
-from bms.chemistry import postprocess_smiles
+from bms.chemistry import postprocess_smiles, convert_graph_to_smiles
 from bms.tokenizer import NodeTokenizer
 
 import warnings 
@@ -124,8 +124,8 @@ class BmsModel:
         node_symbols = [pred['symbols'] for pred in preds['atomtok_coords']]
         edges = preds['edges']
 
-        post_smiles, molblock, r_success = postprocess_smiles(smiles, node_coords, node_symbols, edges, molblock=True)
-        return post_smiles, molblock
+        smiles, molblock, r_success = convert_graph_to_smiles(node_coords, node_symbols, edges, images=images)
+        return smiles, molblock
 
 
 

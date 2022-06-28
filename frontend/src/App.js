@@ -6,6 +6,7 @@ import {
 } from "react-router-dom"
 import { Navbar, Nav } from "react-bootstrap";
 import { PdfExtract } from "./components/PdfExtract";
+import { ImageExtract } from "./components/ImageExtract";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -26,7 +27,7 @@ function App() {
 
             <Route path="/pdf" element={<PdfExtract/>}/>
 
-            <Route path="/image" element={<PdfExtract/>}/>
+            <Route path="/image" element={<ImageExtract/>}/>
 
             <Route path="/" element={<PdfExtract/>}/>
           </Routes>

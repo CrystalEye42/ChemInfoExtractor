@@ -15,7 +15,6 @@
 #wrapper-inner{
     width: 100%;
     height: fit-content;
-    padding-left: 5%;
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-all;
@@ -33,6 +32,7 @@
     word-break: break-all;
     display: block;
     padding-bottom: 20px;
+    padding-left: 5%;
 }
 
 
@@ -52,4 +52,8 @@
 select{
     max-width: 40%;
     word-wrap: break-word;
+}
+
+h4 {
+    margin-top: 10px !important;
 }

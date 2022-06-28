@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import './FigureDisplay.css';
 
 export class KetcherDisplay extends React.Component {
     constructor(props) {
@@ -29,7 +30,7 @@ export class KetcherDisplay extends React.Component {
             const ketcher = current.contentWindow.ketcher;
             //console.log(ketcher);
             console.log("molblock here\n", content);
-            ketcher.setMolecule(content).then(console.log("set molecule"));
+            ketcher.setMolecule(content).then(ketcher.setMolecule(content).then(console.log("set molecule")));
         }
     }
 
@@ -44,7 +45,15 @@ export class KetcherDisplay extends React.Component {
         return (
             <div>
                 {!this.props.molblock && <p>No Mol block predicted</p>}
-                <iframe title="myiframe" ref={this.refFrame} onLoad={this.startPolling} src="./standalone/index.html" width="200" height="200"></iframe>
+                <div id="wrap"></div>
+                <iframe 
+                    id="frame"
+                    title="myiframe" 
+                    ref={this.refFrame} 
+                    onLoad={this.startPolling} 
+                    src="./standalone/index.html"
+                    width="640"
+                    height="500"></iframe>
             </div>
         );
     }

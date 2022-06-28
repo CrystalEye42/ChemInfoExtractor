@@ -106,7 +106,7 @@ export class FigureDisplay extends React.Component {
         const figures = details["subfigures"];
         const figuresList = figures.length > 0 && figures.map(([image, smiles], i) => {
             return (
-                <option key={i} value={i}>{smiles}</option>
+                <option key={i+smiles} value={i}>{i+1}</option>
             )
         }, this);
 
@@ -120,21 +120,25 @@ export class FigureDisplay extends React.Component {
         var subfigure = <p></p>
         if (this.state.value >= 0){
             const [image, smiles] = details["subfigures"][this.state.value];
-            subfigure = (<div id="wrapper">
+            subfigure = (
+                <div>
+                <div id="wrapper-inner">
                     <div id="original">
-                        <h5>Original</h5>
+                        <h4>Original</h4>
                         <img src={`data:image/jpeg;base64,${image}`} width="200" alt={smiles}/>
                     </div>
-                    <div id="prediction">
-                        <h5>Prediction</h5>
-                        <KetcherDisplay molblock={details['molblocks'][this.state.value]} />
+                    <h4>Prediction</h4>
+                    <div id="pred">
+                        {figures[this.state.value][1]}
+                        <br></br>
                     </div>
+                </div>
+                <div id="ketcher"><KetcherDisplay molblock={details['molblocks'][this.state.value]} /></div>
                 </div>);   
         }
         
         return (
             <div>
-                <h3>Figure</h3>
                 <div id="imagewrap">
                     <div id="imagedisp">
                         <img src={`data:image/jpeg;base64,${details["figure"]}`} id="mainimg" alt="main"/>

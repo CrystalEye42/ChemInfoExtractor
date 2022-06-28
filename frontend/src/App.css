@@ -33,7 +33,7 @@ form{
   justify-content: center;
   align-items: center;
   height: 550px;
-  width: 600px;
+  width: 560px;
   overflow-y: auto;
   margin-bottom: 10px;
   float: left;
@@ -44,12 +44,11 @@ span{
 }
 
 #wrapper{
-  width: 1250px;
-  white-space: nowrap;
+  width: 1350px;
 }
 
 #spacer{
-  width: 30px;
+  width: 0px;
   float: left;
 }
 
@@ -59,10 +58,11 @@ span{
 }
 
 #results{
-  width: 600px;
+  width: 650px;
   height: 700px;
   margin-top: 30px;
   overflow-y: auto;
+  overflow-x: hidden;
   overflow-wrap: break-word;
   float: left;
   border: 1px solid lightgray;

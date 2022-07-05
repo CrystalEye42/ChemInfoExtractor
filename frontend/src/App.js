@@ -7,6 +7,7 @@ import {
 import { Navbar, Nav } from "react-bootstrap";
 import { PdfExtract } from "./components/PdfExtract";
 import { ImageExtract } from "./components/ImageExtract";
+import { MolExtract } from "./components/MolExtract";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -19,7 +20,8 @@ function App() {
             <Navbar.Brand href="/home">ChemInfoExtractor</Navbar.Brand>
             <Nav className="mr-auto">
               <Nav.Link href="/pdf">Extract PDF</Nav.Link>
-              <Nav.Link href="/image">Extract Image</Nav.Link>
+              <Nav.Link href="/figure">Extract Figure</Nav.Link>
+              <Nav.Link href="/molecule">Extract Molecule</Nav.Link>
             </Nav>
           </Navbar>
 
@@ -27,7 +29,9 @@ function App() {
 
             <Route path="/pdf" element={<PdfExtract/>}/>
 
-            <Route path="/image" element={<ImageExtract/>}/>
+            <Route path="/figure" element={<ImageExtract/>}/>
+
+            <Route path="/molecule" element={<MolExtract/>}/>
 
             <Route path="/" element={<PdfExtract/>}/>
           </Routes>

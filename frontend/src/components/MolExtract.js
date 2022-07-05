@@ -1,11 +1,11 @@
 import { useState } from 'react'
 
-import './ImageExtract.css';
+import './MolExtract.css';
 // Import url for sending requests
 import { base_url } from "../config";
-import { FigureDisplay } from './FigureDisplay';
+import { KetcherDisplay } from './KetcherDisplay';
 
-export function ImageExtract() {
+export function MolExtract() {
 
   // image file onChange state
   const [imageFile, setImageFile] = useState(null);
@@ -49,8 +49,7 @@ export function ImageExtract() {
 
   const setFiguresFromResponse = (response) => {
     setFigureDetails({
-        "figure": response["image"], 
-        "subfigures": response["images"], 
+        "smiles": response["smiles"], 
         "molblocks": response["molblocks"]
     });
     console.log(figureDetails);
@@ -76,7 +75,7 @@ export function ImageExtract() {
     setImageError('');
     setImageFile(imageFile);
     setExtractState('loading');
-    request.open("POST", base_url + '/extractimage');
+    request.open("POST", base_url + '/extractmol');
     request.send(formData);
     console.log("sent post request");
   }
@@ -124,7 +123,14 @@ export function ImageExtract() {
           </div>
           <div id="spacer"><p></p></div>
           <div id="results">
-              {(extractState === 'done') && <FigureDisplay details={figureDetails} showmain={false}/>}
+              {(extractState === 'done') && <div>
+                <h5>Prediction</h5>
+                <div id="pred">
+                    {figureDetails['smiles']}
+                    <br></br>
+                </div>
+                <div id="ketcher"><KetcherDisplay molblock={figureDetails['molblocks']} /></div>
+              </div>}
           </div>
         </div>
       </div>

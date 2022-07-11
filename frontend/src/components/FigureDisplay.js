@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from 'prop-types';
 import { KetcherDisplay } from './KetcherDisplay';
 import './FigureDisplay.css';
+import { View, StyleSheet } from "react-native";
 
 export class FigureDisplay extends React.Component {
     constructor(props) {
@@ -16,6 +17,29 @@ export class FigureDisplay extends React.Component {
         this.setState({value: event.target.value});
     }
 
+    drawBox(bbox) {
+        if (bbox === null) {
+            return (
+                <img src={`data:image/jpeg;base64,${this.props.details["figure"]}`} id="mainimg" alt="main"/>
+            );
+        }
+        const [x1, y1, x2, y2] = bbox;
+        return (
+            <View style={styles.imageContainer}>
+                <img src={`data:image/jpeg;base64,${this.props.details["figure"]}`} id="mainimg" alt="main"/>
+                <View style={[
+                    styles.rectangle,
+                    {
+                        top: y1,
+                        height: y2-y1,
+                        left: x1,
+                        width: x2-x1,
+                    }
+                ]}></View>
+            </View>
+        );
+    }
+
     render() {
         const details = this.props.details;
         this.ketchers = [];
@@ -24,7 +48,7 @@ export class FigureDisplay extends React.Component {
         const figuresList = figures.length > 0 && figures.map(([image, smiles], i) => {
             return (
                 <option key={i+smiles} value={i}>{"Molecule "+(i+1)}</option>
-            )
+            );
         }, this);
 
         // const ketcherList = details['molblocks'].length > 0 && details['molblocks'].map((molblock, i) => {
@@ -54,11 +78,13 @@ export class FigureDisplay extends React.Component {
                 </div>);   
         }
         
+        const bbox = details["subfigures"][this.state.value] ? details["subfigures"][this.state.value][2] : null;
+
         return (
             <div>
                 {this.props.showmain && <div id="imagewrap">
                     <div id="imagedisp">
-                        <img src={`data:image/jpeg;base64,${details["figure"]}`} id="mainimg" alt="main"/>
+                        <View style={styles.container}>{this.drawBox(bbox)}</View>
                     </div>
                 </div>}
                 <h4>Extracted Molecules</h4>
@@ -79,3 +105,19 @@ FigureDisplay.propTypes = {
     details: PropTypes.object.isRequired,
     showmain: PropTypes.bool.isRequired
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: "center",
+        padding: 8
+      },
+      imageContainer: {
+        alignSelf: "center"
+      },
+    rectangle: {
+      borderWidth: 3,
+      borderColor: "black",
+      position: "absolute"
+    }
+  });

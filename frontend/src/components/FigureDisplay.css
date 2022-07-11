@@ -3,7 +3,6 @@
 }
 
 #imagedisp{
-    max-height: 250px;
     overflow-y: auto;
     text-align: center;
 }

@@ -9,12 +9,21 @@ export class FigureDisplay extends React.Component {
         super(props);
         this.state = {
             value: this.props.details["subfigures"].length > 0 ? 0 : -1,
+            height: 0,
+            width: 0,
         };
         this.handleChange = this.handleChange.bind(this);
+        this.onImgLoad = this.onImgLoad.bind(this);
     }
 
     handleChange(event) {
         this.setState({value: event.target.value});
+    }
+
+    onImgLoad({ target: img }) {
+        const { offsetHeight, offsetWidth } = img;
+        console.log(offsetHeight, offsetWidth);
+        this.setState({height:offsetHeight, width:offsetWidth});
     }
 
     drawBox(bbox) {
@@ -26,14 +35,14 @@ export class FigureDisplay extends React.Component {
         const [x1, y1, x2, y2] = bbox;
         return (
             <View style={styles.imageContainer}>
-                <img src={`data:image/jpeg;base64,${this.props.details["figure"]}`} id="mainimg" alt="main"/>
+                <img src={`data:image/jpeg;base64,${this.props.details["figure"]}`} id="mainimg" onLoad={this.onImgLoad} alt="main"/>
                 <View style={[
                     styles.rectangle,
                     {
-                        top: y1,
-                        height: y2-y1,
-                        left: x1,
-                        width: x2-x1,
+                        top: y1*this.state.height,
+                        height: (y2-y1)*this.state.height,
+                        left: x1*this.state.width,
+                        width: (x2-x1)*this.state.width,
                     }
                 ]}></View>
             </View>

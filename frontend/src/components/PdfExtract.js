@@ -30,7 +30,7 @@ export function PdfExtract() {
 
   const [extractState, setExtractState] = useState('unready');
 
-  //const [molImageAndTexts, setMolImageAndTexts] = useState([]);
+  const [responseData, setResponseData] = useState(null);
 
   const [figures, setFigures] = useState([]);
 
@@ -52,6 +52,21 @@ export function PdfExtract() {
           setExtractState('ready');
         }
       }
+      else if (selectedFile.type === 'application/json') {
+        let reader = new FileReader();
+        console.log(selectedFile);
+        reader.readAsText(selectedFile);
+        reader.onloadend = (e) => {
+          console.log(e.target.result);
+          const response = JSON.parse(e.target.result);
+          setResponseData(response);
+          const smilesString = getSmiles(response);
+          //setMoleculesAndSmiles(response);
+          setFiguresFromResponse(response);
+          console.log(smilesString);
+          setExtractState('done');
+        }
+      }
       else {
         setPdfData('');
         setPdfError('Not a valid pdf: Please select only PDF');
@@ -61,6 +76,28 @@ export function PdfExtract() {
     }
     else {
       console.log('please select a PDF');
+    }
+  }
+
+  const fetchExample = async () => {
+    // eslint-disable-next-line no-restricted-globals
+    const file = `${location.origin}/example.pdf`;
+    const response = await fetch(file);
+    console.log(response);
+    const example = await response.blob();
+    console.log(example);
+    handleExample(example);
+}
+
+  const handleExample = (example) => {
+    console.log(example);
+    setPdfData(example);
+    let reader = new FileReader();
+    reader.readAsDataURL(example);
+    reader.onloadend = (e) => {
+      setPdfError('');
+      setPdfFile(e.target.result);
+      setExtractState('ready');
     }
   }
 
@@ -109,6 +146,7 @@ export function PdfExtract() {
         setPdfError('');
         setPdfFile(pdfFile);
         const response = JSON.parse(request.response);
+        setResponseData(response);
         const smilesString = getSmiles(response);
         //setMoleculesAndSmiles(response);
         setFiguresFromResponse(response);
@@ -144,7 +182,18 @@ export function PdfExtract() {
           </form>
 
           <div>
+            {(extractState !== 'loading') && <button type="button" onClick={fetchExample}>Example</button>}
+
             {(extractState === 'ready') && <button type="button" onClick={extractFile}>Extract Info</button>}
+
+            {(extractState === 'done') && <a
+                href={`data:text/json;charset=utf-8,${encodeURIComponent(
+                  JSON.stringify(responseData)
+                )}`}
+                download="export.json"
+              >
+                <button type="button">Save Response</button>
+              </a>}
 
             {(extractState === 'loading') && <div><div className="loader"></div>
               <p>Getting SMILES representations, may take a few minutes...</p></div>}

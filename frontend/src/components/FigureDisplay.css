@@ -62,3 +62,12 @@ h5 {
     text-align: left;
     margin-left: 3%;
 }
+
+#resultButtons{
+    text-align: right;
+  }
+  
+  #resultBody{
+    overflow-y: auto;
+    overflow-x: hidden;
+  }

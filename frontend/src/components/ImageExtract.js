@@ -1,5 +1,5 @@
 import { useState } from 'react'
-
+import React from 'react';
 import './ImageExtract.css';
 // Import url for sending requests
 import { base_url } from "../config";
@@ -15,9 +15,13 @@ export function ImageExtract() {
 
   const [extractState, setExtractState] = useState('unready');
 
+  const [responseData, setResponseData] = useState(null);
+
   //const [molImageAndTexts, setMolImageAndTexts] = useState([]);
 
   const [figureDetails, setFigureDetails] = useState(null);
+
+  const inputFileRef = React.useRef();
 
   // handle file onChange event
   const allowedFiles = ['image/png', 'image/jpeg'];
@@ -47,6 +51,51 @@ export function ImageExtract() {
     }
   }
 
+  const handleJSON = (e) => {
+    let selectedFile = e.target.files[0];
+    if (selectedFile) {
+      if (selectedFile.type === 'application/json') {
+        try {
+          let reader = new FileReader();
+          console.log(selectedFile);
+          reader.readAsText(selectedFile);
+          reader.onloadend = (e) => {
+            console.log(e.target.result);
+            const response = JSON.parse(e.target.result);
+            setResponseData(response);
+            //setMoleculesAndSmiles(response);
+            setFiguresFromResponse(response);
+            setExtractState('done');
+          }  
+        } catch (error) {
+          console.log("bad file shape")
+        }
+      }
+    }
+  }
+
+  const fetchExample = async (exampleFileName) => {
+    // eslint-disable-next-line no-restricted-globals
+    const file = `${location.origin}/${exampleFileName}`;
+    const response = await fetch(file);
+    console.log(response);
+    const example = await response.blob();
+    console.log(example);
+    handleExample(example);
+}
+
+  const handleExample = (example) => {
+    console.log(example);
+    setImageData(example);
+    let reader = new FileReader();
+    reader.readAsDataURL(example);
+    reader.onloadend = (e) => {
+      setImageError('');
+      setImageFile(e.target.result);
+      setExtractState('ready');
+    }
+  }
+
   const setFiguresFromResponse = (response) => {
     setFigureDetails({
         "figure": response["image"], 
@@ -71,6 +120,7 @@ export function ImageExtract() {
         //setMoleculesAndSmiles(response);
         setFiguresFromResponse(response);
         setExtractState('done');
+        setResponseData(response);
       }
     }
     setImageError('');
@@ -79,7 +129,13 @@ export function ImageExtract() {
     request.open("POST", base_url + '/extractimage');
     request.send(formData);
     console.log("sent post request");
-  }
+  };
+
+  const clickForm = () => {
+    /*Collecting node-element and performing click*/
+    inputFileRef.current.click();
+    console.log(inputFileRef.current);
+  };
 
   return (
     <div className="container">
@@ -101,7 +157,15 @@ export function ImageExtract() {
           </form>
 
           <div>
-            {(extractState === 'ready') && <button type="button" onClick={extractFile}>Extract Info</button>}
+            {(extractState !== 'loading') && 
+            <div>
+              <button type="button" onClick={() => fetchExample("exampleimg1.png")}>Example 1</button>
+              <button type="button" onClick={() => fetchExample("exampleimg2.png")}>Example 2</button>
+              <button type="button" onClick={() => fetchExample("exampleimg3.png")}>Example 3</button>
+
+              <button type="button" className='rightbutton' onClick={extractFile} 
+                disabled={extractState !== 'ready'}>Extract Info</button>
+            </div>}
 
             {(extractState === 'loading') && <div><div className="loader"></div>
               <p>Getting SMILES representations, may take a few minutes...</p></div>}
@@ -124,7 +188,22 @@ export function ImageExtract() {
           </div>
           <div id="spacer"><p></p></div>
           <div id="results">
+          <div id="resultButtons">
+              <button type="button" onClick={clickForm}>Load Previous</button>
+              <input type='file' ref={inputFileRef} className="form-control" style={{display:'none'}} 
+                onChangeCapture={handleJSON}></input>
+              <a
+                href={`data:text/json;charset=utf-8,${encodeURIComponent(
+                  JSON.stringify(responseData)
+                )}`}
+                download="export.json"
+                >
+                <button type="button" disabled={extractState !== 'done'}>Save Result</button>
+              </a>
+            </div>
+            <div id="resultBody">
               {(extractState === 'done') && <FigureDisplay details={figureDetails} showmain={false}/>}
+            </div>
           </div>
         </div>
       </div>

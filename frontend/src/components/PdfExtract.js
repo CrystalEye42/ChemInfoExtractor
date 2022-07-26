@@ -1,5 +1,5 @@
-import { useState } from 'react'
-
+import { useState } from 'react';
+import React from 'react';
 // Import Worker
 import { Worker } from '@react-pdf-viewer/core';
 // Import the main Viewer component
@@ -36,6 +36,8 @@ export function PdfExtract() {
 
   const [figureDetails, setFigureDetails] = useState(null);
 
+  const inputFileRef = React.useRef();
+
   // handle file onChange event
   const allowedFiles = ['application/pdf'];
   const handleFile = (e) => {
@@ -52,21 +54,6 @@ export function PdfExtract() {
           setExtractState('ready');
         }
       }
-      else if (selectedFile.type === 'application/json') {
-        let reader = new FileReader();
-        console.log(selectedFile);
-        reader.readAsText(selectedFile);
-        reader.onloadend = (e) => {
-          console.log(e.target.result);
-          const response = JSON.parse(e.target.result);
-          setResponseData(response);
-          const smilesString = getSmiles(response);
-          //setMoleculesAndSmiles(response);
-          setFiguresFromResponse(response);
-          console.log(smilesString);
-          setExtractState('done');
-        }
-      }
       else {
         setPdfData('');
         setPdfError('Not a valid pdf: Please select only PDF');
@@ -79,9 +66,34 @@ export function PdfExtract() {
     }
   }
 
-  const fetchExample = async () => {
+  const handleJSON = (e) => {
+    let selectedFile = e.target.files[0];
+    if (selectedFile) {
+      if (selectedFile.type === 'application/json') {
+        try {
+          let reader = new FileReader();
+          console.log(selectedFile);
+          reader.readAsText(selectedFile);
+          reader.onloadend = (e) => {
+            console.log(e.target.result);
+            const response = JSON.parse(e.target.result);
+            setResponseData(response);
+            const smilesString = getSmiles(response);
+            //setMoleculesAndSmiles(response);
+            setFiguresFromResponse(response);
+            console.log(smilesString);
+            setExtractState('done');
+          }  
+        } catch (error) {
+          console.log("bad file shape")
+        }
+      }
+    }
+  }
+
+  const fetchExample = async (exampleFileName) => {
     // eslint-disable-next-line no-restricted-globals
-    const file = `${location.origin}/example.pdf`;
+    const file = `${location.origin}/${exampleFileName}`;
     const response = await fetch(file);
     console.log(response);
     const example = await response.blob();
@@ -160,7 +172,13 @@ export function PdfExtract() {
     request.open("POST", base_url + '/extract');
     request.send(formData);
     console.log("sent post request");
-  }
+  };
+
+  const clickForm = () => {
+    /*Collecting node-element and performing click*/
+    inputFileRef.current.click();
+    console.log(inputFileRef.current);
+  };
 
   return (
     <div className="container">
@@ -182,18 +200,17 @@ export function PdfExtract() {
           </form>
 
           <div>
-            {(extractState !== 'loading') && <button type="button" onClick={fetchExample}>Example</button>}
+            {/* https://pubs.acs.org/doi/pdf/10.1021/acs.joc.2c00749 */}
+            {(extractState !== 'loading') && 
+            <div>
+              <button type="button" onClick={() => fetchExample("example1.pdf")}>Example 1</button>
+              <button type="button" onClick={() => fetchExample("example2.pdf")}>Example 2</button>
+              <button type="button" onClick={() => fetchExample("example3.pdf")}>Example 3</button>
 
-            {(extractState === 'ready') && <button type="button" onClick={extractFile}>Extract Info</button>}
+              <button type="button" className='rightbutton' onClick={extractFile} 
+                disabled={extractState !== 'ready'}>Extract Info</button>
+            </div>}
 
-            {(extractState === 'done') && <a
-                href={`data:text/json;charset=utf-8,${encodeURIComponent(
-                  JSON.stringify(responseData)
-                )}`}
-                download="export.json"
-              >
-                <button type="button">Save Response</button>
-              </a>}
 
             {(extractState === 'loading') && <div><div className="loader"></div>
               <p>Getting SMILES representations, may take a few minutes...</p></div>}
@@ -219,7 +236,22 @@ export function PdfExtract() {
           </div>
           <div id="spacer"><p></p></div>
           <div id="results">
+            <div id="resultButtons">
+              <button type="button" onClick={clickForm}>Load Previous</button>
+              <input type='file' ref={inputFileRef} className="form-control" style={{display:'none'}} 
+                onChangeCapture={handleJSON}></input>
+              <a
+                href={`data:text/json;charset=utf-8,${encodeURIComponent(
+                  JSON.stringify(responseData)
+                )}`}
+                download="export.json"
+                >
+                <button type="button" disabled={extractState !== 'done'}>Save Result</button>
+              </a>
+            </div>
+            <div id="resultBody">
               {(extractState === 'done') && <FigureSelect figures={figures} details={figureDetails} />}
+            </div>
           </div>
         </div>
       </div>

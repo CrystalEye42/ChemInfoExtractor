@@ -6,7 +6,7 @@ export class FigureSelect extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: '',
+            value: this.props.figures.length > 0 ? this.props.figures[0] : '',
         };
         this.handleChange = this.handleChange.bind(this);
     }
@@ -24,15 +24,15 @@ export class FigureSelect extends React.Component {
         }, this);
         const displayList = figures.length > 0 && figures.map((item, i) => {
             return (
-                this.state.value===item && <FigureDisplay key={i} details={this.props.details[item]}/>
+                this.state.value===item && <FigureDisplay key={i} details={this.props.details[item]} showmain={true}/>
             )
         }, this);
         return (
             <div>
-			<select onChange={this.handleChange}>
-                <option value="" disabled selected>Select a figure</option>
+			{this.state.value && <select onChange={this.handleChange}>
 				{figuresList}
-			</select>
+			</select>}
+            {!this.state.value && <p>No figures extracted.</p>}
             <div>
                 {displayList}
             </div>

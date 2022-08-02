@@ -1,37 +1,10 @@
-
-.display-linebreak {
-  white-space: pre-line;
-  overflow-wrap: break-word;
-}
-
-.loader {
-  border: 4px solid #f3f3f3; /* Light grey */
-  border-top: 4px solid #3498db; /* Blue */
-  border-radius: 50%;
-  width: 16px;
-  height: 16px;
-  float:left;
-  margin: 0px 20px;
-  animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-form{
-  margin: 30px 0px;
-}
-
 .imgviewer{
   display: flex;
   justify-content: center;
   align-items: center;
   width: 560px;
-  max-height: 550px;
+  max-height: 500px;
   overflow-y: auto;
-  margin-bottom: 10px;
   float: left;
 }
 
@@ -46,10 +19,6 @@ span{
 #wrapper{
   width: 1350px;
   height: 800px;
-}
-
-.form-control{
-  width: 560px !important;
 }
 
 #spacer{
@@ -70,7 +39,6 @@ span{
   overflow-x: hidden;
   overflow-wrap: break-word;
   float: left;
-  border: 1px solid lightgray;
 }
 
 #resultButtons{

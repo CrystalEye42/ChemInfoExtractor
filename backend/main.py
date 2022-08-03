@@ -208,4 +208,4 @@ if __name__ == '__main__':
     load_dotenv(dotenv_path=config_path)
     port = environ.get('PORT')
 
-    app.run(debug=True, host='0.0.0.0', port=port)
+    app.run(debug=True, host='0.0.0.0', port=port, threaded=False)

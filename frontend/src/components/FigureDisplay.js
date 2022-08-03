@@ -22,7 +22,6 @@ export class FigureDisplay extends React.Component {
 
     onImgLoad({ target: img }) {
         const { offsetHeight, offsetWidth } = img;
-        console.log(offsetHeight, offsetWidth);
         this.setState({height:offsetHeight, width:offsetWidth});
     }
 
@@ -55,8 +54,13 @@ export class FigureDisplay extends React.Component {
 
         const figures = details["subfigures"];
         const figuresList = figures.length > 0 && figures.map(([image, smiles], i) => {
+            console.log("index " + i + this.state.value );
             return (
-                <option key={i+smiles} value={i}>{"Molecule "+(i+1)}</option>
+                <div key={i+smiles}>
+                    <input type="radio" className="btn-check" name="btnradio2" id={"subbuttonradio"+i} 
+                    checked={i==this.state.value} value={i}></input>
+                    <label className="btn btn-outline-primary" htmlFor={"subbuttonradio"+i} >{i+1}</label>
+                </div>
             );
         }, this);
 
@@ -97,9 +101,11 @@ export class FigureDisplay extends React.Component {
                     </div>
                 </div>}
                 <h4>Extracted Molecules</h4>
-                {this.state.value >= 0 && <select onChange={this.handleChange}>
-                    {figuresList}
-                </select>}
+                {this.state.value >= 0 && <div className="buttongroupwrap">
+                    <div className="btn-group" role="group" aria-label="second group" onChange={this.handleChange}>
+                        {figuresList}
+                    </div>
+                </div>}
                 {this.state.value === -1 && <p>No molecules found in figure.</p>}
 
                 <div>

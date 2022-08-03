@@ -208,7 +208,7 @@ export function ImageExtract() {
                 )}`}
                 download="export.json"
                 >
-                <button type="button" className='btn btn-secondary' disabled={extractState !== 'done'}>Save Result</button>
+                <button type="button" className='btn btn-secondary' style={{marginLeft:"3px"}} disabled={extractState !== 'done'}>Save Result</button>
               </a>
             </div>
             <div id="resultBody">

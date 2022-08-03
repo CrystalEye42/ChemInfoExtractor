@@ -67,7 +67,12 @@ h5 {
     text-align: right;
   }
   
-  #resultBody{
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
+#resultBody{
+overflow-y: auto;
+overflow-x: hidden;
+}
+
+.buttongroupwrap {
+    overflow-x: auto;
+    margin-top: 3px;
+}

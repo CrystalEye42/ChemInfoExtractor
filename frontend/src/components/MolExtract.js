@@ -73,7 +73,11 @@ export function MolExtract() {
     }
   }
 
-  const fetchExample = async (exampleFileName) => {
+  const fetchExample = async (e) => {
+    const exampleFileName = e.target.value;
+    if (!exampleFileName) {
+      return;
+    }
     // eslint-disable-next-line no-restricted-globals
     const file = `${location.origin}/${exampleFileName}`;
     const response = await fetch(file);
@@ -144,32 +148,38 @@ export function MolExtract() {
 
             <label><h3>Upload Image</h3></label>
             <br></br>
-
-            <input type='file' className="form-control"
+            <div>
+              <input type='file' className="form-control"
               onChange={handleFile}></input>
+              <button type="button" className="btn btn-primary" onClick={extractFile} 
+                disabled={extractState !== 'ready'}>Extract</button>
+            </div>
 
             {/* we will display error message in case user select some file
             other than pdf */}
             {imageError && <span className='text-danger'>{imageError}</span>}
+            {!imageError && <br></br>}
 
           </form>
 
           <div>
           {(extractState !== 'loading') && 
             <div>
-              <button type="button" onClick={() => fetchExample("examplemol1.png")}>Example 1</button>
-              <button type="button" onClick={() => fetchExample("examplemol2.png")}>Example 2</button>
-              <button type="button" onClick={() => fetchExample("examplemol3.png")}>Example 3</button>
-
-              <button type="button" className='rightbutton' onClick={extractFile} 
-                disabled={extractState !== 'ready'}>Extract Info</button>
+              <select onChange={fetchExample} className="form-select">
+                <option value="" disabled selected>Examples</option>
+                <option value="examplemol1.png">1</option>
+                <option value="examplemol2.png">2</option>
+                <option value="examplemol3.png">3</option>
+              </select>
             </div>}
 
             {(extractState === 'loading') && <div><div className="loader"></div>
-              <p>Getting SMILES representations, may take a few minutes...</p></div>}
+              <p>Extracting molecule information, may take a few minutes...</p></div>}
           </div>
           
+          <br></br>
           <h4>View Image</h4>
+
           <div>
             {/* View Image */}
             <div className="imgviewer">
@@ -187,8 +197,8 @@ export function MolExtract() {
           <div id="spacer"><p></p></div>
           <div id="results">
             <div id="resultButtons">
-              <button type="button" onClick={clickForm}>Load Previous</button>
-              <input type='file' ref={inputFileRef} className="form-control" style={{display:'none'}} 
+              <button type="button" className='btn btn-secondary' onClick={clickForm}>Load Previous</button>
+              <input type='file' ref={inputFileRef} style={{display:'none'}} 
                 onChangeCapture={handleJSON}></input>
               <a
                 href={`data:text/json;charset=utf-8,${encodeURIComponent(
@@ -196,7 +206,7 @@ export function MolExtract() {
                 )}`}
                 download="export.json"
                 >
-                <button type="button" disabled={extractState !== 'done'}>Save Result</button>
+                <button type="button" className='btn btn-secondary'  style={{marginLeft:"3px"}} disabled={extractState !== 'done'}>Save Result</button>
               </a>
             </div>
             <div id="resultBody">

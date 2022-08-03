@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import { FigureDisplay } from "./FigureDisplay";
+import './FigureDisplay.css'
 
 export class FigureSelect extends React.Component {
     constructor(props) {
@@ -8,18 +9,30 @@ export class FigureSelect extends React.Component {
         this.state = {
             value: this.props.figures.length > 0 ? this.props.figures[0] : '',
         };
+        this.handleClick = this.handleClick.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
 
+    handleClick(item) {
+        console.log("here");
+        this.setState({value: item});
+    }
+
     handleChange(event) {
+        console.log("here2");
         this.setState({value: event.target.value});
     }
+
 
     render() {
         const figures = this.props.figures;
         const figuresList = figures.length > 0 && figures.map((item, i) => {
             return (
-                <option key={i} value={item}>{item}</option>
+                <div key={i}>
+                    <input type="radio" className="btn-check" name="btnradio" id={"buttonradio"+i} 
+                    checked={item===this.state.value} value={item}></input>
+                    <label className="btn btn-outline-primary" htmlFor={"buttonradio"+i} >{i+1}</label>
+                </div>
             )
         }, this);
         const displayList = figures.length > 0 && figures.map((item, i) => {
@@ -29,14 +42,16 @@ export class FigureSelect extends React.Component {
         }, this);
         return (
             <div>
-			{this.state.value && <select onChange={this.handleChange}>
-				{figuresList}
-			</select>}
-            {!this.state.value && <p>No figures extracted.</p>}
-            <div>
-                {displayList}
+                {this.state.value && <div className="buttongroupwrap">
+                    <div className="btn-group" role="group" aria-label="first group" onChange={this.handleChange}>
+                        {figuresList}
+                    </div>
+                </div>}
+                {!this.state.value && <p>No figures extracted.</p>}
+                <div>
+                    {displayList}
+                </div>
             </div>
-		</div>
         );
     }
 }

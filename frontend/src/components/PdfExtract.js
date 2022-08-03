@@ -91,7 +91,11 @@ export function PdfExtract() {
     }
   }
 
-  const fetchExample = async (exampleFileName) => {
+  const fetchExample = async (e) => {
+    const exampleFileName = e.target.value;
+    if (!exampleFileName) {
+      return;
+    }
     // eslint-disable-next-line no-restricted-globals
     const file = `${location.origin}/${exampleFileName}`;
     const response = await fetch(file);
@@ -189,13 +193,16 @@ export function PdfExtract() {
 
             <label><h3>Upload PDF</h3></label>
             <br></br>
-
-            <input type='file' className="form-control"
+            <div>
+              <input type='file' className="form-control"
               onChange={handleFile}></input>
-
+              <button type="button" className="btn btn-primary" onClick={extractFile} 
+                disabled={extractState !== 'ready'}>Extract</button>
+            </div>
             {/* we will display error message in case user select some file
             other than pdf */}
             {pdfError && <span className='text-danger'>{pdfError}</span>}
+            {!pdfError && <br></br>}
 
           </form>
 
@@ -203,20 +210,22 @@ export function PdfExtract() {
             {/* https://pubs.acs.org/doi/pdf/10.1021/acs.joc.2c00749 */}
             {(extractState !== 'loading') && 
             <div>
-              <button type="button" onClick={() => fetchExample("example1.pdf")}>Example 1</button>
-              <button type="button" onClick={() => fetchExample("example2.pdf")}>Example 2</button>
-              <button type="button" onClick={() => fetchExample("example3.pdf")}>Example 3</button>
-
-              <button type="button" className='rightbutton' onClick={extractFile} 
-                disabled={extractState !== 'ready'}>Extract Info</button>
+              <select onChange={fetchExample} className="form-select">
+                <option value="" disabled selected>Examples</option>
+                <option value="example1.pdf">1</option>
+                <option value="example2.pdf">2</option>
+                <option value="example3.pdf">3</option>
+              </select>
             </div>}
 
 
             {(extractState === 'loading') && <div><div className="loader"></div>
-              <p>Getting SMILES representations, may take a few minutes...</p></div>}
+              <p>Extracting molecule information, may take a few minutes...</p></div>}
           </div>
           
+          <br></br>
           <h4>View PDF</h4>
+          
           <div>
             {/* View PDF */}
             <div className="viewer">
@@ -237,8 +246,8 @@ export function PdfExtract() {
           <div id="spacer"><p></p></div>
           <div id="results">
             <div id="resultButtons">
-              <button type="button" onClick={clickForm}>Load Previous</button>
-              <input type='file' ref={inputFileRef} className="form-control" style={{display:'none'}} 
+              <button type="button" className='btn btn-secondary' onClick={clickForm}>Load Previous</button>
+              <input type='file' ref={inputFileRef} style={{display:'none'}} 
                 onChangeCapture={handleJSON}></input>
               <a
                 href={`data:text/json;charset=utf-8,${encodeURIComponent(
@@ -246,7 +255,7 @@ export function PdfExtract() {
                 )}`}
                 download="export.json"
                 >
-                <button type="button" disabled={extractState !== 'done'}>Save Result</button>
+                <button type="button" className='btn btn-secondary' style={{marginLeft:"3px"}} disabled={extractState !== 'done'}>Save Result</button>
               </a>
             </div>
             <div id="resultBody">

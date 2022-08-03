@@ -5,15 +5,17 @@ import './FigureDisplay.css';
 export class KetcherDisplay extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            scrollPosition: 0,
+        };
         this.refFrame = React.createRef();
         this.display = this.display.bind(this);
         this.startPolling = this.startPolling.bind(this);
     }
 
     startPolling() {
+        this.setState({scrollPosition: 0});
         if (this.refFrame.current && this.refFrame.current.contentWindow) {
-            console.log('react is ready');
-            console.log(this.refFrame.current.contentWindow);
             this.display();
             return;
         }
@@ -23,19 +25,18 @@ export class KetcherDisplay extends React.Component {
     display() {
         const { current } = this.refFrame;
         const content = this.props.molblock;
-        console.log(current, content);
         if (current) {
-            //const doc = current.contentDocument;
-            //console.log(current.contentWindow)
             const ketcher = current.contentWindow.ketcher;
-            //console.log(ketcher);
             console.log("molblock here\n", content);
-            ketcher.setMolecule(content).then(ketcher.setMolecule(content).then(console.log("set molecule")));
+            ketcher.setMolecule(content).then(ketcher.setMolecule(content)
+                .then(() => {
+                    console.log("scroll: " +this.state.scrollPosition);
+                    document.getElementById("results").scrollTo(0,this.state.scrollPosition);
+                }));
         }
     }
 
     componentDidUpdate(prevProps) {
-        console.log("here", prevProps.molblock !== this.props.molblock);
         if (prevProps.molblock !== this.props.molblock) {
             this.startPolling();
         }
@@ -50,7 +51,9 @@ export class KetcherDisplay extends React.Component {
                     id="frame"
                     title="myiframe" 
                     ref={this.refFrame} 
-                    onLoad={this.startPolling} 
+                    onLoad={() => {
+                        this.setState({scrollPosition: 0});
+                        this.startPolling();}}
                     src="./standalone/index.html"
                     width="640"
                     height="500"></iframe>

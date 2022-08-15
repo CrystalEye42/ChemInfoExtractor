@@ -32,9 +32,23 @@ export class FigureDisplay extends React.Component {
             );
         }
         const [x1, y1, x2, y2] = bbox;
+        const otherBoxes = this.props.details["subfigures"].map((info, i) => {
+            const [x1, y1, x2, y2] = info[2];
+            return (<View key={"det"+i} style={[
+                styles.rectangleShaded,
+                {
+                    top: y1*this.state.height,
+                    height: (y2-y1)*this.state.height,
+                    left: x1*this.state.width,
+                    width: (x2-x1)*this.state.width,
+                }
+            ]}></View>);
+        });
+        console.log("num boxes: "+otherBoxes.length)
         return (
             <View style={styles.imageContainer}>
                 <img src={`data:image/jpeg;base64,${this.props.details["figure"]}`} id="mainimg" onLoad={this.onImgLoad} alt="main"/>
+                {otherBoxes}
                 <View style={[
                     styles.rectangle,
                     {
@@ -100,6 +114,7 @@ export class FigureDisplay extends React.Component {
                         <View style={styles.container}>{this.drawBox(bbox)}</View>
                     </div>
                 </div>}
+                <br></br>
                 <h4>Extracted Molecules</h4>
                 {this.state.value >= 0 && <div className="buttongroupwrap">
                     <div className="btn-group" role="group" aria-label="second group" onChange={this.handleChange}>
@@ -127,12 +142,16 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         padding: 8
       },
-      imageContainer: {
+    imageContainer: {
         alignSelf: "center"
-      },
+    },
     rectangle: {
-      borderWidth: 3,
-      borderColor: "black",
-      position: "absolute"
+        borderWidth: 4,
+        borderColor: "red",
+        position: "absolute"
+    },
+    rectangleShaded: {
+        backgroundColor: 'rgba(200, 0, 0, 0.15)',
+        position: "absolute"
     }
   });

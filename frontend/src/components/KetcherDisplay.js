@@ -6,7 +6,7 @@ export class KetcherDisplay extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            scrollPosition: 0,
+            scroll: true,
         };
         this.refFrame = React.createRef();
         this.display = this.display.bind(this);
@@ -14,7 +14,6 @@ export class KetcherDisplay extends React.Component {
     }
 
     startPolling() {
-        this.setState({scrollPosition: 0});
         if (this.refFrame.current && this.refFrame.current.contentWindow) {
             this.display();
             return;
@@ -30,8 +29,10 @@ export class KetcherDisplay extends React.Component {
             console.log("molblock here\n", content);
             ketcher.setMolecule(content).then(ketcher.setMolecule(content)
                 .then(() => {
-                    console.log("scroll: " +this.state.scrollPosition);
-                    document.getElementById("results").scrollTo(0,this.state.scrollPosition);
+                    if (this.state.scroll) {
+                        document.getElementById("results").scrollTo(0,0);
+                    }
+                    this.setState({scroll: false});
                 }));
         }
     }
@@ -52,7 +53,7 @@ export class KetcherDisplay extends React.Component {
                     title="myiframe" 
                     ref={this.refFrame} 
                     onLoad={() => {
-                        this.setState({scrollPosition: 0});
+                        this.setState({scroll: true});
                         this.startPolling();}}
                     src="./standalone/index.html"
                     width="640"

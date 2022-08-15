@@ -210,8 +210,9 @@ export function PdfExtract() {
             {/* https://pubs.acs.org/doi/pdf/10.1021/acs.joc.2c00749 */}
             {(extractState !== 'loading') && 
             <div>
+              <b>Example: </b>
               <select onChange={fetchExample} className="form-select">
-                <option value="" disabled selected>Examples</option>
+                <option value="" disabled selected>Select</option>
                 <option value="example1.pdf">1</option>
                 <option value="example2.pdf">2</option>
                 <option value="example3.pdf">3</option>
@@ -246,7 +247,7 @@ export function PdfExtract() {
           <div id="spacer"><p></p></div>
           <div id="results">
             <div id="resultButtons">
-              <button type="button" className='btn btn-secondary' onClick={clickForm}>Load Previous</button>
+              <button type="button" className='btn btn-secondary' onClick={clickForm}>Load Results</button>
               <input type='file' ref={inputFileRef} style={{display:'none'}} 
                 onChangeCapture={handleJSON}></input>
               <a
@@ -255,7 +256,7 @@ export function PdfExtract() {
                 )}`}
                 download="export.json"
                 >
-                <button type="button" className='btn btn-secondary' style={{marginLeft:"3px"}} disabled={extractState !== 'done'}>Save Result</button>
+                <button type="button" className='btn btn-secondary' style={{marginLeft:"3px"}} disabled={extractState !== 'done'}>Save Results</button>
               </a>
             </div>
             <div id="resultBody">

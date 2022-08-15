@@ -80,3 +80,9 @@ span{
   overflow-y: auto;
   overflow-x: hidden;
 }
+
+select{
+  display: inline !important;
+  margin-left: 10px !important;
+  width: 20% !important;
+}

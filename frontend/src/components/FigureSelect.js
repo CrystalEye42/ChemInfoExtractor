@@ -42,6 +42,7 @@ export class FigureSelect extends React.Component {
         }, this);
         return (
             <div>
+                <h4>Figure</h4>
                 {this.state.value && <div className="buttongroupwrap">
                     <div className="btn-group" role="group" aria-label="first group" onChange={this.handleChange}>
                         {figuresList}

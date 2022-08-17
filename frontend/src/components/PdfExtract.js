@@ -1,26 +1,19 @@
 import { useState } from 'react';
 import React from 'react';
-// Import Worker
-import { Worker } from '@react-pdf-viewer/core';
-// Import the main Viewer component
-import { Viewer } from '@react-pdf-viewer/core';
-// Import the styles
-import '@react-pdf-viewer/core/lib/styles/index.css';
 // default layout plugin
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
-// Import styles of default layout plugin
-import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 // Import library for modifying pdf
 //import { PDFDocument } from 'pdf-lib';
 import './PdfExtract.css';
 // Import url for sending requests
 import { base_url } from "../config";
 import { FigureSelect } from './FigureSelect';
+import { PdfDisp } from './Pdf';
 
 export function PdfExtract() {
 
   // creating new plugin instance
-  const defaultLayoutPluginInstance = defaultLayoutPlugin();
+  defaultLayoutPlugin();
 
   // pdf file onChange state
   const [pdfFile, setPdfFile] = useState(null);
@@ -210,8 +203,9 @@ export function PdfExtract() {
             {/* https://pubs.acs.org/doi/pdf/10.1021/acs.joc.2c00749 */}
             {(extractState !== 'loading') && 
             <div>
+              <b>Example: </b>
               <select onChange={fetchExample} className="form-select">
-                <option value="" disabled selected>Examples</option>
+                <option value="" disabled selected>Select</option>
                 <option value="example1.pdf">1</option>
                 <option value="example2.pdf">2</option>
                 <option value="example3.pdf">3</option>
@@ -231,12 +225,13 @@ export function PdfExtract() {
             <div className="viewer">
 
               {/* render this if we have a pdf file */}
-              {pdfFile && (
+              {/*pdfFile && (
                 <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.12.313/build/pdf.worker.min.js">
                   <Viewer fileUrl={pdfFile}
                     plugins={[defaultLayoutPluginInstance]}></Viewer>
                 </Worker>
-              )}
+              )*/}
+              {pdfFile && <PdfDisp file={pdfFile}></PdfDisp>}
 
               {/* render this if we have pdfFile state null   */}
               {!pdfFile && <>No file is selected yet</>}
@@ -246,7 +241,7 @@ export function PdfExtract() {
           <div id="spacer"><p></p></div>
           <div id="results">
             <div id="resultButtons">
-              <button type="button" className='btn btn-secondary' onClick={clickForm}>Load Previous</button>
+              <button type="button" className='btn btn-secondary' onClick={clickForm}>Load Results</button>
               <input type='file' ref={inputFileRef} style={{display:'none'}} 
                 onChangeCapture={handleJSON}></input>
               <a
@@ -255,7 +250,7 @@ export function PdfExtract() {
                 )}`}
                 download="export.json"
                 >
-                <button type="button" className='btn btn-secondary' style={{marginLeft:"3px"}} disabled={extractState !== 'done'}>Save Result</button>
+                <button type="button" className='btn btn-secondary' style={{marginLeft:"3px"}} disabled={extractState !== 'done'}>Save Results</button>
               </a>
             </div>
             <div id="resultBody">

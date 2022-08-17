@@ -30,12 +30,11 @@ form{
   background-color: #e4e4e4;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: 500px;
   width: 560px;
   overflow-y: auto;
   overflow-x: hidden;
-  margin-bottom: 10px;
   float: left;
 }
 
@@ -79,4 +78,10 @@ span{
 #resultBody{
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+select{
+  display: inline !important;
+  margin-left: 10px !important;
+  width: 20% !important;
 }

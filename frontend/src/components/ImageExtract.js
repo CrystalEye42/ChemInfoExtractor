@@ -167,8 +167,9 @@ export function ImageExtract() {
           <div>
             {(extractState !== 'loading') && 
             <div>
+            <b>Example: </b>
             <select onChange={fetchExample} className="form-select">
-              <option value="" disabled selected>Examples</option>
+              <option value="" disabled selected>Select</option>
               <option value="exampleimg1.png">1</option>
               <option value="exampleimg2.png">2</option>
               <option value="exampleimg3.png">3</option>
@@ -199,7 +200,7 @@ export function ImageExtract() {
           <div id="spacer"><p></p></div>
           <div id="results">
           <div id="resultButtons">
-              <button type="button" className='btn btn-secondary' onClick={clickForm}>Load Previous</button>
+              <button type="button" className='btn btn-secondary' onClick={clickForm}>Load Results</button>
               <input type='file' ref={inputFileRef} style={{display:'none'}} 
                 onChangeCapture={handleJSON}></input>
               <a
@@ -208,7 +209,7 @@ export function ImageExtract() {
                 )}`}
                 download="export.json"
                 >
-                <button type="button" className='btn btn-secondary' style={{marginLeft:"3px"}} disabled={extractState !== 'done'}>Save Result</button>
+                <button type="button" className='btn btn-secondary' style={{marginLeft:"3px"}} disabled={extractState !== 'done'}>Save Results</button>
               </a>
             </div>
             <div id="resultBody">

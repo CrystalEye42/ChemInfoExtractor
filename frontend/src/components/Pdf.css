@@ -1,0 +1,58 @@
+.Example__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 460px;
+}
+  
+.pageControls {
+    background-color: rgb(46, 46, 46);
+    text-align: center;
+}
+
+.pageNumEntry {
+    text-align: center;
+    width: 50px;
+}
+
+.pageNumberDisplay {
+    display: inline;
+    color: white;
+    padding: 0px 10px;
+}
+
+.Example__container__load {
+    margin-top: 1em;
+    color: white;
+}
+
+.Example__container__document {
+    margin-bottom: 0px;
+}
+  
+.Example__container__document .react-pdf__Document {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Example__container__document .react-pdf__Page {
+    max-width: calc(100% - 2em);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    margin: 1em;
+}
+
+.Example__container__document .react-pdf__Page canvas {
+    max-width: 100%;
+    height: auto !important;
+}
+
+.Example__container__document .react-pdf__message {
+    color: white;
+}
+
+.react-pdf__Page__annotations{
+    display: none !important;
+}

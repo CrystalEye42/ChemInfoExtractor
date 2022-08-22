@@ -1,7 +1,7 @@
 .imgviewer{
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: 560px;
   max-height: 500px;
   overflow-y: auto;

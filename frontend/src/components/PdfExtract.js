@@ -115,12 +115,6 @@ export function PdfExtract() {
       .reduce((prev, curr) => prev + curr["smiles"].reduce((x, y) => x + "\n" + y, ""), "SMILES found: \n");
   }
 
-  /*const setMoleculesAndSmiles = (response) => {
-    setMolImageAndTexts(response.reduce(
-      (arr, curr) => arr.concat(curr["images"]), [])
-    );
-  }*/
-
   const getFigureName = (path) => {
     // expects image_path to be "{filename}_temp/figures-{figureType}-{figureNumber}.png"
     const tokens = path.substring(0, path.length-4).split("-");
@@ -234,7 +228,7 @@ export function PdfExtract() {
               {pdfFile && <PdfDisp file={pdfFile}></PdfDisp>}
 
               {/* render this if we have pdfFile state null   */}
-              {!pdfFile && <>No file is selected yet</>}
+              {!pdfFile && <div style={{alignItems: "center", height: "100%"}}><p>No file is selected yet</p></div>}
             </div>
           </div>
           </div>

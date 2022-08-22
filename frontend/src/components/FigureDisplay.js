@@ -1,65 +1,26 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import { KetcherDisplay } from './KetcherDisplay';
+import { FigureImageDisplay } from "./FigureImageDisplay";
 import './FigureDisplay.css';
-import { View, StyleSheet } from "react-native";
 
 export class FigureDisplay extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: this.props.details["subfigures"].length > 0 ? 0 : -1,
-            height: 0,
-            width: 0,
+            value: this.props.details["subfigures"].length > 0 ? 0 : -1
         };
         this.handleChange = this.handleChange.bind(this);
-        this.onImgLoad = this.onImgLoad.bind(this);
+        if (this.props.callback) {
+            this.props.callback(this.props.details["subfigures"].length > 0 ? 0 : -1);
+        }
     }
 
     handleChange(event) {
         this.setState({value: event.target.value});
-    }
-
-    onImgLoad({ target: img }) {
-        const { offsetHeight, offsetWidth } = img;
-        this.setState({height:offsetHeight, width:offsetWidth});
-    }
-
-    drawBox(bbox) {
-        if (bbox === null) {
-            return (
-                <img src={`data:image/jpeg;base64,${this.props.details["figure"]}`} id="mainimg" alt="main"/>
-            );
+        if (this.props.callback) {
+            this.props.callback(event.target.value);
         }
-        const [x1, y1, x2, y2] = bbox;
-        const otherBoxes = this.props.details["subfigures"].map((info, i) => {
-            const [x1, y1, x2, y2] = info[2];
-            return (<View key={"det"+i} style={[
-                styles.rectangleShaded,
-                {
-                    top: y1*this.state.height,
-                    height: (y2-y1)*this.state.height,
-                    left: x1*this.state.width,
-                    width: (x2-x1)*this.state.width,
-                }
-            ]}></View>);
-        });
-        console.log("num boxes: "+otherBoxes.length)
-        return (
-            <View style={styles.imageContainer}>
-                <img src={`data:image/jpeg;base64,${this.props.details["figure"]}`} id="mainimg" onLoad={this.onImgLoad} alt="main"/>
-                {otherBoxes}
-                <View style={[
-                    styles.rectangle,
-                    {
-                        top: y1*this.state.height,
-                        height: (y2-y1)*this.state.height,
-                        left: x1*this.state.width,
-                        width: (x2-x1)*this.state.width,
-                    }
-                ]}></View>
-            </View>
-        );
     }
 
     render() {
@@ -68,7 +29,6 @@ export class FigureDisplay extends React.Component {
 
         const figures = details["subfigures"];
         const figuresList = figures.length > 0 && figures.map(([image, smiles], i) => {
-            console.log("index " + i + this.state.value );
             return (
                 <div key={i+smiles}>
                     <input type="radio" className="btn-check" name="btnradio2" id={"subbuttonradio"+i} 
@@ -105,14 +65,10 @@ export class FigureDisplay extends React.Component {
                 </div>);   
         }
         
-        const bbox = details["subfigures"][this.state.value] ? details["subfigures"][this.state.value][2] : null;
-
         return (
             <div>
                 {this.props.showmain && <div id="imagewrap">
-                    <div id="imagedisp">
-                        <View style={styles.container}>{this.drawBox(bbox)}</View>
-                    </div>
+                    <FigureImageDisplay details={details} value={this.state.value}></FigureImageDisplay>
                 </div>}
                 <br></br>
                 <h4>Extracted Molecules</h4>
@@ -133,25 +89,6 @@ export class FigureDisplay extends React.Component {
 
 FigureDisplay.propTypes = {
     details: PropTypes.object.isRequired,
-    showmain: PropTypes.bool.isRequired
+    showmain: PropTypes.bool.isRequired,
+    callback: PropTypes.func
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: "center",
-        padding: 8
-      },
-    imageContainer: {
-        alignSelf: "center"
-    },
-    rectangle: {
-        borderWidth: 4,
-        borderColor: "red",
-        position: "absolute"
-    },
-    rectangleShaded: {
-        backgroundColor: 'rgba(200, 0, 0, 0.15)',
-        position: "absolute"
-    }
-  });

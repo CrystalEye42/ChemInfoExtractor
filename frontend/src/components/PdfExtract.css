@@ -36,6 +36,7 @@ form{
   overflow-y: auto;
   overflow-x: hidden;
   float: left;
+  text-align: center;
 }
 
 span{

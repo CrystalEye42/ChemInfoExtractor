@@ -4,6 +4,7 @@ import './ImageExtract.css';
 // Import url for sending requests
 import { base_url } from "../config";
 import { FigureDisplay } from './FigureDisplay';
+import { FigureImageDisplay } from './FigureImageDisplay';
 
 export function ImageExtract() {
 
@@ -20,6 +21,7 @@ export function ImageExtract() {
   //const [molImageAndTexts, setMolImageAndTexts] = useState([]);
 
   const [figureDetails, setFigureDetails] = useState(null);
+  const [bboxIndex, setBboxIndex] = useState(-1);
 
   const inputFileRef = React.useRef();
 
@@ -188,8 +190,12 @@ export function ImageExtract() {
             <div className="imgviewer">
 
               {/* render this if we have a image file */}
-              {imageFile && (
+              {imageFile && extractState !== "done" && (
                 <img src={imageFile} id="inputimg" alt="input"/>
+              )}
+
+              {extractState === "done" && (
+                <FigureImageDisplay details={figureDetails} value={bboxIndex}></FigureImageDisplay>
               )}
 
               {/* render this if we have imageFile state null   */}
@@ -213,7 +219,7 @@ export function ImageExtract() {
               </a>
             </div>
             <div id="resultBody">
-              {(extractState === 'done') && <FigureDisplay details={figureDetails} showmain={false}/>}
+              {(extractState === 'done') && <FigureDisplay details={figureDetails} showmain={false} callback={setBboxIndex}/>}
             </div>
           </div>
         </div>

@@ -124,7 +124,7 @@ def run_models_on_image(img_path):
         image_buffer = []
 
     #store the results
-    captioned_images = [[im, smile] for im, smile in zip(cropped_images, smiles_results)]
+    captioned_images = [[im, smile, bb] for im, smile, bb in zip(cropped_images, smiles_results, mol_bboxes)]
     img_encode = cv2.imencode(".jpg", image)[1]
     byte_arr = io.BytesIO(img_encode)
     encoded_img = encodebytes(byte_arr.getvalue()).decode('ascii')

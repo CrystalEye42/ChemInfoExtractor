@@ -111,8 +111,8 @@ class BmsModel:
         return encoder, decoder
 
 
-    def predict_image(self, images):
-        augmented_imgs = [torch.unsqueeze(self.transform(image=image, keypoints=[])['image'], 0) for image in images]
+    def predict_image(self, imgs):
+        augmented_imgs = [torch.unsqueeze(self.transform(image=image, keypoints=[])['image'], 0) for image in imgs]
         augmented_imgs = torch.cat(augmented_imgs, 0)
         images = augmented_imgs.to(self.device)
         with torch.no_grad():
@@ -124,7 +124,7 @@ class BmsModel:
         node_symbols = [pred['symbols'] for pred in preds['atomtok_coords']]
         edges = preds['edges']
 
-        smiles, molblock, r_success = convert_graph_to_smiles(node_coords, node_symbols, edges, images=images)
+        smiles, molblock, r_success = convert_graph_to_smiles(node_coords, node_symbols, edges, images=imgs)
         return smiles, molblock
 
 

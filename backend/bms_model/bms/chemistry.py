@@ -487,7 +487,7 @@ def _convert_graph_to_smiles(coords, symbols, edges, image=None, debug=False):
         if image is not None:
             height, width, _ = image.shape
             ratio = width / height
-            coords = [[x * ratio * 10, y * 10] for x, y in coords]
+            coords = [[x * ratio * 5, y * 5] for x, y in coords]
         mol = _verify_chirality(mol, coords, symbols, edges, debug)
         # molblock is obtained before expanding functional groups. Otherwise the expanded substructure won't have
         # coordinates.

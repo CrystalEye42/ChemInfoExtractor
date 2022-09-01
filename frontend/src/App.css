@@ -5,7 +5,7 @@ html {
 
 body {
 	/* Margin bottom by footer height */
-	margin-bottom: 60px;
+	margin-bottom: 120px;
 }
 
 
@@ -28,8 +28,4 @@ body {
 .footer-info {
 	line-height: 20px;
 	color: white
-}
-
-.container{
-    margin-left:10px !important;
 }

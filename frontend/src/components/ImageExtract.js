@@ -145,9 +145,9 @@ export function ImageExtract() {
 
   return (
     <div className="container">
-      <div id="wrapper">
+      <div className="row justify-content-md-center">
         {/* Upload Image */}
-        <div id="pdfselect">
+        <div className='col'>
           <form>
 
             <label><h3>Upload Image</h3></label>
@@ -202,21 +202,21 @@ export function ImageExtract() {
               {!imageFile && <>No file is selected yet</>}
             </div>
           </div>
-          </div>
-          <div id="spacer"><p></p></div>
+        </div>
+        <div className='col'>
           <div id="results">
-          <div id="resultButtons">
-              <button type="button" className='btn btn-secondary' onClick={clickForm}>Load Results</button>
-              <input type='file' ref={inputFileRef} style={{display:'none'}} 
-                onChangeCapture={handleJSON}></input>
-              <a
-                href={`data:text/json;charset=utf-8,${encodeURIComponent(
-                  JSON.stringify(responseData)
-                )}`}
-                download="export.json"
-                >
-                <button type="button" className='btn btn-secondary' style={{marginLeft:"3px"}} disabled={extractState !== 'done'}>Save Results</button>
-              </a>
+            <div id="resultButtons">
+                <button type="button" className='btn btn-secondary' onClick={clickForm}>Load Results</button>
+                <input type='file' ref={inputFileRef} style={{display:'none'}} 
+                  onChangeCapture={handleJSON}></input>
+                <a
+                  href={`data:text/json;charset=utf-8,${encodeURIComponent(
+                    JSON.stringify(responseData)
+                  )}`}
+                  download="export.json"
+                  >
+                  <button type="button" className='btn btn-secondary' style={{marginLeft:"3px"}} disabled={extractState !== 'done'}>Save Results</button>
+                </a>
             </div>
             <div id="resultBody">
               {(extractState === 'done') && <FigureDisplay details={figureDetails} showmain={false} callback={setBboxIndex}/>}
@@ -224,5 +224,6 @@ export function ImageExtract() {
           </div>
         </div>
       </div>
+    </div>
   );
 }

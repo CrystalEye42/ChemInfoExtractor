@@ -27,6 +27,9 @@ export class KetcherDisplay extends React.Component {
         if (current) {
             const ketcher = current.contentWindow.ketcher;
             console.log("molblock here\n", content);
+            if (!ketcher) {
+                return;
+            }
             ketcher.setMolecule(content).then(ketcher.setMolecule(content)
                 .then(() => {
                     if (this.state.scroll) {

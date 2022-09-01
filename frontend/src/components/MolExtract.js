@@ -141,9 +141,9 @@ export function MolExtract() {
 
   return (
     <div className="container">
-      <div id="wrapper">
+      <div className="row justify-content-md-center">
         {/* Upload Image */}
-        <div id="pdfselect">
+        <div className='col'>
           <form>
 
             <label><h3>Upload Molecule Image</h3></label>
@@ -194,8 +194,8 @@ export function MolExtract() {
               {!imageFile && <>No file is selected yet</>}
             </div>
           </div>
-          </div>
-          <div id="spacer"><p></p></div>
+        </div>
+        <div className='col'>
           <div id="results">
             <div id="resultButtons">
               <button type="button" className='btn btn-secondary' onClick={clickForm}>Load Results</button>
@@ -223,5 +223,6 @@ export function MolExtract() {
           </div>
         </div>
       </div>
+    </div>
   );
 }

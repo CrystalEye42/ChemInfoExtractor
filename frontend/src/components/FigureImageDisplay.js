@@ -57,7 +57,7 @@ export class FigureImageDisplay extends React.Component {
 
     render() {
         console.log(this.props.details);
-        const subfigure = this.props.details["subfigures"][this.props.value];
+        const subfigure =  this.props.value >=0 ? this.props.details["subfigures"][this.props.value]:null;
         const bbox = subfigure ? subfigure[2] : null;
         console.log(subfigure);
         console.log(bbox);

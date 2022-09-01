@@ -30,14 +30,7 @@ export class PdfDisp extends React.Component {
         const page = this.state.pageNumber;
         const numPages = this.state.numPages;
         return (
-        <div>
-            <div className="Example__container">
-                <div className="Example__container__document">
-                    <Document file={this.props.file} onLoadSuccess={this.onDocumentLoadSuccess}>
-                        <Page pageNumber={page} />
-                    </Document>
-                </div>
-            </div>
+        <div style={{height:'100%'}}>
             <div className='pageControls'>
                 <button type="button" className="btn btn-dark" 
                     onClick={() => this.setState({pageNumber:(page-1>0 ? page-1 : 1)})} 
@@ -51,6 +44,13 @@ export class PdfDisp extends React.Component {
                     onClick={() => this.setState({pageNumber:(page+1 <= numPages ? page+1 : numPages)})} 
                     >&#8250;
                 </button>
+            </div>
+            <div className="Example__container">
+                <div className="Example__container__document">
+                    <Document file={this.props.file} onLoadSuccess={this.onDocumentLoadSuccess}>
+                        <Page pageNumber={page} />
+                    </Document>
+                </div>
             </div>
         </div>
         );

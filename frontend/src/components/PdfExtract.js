@@ -173,12 +173,12 @@ export function PdfExtract() {
 
   return (
     <div className="container">
-      <div id="wrapper">
+      <div className="row justify-content-md-center">
         {/* Upload PDF */}
-        <div id="pdfselect">
+        <div className='col'>
           <form>
 
-            <label><h3>Upload PDF</h3></label>
+            <h3>Upload PDF</h3>
             <br></br>
             <div>
               <input type='file' className="form-control"
@@ -232,7 +232,7 @@ export function PdfExtract() {
             </div>
           </div>
           </div>
-          <div id="spacer"><p></p></div>
+          <div className='col'>
           <div id="results">
             <div id="resultButtons">
               <button type="button" className='btn btn-secondary' onClick={clickForm}>Load Results</button>
@@ -251,6 +251,7 @@ export function PdfExtract() {
               {(extractState === 'done') && <FigureSelect figures={figures} details={figureDetails} />}
             </div>
           </div>
+        </div>
         </div>
       </div>
   );

@@ -4,7 +4,7 @@
     align-items: center;
     overflow-y: auto;
     overflow-x: hidden;
-    height: 460px;
+    max-height: 700px;
 }
   
 .pageControls {

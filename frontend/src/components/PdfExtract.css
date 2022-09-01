@@ -27,25 +27,19 @@ form{
 }
 
 .viewer{
+  width: 560px;
+  min-height: 500px;
   background-color: #e4e4e4;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  height: 500px;
-  width: 560px;
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden;
-  float: left;
   text-align: center;
 }
 
 span{
   margin-top: 3px;
-}
-
-#wrapper{
-  width: 1350px;
-  height: 800px;
 }
 
 .form-control{
@@ -55,21 +49,15 @@ span{
 
 #spacer{
   width: 0px;
-  float: left;
-}
-
-#pdfselect{
-  float:left;
-  width: 600px;
 }
 
 #results{
   width: 650px;
+  max-height: 1000px;
   margin-top: 30px;
   overflow-y: auto;
   overflow-x: hidden;
   overflow-wrap: break-word;
-  float: left;
 }
 
 #resultButtons{

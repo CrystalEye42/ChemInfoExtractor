@@ -5,6 +5,7 @@ import time
 import json
 from PIL import Image
 import numpy as np
+import uuid
 
 def extract_figures_from_pdf(filename, temp_directory='', return_images=False):
     """
@@ -20,8 +21,9 @@ def extract_figures_from_pdf(filename, temp_directory='', return_images=False):
     prefix = 'figures'
     json_name = 'bboxes'
     if not temp_directory:
-        temp_directory = filename[:-4]+'_temp'
+        temp_directory = uuid.uuid4().hex
     os.system(f'mkdir {temp_directory}')
+    filename = filename.replace(" ", r"\ ")
     os.system(f'pdffigures/pdffigures {filename} -o {temp_directory}/{prefix}')
     os.system(f'pdffigures/pdffigures {filename} -j {temp_directory}/{json_name}')
     

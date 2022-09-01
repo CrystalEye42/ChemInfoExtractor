@@ -162,7 +162,7 @@ class Extractor(Resource):
         
         results = run_models(f.filename)
 
-        os.system(f'rm {f.filename}')
+        os.system('rm '+ f.filename.replace(" ", r"\ "))
         return results
 
 
@@ -176,7 +176,7 @@ class ImageExtractor(Resource):
         
         results = run_models_on_image(f.filename)
 
-        os.system(f'rm {f.filename}')
+        os.system('rm '+ f.filename.replace(" ", r"\ "))
         return results
 
 
@@ -190,7 +190,7 @@ class MolExtractor(Resource):
         
         results = run_models_on_molecule(f.filename)
 
-        os.system(f'rm {f.filename}')
+        os.system('rm '+ f.filename.replace(" ", r"\ ")) 
         return results
 
 api.add_resource(Extractor, '/extract')

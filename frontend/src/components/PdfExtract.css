@@ -29,11 +29,12 @@ form{
 .viewer{
   width: 560px;
   min-height: 500px;
+  max-height: 700px;
   background-color: #e4e4e4;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  overflow-y: hidden;
+  overflow-y: auto;
   overflow-x: hidden;
   text-align: center;
 }
@@ -53,7 +54,6 @@ span{
 
 #results{
   width: 650px;
-  max-height: 1000px;
   margin-top: 30px;
   overflow-y: auto;
   overflow-x: hidden;

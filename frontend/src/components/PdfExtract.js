@@ -1,19 +1,26 @@
 import { useState } from 'react';
 import React from 'react';
 // default layout plugin
+import { Worker } from '@react-pdf-viewer/core';
+// Import the main Viewer component
+import { Viewer } from '@react-pdf-viewer/core';
+// Import the styles
+import '@react-pdf-viewer/core/lib/styles/index.css';
+// default layout plugin
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
+// Import styles of default layout plugin
+import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 // Import library for modifying pdf
 //import { PDFDocument } from 'pdf-lib';
 import './PdfExtract.css';
 // Import url for sending requests
 import { base_url } from "../config";
 import { FigureSelect } from './FigureSelect';
-import { PdfDisp } from './Pdf';
 
 export function PdfExtract() {
 
   // creating new plugin instance
-  defaultLayoutPlugin();
+  const defaultLayoutPluginInstance = defaultLayoutPlugin();
 
   // pdf file onChange state
   const [pdfFile, setPdfFile] = useState(null);
@@ -219,13 +226,13 @@ export function PdfExtract() {
             <div className="viewer">
 
               {/* render this if we have a pdf file */}
-              {/*pdfFile && (
+              {pdfFile && (
                 <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.12.313/build/pdf.worker.min.js">
                   <Viewer fileUrl={pdfFile}
                     plugins={[defaultLayoutPluginInstance]}></Viewer>
                 </Worker>
-              )*/}
-              {pdfFile && <PdfDisp file={pdfFile}></PdfDisp>}
+              )}
+              {/*pdfFile && <PdfDisp file={pdfFile}></PdfDisp>*/}
 
               {/* render this if we have pdfFile state null   */}
               {!pdfFile && <div style={{alignItems: "center", height: "100%"}}><p>No file is selected yet</p></div>}

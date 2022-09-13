@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from 'prop-types';
 import { View, StyleSheet } from "react-native";
 
+const borderWidth = 3;
+
 export class FigureImageDisplay extends React.Component {
     constructor(props) {
         super(props);
@@ -45,10 +47,10 @@ export class FigureImageDisplay extends React.Component {
                 <View style={[
                     styles.rectangle,
                     {
-                        top: y1*this.state.height,
-                        height: (y2-y1)*this.state.height,
-                        left: x1*this.state.width,
-                        width: (x2-x1)*this.state.width,
+                        top: y1*this.state.height-borderWidth,
+                        height: (y2-y1)*this.state.height+2*borderWidth,
+                        left: x1*this.state.width-borderWidth,
+                        width: (x2-x1)*this.state.width+2*borderWidth,
                     }
                 ]}></View>
             </View>
@@ -84,8 +86,9 @@ const styles = StyleSheet.create({
         alignSelf: "center"
     },
     rectangle: {
-        borderWidth: 4,
+        borderWidth: borderWidth,
         borderColor: "red",
+        borderStyle: "dashed",
         position: "absolute"
     },
     rectangleShaded: {

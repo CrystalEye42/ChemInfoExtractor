@@ -47,14 +47,9 @@ export class FigureDisplay extends React.Component {
         
         var subfigure = <p></p>;
         if (this.state.value >= 0){
-            const [image, smiles] = details["subfigures"][this.state.value];
             subfigure = (
                 <div>
                 <div id="wrapper-inner">
-                    <div id="original">
-                        <h5>Original</h5>
-                        <img src={`data:image/jpeg;base64,${image}`} width="200" alt={smiles}/>
-                    </div>
                     <h5>Prediction</h5>
                     <div id="pred">
                         {figures[this.state.value][1]}

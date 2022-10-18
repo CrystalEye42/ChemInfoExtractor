@@ -21,6 +21,19 @@ api = Api(app)
 
 model = Models()
 
+def get_overlap(bbox1, bbox2):
+    x1, y1, x2, y2 = bbox1
+    u1, v1, u2, v2 = bbox2
+    intersection_area = (min(u2,x2)-max(u1,x1))*(min(v2,y2)-max(v1,y1))
+    return intersection_area/((x2-x1)*(y2-y1)+(u2-u1)*(v2-v1)-intersection_area)
+
+def is_unique_bbox(bbox, bboxes):
+    for b in bboxes:
+        if get_overlap(b, bbox) > 0.9:
+            return False
+    return True
+
+
 def run_models(pdf_path):
     start_time = time.time()
     figures, directory = extract_figures_from_pdf(pdf_path, return_images=True)
@@ -35,7 +48,12 @@ def run_models(pdf_path):
         print(f'batch size: {len(batch)}')
         output_bboxes.extend(model.predict_bbox(batch))
     for i, output in enumerate(output_bboxes):
-        figures[i]['mol_bboxes'] = [elt['bbox'] for elt in output if elt['category'] == '[Mol]'] 
+        mol_bboxes = [elt['bbox'] for elt in output if elt['category'] == '[Mol]']
+        unique_bboxes = []
+        figures[i]['mol_bboxes'] = unique_bboxes 
+        for bbox in mol_bboxes:
+            if is_unique_bbox(bbox, unique_bboxes):
+                unique_bboxes.append(bbox)
 #    for figure in figures:]
 #        figure['mol_bboxes'] = [output['bbox'] for output in model.predict_bbox(figure['image_path']) if output['category'] == '[Mol]']
     print(time.time()-start_time)
@@ -84,6 +102,8 @@ def run_models(pdf_path):
         figure['smiles'] = smiles_results[offset:offset+num_results]
         figure['molblocks'] = mol_results[offset:offset+num_results]
         offset += num_results
+
+    figures = [figure for figure in figures if figure['mol_bboxes']]
     print(time.time()-start_time)
     os.system(f'rm -rf {directory}')
     return figures
@@ -91,6 +111,11 @@ def run_models(pdf_path):
 def run_models_on_image(img_path):
     start_time = time.time()
     mol_bboxes = [output['bbox'] for output in model.predict_bbox([img_path])[0] if output['category'] == '[Mol]']
+    unique_bboxes = []
+    for bbox in mol_bboxes:
+        if is_unique_bbox(bbox, unique_bboxes):
+            unique_bboxes.append(bbox)
+    mol_bboxes = unique_bboxes
 
     print(time.time()-start_time)
     # predict smiles

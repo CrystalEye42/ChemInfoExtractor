@@ -1,6 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
+  "homepage": "./",
   "private": true,
   "dependencies": {
     "@react-pdf-viewer/core": "^3.3.1",

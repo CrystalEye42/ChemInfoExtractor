@@ -24,7 +24,7 @@ def extract_figures_from_pdf(filename, temp_directory='', return_images=False):
         temp_directory = uuid.uuid4().hex
     os.system(f'mkdir {temp_directory}')
     filename = filename.replace(" ", r"\ ")
-    os.system(f'pdffigures/pdffigures {filename} -o {temp_directory}/{prefix}')
+    os.system(f'pdffigures/pdffigures {filename} -c {temp_directory}/{prefix}')
     os.system(f'pdffigures/pdffigures {filename} -j {temp_directory}/{json_name}')
     
     time_counter = 0
@@ -42,7 +42,7 @@ def extract_figures_from_pdf(filename, temp_directory='', return_images=False):
                 'width': image['Width'],
                 'height': image['Height'],
                 'bb': image['ImageBB'],
-                'image_path': f'{temp_directory}/{prefix}-{image["Type"]}-{image["Number"]}.png'}
+                'image_path': f'{temp_directory}/{prefix}-{image["Type"]}-c{image["Number"]}.png'}
         if return_images:
             image = Image.open(data['image_path'], mode='r')
             byte_arr = io.BytesIO()

@@ -94,17 +94,21 @@ void boxExpandUD(BOX *box, BOXA *boxes) {
 
 double scoreBox(BOX *region, FigureType type, BOXA *bodyText,
                 BOXA *graphicsBoxes, BOXA *claimedImages, PIX *original) {
+  //std::cout<<"region "<< region->x <<", "<< region-> y<< ", " << region->w << ", " << region->h <<"\n";
   if (region->w < 25 or region->h < 25) {
+    //std::cout << "too small\n";
     return 0;
   }
   int zero;
   pixZero(pixClipRectangle(original, region, NULL), &zero);
   if (zero) {
+    //std::cout << "pix zero\n";
     return 0;
   }
   BOXA *b = boxaIntersectsBox(bodyText, region);
   l_int32 intersect = b->n;
   if (intersect > 0) {
+    //std::cout << "intersect text\n";
     return 0;
   }
   for (int i = 0; i < claimedImages->n; i++) {
@@ -114,6 +118,7 @@ double scoreBox(BOX *region, FigureType type, BOXA *bodyText,
     float psame;
     boxOverlapFraction(region, claimedImages->box[i], &psame);
     if (psame > 0.1) {
+      //std::cout << "intersect image\n";
       return false;
     }
   }
@@ -133,7 +138,8 @@ double scoreBox(BOX *region, FigureType type, BOXA *bodyText,
       }
     } else if (((b->box[i]->w * b->box[i]->h) > 1000 and psame < 0.50) or
                ((b->box[i]->w * b->box[i]->h) > 3000 and psame < 0.80)) {
-      return 0;
+      //std::cout << "not enough overlap with graphics\n";
+      return 1;
     }
   }
 
@@ -253,10 +259,18 @@ std::vector<Figure> extractFigures(PIX *original, PageRegions &pageRegions,
       // For two columns document, captions that do not
       // cross the center should not have regions pass the center
       if (docStats.documentIsTwoColumn()) {
-        if (captBox->x + captBox->w <= center and
+	bool check = false;
+	for (int j = 0; j < captions->n; j++) {
+	  BOX *captBox2 = boxaGetBox(captions, j, L_CLONE);
+	  if (i != j and ((captBox->x >= center) != (captBox2->x >= center)) and
+	      std::abs(captBox->y - captBox2->y) < original->h / 6) {
+	    check = true;
+	  }
+	}
+        if (check and captBox->x + captBox->w <= center and
             proposal->x + proposal->w > center) {
           boxRelocateOneSide(proposal, proposal, center - 1, L_FROM_RIGHT);
-        } else if (captBox->x >= center and proposal->x < center) {
+        } else if (check and captBox->x >= center and proposal->x < center) {
           boxRelocateOneSide(proposal, proposal, center + 1, L_FROM_LEFT);
         }
       }

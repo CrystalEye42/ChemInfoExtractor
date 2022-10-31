@@ -6,7 +6,7 @@ Run `make DEBUG=0`
 
 ### Running pdffigures
 
-Run `pdffigures -c {prefix} {path/to/pdf}` for high-res colored images
+Run `pdffigures -c {prefix} {path/to/pdf}` for high-res colored images. To save images to a specific folder, first create the folder if it doesn't already exist and then add that folder path to the prefix (i.e. `path/to/folder/prefix`). 
 
 Use -o instead of -c for black and white images (faster)
 

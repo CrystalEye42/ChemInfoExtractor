@@ -207,9 +207,9 @@ export function PdfExtract() {
               <b>Example: </b>
               <select onChange={fetchExample} className="form-select">
                 <option value="" disabled selected>Select</option>
-                <option value="example1.pdf">1</option>
-                <option value="example2.pdf">2</option>
-                <option value="example3.pdf">3</option>
+                <option value="example1.pdf">acs.jmedchem.1c01646</option>
+                <option value="example2.pdf">acs.joc.2c00783</option>
+                <option value="example3.pdf">acs.joc.2c00749</option>
               </select>
             </div>}
 

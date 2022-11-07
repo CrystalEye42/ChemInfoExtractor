@@ -17,7 +17,7 @@ function App() {
       <Router>
         <div>
           <Navbar bg="dark" variant="dark" className="px-2">
-            <Navbar.Brand href="/home">ChemInfoExtractor</Navbar.Brand>
+            <Navbar.Brand href="/home">MolScribe</Navbar.Brand>
             <Nav className="mr-auto">
               <Nav.Link href="/pdf">Extract PDF</Nav.Link>
               <Nav.Link href="/figure">Extract Figure</Nav.Link>
@@ -40,13 +40,7 @@ function App() {
 
       <footer className="footer">
         <div className="container">
-          <span className="footer-head">ChemInfoExtractor v0.1 @ 2022</span> &nbsp; <a href="https://accessibility.mit.edu/">Accessibility</a> <br />
-
-          <p className="footer-info">
-            Computer Science and Artificial Intelligence Laboratory <br />
-            Department of Chemical Engineering <br />
-            Massachusetts Institute of Technology
-          </p>
+          <span className="footer-head">MolScribe v0.1 @ 2022. Computer Science and Artificial Intelligence Laboratory MIT. </span> &nbsp;<br />
         </div>
       </footer>
     </div >

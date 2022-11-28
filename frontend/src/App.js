@@ -40,7 +40,7 @@ function App() {
 
       <footer className="footer">
         <div className="container">
-          <span className="footer-head">MolScribe v0.1 @ 2022. Computer Science and Artificial Intelligence Laboratory MIT. </span> &nbsp;<br />
+          <span className="footer-head">MolScribe v0.1 @ 2022. MIT CSAIL. </span> &nbsp;<br />
         </div>
       </footer>
     </div >

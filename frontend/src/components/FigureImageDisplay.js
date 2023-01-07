@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { View, StyleSheet } from "react-native";
 
 const borderWidth = 3;
-
+// component for drawing bounding boxes on figure images
 export class FigureImageDisplay extends React.Component {
     constructor(props) {
         super(props);
@@ -25,7 +25,6 @@ export class FigureImageDisplay extends React.Component {
                 <img src={`data:image/jpeg;base64,${this.props.details["figure"]}`} id="mainimg" alt="main"/>
             );
         }
-        console.log(bbox);
         const [x1, y1, x2, y2] = bbox;
         const otherBoxes = this.props.details["subfigures"].map((info, i) => {
             const [x1, y1, x2, y2] = info[2];
@@ -39,7 +38,6 @@ export class FigureImageDisplay extends React.Component {
                 }
             ]}></View>);
         });
-        console.log("num boxes: "+otherBoxes.length)
         return (
             <View style={styles.imageContainer}>
                 <img src={`data:image/jpeg;base64,${this.props.details["figure"]}`} id="mainimg" onLoad={this.onImgLoad} alt="main"/>
@@ -58,11 +56,8 @@ export class FigureImageDisplay extends React.Component {
     }
 
     render() {
-        console.log(this.props.details);
         const subfigure =  this.props.value >=0 ? this.props.details["subfigures"][this.props.value]:null;
         const bbox = subfigure ? subfigure[2] : null;
-        console.log(subfigure);
-        console.log(bbox);
         return (
         <div id="imagedisp">
             <View style={styles.container}>{this.drawBox(bbox)}</View>

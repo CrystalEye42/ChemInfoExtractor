@@ -11,7 +11,6 @@ import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 // Import styles of default layout plugin
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 // Import library for modifying pdf
-//import { PDFDocument } from 'pdf-lib';
 import './PdfExtract.css';
 // Import url for sending requests
 import { base_url } from "../config";
@@ -25,7 +24,7 @@ export function PdfExtract() {
   // pdf file onChange state
   const [pdfFile, setPdfFile] = useState(null);
   const [pdfData, setPdfData] = useState(null);
-  // pdf file error state
+  // pdf file error message state
   const [pdfError, setPdfError] = useState('');
 
   const [extractState, setExtractState] = useState('unready');
@@ -42,7 +41,6 @@ export function PdfExtract() {
   const allowedFiles = ['application/pdf'];
   const handleFile = (e) => {
     let selectedFile = e.target.files[0];
-    // console.log(selectedFile.type);
     if (selectedFile) {
       if (selectedFile && allowedFiles.includes(selectedFile.type)) {
         setPdfData(selectedFile);
@@ -66,22 +64,18 @@ export function PdfExtract() {
     }
   }
 
+  // load display saved results from JSON file
   const handleJSON = (e) => {
     let selectedFile = e.target.files[0];
     if (selectedFile) {
       if (selectedFile.type === 'application/json') {
         try {
           let reader = new FileReader();
-          console.log(selectedFile);
           reader.readAsText(selectedFile);
           reader.onloadend = (e) => {
-            console.log(e.target.result);
             const response = JSON.parse(e.target.result);
             setResponseData(response);
-            const smilesString = getSmiles(response);
-            //setMoleculesAndSmiles(response);
             setFiguresFromResponse(response);
-            console.log(smilesString);
             setExtractState('done');
           }  
         } catch (error) {
@@ -91,6 +85,7 @@ export function PdfExtract() {
     }
   }
 
+  // get example file to display
   const fetchExample = async (e) => {
     const exampleFileName = e.target.value;
     if (!exampleFileName) {
@@ -99,14 +94,7 @@ export function PdfExtract() {
     // eslint-disable-next-line no-restricted-globals
     const file = `${location.origin}/${exampleFileName}`;
     const response = await fetch(file);
-    console.log(response);
     const example = await response.blob();
-    console.log(example);
-    handleExample(example);
-}
-
-  const handleExample = (example) => {
-    console.log(example);
     setPdfData(example);
     let reader = new FileReader();
     reader.readAsDataURL(example);
@@ -116,19 +104,15 @@ export function PdfExtract() {
       setExtractState('ready');
     }
   }
-
-  const getSmiles = (response) => {
-    return response.filter(curr => curr["smiles"].length > 0)
-      .reduce((prev, curr) => prev + curr["smiles"].reduce((x, y) => x + "\n" + y, ""), "SMILES found: \n");
-  }
-
+  
+  // expects image path to be "{filename}_temp/figures-{figureType}-{figureNumber}.png"
   const getFigureName = (path) => {
-    // expects image_path to be "{filename}_temp/figures-{figureType}-{figureNumber}.png"
     const tokens = path.substring(0, path.length-4).split("-");
     const result = tokens[tokens.length-2]+" "+tokens[tokens.length-1];
     return result;
   }
 
+  // set the values of Figures and FigureDetails
   const setFiguresFromResponse = (response) => {
     setFigures(response.map(curr => {
       return getFigureName(curr["image_path"]);
@@ -144,25 +128,18 @@ export function PdfExtract() {
     }, {}));
   };
 
+  // send post request containing pdf file
   const extractFile = () => {
-    // send post request containing pdf file
     const formData = new FormData();
     formData.append("file", pdfData);
     const request = new XMLHttpRequest();
-    console.log(base_url);
     request.onreadystatechange = function () {
-      console.log("readystatechange");
-      console.log(request.readyState);
       if (request.readyState === 4 && request.status == 200) {
-        console.log(request.response);
         setPdfError('');
         setPdfFile(pdfFile);
         const response = JSON.parse(request.response);
         setResponseData(response);
-        const smilesString = getSmiles(response);
-        //setMoleculesAndSmiles(response);
         setFiguresFromResponse(response);
-        console.log(smilesString);
         setExtractState('done');
       }
     }
@@ -171,13 +148,11 @@ export function PdfExtract() {
     setExtractState('loading');
     request.open("POST", base_url + '/extract');
     request.send(formData);
-    console.log("sent post request");
   };
 
   const clickForm = () => {
     /*Collecting node-element and performing click*/
     inputFileRef.current.click();
-    console.log(inputFileRef.current);
   };
 
   return (

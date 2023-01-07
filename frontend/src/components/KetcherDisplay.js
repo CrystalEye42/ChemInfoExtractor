@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from 'prop-types';
 import './FigureDisplay.css';
 
+// wrapper component for Ketcher window
 export class KetcherDisplay extends React.Component {
     constructor(props) {
         super(props);

@@ -1,2 +1,1 @@
-export const base_url = 'http://wang7776@rosetta9.csail.mit.edu:5000'
-
+export const base_url = 'http://rosetta9.csail.mit.edu:5000' // change to own backend location

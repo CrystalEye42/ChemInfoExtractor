@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './Pdf.css';
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
 
+// unused, custom component for displaying PDFs 
 export class PdfDisp extends React.Component {
     constructor(props) {
         super(props);

@@ -17,16 +17,14 @@ export function MolExtract() {
 
   const [responseData, setResponseData] = useState(null);
 
-  //const [molImageAndTexts, setMolImageAndTexts] = useState([]);
-
   const [figureDetails, setFigureDetails] = useState(null);
 
   const inputFileRef = React.useRef();
+
   // handle file onChange event
   const allowedFiles = ['image/png', 'image/jpeg'];
   const handleFile = (e) => {
     let selectedFile = e.target.files[0];
-    // console.log(selectedFile.type);
     if (selectedFile) {
       if (selectedFile && allowedFiles.includes(selectedFile.type)) {
         setImageData(selectedFile);
@@ -50,19 +48,17 @@ export function MolExtract() {
     }
   }
 
+  // load display saved results from JSON file
   const handleJSON = (e) => {
     let selectedFile = e.target.files[0];
     if (selectedFile) {
       if (selectedFile.type === 'application/json') {
         try {
           let reader = new FileReader();
-          console.log(selectedFile);
           reader.readAsText(selectedFile);
           reader.onloadend = (e) => {
-            console.log(e.target.result);
             const response = JSON.parse(e.target.result);
             setResponseData(response);
-            //setMoleculesAndSmiles(response);
             setFiguresFromResponse(response);
             setExtractState('done');
           }  
@@ -73,6 +69,7 @@ export function MolExtract() {
     }
   }
 
+  // get example file to display
   const fetchExample = async (e) => {
     const exampleFileName = e.target.value;
     if (!exampleFileName) {
@@ -81,14 +78,7 @@ export function MolExtract() {
     // eslint-disable-next-line no-restricted-globals
     const file = `${location.origin}/${exampleFileName}`;
     const response = await fetch(file);
-    console.log(response);
     const example = await response.blob();
-    console.log(example);
-    handleExample(example);
-}
-
-  const handleExample = (example) => {
-    console.log(example);
     setImageData(example);
     let reader = new FileReader();
     reader.readAsDataURL(example);
@@ -97,29 +87,26 @@ export function MolExtract() {
       setImageFile(e.target.result);
       setExtractState('ready');
     }
-  }
+}
 
+  // set the values of FigureDetails  
   const setFiguresFromResponse = (response) => {
     setFigureDetails({
         "smiles": response["smiles"], 
         "molblocks": response["molblocks"]
     });
-    console.log(figureDetails);
   };
 
+  // send post request containing image file
   const extractFile = () => {
-    // send post request containing image file
     const formData = new FormData();
     formData.append("file", imageData);
     const request = new XMLHttpRequest();
-    console.log(base_url);
     request.onreadystatechange = function () {
       if (request.readyState === 4) {
-        console.log(request.response);
         setImageError('');
         setImageFile(imageFile);
         const response = JSON.parse(request.response);
-        //setMoleculesAndSmiles(response);
         setFiguresFromResponse(response);
         setExtractState('done');
         setResponseData(response);
@@ -130,7 +117,6 @@ export function MolExtract() {
     setExtractState('loading');
     request.open("POST", base_url + '/extractmol');
     request.send(formData);
-    console.log("sent post request");
   };
 
   const clickForm = () => {
@@ -156,7 +142,7 @@ export function MolExtract() {
             </div>
 
             {/* we will display error message in case user select some file
-            other than pdf */}
+            other than png/jpeg */}
             {imageError && <span className='text-danger'>{imageError}</span>}
             {!imageError && <br></br>}
 

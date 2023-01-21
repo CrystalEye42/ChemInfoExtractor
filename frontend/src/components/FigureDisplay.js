@@ -4,6 +4,7 @@ import { KetcherDisplay } from './KetcherDisplay';
 import { FigureImageDisplay } from "./FigureImageDisplay";
 import './FigureDisplay.css';
 
+// component for dipsplaying an individual result
 export class FigureDisplay extends React.Component {
     constructor(props) {
         super(props);
@@ -37,13 +38,6 @@ export class FigureDisplay extends React.Component {
                 </div>
             );
         }, this);
-
-        // const ketcherList = details['molblocks'].length > 0 && details['molblocks'].map((molblock, i) => {
-        //     console.log(this.state.value === i.toString());
-        //     return (
-        //         this.state.value===i.toString() && <KetcherDisplay molblock={molblock} />
-        //     )
-        // }, this);
         
         var subfigure = <p></p>;
         if (this.state.value >= 0){
@@ -56,7 +50,7 @@ export class FigureDisplay extends React.Component {
                         <br></br>
                     </div>
                 </div>
-                <div id="ketcher"><KetcherDisplay molblock={details['molblocks'][this.state.value]} /></div>
+                    <div id="ketcher"><KetcherDisplay molblock={details['molblocks'][this.state.value]} /></div>
                 </div>);   
         }
         

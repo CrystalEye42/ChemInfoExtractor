@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { FigureDisplay } from "./FigureDisplay";
 import './FigureDisplay.css'
 
+// main component for displaying results, contains FigureDisplay
 export class FigureSelect extends React.Component {
     constructor(props) {
         super(props);
@@ -14,12 +15,10 @@ export class FigureSelect extends React.Component {
     }
 
     handleClick(item) {
-        console.log("here");
         this.setState({value: item});
     }
 
     handleChange(event) {
-        console.log("here2");
         this.setState({value: event.target.value});
     }
 
@@ -31,7 +30,7 @@ export class FigureSelect extends React.Component {
                 <div key={i}>
                     <input type="radio" className="btn-check" name="btnradio" id={"buttonradio"+i} 
                     checked={item===this.state.value} value={item}></input>
-                    <label className="btn btn-outline-primary" htmlFor={"buttonradio"+i} >{i+1}</label>
+                    <label className="btn btn-outline-primary" htmlFor={"buttonradio"+i}>{i+1}</label>
                 </div>
             )
         }, this);

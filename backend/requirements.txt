@@ -1,0 +1,21 @@
+Flask==1.1.2
+waitress
+-f https://download.pytorch.org/whl/torch_stable.html
+torch==1.10.0+cu113
+pytorch-lightning==1.6.0
+Flask-RESTful
+Flask-Cors==3.0.8
+python-dotenv
+opencv-python==4.5.3.56
+Pillow==8.2.0
+torchvision==0.11.1+cu113
+pandas==1.2.4
+pycocotools==2.0.4
+albumentations==1.1.0
+SmilesPE==0.0.3
+rdkit-pypi==2021.3.2.2
+python-levenshtein==0.12.0
+timm @ git+https://github.com/rwightman/pytorch-image-models.git@54a6cca27a9a3e092a07457f5d56709da56e3cf5
+opennmt-py==2.2.0
+git+https://github.com/thomas0809/MolScribe.git
+

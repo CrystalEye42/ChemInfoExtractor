@@ -2,6 +2,9 @@ import sys
 
 from reaction_model.predict_bbox import ReactionModel
 
+from huggingface_hub import hf_hub_download
+from molscribe import MolScribe
+
 from bms_model.predict_smiles import BmsModel
 
 class Models:
@@ -9,13 +12,14 @@ class Models:
         print('reaction')
         self.reaction = ReactionModel()
         print('bms')
-        self.bms = BmsModel()
+        ckpt_path = hf_hub_download("yujieq/MolScribe", "swin_base_char_aux_1m.pth")
+        self.bms = MolScribe(ckpt_path)
 
     def predict_bbox(self, image_paths):
         return self.reaction.predict(image_paths)
 
     def predict_smiles(self, image):
-        return self.bms.predict_image(image)
+        return self.bms.predict_images(image)
 
 if __name__ == '__main__':
     m = Models()

@@ -1,6 +1,7 @@
 from flask import Flask, request
 from flask_restful import Resource, Api
 from flask_cors import CORS
+from waitress import serve
 from dotenv import load_dotenv
 from os import environ
 from pathlib import Path
@@ -233,4 +234,5 @@ if __name__ == '__main__':
     load_dotenv(dotenv_path=config_path)
     port = environ.get('PORT')
 
-    app.run(debug=True, host='0.0.0.0', port=port, threaded=False)
+    app.run(ssl_context='adhoc', host='0.0.0.0', port=port, threaded=False)
+

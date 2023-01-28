@@ -92,7 +92,8 @@ class ReactionModel:
         model = ReactionExtractorPix2Seq.load_from_checkpoint(
             os.path.join(args.save_path, 'checkpoints/best.ckpt'), strict=False, args=args, tokenizer=tokenizer)
         model.eval()
-        model.cuda()
+        if torch.cuda.is_available():
+            model.cuda()
         self.model = model
 
     def predict(self, image_path_array):

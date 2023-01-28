@@ -35,6 +35,8 @@ export function PdfExtract() {
 
   const [figureDetails, setFigureDetails] = useState(null);
 
+  const [extractLimited, setExtractLimited] = useState(true);
+
   const inputFileRef = React.useRef();
 
   // handle file onChange event
@@ -85,6 +87,10 @@ export function PdfExtract() {
     }
   }
 
+  const handleLimited = () => {
+    setExtractLimited(!extractLimited);
+  }
+
   // get example file to display
   const fetchExample = async (e) => {
     const exampleFileName = e.target.value;
@@ -132,6 +138,9 @@ export function PdfExtract() {
   const extractFile = () => {
     const formData = new FormData();
     formData.append("file", pdfData);
+    if (extractLimited) {
+      formData.append("num_pages", "10");
+    }
     const request = new XMLHttpRequest();
     request.onreadystatechange = function () {
       if (request.readyState === 4 && request.status == 200) {
@@ -174,7 +183,9 @@ export function PdfExtract() {
             other than pdf */}
             {pdfError && <span className='text-danger'>{pdfError}</span>}
             {!pdfError && <br></br>}
-
+            <span>Limit to first 10 pages </span>
+            <input type="checkbox" checked={extractLimited} onChange={handleLimited}></input>
+            <p></p>
           </form>
 
           <div>

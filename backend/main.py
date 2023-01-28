@@ -11,7 +11,6 @@ import io
 from base64 import encodebytes
 import cv2
 from model import Models
-from pdffigures.wrapper import extract_figures_from_pdf
 from torch import multiprocessing
 import time
 
@@ -35,9 +34,9 @@ def is_unique_bbox(bbox, bboxes):
     return True
 
 
-def run_models(pdf_path):
+def run_models(pdf_path, num_pages=None):
     start_time = time.time()
-    figures, directory = extract_figures_from_pdf(pdf_path, return_images=True)
+    figures, directory = model.extract_figures_from_pdf(pdf_path, num_pages=num_pages)
     print(time.time()-start_time)
 
     batch_size = 16
@@ -104,7 +103,7 @@ def run_models(pdf_path):
         figure['molblocks'] = mol_results[offset:offset+num_results]
         offset += num_results
 
-    figures = [figure for figure in figures if figure['mol_bboxes']]
+    # figures = [figure for figure in figures if figure['mol_bboxes']]
     print(time.time()-start_time)
     os.system(f'rm -rf {directory}')
     return figures
@@ -186,7 +185,10 @@ class Extractor(Resource):
         file.write(f.read())
         file.close()
         
-        results = run_models(f.filename)
+        num_pages = None
+        if 'num_pages' in request.form:
+            num_pages = int(request.form['num_pages'])
+        results = run_models(f.filename, num_pages=num_pages)
 
         os.system('rm '+ f.filename.replace(" ", r"\ "))
         return results

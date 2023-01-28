@@ -1,10 +1,10 @@
 # Backend
 
 ## Installation
- - Create a conda env using the environment.yml using `conda env create -f environment.yml`
- - Activate the environment with `conda activate molscribe`
- - `cd` into the pdffigures directory
- - Install the pdffigures dependencies and `make` as instructed in the [original repository](https://github.com/allenai/pdffigures)
+ - Install poppler for pdf2image
+   - Mac: run `brew install poppler`
+   - Linux: most distros already have poppler, but if it's not already available, install `poppler-utils`
+ - Run `python -m pip install -r requirements.txt`
  
  ## Running the backend
  - `python3 main.py` to run in development mode

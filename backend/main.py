@@ -49,11 +49,15 @@ def run_models(pdf_path, num_pages=None):
         output_bboxes.extend(model.predict_bbox(batch))
     for i, output in enumerate(output_bboxes):
         mol_bboxes = [elt['bbox'] for elt in output if elt['category'] == '[Mol]']
+        mol_scores = [elt['score'] for elt in output if elt['category'] == '[Mol]']
         unique_bboxes = []
+        scores = []
         figures[i]['mol_bboxes'] = unique_bboxes 
-        for bbox in mol_bboxes:
+        figures[i]['mol_scores'] = scores
+        for bbox, score in zip(mol_bboxes, mol_scores):
             if is_unique_bbox(bbox, unique_bboxes):
                 unique_bboxes.append(bbox)
+                scores.append(score)
 #    for figure in figures:]
 #        figure['mol_bboxes'] = [output['bbox'] for output in model.predict_bbox(figure['image_path']) if output['category'] == '[Mol]']
     print(time.time()-start_time)

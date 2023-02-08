@@ -179,7 +179,7 @@ export function ImageExtract() {
               )}
 
               {extractState === "done" && (
-                <FigureImageDisplay details={figureDetails} value={bboxIndex}></FigureImageDisplay>
+                <FigureImageDisplay details={figureDetails} value={bboxIndex} callback={setBboxIndex}></FigureImageDisplay>
               )}
 
               {/* render this if we have imageFile state null   */}
@@ -203,7 +203,7 @@ export function ImageExtract() {
                 </a>
             </div>
             <div id="resultBody">
-              {(extractState === 'done') && <FigureDisplay details={figureDetails} showmain={false} callback={setBboxIndex}/>}
+              {(extractState === 'done') && <FigureDisplay details={figureDetails} showmain={false} value={bboxIndex} callback={setBboxIndex}/>}
             </div>
           </div>
         </div>

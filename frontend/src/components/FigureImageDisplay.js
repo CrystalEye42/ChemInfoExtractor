@@ -28,15 +28,21 @@ export class FigureImageDisplay extends React.Component {
         const [x1, y1, x2, y2] = bbox;
         const otherBoxes = this.props.details["subfigures"].map((info, i) => {
             const [x1, y1, x2, y2] = info[2];
-            return (<View key={"det"+i} style={[
-                styles.rectangleShaded,
-                {
-                    top: y1*this.state.height,
-                    height: (y2-y1)*this.state.height,
-                    left: x1*this.state.width,
-                    width: (x2-x1)*this.state.width,
-                }
-            ]}></View>);
+            return (
+            <div key={"det"+i} 
+                onClick={(e) => {
+                    this.props.callback(i);
+                }}>
+                <View style={[
+                    styles.rectangleShaded,
+                    {
+                        top: y1*this.state.height,
+                        height: (y2-y1)*this.state.height,
+                        left: x1*this.state.width,
+                        width: (x2-x1)*this.state.width,
+                    }
+                ]} ></View>
+            </div>);
         });
         return (
             <View style={styles.imageContainer}>
@@ -69,6 +75,7 @@ export class FigureImageDisplay extends React.Component {
 FigureImageDisplay.propTypes = {
     details: PropTypes.object.isRequired,
     value: PropTypes.number.isRequired,
+    callback: PropTypes.func.isRequired
 }
 
 const styles = StyleSheet.create({

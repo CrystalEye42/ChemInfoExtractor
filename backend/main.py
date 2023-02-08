@@ -69,11 +69,13 @@ def run_models(pdf_path, num_pages=None):
     mol_results = []
     cropped_images = []
     bboxes = []
+    scores = []
     for figure in figures:
         image = cv2.imread(figure['image_path'])
         print('figure: ', count)
         count += 1
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        scores.extend(figure['mol_scores'])
         for bbox in figure['mol_bboxes']:
             height, width, _ = image.shape
             x1, y1, x2, y2 = bbox
@@ -98,7 +100,7 @@ def run_models(pdf_path, num_pages=None):
         image_buffer = []
 
     #store the results
-    captioned_images = [[im, smile, bb] for im, smile, bb in zip(cropped_images, smiles_results, bboxes)]
+    captioned_images = [[im, smile, bb, score] for im, smile, bb, score in zip(cropped_images, smiles_results, bboxes, scores)]
     offset = 0
     for figure in figures:
         num_results = len(figure['mol_bboxes'])
@@ -115,10 +117,13 @@ def run_models(pdf_path, num_pages=None):
 def run_models_on_image(img_path):
     start_time = time.time()
     mol_bboxes = [output['bbox'] for output in model.predict_bbox([img_path])[0] if output['category'] == '[Mol]']
+    mol_scores = [elt['score'] for elt in output if elt['category'] == '[Mol]']
     unique_bboxes = []
-    for bbox in mol_bboxes:
+    scores = []
+    for bbox, score in zip(mol_bboxes, mol_scores):
         if is_unique_bbox(bbox, unique_bboxes):
             unique_bboxes.append(bbox)
+            scores.append(score)
     mol_bboxes = unique_bboxes
 
     print(time.time()-start_time)
@@ -153,7 +158,7 @@ def run_models_on_image(img_path):
         image_buffer = []
 
     #store the results
-    captioned_images = [[im, smile, bb] for im, smile, bb in zip(cropped_images, smiles_results, mol_bboxes)]
+    captioned_images = [[im, smile, bb, score] for im, smile, bb, score in zip(cropped_images, smiles_results, mol_bboxes, scores)]
     img_encode = cv2.imencode(".jpg", image)[1]
     byte_arr = io.BytesIO(img_encode)
     encoded_img = encodebytes(byte_arr.getvalue()).decode('ascii')

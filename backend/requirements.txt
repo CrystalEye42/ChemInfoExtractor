@@ -1,7 +1,11 @@
-Flask==1.1.2
+Flask
 waitress
 -f https://download.pytorch.org/whl/torch_stable.html
 torch==1.10.0+cu113
+layoutparser
+-f https://dl.fbaipublicfiles.com/detectron2/wheels/cu113/torch1.10/index.html
+detectron2
+pdf2image
 pytorch-lightning==1.6.0
 Flask-RESTful
 Flask-Cors==3.0.8

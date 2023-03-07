@@ -12,21 +12,29 @@ export class FigureDisplay extends React.Component {
             value: this.props.details["subfigures"].length > 0 ? 0 : -1
         };
         this.handleChange = this.handleChange.bind(this);
+        this.updateIndex = this.updateIndex.bind(this);
         if (this.props.callback) {
             this.props.callback(this.props.details["subfigures"].length > 0 ? 0 : -1);
         }
     }
 
     handleChange(event) {
-        this.setState({value: event.target.value});
+        this.updateIndex(event.target.value);
+    }
+
+    updateIndex(value) {
+        this.setState({value: value});
         if (this.props.callback) {
-            this.props.callback(event.target.value);
+            this.props.callback(value);
         }
     }
 
     render() {
         const details = this.props.details;
         this.ketchers = [];
+        if (this.props.value !== null && this.props.value !== undefined && this.props.value !== this.state.value) {
+            this.setState({value: this.props.value});
+        }
 
         const figures = details["subfigures"];
         const figuresList = figures.length > 0 && figures.map(([image, smiles], i) => {
@@ -57,7 +65,7 @@ export class FigureDisplay extends React.Component {
         return (
             <div>
                 {this.props.showmain && <div id="imagewrap">
-                    <FigureImageDisplay details={details} value={this.state.value}></FigureImageDisplay>
+                    <FigureImageDisplay details={details} value={this.state.value} callback={this.updateIndex}></FigureImageDisplay>
                 </div>}
                 <br></br>
                 <h4>Extracted Molecules</h4>
@@ -79,5 +87,6 @@ export class FigureDisplay extends React.Component {
 FigureDisplay.propTypes = {
     details: PropTypes.object.isRequired,
     showmain: PropTypes.bool.isRequired,
-    callback: PropTypes.func
+    callback: PropTypes.func,
+    value: PropTypes.number
 }

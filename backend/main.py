@@ -11,7 +11,6 @@ import io
 from base64 import encodebytes
 import cv2
 from model import Models
-from pdffigures.wrapper import extract_figures_from_pdf
 from torch import multiprocessing
 import time
 
@@ -35,9 +34,9 @@ def is_unique_bbox(bbox, bboxes):
     return True
 
 
-def run_models(pdf_path):
+def run_models(pdf_path, num_pages=None):
     start_time = time.time()
-    figures, directory = extract_figures_from_pdf(pdf_path, return_images=True)
+    figures, directory = model.extract_figures_from_pdf(pdf_path, num_pages=num_pages)
     print(time.time()-start_time)
 
     batch_size = 16
@@ -50,11 +49,15 @@ def run_models(pdf_path):
         output_bboxes.extend(model.predict_bbox(batch))
     for i, output in enumerate(output_bboxes):
         mol_bboxes = [elt['bbox'] for elt in output if elt['category'] == '[Mol]']
+        mol_scores = [elt['score'] for elt in output if elt['category'] == '[Mol]']
         unique_bboxes = []
+        scores = []
         figures[i]['mol_bboxes'] = unique_bboxes 
-        for bbox in mol_bboxes:
+        figures[i]['mol_scores'] = scores
+        for bbox, score in zip(mol_bboxes, mol_scores):
             if is_unique_bbox(bbox, unique_bboxes):
                 unique_bboxes.append(bbox)
+                scores.append(score)
 #    for figure in figures:]
 #        figure['mol_bboxes'] = [output['bbox'] for output in model.predict_bbox(figure['image_path']) if output['category'] == '[Mol]']
     print(time.time()-start_time)
@@ -66,11 +69,13 @@ def run_models(pdf_path):
     mol_results = []
     cropped_images = []
     bboxes = []
+    scores = []
     for figure in figures:
         image = cv2.imread(figure['image_path'])
         print('figure: ', count)
         count += 1
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        scores.extend(figure['mol_scores'])
         for bbox in figure['mol_bboxes']:
             height, width, _ = image.shape
             x1, y1, x2, y2 = bbox
@@ -95,7 +100,7 @@ def run_models(pdf_path):
         image_buffer = []
 
     #store the results
-    captioned_images = [[im, smile, bb] for im, smile, bb in zip(cropped_images, smiles_results, bboxes)]
+    captioned_images = [[im, smile, bb, score] for im, smile, bb, score in zip(cropped_images, smiles_results, bboxes, scores)]
     offset = 0
     for figure in figures:
         num_results = len(figure['mol_bboxes'])
@@ -104,7 +109,7 @@ def run_models(pdf_path):
         figure['molblocks'] = mol_results[offset:offset+num_results]
         offset += num_results
 
-    figures = [figure for figure in figures if figure['mol_bboxes']]
+    # figures = [figure for figure in figures if figure['mol_bboxes']]
     print(time.time()-start_time)
     os.system(f'rm -rf {directory}')
     return figures
@@ -112,10 +117,13 @@ def run_models(pdf_path):
 def run_models_on_image(img_path):
     start_time = time.time()
     mol_bboxes = [output['bbox'] for output in model.predict_bbox([img_path])[0] if output['category'] == '[Mol]']
+    mol_scores = [elt['score'] for elt in output if elt['category'] == '[Mol]']
     unique_bboxes = []
-    for bbox in mol_bboxes:
+    scores = []
+    for bbox, score in zip(mol_bboxes, mol_scores):
         if is_unique_bbox(bbox, unique_bboxes):
             unique_bboxes.append(bbox)
+            scores.append(score)
     mol_bboxes = unique_bboxes
 
     print(time.time()-start_time)
@@ -150,7 +158,7 @@ def run_models_on_image(img_path):
         image_buffer = []
 
     #store the results
-    captioned_images = [[im, smile, bb] for im, smile, bb in zip(cropped_images, smiles_results, mol_bboxes)]
+    captioned_images = [[im, smile, bb, score] for im, smile, bb, score in zip(cropped_images, smiles_results, mol_bboxes, scores)]
     img_encode = cv2.imencode(".jpg", image)[1]
     byte_arr = io.BytesIO(img_encode)
     encoded_img = encodebytes(byte_arr.getvalue()).decode('ascii')
@@ -186,7 +194,10 @@ class Extractor(Resource):
         file.write(f.read())
         file.close()
         
-        results = run_models(f.filename)
+        num_pages = None
+        if 'num_pages' in request.form:
+            num_pages = int(request.form['num_pages'])
+        results = run_models(f.filename, num_pages=num_pages)
 
         os.system('rm '+ f.filename.replace(" ", r"\ "))
         return results

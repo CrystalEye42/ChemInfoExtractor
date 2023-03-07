@@ -5,6 +5,7 @@ import { View, StyleSheet } from "react-native";
 const borderWidth = 3;
 // component for drawing bounding boxes on figure images
 export class FigureImageDisplay extends React.Component {
+    TEXT_OFFSET = 20;
     constructor(props) {
         super(props);
         this.state = {
@@ -16,7 +17,7 @@ export class FigureImageDisplay extends React.Component {
 
     onImgLoad({ target: img }) {
         const { offsetHeight, offsetWidth } = img;
-        this.setState({height:offsetHeight, width:offsetWidth});
+        this.setState({height:offsetHeight + this.TEXT_OFFSET, width:offsetWidth});
     }
 
     drawBox(bbox) {
@@ -28,15 +29,22 @@ export class FigureImageDisplay extends React.Component {
         const [x1, y1, x2, y2] = bbox;
         const otherBoxes = this.props.details["subfigures"].map((info, i) => {
             const [x1, y1, x2, y2] = info[2];
-            return (<View key={"det"+i} style={[
-                styles.rectangleShaded,
-                {
-                    top: y1*this.state.height,
-                    height: (y2-y1)*this.state.height,
-                    left: x1*this.state.width,
-                    width: (x2-x1)*this.state.width,
-                }
-            ]}></View>);
+            const score = info[3].toFixed(4);
+            return (
+            <div key={"det"+i}
+                onClick={(e) => {
+                    this.props.callback(i);
+                }}>
+                <View style={[
+                    styles.rectangleShaded,
+                    {
+                        top: y1*this.state.height-this.TEXT_OFFSET,
+                        height: (y2-y1)*this.state.height+this.TEXT_OFFSET,
+                        left: x1*this.state.width,
+                        width: (x2-x1)*this.state.width,
+                    }
+                ]}>{score}</View>
+            </div>);
         });
         return (
             <View style={styles.imageContainer}>
@@ -45,8 +53,8 @@ export class FigureImageDisplay extends React.Component {
                 <View style={[
                     styles.rectangle,
                     {
-                        top: y1*this.state.height-borderWidth,
-                        height: (y2-y1)*this.state.height+2*borderWidth,
+                        top: y1*this.state.height-borderWidth-this.TEXT_OFFSET,
+                        height: (y2-y1)*this.state.height+2*borderWidth+this.TEXT_OFFSET,
                         left: x1*this.state.width-borderWidth,
                         width: (x2-x1)*this.state.width+2*borderWidth,
                     }
@@ -69,6 +77,7 @@ export class FigureImageDisplay extends React.Component {
 FigureImageDisplay.propTypes = {
     details: PropTypes.object.isRequired,
     value: PropTypes.number.isRequired,
+    callback: PropTypes.func.isRequired
 }
 
 const styles = StyleSheet.create({

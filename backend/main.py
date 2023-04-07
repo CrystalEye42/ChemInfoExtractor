@@ -116,7 +116,8 @@ def run_models(pdf_path, num_pages=None):
 
 def run_models_on_image(img_path):
     start_time = time.time()
-    mol_bboxes = [output['bbox'] for output in model.predict_bbox([img_path])[0] if output['category'] == '[Mol]']
+    output = model.predict_bbox([img_path])[0] 
+    mol_bboxes = [elt['bbox'] for elt in output if elt['category'] == '[Mol]']
     mol_scores = [elt['score'] for elt in output if elt['category'] == '[Mol]']
     unique_bboxes = []
     scores = []

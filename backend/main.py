@@ -114,6 +114,25 @@ def run_models(pdf_path, num_pages=None):
     os.system(f'rm -rf {directory}')
     return figures
 
+def run_rxn_models(pdf_path, num_pages=None):
+    start_time = time.time()
+    figures, directory = model.extract_figures_from_pdf(pdf_path, num_pages=num_pages)
+    print(time.time()-start_time)
+
+    batch_size = 16
+    image_paths = [figure['image_path'] for figure in figures]
+    reactions = []
+    print(len(figures))
+    for i in range(0, len(image_paths), batch_size):
+        batch = image_paths[i: min(batch_size+i, len(image_paths))]
+        print(f'batch size: {len(batch)}')
+        reactions.extend(model.predict_reactions(batch))
+    for figure, reaction in zip(figures, reactions):
+        figure['reactions'] = reaction
+    print(time.time()-start_time)
+    return figures
+
+
 def run_models_on_image(img_path):
     start_time = time.time()
     output = model.predict_bbox([img_path])[0] 
@@ -231,9 +250,28 @@ class MolExtractor(Resource):
         os.system('rm '+ f.filename.replace(" ", r"\ ")) 
         return results
 
+
+class RxnExtractor(Resource):
+    def post(self):
+        f = request.files['file']
+        print(f.filename)
+        file = open(f.filename, "wb")
+        file.write(f.read())
+        file.close()
+        
+        num_pages = None
+        if 'num_pages' in request.form:
+            num_pages = int(request.form['num_pages'])
+        results = run_rxn_models(f.filename, num_pages=num_pages)
+
+        os.system('rm '+ f.filename.replace(" ", r"\ "))
+        return results
+
+
 api.add_resource(Extractor, '/extract')
 api.add_resource(ImageExtractor, '/extractimage')
 api.add_resource(MolExtractor, '/extractmol')
+api.add_resource(RxnExtractor, '/extractrxn')
 
 if __name__ == '__main__':
 

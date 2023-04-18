@@ -1,6 +1,6 @@
 import sys
 
-from torch.cuda import is_available
+import torch
 import layoutparser as lp
 import pdf2image
 import numpy as np
@@ -14,12 +14,13 @@ from reaction_model.predict_bbox import ReactionModel
 
 from huggingface_hub import hf_hub_download
 from molscribe import MolScribe
+from rxnscribe import RxnScribe
 
 from bms_model.predict_smiles import BmsModel
 
 class Models:
     def __init__(self):
-        self.device = 'cuda' if is_available() else 'cpu'
+        self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
         print(self.device)
         print('layout')
         self.layout = lp.Detectron2LayoutModel('lp://PubLayNet/mask_rcnn_X_101_32x8d_FPN_3x/config', 
@@ -29,10 +30,15 @@ class Models:
 
         print('reaction')
         self.reaction = ReactionModel()
-        print('bms')
-        ckpt_path = hf_hub_download("yujieq/MolScribe", "swin_base_char_aux_1m.pth")
-        self.bms = MolScribe(ckpt_path, device=self.device)
 
+        print('molscribe')
+        ckpt_path = hf_hub_download("yujieq/MolScribe", "swin_base_char_aux_1m.pth")
+        self.molscribe = MolScribe(ckpt_path, device=torch.device(self.device))
+
+        print('rxnscribe')
+        ckpt_path2 = hf_hub_download("yujieq/RxnScribe", "pix2seq_reaction_full.ckpt")
+        self.rxnscribe = RxnScribe(ckpt_path2, device=torch.device(self.device))
+        
     def extract_figures_from_pdf(self, pdf_path, num_pages=None):
         imgs = pdf2image.convert_from_path(pdf_path)
         if num_pages is not None:
@@ -67,8 +73,14 @@ class Models:
     def predict_bbox(self, image_paths):
         return self.reaction.predict(image_paths)
 
-    def predict_smiles(self, image):
-        return self.bms.predict_images(image)
+    def predict_smiles(self, images):
+        results = self.molscribe.predict_images(images)
+        smiles_results = [r['smiles'] for r in results]
+        molfile_results = [r['molfile'] for r in results]
+        return smiles_results, molfile_results
+
+    def predict_reactions(self, image_paths):
+        return self.rxnscribe.predict_image_files(image_paths, molscribe=True, ocr=False)
 
 if __name__ == '__main__':
     m = Models()

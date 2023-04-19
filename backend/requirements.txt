@@ -21,5 +21,6 @@ rdkit-pypi==2021.3.2.2
 python-levenshtein==0.12.0
 timm @ git+https://github.com/rwightman/pytorch-image-models.git@54a6cca27a9a3e092a07457f5d56709da56e3cf5
 opennmt-py==2.2.0
-git+https://github.com/thomas0809/MolScribe.git
-
+transformers>=4.6.0
+easyocr==1.6.2
+tensorboardX

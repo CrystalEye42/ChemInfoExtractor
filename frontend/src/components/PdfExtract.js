@@ -61,9 +61,6 @@ export function PdfExtract() {
         setExtractState('unready');
       }
     }
-    else {
-      console.log('please select a PDF');
-    }
   }
 
   // load display saved results from JSON file
@@ -81,7 +78,7 @@ export function PdfExtract() {
             setExtractState('done');
           }  
         } catch (error) {
-          console.log("bad file shape")
+          setPdfError('Bad file shape');
         }
       }
     }

@@ -43,9 +43,6 @@ export function MolExtract() {
         setExtractState('unready');
       }
     }
-    else {
-      console.log('please select an image');
-    }
   }
 
   // load display saved results from JSON file
@@ -63,7 +60,7 @@ export function MolExtract() {
             setExtractState('done');
           }  
         } catch (error) {
-          console.log("bad file shape")
+          setImageError('Bad file shape');
         }
       }
     }
@@ -122,7 +119,6 @@ export function MolExtract() {
   const clickForm = () => {
     /*Collecting node-element and performing click*/
     inputFileRef.current.click();
-    console.log(inputFileRef.current);
   };
 
   return (

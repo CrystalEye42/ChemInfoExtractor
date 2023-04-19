@@ -37,15 +37,12 @@ def is_unique_bbox(bbox, bboxes):
 def run_models(pdf_path, num_pages=None):
     start_time = time.time()
     figures, directory = model.extract_figures_from_pdf(pdf_path, num_pages=num_pages)
-    print(time.time()-start_time)
 
     batch_size = 16
     image_paths = [figure['image_path'] for figure in figures]
     output_bboxes = []
-    print(len(figures))
     for i in range(0, len(image_paths), batch_size):
         batch = image_paths[i: min(batch_size+i, len(image_paths))]
-        print(f'batch size: {len(batch)}')
         output_bboxes.extend(model.predict_bbox(batch))
     for i, output in enumerate(output_bboxes):
         mol_bboxes = [elt['bbox'] for elt in output if elt['category'] == '[Mol]']
@@ -60,7 +57,6 @@ def run_models(pdf_path, num_pages=None):
                 scores.append(score)
 #    for figure in figures:]
 #        figure['mol_bboxes'] = [output['bbox'] for output in model.predict_bbox(figure['image_path']) if output['category'] == '[Mol]']
-    print(time.time()-start_time)
 
     # predict smiles
     count = 1
@@ -72,7 +68,6 @@ def run_models(pdf_path, num_pages=None):
     scores = []
     for figure in figures:
         image = cv2.imread(figure['image_path'])
-        print('figure: ', count)
         count += 1
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         scores.extend(figure['mol_scores'])
@@ -110,26 +105,21 @@ def run_models(pdf_path, num_pages=None):
         offset += num_results
 
     # figures = [figure for figure in figures if figure['mol_bboxes']]
-    print(time.time()-start_time)
     os.system(f'rm -rf {directory}')
     return figures
 
 def run_rxn_models(pdf_path, num_pages=None):
     start_time = time.time()
     figures, directory = model.extract_figures_from_pdf(pdf_path, num_pages=num_pages)
-    print(time.time()-start_time)
 
     batch_size = 16
     image_paths = [figure['image_path'] for figure in figures]
     reactions = []
-    print(len(figures))
     for i in range(0, len(image_paths), batch_size):
         batch = image_paths[i: min(batch_size+i, len(image_paths))]
-        print(f'batch size: {len(batch)}')
         reactions.extend(model.predict_reactions(batch))
     for figure, reaction in zip(figures, reactions):
         figure['reactions'] = reaction
-    print(time.time()-start_time)
     return figures
 
 
@@ -146,7 +136,6 @@ def run_models_on_image(img_path):
             scores.append(score)
     mol_bboxes = unique_bboxes
 
-    print(time.time()-start_time)
     # predict smiles
     batch_size = 16
     image_buffer = []
@@ -188,7 +177,6 @@ def run_models_on_image(img_path):
     results['images'] = captioned_images
     results['smiles'] = smiles_results
     results['molblocks'] = mol_results
-    print(time.time()-start_time)
     return results
 
 def run_models_on_molecule(img_path):
@@ -202,14 +190,12 @@ def run_models_on_molecule(img_path):
     results = {}
     results['smiles'] = smiles_results[0]
     results['molblocks'] = mol_results[0]
-    print(time.time()-start_time)
     return results
 
 
 class Extractor(Resource):
     def post(self):
         f = request.files['file']
-        print(f.filename)
         file = open(f.filename, "wb")
         file.write(f.read())
         file.close()
@@ -226,7 +212,6 @@ class Extractor(Resource):
 class ImageExtractor(Resource):
     def post(self):
         f = request.files['file']
-        print(f.filename)
         file = open(f.filename, "wb")
         file.write(f.read())
         file.close()
@@ -240,7 +225,6 @@ class ImageExtractor(Resource):
 class MolExtractor(Resource):
     def post(self):
         f = request.files['file']
-        print(f.filename)
         file = open(f.filename, "wb")
         file.write(f.read())
         file.close()
@@ -254,7 +238,6 @@ class MolExtractor(Resource):
 class RxnExtractor(Resource):
     def post(self):
         f = request.files['file']
-        print(f.filename)
         file = open(f.filename, "wb")
         file.write(f.read())
         file.close()

@@ -1,10 +1,12 @@
 # Backend
 
 ## Installation
- - Install poppler for pdf2image
-   - Mac: run `brew install poppler`
-   - Linux: most distros already have poppler, but if it's not already available, install `poppler-utils`
- - Run `python -m pip install -r requirements.txt`
+ - Run the following lines
+ ```
+ python -m pip install -r requirements.txt
+ python -m pip install --no-deps git+https://github.com/thomas0809/MolScribe.git@main#egg=MolScribe
+ python -m pip install --no-deps git+https://github.com/thomas0809/RxnScribe.git@main#egg=RxnScribe
+ ```
  
  ## Running the backend
  - `python3 main.py` to run in development mode

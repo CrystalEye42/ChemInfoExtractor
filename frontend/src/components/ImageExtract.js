@@ -45,9 +45,6 @@ export function ImageExtract() {
         setExtractState('unready');
       }
     }
-    else {
-      console.log('please select an image');
-    }
   }
 
   // load display saved results from JSON file
@@ -65,7 +62,7 @@ export function ImageExtract() {
             setExtractState('done');
           }  
         } catch (error) {
-          console.log("bad file shape")
+          setImageError('Bad file shape');
         }
       }
     }

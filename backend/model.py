@@ -21,21 +21,21 @@ from bms_model.predict_smiles import BmsModel
 class Models:
     def __init__(self):
         self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
-        print(self.device)
-        print('layout')
+        print('Using', self.device)
+        print('Loading layout')
         self.layout = lp.Detectron2LayoutModel('lp://PubLayNet/mask_rcnn_X_101_32x8d_FPN_3x/config', 
                 extra_config=["MODEL.ROI_HEADS.SCORE_THRESH_TEST", 0.5], 
                 label_map={0: "Text", 1: "Title", 2: "List", 3:"Table", 4:"Figure"}, 
                 device=self.device)
 
-        print('reaction')
+        print('Loading reaction')
         self.reaction = ReactionModel()
 
-        print('molscribe')
+        print('Loading molscribe')
         ckpt_path = hf_hub_download("yujieq/MolScribe", "swin_base_char_aux_1m.pth")
         self.molscribe = MolScribe(ckpt_path, device=torch.device(self.device))
 
-        print('rxnscribe')
+        print('Loading rxnscribe')
         ckpt_path2 = hf_hub_download("yujieq/RxnScribe", "pix2seq_reaction_full.ckpt")
         self.rxnscribe = RxnScribe(ckpt_path2, device=torch.device(self.device))
         
@@ -84,8 +84,3 @@ class Models:
 
 if __name__ == '__main__':
     m = Models()
-    print('model initialized')
-    f, _ = m.extract_figures_from_pdf('/scratch/wang7776/chem_ie/ChemInfoExtractor/frontend/public/example1.pdf')
-    print(len(f))
-    a = m.predict_bbox('/scratch/wang7776/chem_ie/reaction/data/detect/images/acs.joc.5b00301-Figure-c8.png')
-    m.predict_smiles('/scratch/wang7776/chem_ie/bms/100.png')

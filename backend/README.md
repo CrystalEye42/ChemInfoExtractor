@@ -7,7 +7,6 @@
  python -m pip install --no-deps git+https://github.com/thomas0809/MolScribe.git@main#egg=MolScribe
  python -m pip install --no-deps git+https://github.com/thomas0809/RxnScribe.git@main#egg=RxnScribe
  ```
- - 
  
  ## Running the backend
  - `python3 main.py` to run in development mode

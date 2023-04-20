@@ -1,10 +1,8 @@
 Flask
 waitress
--f https://download.pytorch.org/whl/torch_stable.html
-torch==1.10.0+cu113
-layoutparser
--f https://dl.fbaipublicfiles.com/detectron2/wheels/cu113/torch1.10/index.html
-detectron2
+torch
+torchvision
+layoutparser[effdet]
 pdf2image
 pytorch-lightning==1.6.0
 Flask-RESTful
@@ -12,7 +10,6 @@ Flask-Cors==3.0.8
 python-dotenv
 opencv-python==4.5.3.56
 Pillow==8.2.0
-torchvision==0.11.1+cu113
 pandas==1.2.4
 pycocotools==2.0.4
 albumentations==1.1.0

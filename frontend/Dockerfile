@@ -3,12 +3,12 @@ FROM node:20 AS build
 WORKDIR /app
 
 COPY package.json package.json
-COPY package-lock.json package-lock.json
+COPY yarn.lock yarn.lock
 
-RUN npm install --legacy-peer-deps
+RUN yarn install
 
 COPY . .
-RUN npm run build
+RUN yarn build
 
 
 # Build final image

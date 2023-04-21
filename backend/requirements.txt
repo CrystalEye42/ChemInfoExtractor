@@ -14,7 +14,7 @@ pandas==1.2.4
 pycocotools==2.0.4
 albumentations==1.1.0
 SmilesPE==0.0.3
-rdkit-pypi==2021.3.2.2
+rdkit-pypi
 python-levenshtein==0.12.0
 timm @ git+https://github.com/rwightman/pytorch-image-models.git@54a6cca27a9a3e092a07457f5d56709da56e3cf5
 opennmt-py==2.2.0

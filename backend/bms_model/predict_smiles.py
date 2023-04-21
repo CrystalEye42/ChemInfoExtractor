@@ -3,27 +3,23 @@ import sys
 path = os.path.abspath(os.path.dirname(__file__))
 if not path in sys.path:
     sys.path.append(path)
-import time
-import json
-import cv2
-import random
 import argparse
 
 import torch
 
 from bms.dataset import get_transforms
 from bms.model import Encoder, Decoder
-from bms.chemistry import postprocess_smiles, convert_graph_to_smiles
+from bms.chemistry import convert_graph_to_smiles
 from bms.tokenizer import NodeTokenizer
 
-import warnings 
+import warnings
 warnings.filterwarnings('ignore')
 
 class BmsModel:
 
     def __init__(self):
         args = self.get_args()
-        
+
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
         self.tokenizer = {"atomtok_coords": NodeTokenizer(64, 'bms_model/bms/vocab_uspto_new.json', True)}
@@ -96,7 +92,7 @@ class BmsModel:
         args.encoder_dim = encoder.n_features
 
         decoder = Decoder(args, tokenizer)
-        
+
         if load_path:
             states = self.load_states(args, load_path)
             # print_rank_0('Loading encoder')
@@ -104,7 +100,7 @@ class BmsModel:
             # print_rank_0('Loading decoder')
             self.safe_load(decoder, states['decoder'])
             print(f"Model loaded from {load_path}")
-        
+
         encoder.to(device)
         decoder.to(device)
 

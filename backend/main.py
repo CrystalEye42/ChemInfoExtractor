@@ -35,7 +35,6 @@ def is_unique_bbox(bbox, bboxes):
 
 
 def run_models(pdf_path, num_pages=None):
-    start_time = time.time()
     figures, directory = model.extract_figures_from_pdf(pdf_path, num_pages=num_pages)
 
     batch_size = 16
@@ -55,8 +54,6 @@ def run_models(pdf_path, num_pages=None):
             if is_unique_bbox(bbox, unique_bboxes):
                 unique_bboxes.append(bbox)
                 scores.append(score)
-#    for figure in figures:]
-#        figure['mol_bboxes'] = [output['bbox'] for output in model.predict_bbox(figure['image_path']) if output['category'] == '[Mol]']
 
     # predict smiles
     count = 1
@@ -78,11 +75,11 @@ def run_models(pdf_path, num_pages=None):
             cropped_image = image[int(y1*height):int(y2*height),int(x1*width):int(x2*width)]
             image_buffer.append(cropped_image)
 
-            img_encode = cv2.imencode(".jpg", cropped_image)[1] 
+            img_encode = cv2.imencode(".jpg", cropped_image)[1]
             byte_arr = io.BytesIO(img_encode)
             encoded_img = encodebytes(byte_arr.getvalue()).decode('ascii')
             cropped_images.append(encoded_img)
-            
+
             if len(image_buffer) >= batch_size:
                 smiles, molblock = model.predict_smiles(image_buffer)
                 smiles_results.extend(smiles)
@@ -104,7 +101,6 @@ def run_models(pdf_path, num_pages=None):
         figure['molblocks'] = mol_results[offset:offset+num_results]
         offset += num_results
 
-    # figures = [figure for figure in figures if figure['mol_bboxes']]
     os.system(f'rm -rf {directory}')
     return figures
 
@@ -125,7 +121,7 @@ def run_rxn_models(pdf_path, num_pages=None):
 
 def run_models_on_image(img_path):
     start_time = time.time()
-    output = model.predict_bbox([img_path])[0] 
+    output = model.predict_bbox([img_path])[0]
     mol_bboxes = [elt['bbox'] for elt in output if elt['category'] == '[Mol]']
     mol_scores = [elt['score'] for elt in output if elt['category'] == '[Mol]']
     unique_bboxes = []
@@ -144,22 +140,24 @@ def run_models_on_image(img_path):
     cropped_images = []
     image = cv2.imread(img_path)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
     for bbox in mol_bboxes:
         height, width, _ = image.shape
         x1, y1, x2, y2 = bbox
         cropped_image = image[int(y1*height):int(y2*height), int(x1*width):int(x2*width)]
         image_buffer.append(cropped_image)
 
-        img_encode = cv2.imencode(".jpg", cropped_image)[1] 
+        img_encode = cv2.imencode(".jpg", cropped_image)[1]
         byte_arr = io.BytesIO(img_encode)
         encoded_img = encodebytes(byte_arr.getvalue()).decode('ascii')
         cropped_images.append(encoded_img)
-        
+
         if len(image_buffer) >= batch_size:
             smiles, molblock = model.predict_smiles(image_buffer)
             smiles_results.extend(smiles)
             mol_results.extend(molblock)
             image_buffer = []
+
     if len(image_buffer) > 0:
         smiles, molblock = model.predict_smiles(image_buffer)
         smiles_results.extend(smiles)
@@ -180,7 +178,6 @@ def run_models_on_image(img_path):
     return results
 
 def run_models_on_molecule(img_path):
-    start_time = time.time()
     # predict smiles
     image = cv2.imread(img_path)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
@@ -199,7 +196,7 @@ class Extractor(Resource):
         file = open(f.filename, "wb")
         file.write(f.read())
         file.close()
-        
+
         num_pages = None
         if 'num_pages' in request.form:
             num_pages = int(request.form['num_pages'])
@@ -215,7 +212,7 @@ class ImageExtractor(Resource):
         file = open(f.filename, "wb")
         file.write(f.read())
         file.close()
-        
+
         results = run_models_on_image(f.filename)
 
         os.system('rm '+ f.filename.replace(" ", r"\ "))
@@ -228,10 +225,10 @@ class MolExtractor(Resource):
         file = open(f.filename, "wb")
         file.write(f.read())
         file.close()
-        
+
         results = run_models_on_molecule(f.filename)
 
-        os.system('rm '+ f.filename.replace(" ", r"\ ")) 
+        os.system('rm '+ f.filename.replace(" ", r"\ "))
         return results
 
 
@@ -241,7 +238,7 @@ class RxnExtractor(Resource):
         file = open(f.filename, "wb")
         file.write(f.read())
         file.close()
-        
+
         num_pages = None
         if 'num_pages' in request.form:
             num_pages = int(request.form['num_pages'])

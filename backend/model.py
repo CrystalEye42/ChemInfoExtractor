@@ -35,7 +35,7 @@ class Models:
         print('Loading rxnscribe')
         ckpt_path2 = hf_hub_download("yujieq/RxnScribe", "pix2seq_reaction_full.ckpt")
         self.rxnscribe = RxnScribe(ckpt_path2, device=torch.device(self.device))
-        
+
     def extract_figures_from_pdf(self, pdf_path, num_pages=None):
         imgs = pdf2image.convert_from_path(pdf_path)
         if num_pages is not None:

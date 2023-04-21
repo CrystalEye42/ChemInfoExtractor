@@ -21,6 +21,7 @@ from reaction.tokenizer import BboxTokenizer
 from reaction.dataset import make_transforms
 from reaction.evaluate import CocoEvaluator, ReactionEvaluator
 
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 def get_args():
     parser = argparse.ArgumentParser()
@@ -71,7 +72,7 @@ class ReactionExtractorPix2Seq(LightningModule):
     def predict(self, images):
         # images: a list of PIL images
         data = [self.transform(image) for image in images]
-        images = torch.stack([image for image, target in data]).cuda()
+        images = torch.stack([image for image, target in data]).to(device)
         targets = [target for image, target in data]
         with torch.no_grad():
             pred_logits = self.model(images)

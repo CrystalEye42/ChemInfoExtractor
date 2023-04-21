@@ -19,41 +19,42 @@ export class KetcherDisplay extends React.Component {
     }
 
     startPolling() {
-        if (this.refFrame.current && this.refFrame.current.contentWindow) {
+        if (this.getKetcher()) {
             this.display()
             return;
         }
 
         this.setState({smiles: null})
         setTimeout(this.startPolling, 100);
-     }
+    }
+
+    getKetcher() {
+        const iframe = document.getElementById("iframe");
+        if (!iframe || !iframe.contentWindow) return;
+        return iframe.contentWindow.ketcher;
+    }
 
     display() {
-        const { current } = this.refFrame;
         const content = this.props.molblock;
-        if (current) {
-            const ketcher = current.contentWindow.ketcher;
-            if (!ketcher) {
-                return;
+        const ketcher = this.getKetcher();
+        if (!ketcher) return;
+
+        ketcher.editor.render.options.autoScale = true;
+        ketcher.editor.render.options.autoScaleMargin = 10;
+        ketcher.setSettings({"fontsz": 18});
+        ketcher.setMolecule(content).then(() => {
+            if (this.state.scroll) {
+                document.getElementById("results").scrollTo(0,0);
             }
-            ketcher.setMolecule(content).then(ketcher.setMolecule(content)
-                .then(() => {
-                    if (this.state.scroll) {
-                        document.getElementById("results").scrollTo(0,0);
-                    }
-                    this.setState({scroll: false});
-                    ketcher.getSmiles().then(smiles => {
-                        this.setState({smiles: smiles});
-                    });
-                }));
-        }
+            this.setState({scroll: false});
+            ketcher.getSmiles().then(smiles => {
+                this.setState({smiles: smiles});
+            });
+        });
     }
 
     async checkSmiles() {
-        const { current } = this.refFrame;
-        if (!current || !current.contentWindow || !this.state.smiles) return;
-
-        const { ketcher } = current.contentWindow;
+        const ketcher = this.getKetcher();
         if (!ketcher) return;
 
         const newSmiles = await ketcher.getSmiles();
@@ -75,13 +76,14 @@ export class KetcherDisplay extends React.Component {
                 {!this.props.molblock && <p>No Mol block predicted</p>}
                 <div id="wrap"></div>
                 <iframe
-                    id="frame"
+                    id="iframe"
                     title="myiframe"
                     ref={this.refFrame}
                     onLoad={() => {
                         this.setState({scroll: true});
                         this.startPolling();}}
                     src="./standalone/index.html"
+                    sandbox="allow-scripts allow-same-origin"
                     width="640"
                     height="500"></iframe>
             </div>

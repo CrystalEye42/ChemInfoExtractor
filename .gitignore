@@ -48,4 +48,4 @@ cycada/imgs/
 *.png
 *.pdf
 **/*_temp/
-
+venv/

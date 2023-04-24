@@ -1,5 +1,3 @@
-import sys
-
 import torch
 import layoutparser as lp
 import pdf2image
@@ -16,7 +14,8 @@ from huggingface_hub import hf_hub_download
 from molscribe import MolScribe
 from rxnscribe import RxnScribe
 
-from bms_model.predict_smiles import BmsModel
+CACHE_DIR = "./cache"
+
 
 class Models:
     def __init__(self):
@@ -28,13 +27,19 @@ class Models:
         print('Loading reaction')
         self.reaction = ReactionModel()
 
-        print('Loading molscribe')
-        ckpt_path = hf_hub_download("yujieq/MolScribe", "swin_base_char_aux_1m.pth")
+        print('Loading MolScribe and RxnScribe')
+        ckpt_path, ckpt_path2 = self.download_models()
         self.molscribe = MolScribe(ckpt_path, device=torch.device(self.device))
-
-        print('Loading rxnscribe')
-        ckpt_path2 = hf_hub_download("yujieq/RxnScribe", "pix2seq_reaction_full.ckpt")
         self.rxnscribe = RxnScribe(ckpt_path2, device=torch.device(self.device))
+
+    @staticmethod
+    def download_models():
+        """
+        This is a static method so we can call it from Dockerfile.
+        """
+        ckpt_path = hf_hub_download("yujieq/MolScribe", "swin_base_char_aux_1m.pth", local_dir=CACHE_DIR)
+        ckpt_path2 = hf_hub_download("yujieq/RxnScribe", "pix2seq_reaction_full.ckpt", local_dir=CACHE_DIR)
+        return ckpt_path, ckpt_path2
 
     def extract_figures_from_pdf(self, pdf_path, num_pages=None):
         imgs = pdf2image.convert_from_path(pdf_path)

@@ -5,6 +5,7 @@ import './ImageExtract.css';
 import { base_url } from "../config";
 import { FigureDisplay } from './FigureDisplay';
 import { FigureImageDisplay } from './FigureImageDisplay';
+import { FakeProgress } from './FakeProgress';
 
 export function ImageExtract() {
 
@@ -159,8 +160,7 @@ export function ImageExtract() {
             </select>
           </div>}
 
-            {(extractState === 'loading') && <div><div className="loader"></div>
-              <p>Extracting molecule information, may take a few minutes...</p></div>}
+          {(extractState === 'loading') && <FakeProgress seconds={10} />}
           </div>
           
           <br></br>

@@ -4,6 +4,7 @@ import './MolExtract.css';
 // Import url for sending requests
 import { base_url } from "../config";
 import { KetcherDisplay } from './KetcherDisplay';
+import { FakeProgress } from './FakeProgress';
 
 export function MolExtract() {
 
@@ -145,7 +146,7 @@ export function MolExtract() {
           </form>
 
           <div>
-          {(extractState !== 'loading') && 
+          {(extractState !== 'loading') &&
             <div>
               <b>Example: </b>
               <select onChange={fetchExample} className="form-select">
@@ -156,10 +157,9 @@ export function MolExtract() {
               </select>
             </div>}
 
-            {(extractState === 'loading') && <div><div className="loader"></div>
-              <p>Extracting molecule information, may take a few minutes...</p></div>}
+            {(extractState === 'loading') && <FakeProgress seconds={10} />}
           </div>
-          
+
           <br></br>
           <h4>View Image</h4>
 

@@ -15,6 +15,7 @@ import './PdfExtract.css';
 // Import url for sending requests
 import { base_url } from "../config";
 import { FigureSelect } from './FigureSelect';
+import { FakeProgress } from './FakeProgress';
 
 export function PdfExtract() {
 
@@ -198,14 +199,12 @@ export function PdfExtract() {
               </select>
             </div>}
 
-
-            {(extractState === 'loading') && <div><div className="loader"></div>
-              <p>Extracting molecule information, may take a few minutes...</p></div>}
+            {(extractState === 'loading') && <FakeProgress seconds={30} />}
           </div>
-          
+
           <br></br>
           <h4>View PDF</h4>
-          
+
           <div>
             {/* View PDF */}
             <div className="viewer">

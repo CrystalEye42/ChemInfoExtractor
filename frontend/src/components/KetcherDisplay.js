@@ -74,7 +74,6 @@ export class KetcherDisplay extends React.Component {
     return (
       <div>
         {!this.props.molblock && <p>No Mol block predicted</p>}
-        <div id="wrap"></div>
         <iframe
           id="iframe"
           title="myiframe"

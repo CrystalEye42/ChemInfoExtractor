@@ -43,15 +43,6 @@
     clear: both;
 }
 
-/*#wrap { width: 560px; height: 500px; padding: 0; overflow: hidden; }
-#frame { width: 700px; height: 625px;}
-#frame {
-    transform: scale(0.8);
-    transform-origin: 0 0;
-    -webkit-transform: scale(0.8);
-    -webkit-transform-origin: 0 0;
-}*/
-
 select{
     max-width: 40%;
     word-wrap: break-word;

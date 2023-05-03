@@ -67,3 +67,7 @@ overflow-x: hidden;
     overflow-x: auto;
     margin-top: 3px;
 }
+
+.btn-ketcher {
+    margin: 0 5px;
+}

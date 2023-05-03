@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./FigureDisplay.css";
+import { base_url } from "../config";
 
 // wrapper component for Ketcher window
 export class KetcherDisplay extends React.Component {
@@ -9,13 +10,17 @@ export class KetcherDisplay extends React.Component {
     this.state = {
       scroll: true,
       smiles: null,
+      smilesChanged: false,
     };
     this.refFrame = React.createRef();
     this.display = this.display.bind(this);
     this.startPolling = this.startPolling.bind(this);
     this.checkSmiles = this.checkSmiles.bind(this);
+    this.reportPrediction = this.reportPrediction.bind(this);
+  }
 
-    this.checkSmilesLoop = setInterval(this.checkSmiles, 5000);
+  componentDidMount() {
+    setInterval(this.checkSmiles, 1000);
   }
 
   startPolling() {
@@ -24,7 +29,6 @@ export class KetcherDisplay extends React.Component {
       return;
     }
 
-    this.setState({ smiles: null });
     setTimeout(this.startPolling, 100);
   }
 
@@ -34,7 +38,7 @@ export class KetcherDisplay extends React.Component {
     return iframe.contentWindow.ketcher;
   }
 
-  display() {
+  async display() {
     const content = this.props.molblock;
     const ketcher = this.getKetcher();
     if (!ketcher) return;
@@ -46,10 +50,7 @@ export class KetcherDisplay extends React.Component {
       if (this.state.scroll) {
         document.getElementById("results").scrollTo(0, 0);
       }
-      this.setState({ scroll: false });
-      ketcher.getSmiles().then((smiles) => {
-        this.setState({ smiles: smiles });
-      });
+      this.setState({ scroll: false, smiles: null, smilesChanged: false });
     });
   }
 
@@ -58,9 +59,9 @@ export class KetcherDisplay extends React.Component {
     if (!ketcher) return;
 
     const newSmiles = await ketcher.getSmiles();
-    if (newSmiles !== this.state.smiles) {
-      // TODO: Do something here!
-      this.setState({ smiles: newSmiles });
+    const oldSmiles = this.state.smiles;
+    if (newSmiles !== oldSmiles) {
+      this.setState({ smiles: newSmiles, smilesChanged: Boolean(oldSmiles) });
     }
   }
 
@@ -68,6 +69,31 @@ export class KetcherDisplay extends React.Component {
     if (prevProps.molblock !== this.props.molblock) {
       this.startPolling();
     }
+  }
+
+  async reportPrediction(event) {
+    const ketcher = this.getKetcher();
+    if (!ketcher) return;
+
+    const payload = {
+      buttonTriggered: event.target.id,
+      molFile: await ketcher.getMolfile(),
+      imageB64: null, // TODO: Update image
+    };
+
+    const requestOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer {sendGridAPIKey}`,
+      },
+      body: JSON.stringify(payload),
+    };
+    console.log(requestOptions); // TODO: Delete
+
+    const response = await fetch(base_url + "/sendemail", requestOptions);
+    console.log(response);
+    // TODO: Open modal with response
   }
 
   render() {
@@ -87,6 +113,28 @@ export class KetcherDisplay extends React.Component {
           width="640"
           height="500"
         ></iframe>
+        <div className="container">
+          <div className="row">
+            <button
+              id="reportPrediction"
+              type="button"
+              className="btn btn-secondary btn-ketcher col-sm"
+              onClick={this.reportPrediction}
+            >
+              Report Incorrect Prediction
+            </button>
+            {this.state.smilesChanged && (
+              <button
+                id="reportEditedPrediction"
+                type="button"
+                className="btn btn-primary btn-ketcher col-sm"
+                onClick={this.reportPrediction}
+              >
+                Submit Fixes to Prediction
+              </button>
+            )}
+          </div>
+        </div>
       </div>
     );
   }

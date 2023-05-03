@@ -199,7 +199,7 @@ export function MolExtract() {
                     {figureDetails['smiles']}
                     <br></br>
                 </div>
-                <div id="ketcher"><KetcherDisplay molblock={figureDetails['molblocks']} /></div>
+                <div id="ketcher"><KetcherDisplay molblock={figureDetails['molblocks']} image={imageFile} /></div>
               </div>}
             </div>
           </div>

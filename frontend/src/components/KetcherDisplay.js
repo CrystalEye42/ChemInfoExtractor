@@ -78,7 +78,7 @@ export class KetcherDisplay extends React.Component {
     const payload = {
       buttonTriggered: event.target.id,
       molFile: await ketcher.getMolfile(),
-      imageB64: null, // TODO: Update image
+      image: this.props.image,
     };
 
     const requestOptions = {
@@ -89,7 +89,6 @@ export class KetcherDisplay extends React.Component {
       },
       body: JSON.stringify(payload),
     };
-    console.log(requestOptions); // TODO: Delete
 
     await fetch(base_url + "/sendemail", requestOptions);
     alert("Report sent successfully!");
@@ -141,4 +140,5 @@ export class KetcherDisplay extends React.Component {
 
 KetcherDisplay.propTypes = {
   molblock: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
 };

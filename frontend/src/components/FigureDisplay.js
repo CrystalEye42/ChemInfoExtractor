@@ -58,7 +58,7 @@ export class FigureDisplay extends React.Component {
                         <br></br>
                     </div>
                 </div>
-                    <div id="ketcher"><KetcherDisplay molblock={details['molblocks'][this.state.value]} /></div>
+                    <div id="ketcher"><KetcherDisplay molblock={details['molblocks'][this.state.value]} image={details["subfigures"][this.state.value]}/></div>
                 </div>);   
         }
         

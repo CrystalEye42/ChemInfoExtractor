@@ -1,18 +1,24 @@
+import os
+import io
+import time
+import json
+from base64 import encodebytes
+
 from flask import Flask, request
 from flask_restful import Resource, Api
 from flask_cors import CORS
-from waitress import serve
-from dotenv import load_dotenv
-from os import environ
-from pathlib import Path
-import json
-import os
-import io
-from base64 import encodebytes
+
 import cv2
+from dotenv import load_dotenv
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail, Email, To, Content
+
 from model import Models
-from torch import multiprocessing
-import time
+
+FROM_EMAIL = "guyzyl@mit.edu"
+TO_EMAIL = "guyzyl@mit.edu"
+EMAIL_SUBJECT = "Updates from ChemInfoExtractor"
+
 
 # App Setup
 app = Flask(__name__)
@@ -248,21 +254,30 @@ class RxnExtractor(Resource):
         return results
 
 
+class SendEmail(Resource):
+    def post(self):
+        payload = json.dumps(request.get_json())
+        message = Mail(Email(FROM_EMAIL), To(TO_EMAIL), EMAIL_SUBJECT, Content("text/plain", payload))
+        sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
+        response = sg.send(message)
+        return response.status_code
+
+
 api.add_resource(Extractor, '/extract')
 api.add_resource(ImageExtractor, '/extractimage')
 api.add_resource(MolExtractor, '/extractmol')
 api.add_resource(RxnExtractor, '/extractrxn')
+api.add_resource(SendEmail, '/sendemail')
 
 if __name__ == '__main__':
 
-    #multiprocessing.set_start_method('spawn')
     print('Starting up server ...')
 
     # Load configuration file
     config_path = os.path.join(os.path.realpath('.'), '.env')
 
     load_dotenv(dotenv_path=config_path)
-    port = environ.get('PORT')
+    port = os.environ.get('PORT')
 
     app.run(ssl_context='adhoc', host='0.0.0.0', port=port, threaded=False)
 

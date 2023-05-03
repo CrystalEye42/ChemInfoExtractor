@@ -2,7 +2,7 @@ FROM python:3.8
 
 WORKDIR /app
 
-RUN apt-get update && apt-get install ffmpeg libsm6 libxext6 -y
+RUN apt-get update && apt-get install ffmpeg libsm6 libxext6 poppler-utils -y
 
 COPY requirements.txt .
 RUN pip install -r requirements.txt && \
@@ -15,10 +15,10 @@ COPY . .
 RUN mkdir -p reaction_model/output/pix2seq_bbox_rand/checkpoints
 RUN wget https://www.dropbox.com/s/qe3si2awv0oq160/best.ckpt -P reaction_model/output/pix2seq_bbox_rand/checkpoints
 
-RUN mkdir cache
+RUN mkdir -p cache
 RUN python -c "from model import Models; Models.download_models()"
 
 
 EXPOSE 5000
 
-ENTRYPOINT ["waitress-serve", "--listen=127.0.0.1:5000", "--threads=1", "main:app"]
+ENTRYPOINT ["waitress-serve", "--listen=0.0.0.0:5000", "--threads=1", "main:app"]

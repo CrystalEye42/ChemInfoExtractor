@@ -91,9 +91,8 @@ export class KetcherDisplay extends React.Component {
     };
     console.log(requestOptions); // TODO: Delete
 
-    const response = await fetch(base_url + "/sendemail", requestOptions);
-    console.log(response);
-    // TODO: Open modal with response
+    await fetch(base_url + "/sendemail", requestOptions);
+    alert("Report sent successfully!");
   }
 
   render() {

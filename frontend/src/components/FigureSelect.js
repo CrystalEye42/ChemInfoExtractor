@@ -34,8 +34,6 @@ export class FigureSelect extends React.Component {
             }
         }
 
-        console.log(figures.length)
-        console.log(filteredFigures.length)
         return [filteredFigures, filteredDetails];
     }
 
@@ -58,7 +56,7 @@ export class FigureSelect extends React.Component {
         }, this);
         const displayList = figures.length > 0 && figures.map((item, i) => {
             return (
-                this.state.value===item && <FigureDisplay key={i} details={details[item]} showmain={true}/>
+                this.state.value===item && <FigureDisplay key={i} details={details[item]} showmain={true} url={this.props.url} />
             )
         }, this);
         return (

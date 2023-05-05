@@ -65,7 +65,7 @@ export class FigureDisplay extends React.Component {
         return (
             <div>
                 {this.props.showmain && <div id="imagewrap">
-                    <FigureImageDisplay details={details} value={this.state.value} callback={this.updateIndex}></FigureImageDisplay>
+                    <FigureImageDisplay details={details} value={this.state.value} callback={this.updateIndex} url={this.props.url}></FigureImageDisplay>
                 </div>}
                 <br></br>
                 <h4>Extracted Molecules</h4>
@@ -88,5 +88,6 @@ FigureDisplay.propTypes = {
     details: PropTypes.object.isRequired,
     showmain: PropTypes.bool.isRequired,
     callback: PropTypes.func,
-    value: PropTypes.number
+    value: PropTypes.number,
+    url: PropTypes.string.isRequired
 }

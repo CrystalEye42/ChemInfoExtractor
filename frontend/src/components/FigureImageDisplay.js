@@ -3,6 +3,13 @@ import PropTypes from 'prop-types';
 import { View, StyleSheet } from "react-native";
 
 
+const categoryIdStyleMap = {
+    0: "boxRed",
+    1: "boxGreen",
+    2: "boxBlue",
+};
+
+
 // component for drawing bounding boxes on figure images
 export class FigureImageDisplay extends React.Component {
     TEXT_OFFSET = 20;
@@ -18,7 +25,7 @@ export class FigureImageDisplay extends React.Component {
 
     onImgLoad({ target: img }) {
         const { offsetHeight, offsetWidth } = img;
-        this.setState({height:offsetHeight + this.TEXT_OFFSET, width:offsetWidth});
+        this.setState({height: offsetHeight + this.TEXT_OFFSET, width: offsetWidth});
     }
 
     createBoxes(boxes) {
@@ -46,33 +53,53 @@ export class FigureImageDisplay extends React.Component {
         });
     }
 
-    drawBoxes(bbox) {
-        if (!bbox) {
-            return (
-                <img src={`data:image/jpeg;base64,${this.props.details["figure"]}`} id="mainimg" alt="main"/>
-            );
+    propsToBoxes() {
+        // Convert props to boxes objs
+        // Handle reactions
+        console.log(this.props) // TODO: Remove
+        if (this.props.url === "/extractrxn") {
+            const allReactions = [];
+            this.props.details["reactions"].forEach((reaction) => {
+                allReactions.push(reaction["reactants"]);
+                allReactions.push(reaction["conditions"]);
+                allReactions.push(reaction["products"]);
+            });
+
+            return allReactions.map((reaction) => ({
+                bbox: reaction["bbox"],
+                label: reaction["category"],
+                style: categoryIdStyleMap[reaction["category_id"]],
+            }));
         }
 
-        const subfigures = this.props.details["subfigures"].map((subfigure) => ({bbox: subfigure[2], label: subfigure[3], style: styles.boxRed}));
-        subfigures.push({bbox: bbox, style: styles.dashedBorderRed});
-        const boxes = this.createBoxes(subfigures);
+        // Handle figures
+        let boxes = this.props.details["subfigures"].map((subfigure) => ({
+            bbox: subfigure[2],
+            label: subfigure[3],
+            style: styles.boxRed,
+        }));
+        boxes.push({
+            bbox: this.props.details["subfigures"][this.props.value][2],
+            style: styles.dashedBorderRed
+        });
 
-        return (
-            <View style={styles.imageContainer}>
-                <img src={`data:image/jpeg;base64,${this.props.details["figure"]}`} id="mainimg" onLoad={this.onImgLoad} alt="main"/>
-                {boxes}
-            </View>
-        );
+        return boxes;
     }
 
     render() {
-        console.log(this.props) // TODO: Remove
-        const subfigure =  this.props.value >=0 ? this.props.details["subfigures"][this.props.value] : null;
-        const bbox = subfigure ? subfigure[2] : null;
+        const boxes = this.propsToBoxes();
+        const boxElements = this.createBoxes(boxes);
+
         return (
-        <div id="imagedisp">
-            <View style={styles.container}>{this.drawBoxes(bbox)}</View>
-        </div>);
+            <div id="imagedisp">
+                <View style={styles.container}>
+                    <View style={styles.imageContainer}>
+                        <img src={`data:image/jpeg;base64,${this.props.details["figure"]}`} id="mainimg" onLoad={this.onImgLoad}alt="main"/>
+                        {boxElements}
+                    </View>
+                </View>
+            </div>
+        );
     }
 }
 
@@ -80,7 +107,8 @@ export class FigureImageDisplay extends React.Component {
 FigureImageDisplay.propTypes = {
     details: PropTypes.object.isRequired,
     value: PropTypes.number.isRequired,
-    callback: PropTypes.func.isRequired
+    callback: PropTypes.func.isRequired,
+    url: PropTypes.string.isRequired,
 }
 
 
@@ -101,6 +129,14 @@ const styles = StyleSheet.create({
     },
     boxRed: {
         backgroundColor: 'rgba(200, 0, 0, 0.15)',
+        position: "absolute"
+    },
+    boxGreen: {
+        backgroundColor: 'rgba(0, 200, 0, 0.15)',
+        position: "absolute"
+    },
+    boxBlue: {
+        backgroundColor: 'rgba(0, 0, 200, 0.15)',
         position: "absolute"
     }
 });

@@ -53,8 +53,8 @@ export class FigureImageDisplay extends React.Component {
             );
         }
 
-        const subfigures = this.props.details["subfigures"].map((subfigure) => ({bbox: subfigure[2], label: subfigure[3], style: styles.rectangleShaded}));
-        subfigures.push({bbox: bbox, style: styles.rectangle});
+        const subfigures = this.props.details["subfigures"].map((subfigure) => ({bbox: subfigure[2], label: subfigure[3], style: styles.boxRed}));
+        subfigures.push({bbox: bbox, style: styles.dashedBorderRed});
         const boxes = this.createBoxes(subfigures);
 
         return (
@@ -83,22 +83,23 @@ FigureImageDisplay.propTypes = {
     callback: PropTypes.func.isRequired
 }
 
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: "center",
         padding: 8
-        },
+    },
     imageContainer: {
         alignSelf: "center"
     },
-    rectangle: {
+    dashedBorderRed: {
         borderWidth: 3,
         borderColor: "red",
         borderStyle: "dashed",
         position: "absolute"
     },
-    rectangleShaded: {
+    boxRed: {
         backgroundColor: 'rgba(200, 0, 0, 0.15)',
         position: "absolute"
     }

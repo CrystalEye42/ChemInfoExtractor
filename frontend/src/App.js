@@ -17,7 +17,7 @@ function App() {
       <Router>
         <div>
           <Navbar bg="dark" variant="dark" className="px-2">
-            <Navbar.Brand href="/home">MolScribe</Navbar.Brand>
+            <Navbar.Brand href="/">MolScribe</Navbar.Brand>
             <Nav className="mr-auto">
               <Nav.Link href="/pdf">Extract PDF</Nav.Link>
               <Nav.Link href="/figure">Extract Figure</Nav.Link>

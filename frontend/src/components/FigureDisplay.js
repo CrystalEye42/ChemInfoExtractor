@@ -40,45 +40,49 @@ export class FigureDisplay extends React.Component {
         const figuresList = figures.length > 0 && figures.map(([image, smiles], i) => {
             return (
                 <div key={i+smiles}>
-                    <input type="radio" className="btn-check" name="btnradio2" id={"subbuttonradio"+i} 
-                    checked={i==this.state.value} value={i}></input>
+                    <input type="radio" className="btn-check" name="btnradio2" id={"subbuttonradio"+i}
+                    checked={i===this.state.value} value={i}></input>
                     <label className="btn btn-outline-primary" htmlFor={"subbuttonradio"+i} >{i+1}</label>
                 </div>
             );
         }, this);
-        
-        var subfigure = <p></p>;
-        if (this.state.value >= 0){
-            subfigure = (
-                <div>
+
+        const subfigure = <div>
                 <div id="wrapper-inner">
                     <h5>Prediction</h5>
                     <div id="pred">
-                        {figures[this.state.value][1]}
+                        {this.state.value >= 0 && figures[this.state.value][1]}
                         <br></br>
                     </div>
                 </div>
-                    <div id="ketcher"><KetcherDisplay molblock={details['molblocks'][this.state.value]} image={details["subfigures"][this.state.value]}/></div>
-                </div>);   
-        }
-        
-        return (
-            <div>
-                {this.props.showmain && <div id="imagewrap">
-                    <FigureImageDisplay details={details} value={this.state.value} callback={this.updateIndex} url={this.props.url}></FigureImageDisplay>
-                </div>}
-                <br></br>
-                <h4>Extracted Molecules</h4>
+                <div id="ketcher">
+                    <KetcherDisplay molblock={details['molblocks'][this.state.value]} image={details["subfigures"][this.state.value]}/>
+                </div>
+            </div>
+
+        const figureDisplay = this.props.showmain ? (
+            <div id="imagewrap">
+                <FigureImageDisplay details={details} value={this.state.value} callback={this.updateIndex} url={this.props.url}></FigureImageDisplay>
+            </div>
+            ) : (
+                <div></div>
+            );
+
+        const extractedMol = <div>
+                <br></br><h4>Extracted Molecules</h4>
                 {this.state.value >= 0 && <div className="buttongroupwrap">
                     <div className="btn-group" role="group" aria-label="second group" onChange={this.handleChange}>
                         {figuresList}
                     </div>
                 </div>}
                 {this.state.value === -1 && <p>No molecules found in figure.</p>}
+            </div>;
 
-                <div>
-                    {subfigure}
-                </div>
+        return (
+            <div>
+                {figureDisplay}
+                {this.props.url !== "/extractrxn" && extractedMol}
+                {this.state.value >= 0 && subfigure}
             </div>
         );
     }

@@ -53,7 +53,7 @@ export class FakeProgress extends React.Component {
             aria-valuenow={this.state.progress}
             aria-valuemin={0}
             aria-valuemax={100}
-            style={{ width: this.state.progressPercentage }}
+            style={{ width: this.state.progressPercentage + "%" }}
           ></div>
         </div>
         <p>Extracting molecule information, should take approximately {this.state.seconds} seconds.</p>

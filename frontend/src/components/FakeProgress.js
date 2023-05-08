@@ -6,7 +6,7 @@ export class FakeProgress extends React.Component {
     super(props);
     this.state = {
       seconds: props.seconds,
-      maxProgress: 10 * props.seconds,
+      maxProgress: 20 * props.seconds, // For some reason 10x causes it to go twice as fast as expected
       progress: 0,
       progressPercentage: 0,
     };

@@ -3,13 +3,6 @@ import PropTypes from 'prop-types';
 import { View, StyleSheet } from "react-native";
 
 
-const categoryIdStyleMap = {
-    0: "boxRed",
-    1: "boxGreen",
-    2: "boxBlue",
-};
-
-
 // component for drawing bounding boxes on figure images
 export class FigureImageDisplay extends React.Component {
     TEXT_OFFSET = 20;
@@ -55,8 +48,9 @@ export class FigureImageDisplay extends React.Component {
 
     propsToBoxes() {
         // Convert props to boxes objs
+        if (this.props.details === undefined) return [];
+
         // Handle reactions
-        console.log(this.props) // TODO: Remove
         if (this.props.url === "/extractrxn") {
             const allReactions = [];
             this.props.details["reactions"].forEach((reaction) => {
@@ -65,7 +59,7 @@ export class FigureImageDisplay extends React.Component {
                 allReactions.push(reaction["products"]);
             });
 
-            return allReactions.map((reaction) => ({
+            return allReactions.flat().map((reaction) => ({
                 bbox: reaction["bbox"],
                 label: reaction["category"],
                 style: categoryIdStyleMap[reaction["category_id"]],
@@ -78,8 +72,9 @@ export class FigureImageDisplay extends React.Component {
             label: subfigure[3],
             style: styles.boxRed,
         }));
+        const selected = this.props.value >= 0 ? this.props.value : 0;
         boxes.push({
-            bbox: this.props.details["subfigures"][this.props.value][2],
+            bbox: boxes[selected]["bbox"],
             style: styles.dashedBorderRed
         });
 
@@ -140,3 +135,10 @@ const styles = StyleSheet.create({
         position: "absolute"
     }
 });
+
+
+const categoryIdStyleMap = {
+    0: styles.boxRed,
+    1: styles.boxGreen,
+    2: styles.boxBlue,
+};

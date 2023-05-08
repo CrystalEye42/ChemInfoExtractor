@@ -22,28 +22,9 @@ export class FigureSelect extends React.Component {
         this.setState({value: event.target.value});
     }
 
-    filterReactionFigures(figures, details) {
-        // Remove images that have no reactions
-        let filteredFigures = [];
-        let filteredDetails = {};
-
-        for (let i in figures) {
-            if (details[figures[i]].reactions.length > 0) {
-                filteredFigures.push(figures[i]);
-                filteredDetails[figures[i]] = details[figures[i]];
-            }
-        }
-
-        return [filteredFigures, filteredDetails];
-    }
-
     render() {
         let figures = this.props.figures;
         let details = this.props.details;
-
-        if (this.props.url === "/extractrxn") {
-            [figures, details] = this.filterReactionFigures(this.props.figures, this.props.details);
-        }
 
         const figuresList = figures.length > 0 && figures.map((item, i) => {
             return (

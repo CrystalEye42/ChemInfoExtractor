@@ -2,10 +2,11 @@ import React from "react";
 import PropTypes from 'prop-types';
 import { View, StyleSheet } from "react-native";
 
-const borderWidth = 3;
+
 // component for drawing bounding boxes on figure images
 export class FigureImageDisplay extends React.Component {
     TEXT_OFFSET = 20;
+
     constructor(props) {
         super(props);
         this.state = {
@@ -17,59 +18,83 @@ export class FigureImageDisplay extends React.Component {
 
     onImgLoad({ target: img }) {
         const { offsetHeight, offsetWidth } = img;
-        this.setState({height:offsetHeight + this.TEXT_OFFSET, width:offsetWidth});
+        this.setState({height: offsetHeight + this.TEXT_OFFSET, width: offsetWidth});
     }
 
-    drawBox(bbox) {
-        if (!bbox) {
+    createBoxes(boxes) {
+        return boxes.map((box, i) => {
+            const [x1, y1, x2, y2] = box["bbox"];
+            const label = isNaN(box["label"]) ? box["label"] : box["label"].toFixed(4);
+            const borderWidth = box["style"]["borderWidth"] || 0;
+
             return (
-                <img src={`data:image/jpeg;base64,${this.props.details["figure"]}`} id="mainimg" alt="main"/>
+                <div key={"det"+i}
+                    onClick={(e) => {
+                        this.props.callback(i);
+                    }}>
+                    <View style={[
+                        box["style"],
+                        {
+                            top: y1 * this.state.height - borderWidth - this.TEXT_OFFSET,
+                            height: (y2 - y1) * this.state.height + 2 * borderWidth + this.TEXT_OFFSET,
+                            left: x1 * this.state.width - borderWidth,
+                            width: (x2 - x1) * this.state.width + 2 * borderWidth,
+                        }
+                    ]}>{label}</View>
+                </div>
             );
-        }
-        const [x1, y1, x2, y2] = bbox;
-        const otherBoxes = this.props.details["subfigures"].map((info, i) => {
-            const [x1, y1, x2, y2] = info[2];
-            const score = info[3].toFixed(4);
-            return (
-            <div key={"det"+i}
-                onClick={(e) => {
-                    this.props.callback(i);
-                }}>
-                <View style={[
-                    styles.rectangleShaded,
-                    {
-                        top: y1*this.state.height-this.TEXT_OFFSET,
-                        height: (y2-y1)*this.state.height+this.TEXT_OFFSET,
-                        left: x1*this.state.width,
-                        width: (x2-x1)*this.state.width,
-                    }
-                ]}>{score}</View>
-            </div>);
         });
-        return (
-            <View style={styles.imageContainer}>
-                <img src={`data:image/jpeg;base64,${this.props.details["figure"]}`} id="mainimg" onLoad={this.onImgLoad} alt="main"/>
-                {otherBoxes}
-                <View style={[
-                    styles.rectangle,
-                    {
-                        top: y1*this.state.height-borderWidth-this.TEXT_OFFSET,
-                        height: (y2-y1)*this.state.height+2*borderWidth+this.TEXT_OFFSET,
-                        left: x1*this.state.width-borderWidth,
-                        width: (x2-x1)*this.state.width+2*borderWidth,
-                    }
-                ]}></View>
-            </View>
-        );
+    }
+
+    propsToBoxes() {
+        // Convert props to boxes objs
+        if (this.props.details === undefined) return [];
+
+        // Handle reactions
+        if (this.props.url === "/extractrxn") {
+            const allReactions = [];
+            this.props.details["reactions"].forEach((reaction) => {
+                allReactions.push(reaction["reactants"].map(v => ({...v, "section": "reactant"})));
+                allReactions.push(reaction["conditions"].map(v => ({...v, "section": "condition"})));
+                allReactions.push(reaction["products"].map(v => ({...v, "section": "product"})));
+            });
+
+            return allReactions.flat().map((reaction) => ({
+                bbox: reaction["bbox"],
+                label: reaction["category"],
+                style: sectionToStyleMap[reaction["section"]],
+            }));
+        }
+
+        // Handle figures
+        let boxes = this.props.details["subfigures"].map((subfigure) => ({
+            bbox: subfigure[2],
+            label: subfigure[3],
+            style: styles.boxRed,
+        }));
+        const selected = this.props.value >= 0 ? this.props.value : 0;
+        boxes.push({
+            bbox: boxes[selected]["bbox"],
+            style: styles.dashedBorderRed
+        });
+
+        return boxes;
     }
 
     render() {
-        const subfigure =  this.props.value >=0 ? this.props.details["subfigures"][this.props.value]:null;
-        const bbox = subfigure ? subfigure[2] : null;
+        const boxes = this.propsToBoxes();
+        const boxElements = this.createBoxes(boxes);
+
         return (
-        <div id="imagedisp">
-            <View style={styles.container}>{this.drawBox(bbox)}</View>
-        </div>);
+            <div id="imagedisp">
+                <View style={styles.container}>
+                    <View style={styles.imageContainer}>
+                        <img src={`data:image/jpeg;base64,${this.props.details["figure"]}`} id="mainimg" onLoad={this.onImgLoad}alt="main"/>
+                        {boxElements}
+                    </View>
+                </View>
+            </div>
+        );
     }
 }
 
@@ -77,26 +102,43 @@ export class FigureImageDisplay extends React.Component {
 FigureImageDisplay.propTypes = {
     details: PropTypes.object.isRequired,
     value: PropTypes.number.isRequired,
-    callback: PropTypes.func.isRequired
+    callback: PropTypes.func.isRequired,
+    url: PropTypes.string.isRequired,
 }
+
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: "center",
         padding: 8
-        },
+    },
     imageContainer: {
         alignSelf: "center"
     },
-    rectangle: {
-        borderWidth: borderWidth,
+    dashedBorderRed: {
+        borderWidth: 3,
         borderColor: "red",
         borderStyle: "dashed",
         position: "absolute"
     },
-    rectangleShaded: {
+    boxRed: {
         backgroundColor: 'rgba(200, 0, 0, 0.15)',
+        position: "absolute"
+    },
+    boxGreen: {
+        backgroundColor: 'rgba(0, 200, 0, 0.15)',
+        position: "absolute"
+    },
+    boxBlue: {
+        backgroundColor: 'rgba(0, 0, 200, 0.15)',
         position: "absolute"
     }
 });
+
+
+const sectionToStyleMap = {
+    reactant: styles.boxRed,
+    condition: styles.boxGreen,
+    product: styles.boxBlue,
+};

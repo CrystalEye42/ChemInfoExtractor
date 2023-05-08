@@ -22,13 +22,14 @@ export class FigureSelect extends React.Component {
         this.setState({value: event.target.value});
     }
 
-
     render() {
-        const figures = this.props.figures;
+        let figures = this.props.figures;
+        let details = this.props.details;
+
         const figuresList = figures.length > 0 && figures.map((item, i) => {
             return (
                 <div key={i}>
-                    <input type="radio" className="btn-check" name="btnradio" id={"buttonradio"+i} 
+                    <input type="radio" className="btn-check" name="btnradio" id={"buttonradio"+i}
                     checked={item===this.state.value} value={item}></input>
                     <label className="btn btn-outline-primary" htmlFor={"buttonradio"+i}>{i+1}</label>
                 </div>
@@ -36,12 +37,12 @@ export class FigureSelect extends React.Component {
         }, this);
         const displayList = figures.length > 0 && figures.map((item, i) => {
             return (
-                this.state.value===item && <FigureDisplay key={i} details={this.props.details[item]} showmain={true}/>
+                this.state.value===item && <FigureDisplay key={i} details={details[item]} showmain={true} url={this.props.url} />
             )
         }, this);
         return (
             <div>
-                <h4>Figure</h4>
+                <h4>Figures</h4>
                 {this.state.value && <div className="buttongroupwrap">
                     <div className="btn-group" role="group" aria-label="first group" onChange={this.handleChange}>
                         {figuresList}
@@ -56,7 +57,9 @@ export class FigureSelect extends React.Component {
     }
 }
 
+
 FigureSelect.propTypes = {
     figures: PropTypes.array.isRequired,
-    details: PropTypes.object.isRequired
+    details: PropTypes.object.isRequired,
+    url: PropTypes.string.isRequired,
 }

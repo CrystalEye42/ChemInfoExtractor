@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import React from 'react';
+import PropTypes from 'prop-types';
 // default layout plugin
 import { Worker } from '@react-pdf-viewer/core';
 // Import the main Viewer component
@@ -17,8 +18,7 @@ import { base_url } from "../config";
 import { FigureSelect } from './FigureSelect';
 import { FakeProgress } from './FakeProgress';
 
-export function PdfExtract() {
-
+export function PdfExtract(props) {
   // creating new plugin instance
   const defaultLayoutPluginInstance = defaultLayoutPlugin();
 
@@ -77,7 +77,7 @@ export function PdfExtract() {
             setResponseData(response);
             setFiguresFromResponse(response);
             setExtractState('done');
-          }  
+          }
         } catch (error) {
           setPdfError('Bad file shape');
         }
@@ -108,7 +108,7 @@ export function PdfExtract() {
       setExtractState('ready');
     }
   }
-  
+
   // expects image path to be "{filename}_temp/figures-{figureType}-{figureNumber}.png"
   const getFigureName = (path) => {
     const tokens = path.substring(0, path.length-4).split("-");
@@ -118,15 +118,15 @@ export function PdfExtract() {
 
   // set the values of Figures and FigureDetails
   const setFiguresFromResponse = (response) => {
-    setFigures(response.map(curr => {
-      return getFigureName(curr["image_path"]);
-    }));
+    setFigures(response.map(curr => getFigureName(curr["image_path"])));
     setFigureDetails(response.reduce((dict, curr) => {
       const key = getFigureName(curr["image_path"]);
       dict[key] = {
-        "figure": curr["image"], 
-        "subfigures": curr["images"], 
-        "molblocks": curr["molblocks"]
+        "figure": curr["image"],
+        // The "||" is here to handle responses from both extract and extractrxn
+        "subfigures": curr["images"] || [],
+        "molblocks": curr["molblocks"] || [],
+        "reactions" : curr["reactions"] || [],
       };
       return dict;
     }, {}));
@@ -141,7 +141,7 @@ export function PdfExtract() {
     }
     const request = new XMLHttpRequest();
     request.onreadystatechange = function () {
-      if (request.readyState === 4 && request.status == 200) {
+      if (request.readyState === 4 && request.status === 200) {
         setPdfError('');
         setPdfFile(pdfFile);
         const response = JSON.parse(request.response);
@@ -153,7 +153,7 @@ export function PdfExtract() {
     setPdfError('');
     setPdfFile(pdfFile);
     setExtractState('loading');
-    request.open("POST", base_url + '/extract');
+    request.open("POST", base_url + props.url);
     request.send(formData);
   };
 
@@ -188,7 +188,7 @@ export function PdfExtract() {
 
           <div>
             {/* https://pubs.acs.org/doi/pdf/10.1021/acs.joc.2c00749 */}
-            {(extractState !== 'loading') && 
+            {(extractState !== 'loading') &&
             <div>
               <b>Example: </b>
               <select onChange={fetchExample} className="form-select">
@@ -227,7 +227,7 @@ export function PdfExtract() {
           <div id="results">
             <div id="resultButtons">
               <button type="button" className='btn btn-secondary' onClick={clickForm}>Load Results</button>
-              <input type='file' ref={inputFileRef} style={{display:'none'}} 
+              <input type='file' ref={inputFileRef} style={{display:'none'}}
                 onChangeCapture={handleJSON}></input>
               <a
                 href={`data:text/json;charset=utf-8,${encodeURIComponent(
@@ -239,11 +239,16 @@ export function PdfExtract() {
               </a>
             </div>
             <div id="resultBody">
-              {(extractState === 'done') && <FigureSelect figures={figures} details={figureDetails} />}
+              {(extractState === 'done') && <FigureSelect figures={figures} details={figureDetails} url={props.url} />}
             </div>
           </div>
         </div>
         </div>
       </div>
   );
+}
+
+
+PdfExtract.propTypes = {
+  url: PropTypes.string.isRequired,
 }

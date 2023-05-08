@@ -32,7 +32,7 @@ export class FakeProgress extends React.Component {
           (this.state.progress / this.state.maxProgress) * 100,
       });
       this.forceUpdate();
-      if (this.state.progress === this.state.maxProgress) {
+      if (this.state.progress >= this.state.maxProgress) {
         clearInterval(interval);
       }
     }, 100);

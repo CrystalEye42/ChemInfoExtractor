@@ -54,15 +54,15 @@ export class FigureImageDisplay extends React.Component {
         if (this.props.url === "/extractrxn") {
             const allReactions = [];
             this.props.details["reactions"].forEach((reaction) => {
-                allReactions.push(reaction["reactants"]);
-                allReactions.push(reaction["conditions"]);
-                allReactions.push(reaction["products"]);
+                allReactions.push(reaction["reactants"].map(v => ({...v, "section": "reactant"})));
+                allReactions.push(reaction["conditions"].map(v => ({...v, "section": "condition"})));
+                allReactions.push(reaction["products"].map(v => ({...v, "section": "product"})));
             });
 
             return allReactions.flat().map((reaction) => ({
                 bbox: reaction["bbox"],
                 label: reaction["category"],
-                style: categoryIdStyleMap[reaction["category_id"]],
+                style: sectionToStyleMap[reaction["section"]],
             }));
         }
 
@@ -137,8 +137,8 @@ const styles = StyleSheet.create({
 });
 
 
-const categoryIdStyleMap = {
-    0: styles.boxRed,
-    1: styles.boxGreen,
-    2: styles.boxBlue,
+const sectionToStyleMap = {
+    reactant: styles.boxRed,
+    condition: styles.boxGreen,
+    product: styles.boxBlue,
 };

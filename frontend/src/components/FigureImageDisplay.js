@@ -46,27 +46,26 @@ export class FigureImageDisplay extends React.Component {
         });
     }
 
-    propsToBoxes() {
-        // Convert props to boxes objs
+    reactionPropsToBoxes() {
         if (this.props.details === undefined) return [];
 
-        // Handle reactions
-        if (this.props.url === "/extractrxn") {
-            const allReactions = [];
-            this.props.details["reactions"].forEach((reaction) => {
-                allReactions.push(reaction["reactants"].map(v => ({...v, "section": "reactant"})));
-                allReactions.push(reaction["conditions"].map(v => ({...v, "section": "condition"})));
-                allReactions.push(reaction["products"].map(v => ({...v, "section": "product"})));
-            });
+        const allReactions = [];
+        this.props.details["reactions"].forEach((reaction) => {
+            allReactions.push(reaction["reactants"].map(v => ({...v, "section": "reactant"})));
+            allReactions.push(reaction["conditions"].map(v => ({...v, "section": "condition"})));
+            allReactions.push(reaction["products"].map(v => ({...v, "section": "product"})));
+        });
 
-            return allReactions.flat().map((reaction) => ({
-                bbox: reaction["bbox"],
-                label: reaction["category"],
-                style: sectionToStyleMap[reaction["section"]],
-            }));
-        }
+        return allReactions.flat().map((reaction) => ({
+            bbox: reaction["bbox"],
+            label: reaction["category"],
+            style: sectionToStyleMap[reaction["section"]],
+        }));
+    }
 
-        // Handle figures
+    figuresPropsToBoxes() {
+        if (this.props.details === undefined) return [];
+
         let boxes = this.props.details["subfigures"].map((subfigure) => ({
             bbox: subfigure[2],
             label: subfigure[3],
@@ -82,7 +81,7 @@ export class FigureImageDisplay extends React.Component {
     }
 
     render() {
-        const boxes = this.propsToBoxes();
+        const boxes = this.props.url.includes("rxn") ? this.reactionPropsToBoxes() : this.figuresPropsToBoxes();
         const boxElements = this.createBoxes(boxes);
 
         return (

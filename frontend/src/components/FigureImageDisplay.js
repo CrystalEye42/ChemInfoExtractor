@@ -152,15 +152,15 @@ const styles = StyleSheet.create({
         position: "absolute"
     },
     boxRed: {
-        backgroundColor: 'rgba(200, 0, 0, 0.15)',
+        backgroundColor: 'rgba(255, 0, 0, 0.20)',
         position: "absolute"
     },
     boxGreen: {
-        backgroundColor: 'rgba(0, 200, 0, 0.15)',
+        backgroundColor: 'rgba(0, 255, 0, 0.20)',
         position: "absolute"
     },
     boxBlue: {
-        backgroundColor: 'rgba(0, 0, 200, 0.15)',
+        backgroundColor: 'rgba(0, 0, 255, 0.20)',
         position: "absolute"
     }
 });

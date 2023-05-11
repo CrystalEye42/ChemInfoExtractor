@@ -71,11 +71,14 @@ export class FigureImageDisplay extends React.Component {
             label: subfigure[3],
             style: styles.boxRed,
         }));
-        const selected = this.props.value >= 0 ? this.props.value : 0;
-        boxes.push({
-            bbox: boxes[selected]["bbox"],
-            style: styles.dashedBorderRed
-        });
+
+        if (boxes.length > 0) {
+            const selected = this.props.value >= 0 ? this.props.value : 0;
+            boxes.push({
+                bbox: boxes[selected]["bbox"],
+                style: styles.dashedBorderRed
+            });
+        }
 
         return boxes;
     }

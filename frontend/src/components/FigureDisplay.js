@@ -29,6 +29,15 @@ export class FigureDisplay extends React.Component {
         }
     }
 
+    splitReactionsToSubFigures(details) {
+        return details.reactions.map((reaction) => ({
+            figure: details.figure,
+            molblocks: details.molblocks,
+            subfigures: details.subfigures,
+            reactions: [reaction],
+        }));
+    }
+
     render() {
         const details = this.props.details;
         this.ketchers = [];
@@ -60,9 +69,15 @@ export class FigureDisplay extends React.Component {
                 </div>
             </div>
 
+        // If reactions, split into individual reactions
+        const detailsList = this.props.url === "/extractrxn" ? this.splitReactionsToSubFigures(details) : [details];
+        const figureDisplays = detailsList.map((detail, i) => (
+            <FigureImageDisplay details={detail} value={this.state.value} callback={this.updateIndex} key={i} url={this.props.url}></FigureImageDisplay>
+        ));
+
         const figureDisplay = this.props.showmain ? (
             <div id="imagewrap">
-                <FigureImageDisplay details={details} value={this.state.value} callback={this.updateIndex} url={this.props.url}></FigureImageDisplay>
+                {figureDisplays}
             </div>
             ) : (
                 <div></div>

@@ -80,9 +80,38 @@ export class FigureImageDisplay extends React.Component {
         return boxes;
     }
 
+    createTables(details) {
+        const rowToCells = (row) => {
+            return row
+                .map((item) => item.smiles)
+                .filter((smiles) => smiles)
+                .map((smiles, i) => <td key={i}>{smiles}</td>);
+        }
+
+        return (
+            <table className="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td>Reactants</td>
+                        {rowToCells(this.props.details.reactions[0].reactants)}
+                    </tr>
+                    <tr>
+                        <td>Conditions</td>
+                        {rowToCells(this.props.details.reactions[0].conditions)}
+                    </tr>
+                    <tr>
+                        <td>Products</td>
+                        {rowToCells(this.props.details.reactions[0].products)}
+                    </tr>
+                </tbody>
+            </table>
+        );
+    }
+
     render() {
         const boxes = this.props.url.includes("rxn") ? this.reactionPropsToBoxes() : this.figuresPropsToBoxes();
         const boxElements = this.createBoxes(boxes);
+        const tables = this.props.url.includes("rxn") ? this.createTables(this.props.details) : (<div></div>);
 
         return (
             <div id="imagedisp">
@@ -92,6 +121,7 @@ export class FigureImageDisplay extends React.Component {
                         {boxElements}
                     </View>
                 </View>
+                {tables}
             </div>
         );
     }

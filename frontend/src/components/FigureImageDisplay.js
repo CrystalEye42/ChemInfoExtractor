@@ -112,9 +112,9 @@ export class FigureImageDisplay extends React.Component {
     }
 
     render() {
-        const boxes = this.props.url.includes("rxn") ? this.reactionPropsToBoxes() : this.figuresPropsToBoxes();
+        const boxes = this.props.url === "/extractrxn" ? this.reactionPropsToBoxes() : this.figuresPropsToBoxes();
         const boxElements = this.createBoxes(boxes);
-        const tables = this.props.url.includes("rxn") ? this.createTables(this.props.details) : (<div></div>);
+        const tables = this.props.url === "/extractrxn" ? this.createTables(this.props.details) : (<div></div>);
 
         return (
             <div id="imagedisp">

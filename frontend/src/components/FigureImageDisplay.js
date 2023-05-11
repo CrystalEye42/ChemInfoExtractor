@@ -46,44 +46,75 @@ export class FigureImageDisplay extends React.Component {
         });
     }
 
-    propsToBoxes() {
-        // Convert props to boxes objs
+    reactionPropsToBoxes() {
         if (this.props.details === undefined) return [];
 
-        // Handle reactions
-        if (this.props.url === "/extractrxn") {
-            const allReactions = [];
-            this.props.details["reactions"].forEach((reaction) => {
-                allReactions.push(reaction["reactants"].map(v => ({...v, "section": "reactant"})));
-                allReactions.push(reaction["conditions"].map(v => ({...v, "section": "condition"})));
-                allReactions.push(reaction["products"].map(v => ({...v, "section": "product"})));
-            });
+        const allReactions = [];
+        this.props.details["reactions"].forEach((reaction) => {
+            allReactions.push(reaction["reactants"].map(v => ({...v, "section": "reactant"})));
+            allReactions.push(reaction["conditions"].map(v => ({...v, "section": "condition"})));
+            allReactions.push(reaction["products"].map(v => ({...v, "section": "product"})));
+        });
 
-            return allReactions.flat().map((reaction) => ({
-                bbox: reaction["bbox"],
-                label: reaction["category"],
-                style: sectionToStyleMap[reaction["section"]],
-            }));
-        }
+        return allReactions.flat().map((reaction) => ({
+            bbox: reaction["bbox"],
+            label: reaction["category"],
+            style: sectionToStyleMap[reaction["section"]],
+        }));
+    }
 
-        // Handle figures
+    figuresPropsToBoxes() {
+        if (this.props.details === undefined) return [];
+
         let boxes = this.props.details["subfigures"].map((subfigure) => ({
             bbox: subfigure[2],
             label: subfigure[3],
             style: styles.boxRed,
         }));
-        const selected = this.props.value >= 0 ? this.props.value : 0;
-        boxes.push({
-            bbox: boxes[selected]["bbox"],
-            style: styles.dashedBorderRed
-        });
+
+        if (boxes.length > 0) {
+            const selected = this.props.value >= 0 ? this.props.value : 0;
+            boxes.push({
+                bbox: boxes[selected]["bbox"],
+                style: styles.dashedBorderRed
+            });
+        }
 
         return boxes;
     }
 
+    createTables(details) {
+        const rowToCells = (row) => {
+            return row
+                .map((item) => item.smiles)
+                .filter((smiles) => smiles)
+                .map((smiles, i) => <td key={i}>{smiles}</td>);
+        }
+
+        return (
+            <table className="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td>Reactants</td>
+                        {rowToCells(this.props.details.reactions[0].reactants)}
+                    </tr>
+                    <tr>
+                        <td>Conditions</td>
+                        {rowToCells(this.props.details.reactions[0].conditions)}
+                    </tr>
+                    <tr>
+                        <td>Products</td>
+                        {rowToCells(this.props.details.reactions[0].products)}
+                    </tr>
+                </tbody>
+            </table>
+        );
+    }
+
     render() {
-        const boxes = this.propsToBoxes();
+        const boxes = this.props.url === "/extractrxn" ? this.reactionPropsToBoxes() : this.figuresPropsToBoxes();
         const boxElements = this.createBoxes(boxes);
+        const tables = this.props.url === "/extractrxn" ? this.createTables(this.props.details) : (<div></div>);
 
         return (
             <div id="imagedisp">
@@ -93,6 +124,7 @@ export class FigureImageDisplay extends React.Component {
                         {boxElements}
                     </View>
                 </View>
+                {tables}
             </div>
         );
     }
@@ -123,15 +155,15 @@ const styles = StyleSheet.create({
         position: "absolute"
     },
     boxRed: {
-        backgroundColor: 'rgba(200, 0, 0, 0.15)',
+        backgroundColor: 'rgba(255, 0, 0, 0.20)',
         position: "absolute"
     },
     boxGreen: {
-        backgroundColor: 'rgba(0, 200, 0, 0.15)',
+        backgroundColor: 'rgba(0, 255, 0, 0.20)',
         position: "absolute"
     },
     boxBlue: {
-        backgroundColor: 'rgba(0, 0, 200, 0.15)',
+        backgroundColor: 'rgba(0, 0, 255, 0.20)',
         position: "absolute"
     }
 });

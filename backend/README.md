@@ -24,3 +24,9 @@ To start the server, run one of the following:
 
 - Build the image: `docker build -t checkinfo-backend .`
 - Run the image: `docker run --rm -p 5000:5000 cheminfo-backend`
+
+## SendGrid
+
+The mechanism for reporting incorrect predictions uses the SendGrid API to send an email with the preidctions that are not correct.
+
+The usage of the API requires an API key, which needs to be set to the backed using the `SENDGRID_API_KEY` enviornment variable.

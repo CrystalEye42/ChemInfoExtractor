@@ -88,6 +88,12 @@ export class FigureImageDisplay extends React.Component {
                 .filter((smiles) => smiles)
                 .map((smiles, i) => <td key={i}>{smiles}</td>);
         }
+        const rowToCellsConds = (row) => {
+            return row
+                .map((item) => item.text.join("\n"))
+                .filter((text) => text)
+                .map((text, i) => <td key={i}>{text}</td>);
+        }
 
         return (
             <table className="table table-bordered">
@@ -98,7 +104,7 @@ export class FigureImageDisplay extends React.Component {
                     </tr>
                     <tr>
                         <td id="leftTableCol">Conditions</td>
-                        {rowToCells(this.props.details.reactions[0].conditions)}
+                        {rowToCellsConds(this.props.details.reactions[0].conditions)}
                     </tr>
                     <tr>
                         <td id="leftTableCol">Products</td>

@@ -141,13 +141,19 @@ export function PdfExtract(props) {
     }
     const request = new XMLHttpRequest();
     request.onreadystatechange = function () {
-      if (request.readyState === 4 && request.status === 200) {
-        setPdfError('');
-        setPdfFile(pdfFile);
-        const response = JSON.parse(request.response);
-        setResponseData(response);
-        setFiguresFromResponse(response);
-        setExtractState('done');
+      if (request.readyState === 4) { 
+	if (request.status === 200) {
+          setPdfError('');
+          setPdfFile(pdfFile);
+          const response = JSON.parse(request.response);
+          setResponseData(response);
+          setFiguresFromResponse(response);
+          setExtractState('done');
+        }
+        else {
+          setPdfError('Something went wrong with the backend. Please contact wang7776@mit.edu');
+          setExtractState('unready');
+        }
       }
     }
     setPdfError('');

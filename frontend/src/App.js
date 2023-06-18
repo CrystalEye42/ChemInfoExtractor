@@ -7,7 +7,7 @@ import {
 import { Navbar, Nav } from "react-bootstrap";
 import { PdfExtract } from "./components/PdfExtract";
 import { ImageExtract } from "./components/ImageExtract";
-import { MolExtract } from "./components/MolExtract";
+import { About } from "./components/About";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -17,12 +17,11 @@ function App() {
       <Router>
         <div>
           <Navbar bg="dark" variant="dark" className="px-2">
-            <Navbar.Brand href="/">MolScribe</Navbar.Brand>
+            <Navbar.Brand href="/">ChemEScribe</Navbar.Brand>
             <Nav className="mr-auto">
-              <Nav.Link href="/pdf">Extract PDF</Nav.Link>
-              <Nav.Link href="/figure">Extract Figure</Nav.Link>
-              <Nav.Link href="/molecule">Extract Molecule</Nav.Link>
-              <Nav.Link href="/reaction">Extract Reaction</Nav.Link>
+              <Nav.Link href="/pdf">MolScribe</Nav.Link>
+              <Nav.Link href="/reaction">RxnScribe</Nav.Link>
+              <Nav.Link href="/figure">ChemRxnExtractor</Nav.Link>
             </Nav>
           </Navbar>
 
@@ -32,18 +31,16 @@ function App() {
 
             <Route path="/figure" element={<ImageExtract/>}/>
 
-            <Route path="/molecule" element={<MolExtract/>}/>
-
             <Route path="/reaction" element={<PdfExtract url="/extractrxn" />}/>
 
-            <Route path="/" element={<PdfExtract url="/extract" />}/>
+            <Route path="/" element={<About/>}/>
           </Routes>
         </div>
       </Router>
 
       <footer className="footer">
         <div className="container">
-          <span className="footer-head">MolScribe v0.1 @ 2022. MIT CSAIL. </span> &nbsp;<br />
+          <span className="footer-head">ChemEScribe v0.1 @ 2023. MIT CSAIL. </span> &nbsp;<br />
         </div>
       </footer>
     </div >

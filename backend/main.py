@@ -29,19 +29,6 @@ api = Api(app)
 
 model = ChemEScribe()
 
-def get_overlap(bbox1, bbox2):
-    x1, y1, x2, y2 = bbox1
-    u1, v1, u2, v2 = bbox2
-    intersection_area = (min(u2,x2)-max(u1,x1))*(min(v2,y2)-max(v1,y1))
-    return intersection_area/((x2-x1)*(y2-y1)+(u2-u1)*(v2-v1)-intersection_area)
-
-def is_unique_bbox(bbox, bboxes):
-    for b in bboxes:
-        if get_overlap(b, bbox) > 0.9:
-            return False
-    return True
-
-
 def get_byte_image(image):
     if type(image) == np.ndarray:
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
@@ -61,6 +48,8 @@ def run_models(pdf_path, num_pages=None):
         smiles = []
         molblocks = []
         sub_images = []
+        if len(figure['molecules']) == 0:
+            continue
         for mol in figure['molecules']:
             mol_bboxes.append(mol['bbox'])
             mol_scores.append(mol['score'])

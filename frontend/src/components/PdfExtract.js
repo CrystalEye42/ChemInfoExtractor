@@ -137,7 +137,7 @@ export function PdfExtract(props) {
     const formData = new FormData();
     formData.append("file", pdfData);
     if (extractLimited) {
-      formData.append("num_pages", "10");
+      formData.append("num_pages", "5");
     }
     const request = new XMLHttpRequest();
     request.onreadystatechange = function () {
@@ -181,7 +181,7 @@ export function PdfExtract(props) {
             other than pdf */}
             {pdfError && <span className='text-danger'>{pdfError}</span>}
             {!pdfError && <br></br>}
-            <span>Limit to first 10 pages </span>
+            <span>Limit to first 5 pages </span>
             <input type="checkbox" checked={extractLimited} onChange={handleLimited}></input>
             <p></p>
           </form>

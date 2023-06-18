@@ -1,11 +1,10 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import { View, StyleSheet } from "react-native";
-
+import './FigureDisplay.css';
 
 // component for drawing bounding boxes on figure images
 export class FigureImageDisplay extends React.Component {
-    TEXT_OFFSET = 20;
 
     constructor(props) {
         super(props);
@@ -18,13 +17,12 @@ export class FigureImageDisplay extends React.Component {
 
     onImgLoad({ target: img }) {
         const { offsetHeight, offsetWidth } = img;
-        this.setState({height: offsetHeight + this.TEXT_OFFSET, width: offsetWidth});
+        this.setState({height: offsetHeight, width: offsetWidth});
     }
 
     createBoxes(boxes) {
         return boxes.map((box, i) => {
             const [x1, y1, x2, y2] = box["bbox"];
-            const label = isNaN(box["label"]) ? box["label"] : box["label"].toFixed(4);
             const borderWidth = box["style"]["borderWidth"] || 0;
 
             return (
@@ -35,12 +33,12 @@ export class FigureImageDisplay extends React.Component {
                     <View style={[
                         box["style"],
                         {
-                            top: y1 * this.state.height - borderWidth - this.TEXT_OFFSET,
-                            height: (y2 - y1) * this.state.height + 2 * borderWidth + this.TEXT_OFFSET,
+                            top: y1 * this.state.height - borderWidth,
+                            height: (y2 - y1) * this.state.height + 2 * borderWidth,
                             left: x1 * this.state.width - borderWidth,
                             width: (x2 - x1) * this.state.width + 2 * borderWidth,
                         }
-                    ]}>{label}</View>
+                    ]}></View>
                 </div>
             );
         });
@@ -85,6 +83,7 @@ export class FigureImageDisplay extends React.Component {
 
     createTables(details) {
         const rowToCells = (row) => {
+            const maxWidth = Math.floor(550 / row.length);
             return row
                 .map((item) => item.smiles)
                 .filter((smiles) => smiles)
@@ -95,15 +94,15 @@ export class FigureImageDisplay extends React.Component {
             <table className="table table-bordered">
                 <tbody>
                     <tr>
-                        <td>Reactants</td>
+                        <td id="leftTableCol">Reactants</td>
                         {rowToCells(this.props.details.reactions[0].reactants)}
                     </tr>
                     <tr>
-                        <td>Conditions</td>
+                        <td id="leftTableCol">Conditions</td>
                         {rowToCells(this.props.details.reactions[0].conditions)}
                     </tr>
                     <tr>
-                        <td>Products</td>
+                        <td id="leftTableCol">Products</td>
                         {rowToCells(this.props.details.reactions[0].products)}
                     </tr>
                 </tbody>

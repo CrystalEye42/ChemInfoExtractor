@@ -9,6 +9,7 @@
 
 #mainimg{
     max-width: 100%;
+    max-height: 600px;
 }
 
 #wrapper-inner{
@@ -70,4 +71,19 @@ overflow-x: hidden;
 
 .btn-ketcher {
     margin: 0 5px;
+}
+
+
+table {
+    text-align: left;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    table-layout: fixed;
+}
+
+#leftTableCol {
+    font-weight: bold;
+    background-color: gainsboro;
+    width: 16%;
 }

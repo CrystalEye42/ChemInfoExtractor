@@ -23,9 +23,11 @@ export class FigureDisplay extends React.Component {
     }
 
     updateIndex(value) {
-        this.setState({value: value});
-        if (this.props.callback) {
-            this.props.callback(value);
+        if (this.props.url === "/extract") {
+            this.setState({value: value});
+            if (this.props.callback) {
+                this.props.callback(value);
+            }
         }
     }
 

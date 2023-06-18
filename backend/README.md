@@ -4,15 +4,10 @@
 
 ### Running Locally
 
-Setup up the requirements by running the following:
+Setup the requirements by running the following:
 
 ```
 python -m pip install -r requirements.txt
-python -m pip install --no-deps git+https://github.com/thomas0809/MolScribe.git@main#egg=MolScribe
-python -m pip install --no-deps git+https://github.com/thomas0809/RxnScribe.git@main#egg=RxnScribe
-
-mkdir -p reaction_model/output/pix2seq_bbox_rand/checkpoints
-wget https://www.dropbox.com/s/qe3si2awv0oq160/best.ckpt -P reaction_model/output/pix2seq_bbox_rand/checkpoints
 ```
 
 To start the server, run one of the following:

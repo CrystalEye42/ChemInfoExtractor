@@ -62,7 +62,7 @@ export class FigureDisplay extends React.Component {
                 <div id="wrapper-inner">
                     <h5>Prediction</h5>
                     <div id="pred">
-                        {this.state.value >= 0 && figures[this.state.value][1]}
+                        {this.state.value >= 0 && figures[this.state.value] && figures[this.state.value][1]}
                         <br></br>
                     </div>
                 </div>

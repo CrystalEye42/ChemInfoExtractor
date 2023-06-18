@@ -185,7 +185,10 @@ export function PdfExtract(props) {
             </div>
             {/* we will display error message in case user select some file
             other than pdf */}
-            {pdfError && <span className='text-danger'>{pdfError}</span>}
+            {pdfError && <div>
+              <span className='text-danger'>{pdfError}</span>
+              <br></br>
+            </div>}
             {!pdfError && <br></br>}
             <span>Limit to first 5 pages </span>
             <input type="checkbox" checked={extractLimited} onChange={handleLimited}></input>

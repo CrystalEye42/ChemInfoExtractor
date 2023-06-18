@@ -83,7 +83,6 @@ export class FigureImageDisplay extends React.Component {
 
     createTables(details) {
         const rowToCells = (row) => {
-            const maxWidth = Math.floor(550 / row.length);
             return row
                 .map((item) => item.smiles)
                 .filter((smiles) => smiles)

@@ -19,19 +19,19 @@ function App() {
           <Navbar bg="dark" variant="dark" className="px-2">
             <Navbar.Brand href="/">ChemEScribe</Navbar.Brand>
             <Nav className="mr-auto">
-              <Nav.Link href="/pdf">MolScribe</Nav.Link>
-              <Nav.Link href="/reaction">RxnScribe</Nav.Link>
+              <Nav.Link href="/molscribe">MolScribe</Nav.Link>
+              <Nav.Link href="/rxnscribe">RxnScribe</Nav.Link>
               <Nav.Link href="/figure">ChemRxnExtractor</Nav.Link>
             </Nav>
           </Navbar>
 
           <Routes>
 
-            <Route path="/pdf" element={<PdfExtract url="/extract" />}/>
+            <Route path="/molscribe" element={<PdfExtract url="/extract" />}/>
 
             <Route path="/figure" element={<ImageExtract/>}/>
 
-            <Route path="/reaction" element={<PdfExtract url="/extractrxn" />}/>
+            <Route path="/rxnscribe" element={<PdfExtract url="/extractrxn" />}/>
 
             <Route path="/" element={<About/>}/>
           </Routes>

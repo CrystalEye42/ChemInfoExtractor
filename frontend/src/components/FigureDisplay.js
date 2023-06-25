@@ -24,7 +24,7 @@ export class FigureDisplay extends React.Component {
 
     updateIndex(value) {
         if (this.props.url === "/extract") {
-            this.setState({value: value});
+            this.setState({value: Number(value)});
             if (this.props.callback) {
                 this.props.callback(value);
             }
@@ -60,11 +60,23 @@ export class FigureDisplay extends React.Component {
 
         const subfigure = <div>
                 <div id="wrapper-inner">
-                    <h5>Prediction</h5>
+                    <h5>SMILES</h5>
                     <div id="pred">
                         {this.state.value >= 0 && figures[this.state.value] && figures[this.state.value][1]}
                         <br></br>
                     </div>
+                    <h5 style={{display:"inline", marginRight:"20px"}}>Molfile</h5>
+                    {window.isSecureContext && this.state.value >= 0 && 
+                        <button type="button" className='btn btn-secondary' 
+                            onClick={() => {navigator.clipboard.writeText(details['molblocks'][this.state.value])}}>
+                            Copy Full
+                        </button>}
+                    <div id="pred" style={{marginTop:"5px"}}>
+                        {this.state.value >= 0 && details['molblocks'][this.state.value].slice(0,288)}
+                        <br></br>
+                        {details['molblocks'][this.state.value].length > 288 && <p>...</p>}
+                    </div>
+
                 </div>
                 <div id="ketcher">
                     <KetcherDisplay molblock={details['molblocks'][this.state.value]} image={details["subfigures"][this.state.value]}/>
@@ -75,7 +87,7 @@ export class FigureDisplay extends React.Component {
         const detailsList = this.props.url === "/extractrxn" ? this.splitReactionsToSubFigures(details) : [details];
         const figureDisplays = detailsList.map((detail, i) => (
             <div key={i}>
-                <h5 style={{textDecoration:"underline"}}>Reaction #{i + 1}</h5>
+                {this.props.url === "/extractrxn" && <h5 style={{textDecoration:"underline"}}>Reaction #{i + 1}</h5>}
                 <FigureImageDisplay details={detail} value={this.state.value} callback={this.updateIndex} url={this.props.url}></FigureImageDisplay>
             </div>
         ));

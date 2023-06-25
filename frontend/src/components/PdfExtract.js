@@ -151,6 +151,7 @@ export function PdfExtract(props) {
           setExtractState('done');
         }
         else {
+          alert('Something went wrong with the backend. Please contact wang7776@mit.edu');
           setPdfError('Something went wrong with the backend. Please contact wang7776@mit.edu');
           setExtractState('unready');
         }

@@ -74,7 +74,10 @@ export class FigureDisplay extends React.Component {
         // If reactions, split into individual reactions
         const detailsList = this.props.url === "/extractrxn" ? this.splitReactionsToSubFigures(details) : [details];
         const figureDisplays = detailsList.map((detail, i) => (
-            <FigureImageDisplay details={detail} value={this.state.value} callback={this.updateIndex} key={i} url={this.props.url}></FigureImageDisplay>
+            <div key={i}>
+                <h5 style={{textDecoration:"underline"}}>Reaction #{i + 1}</h5>
+                <FigureImageDisplay details={detail} value={this.state.value} callback={this.updateIndex} url={this.props.url}></FigureImageDisplay>
+            </div>
         ));
 
         const figureDisplay = this.props.showmain ? (

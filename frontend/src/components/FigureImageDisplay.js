@@ -83,33 +83,46 @@ export class FigureImageDisplay extends React.Component {
 
     createTables(details) {
         const rowToCells = (row) => {
-            return row
+            const result = row
                 .map((item) => item.smiles)
                 .filter((smiles) => smiles)
                 .map((smiles, i) => <td key={i}>{smiles}</td>);
+            if (result.length === 0) {
+                return [<td key={0}></td>];
+            }
+            return result
         }
         const rowToCellsConds = (row) => {
-            return row
+            const result = row
                 .map((item) => item.text.join("\n"))
                 .filter((text) => text)
                 .map((text, i) => <td key={i}>{text}</td>);
+            if (result.length === 0) {
+                return [<td key={0}></td>];
+            }
+            return result
         }
-
+        const reactantCells = rowToCells(this.props.details.reactions[0].reactants);
+        const conditionCells = rowToCellsConds(this.props.details.reactions[0].conditions);
+        const productCells = rowToCells(this.props.details.reactions[0].products);
         return (
             <table className="table table-bordered">
                 <tbody>
                     <tr>
-                        <td id="leftTableCol">Reactants</td>
-                        {rowToCells(this.props.details.reactions[0].reactants)}
+                        <td id="leftTableCol" rowSpan={reactantCells.length} style={{backgroundColor:'rgba(255, 0, 0, 0.20)'}}>Reactants</td>
+                        {reactantCells[0]}
                     </tr>
+                    {reactantCells.slice(1).map((item, i) => <tr key={i}>{item}</tr>)}
                     <tr>
-                        <td id="leftTableCol">Conditions</td>
-                        {rowToCellsConds(this.props.details.reactions[0].conditions)}
+                        <td id="leftTableCol" rowSpan={conditionCells.length} style={{backgroundColor:'rgba(0, 255, 0, 0.20)'}}>Conditions</td>
+                        {conditionCells[0]}
                     </tr>
+                    {conditionCells.slice(1).map((item, i) => <tr key={i}>{item}</tr>)}
                     <tr>
-                        <td id="leftTableCol">Products</td>
-                        {rowToCells(this.props.details.reactions[0].products)}
+                        <td id="leftTableCol" rowSpan={productCells.length} style={{backgroundColor:'rgba(0, 0, 255, 0.20)'}}>Products</td>
+                        {productCells[0]}
                     </tr>
+                    {productCells.slice(1).map((item, i) => <tr key={i}>{item}</tr>)}
                 </tbody>
             </table>
         );

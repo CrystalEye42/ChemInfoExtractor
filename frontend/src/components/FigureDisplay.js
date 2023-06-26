@@ -59,25 +59,25 @@ export class FigureDisplay extends React.Component {
         }, this);
 
         const subfigure = <div>
-                <div id="wrapper-inner">
+                {this.state.value >= 0 && <div id="wrapper-inner">
                     <h5>SMILES</h5>
                     <div id="pred">
-                        {this.state.value >= 0 && figures[this.state.value] && figures[this.state.value][1]}
+                        {figures[this.state.value] && figures[this.state.value][1]}
                         <br></br>
                     </div>
                     <h5 style={{display:"inline", marginRight:"20px"}}>Molfile</h5>
-                    {window.isSecureContext && this.state.value >= 0 && 
+                    {window.isSecureContext &&
                         <button type="button" className='btn btn-secondary' 
                             onClick={() => {navigator.clipboard.writeText(details['molblocks'][this.state.value])}}>
                             Copy Full
                         </button>}
                     <div id="pred" style={{marginTop:"5px"}}>
-                        {this.state.value >= 0 && details['molblocks'][this.state.value].slice(0,288)}
+                        {details['molblocks'] && details['molblocks'][this.state.value].slice(0,288)}
                         <br></br>
-                        {details['molblocks'][this.state.value].length > 288 && <p>...</p>}
+                        {details['molblocks'] && details['molblocks'][this.state.value].length > 288 && <p>...</p>}
                     </div>
 
-                </div>
+                </div>}
                 <div id="ketcher">
                     <KetcherDisplay molblock={details['molblocks'][this.state.value]} image={details["subfigures"][this.state.value]}/>
                 </div>

@@ -58,6 +58,14 @@ export class FigureDisplay extends React.Component {
             );
         }, this);
 
+        const showMolblock = (molblock) => {
+            return molblock.split("\n").map((item, i) => {
+                return (<div key={i}>
+                    <>{item}</>
+                </div>)}
+                );
+        };
+
         const subfigure = <div>
                 {this.state.value >= 0 && <div id="wrapper-inner">
                     <h5>SMILES</h5>
@@ -69,12 +77,10 @@ export class FigureDisplay extends React.Component {
                     {window.isSecureContext &&
                         <button type="button" className='btn btn-secondary' 
                             onClick={() => {navigator.clipboard.writeText(details['molblocks'][this.state.value])}}>
-                            Copy Full
+                            Copy
                         </button>}
                     <div id="pred" style={{marginTop:"5px"}}>
-                        {details['molblocks'] && details['molblocks'][this.state.value].slice(0,288)}
-                        <br></br>
-                        {details['molblocks'] && details['molblocks'][this.state.value].length > 288 && <p>...</p>}
+                        {details['molblocks'] && showMolblock(details['molblocks'][this.state.value])}
                     </div>
 
                 </div>}

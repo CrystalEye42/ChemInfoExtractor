@@ -1,11 +1,10 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import { View, StyleSheet } from "react-native";
-
+import './FigureDisplay.css';
 
 // component for drawing bounding boxes on figure images
 export class FigureImageDisplay extends React.Component {
-    TEXT_OFFSET = 20;
 
     constructor(props) {
         super(props);
@@ -18,13 +17,12 @@ export class FigureImageDisplay extends React.Component {
 
     onImgLoad({ target: img }) {
         const { offsetHeight, offsetWidth } = img;
-        this.setState({height: offsetHeight + this.TEXT_OFFSET, width: offsetWidth});
+        this.setState({height: offsetHeight, width: offsetWidth});
     }
 
     createBoxes(boxes) {
         return boxes.map((box, i) => {
             const [x1, y1, x2, y2] = box["bbox"];
-            const label = isNaN(box["label"]) ? box["label"] : box["label"].toFixed(4);
             const borderWidth = box["style"]["borderWidth"] || 0;
 
             return (
@@ -35,12 +33,12 @@ export class FigureImageDisplay extends React.Component {
                     <View style={[
                         box["style"],
                         {
-                            top: y1 * this.state.height - borderWidth - this.TEXT_OFFSET,
-                            height: (y2 - y1) * this.state.height + 2 * borderWidth + this.TEXT_OFFSET,
+                            top: y1 * this.state.height - borderWidth,
+                            height: (y2 - y1) * this.state.height + 2 * borderWidth,
                             left: x1 * this.state.width - borderWidth,
                             width: (x2 - x1) * this.state.width + 2 * borderWidth,
                         }
-                    ]}>{label}</View>
+                    ]}></View>
                 </div>
             );
         });
@@ -85,27 +83,46 @@ export class FigureImageDisplay extends React.Component {
 
     createTables(details) {
         const rowToCells = (row) => {
-            return row
+            const result = row
                 .map((item) => item.smiles)
                 .filter((smiles) => smiles)
                 .map((smiles, i) => <td key={i}>{smiles}</td>);
+            if (result.length === 0) {
+                return [<td key={0}></td>];
+            }
+            return result
         }
-
+        const rowToCellsConds = (row) => {
+            const result = row
+                .map((item) => item.text.join("\n"))
+                .filter((text) => text)
+                .map((text, i) => <td key={i}>{text}</td>);
+            if (result.length === 0) {
+                return [<td key={0}></td>];
+            }
+            return result
+        }
+        const reactantCells = rowToCells(this.props.details.reactions[0].reactants);
+        const conditionCells = rowToCellsConds(this.props.details.reactions[0].conditions);
+        const productCells = rowToCells(this.props.details.reactions[0].products);
         return (
             <table className="table table-bordered">
                 <tbody>
                     <tr>
-                        <td>Reactants</td>
-                        {rowToCells(this.props.details.reactions[0].reactants)}
+                        <td id="leftTableCol" rowSpan={reactantCells.length} style={{backgroundColor:'rgba(255, 0, 0, 0.20)'}}>Reactants</td>
+                        {reactantCells[0]}
                     </tr>
+                    {reactantCells.slice(1).map((item, i) => <tr key={i}>{item}</tr>)}
                     <tr>
-                        <td>Conditions</td>
-                        {rowToCells(this.props.details.reactions[0].conditions)}
+                        <td id="leftTableCol" rowSpan={conditionCells.length} style={{backgroundColor:'rgba(0, 255, 0, 0.20)'}}>Conditions</td>
+                        {conditionCells[0]}
                     </tr>
+                    {conditionCells.slice(1).map((item, i) => <tr key={i}>{item}</tr>)}
                     <tr>
-                        <td>Products</td>
-                        {rowToCells(this.props.details.reactions[0].products)}
+                        <td id="leftTableCol" rowSpan={productCells.length} style={{backgroundColor:'rgba(0, 0, 255, 0.20)'}}>Products</td>
+                        {productCells[0]}
                     </tr>
+                    {productCells.slice(1).map((item, i) => <tr key={i}>{item}</tr>)}
                 </tbody>
             </table>
         );

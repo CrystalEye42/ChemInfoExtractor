@@ -23,9 +23,11 @@ export class FigureDisplay extends React.Component {
     }
 
     updateIndex(value) {
-        this.setState({value: value});
-        if (this.props.callback) {
-            this.props.callback(value);
+        if (this.props.url === "/extract") {
+            this.setState({value: Number(value)});
+            if (this.props.callback) {
+                this.props.callback(value);
+            }
         }
     }
 
@@ -56,14 +58,32 @@ export class FigureDisplay extends React.Component {
             );
         }, this);
 
+        const showMolblock = (molblock) => {
+            return molblock.split("\n").map((item, i) => {
+                return (<div key={i}>
+                    <>{item}</>
+                </div>)}
+                );
+        };
+
         const subfigure = <div>
-                <div id="wrapper-inner">
-                    <h5>Prediction</h5>
+                {this.state.value >= 0 && <div id="wrapper-inner">
+                    <h5>SMILES</h5>
                     <div id="pred">
-                        {this.state.value >= 0 && figures[this.state.value][1]}
+                        {figures[this.state.value] && figures[this.state.value][1]}
                         <br></br>
                     </div>
-                </div>
+                    <h5 style={{display:"inline", marginRight:"20px"}}>Molfile</h5>
+                    {window.isSecureContext &&
+                        <button type="button" className='btn btn-secondary' 
+                            onClick={() => {navigator.clipboard.writeText(details['molblocks'][this.state.value])}}>
+                            Copy
+                        </button>}
+                    <div id="pred" style={{marginTop:"5px"}}>
+                        {details['molblocks'] && showMolblock(details['molblocks'][this.state.value])}
+                    </div>
+
+                </div>}
                 <div id="ketcher">
                     <KetcherDisplay molblock={details['molblocks'][this.state.value]} image={details["subfigures"][this.state.value]}/>
                 </div>
@@ -72,7 +92,10 @@ export class FigureDisplay extends React.Component {
         // If reactions, split into individual reactions
         const detailsList = this.props.url === "/extractrxn" ? this.splitReactionsToSubFigures(details) : [details];
         const figureDisplays = detailsList.map((detail, i) => (
-            <FigureImageDisplay details={detail} value={this.state.value} callback={this.updateIndex} key={i} url={this.props.url}></FigureImageDisplay>
+            <div key={i}>
+                {this.props.url === "/extractrxn" && <h5 style={{textDecoration:"underline"}}>Reaction #{i + 1}</h5>}
+                <FigureImageDisplay details={detail} value={this.state.value} callback={this.updateIndex} url={this.props.url}></FigureImageDisplay>
+            </div>
         ));
 
         const figureDisplay = this.props.showmain ? (

@@ -137,17 +137,24 @@ export function PdfExtract(props) {
     const formData = new FormData();
     formData.append("file", pdfData);
     if (extractLimited) {
-      formData.append("num_pages", "10");
+      formData.append("num_pages", "5");
     }
     const request = new XMLHttpRequest();
     request.onreadystatechange = function () {
-      if (request.readyState === 4 && request.status === 200) {
-        setPdfError('');
-        setPdfFile(pdfFile);
-        const response = JSON.parse(request.response);
-        setResponseData(response);
-        setFiguresFromResponse(response);
-        setExtractState('done');
+      if (request.readyState === 4) { 
+	if (request.status === 200) {
+          setPdfError('');
+          setPdfFile(pdfFile);
+          const response = JSON.parse(request.response);
+          setResponseData(response);
+          setFiguresFromResponse(response);
+          setExtractState('done');
+        }
+        else {
+          alert('Something went wrong with the backend. Please contact wang7776@mit.edu');
+          setPdfError('Something went wrong with the backend. Please contact wang7776@mit.edu');
+          setExtractState('unready');
+        }
       }
     }
     setPdfError('');
@@ -179,9 +186,12 @@ export function PdfExtract(props) {
             </div>
             {/* we will display error message in case user select some file
             other than pdf */}
-            {pdfError && <span className='text-danger'>{pdfError}</span>}
+            {pdfError && <div>
+              <span className='text-danger'>{pdfError}</span>
+              <br></br>
+            </div>}
             {!pdfError && <br></br>}
-            <span>Limit to first 10 pages </span>
+            <span>Limit to first 5 pages </span>
             <input type="checkbox" checked={extractLimited} onChange={handleLimited}></input>
             <p></p>
           </form>

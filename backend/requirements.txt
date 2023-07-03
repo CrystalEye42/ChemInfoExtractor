@@ -4,6 +4,7 @@ torch
 torchvision
 flask-restful
 flask-cors==3.0.8
+opencv-python-headless==4.5.4.60
 python-dotenv
 tensorboardx
 sendgrid

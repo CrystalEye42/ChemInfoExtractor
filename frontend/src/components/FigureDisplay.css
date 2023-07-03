@@ -9,6 +9,7 @@
 
 #mainimg{
     max-width: 100%;
+    max-height: 600px;
 }
 
 #wrapper-inner{
@@ -17,8 +18,7 @@
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-all;
-    text-align: center;
-
+    text-align: left;
 }
 
 #original{
@@ -26,7 +26,6 @@
 }
 
 #pred{
-    width: 90%;
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-all;
@@ -34,8 +33,10 @@
     margin-bottom: 20px;
     padding-right: 2%;
     padding-left: 2%;
-    margin-left: 3%;
     border: 1px solid lightgray;
+    font-family: monospace;
+    max-height: 200px;
+    overflow-y: scroll;
 }
 
 
@@ -51,7 +52,6 @@ select{
 h5 {
     margin-top: 10px !important;
     text-align: left;
-    margin-left: 3%;
 }
 
 #resultButtons{
@@ -70,4 +70,18 @@ overflow-x: hidden;
 
 .btn-ketcher {
     margin: 0 5px;
+}
+
+
+table {
+    text-align: left;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    table-layout: fixed;
+}
+
+#leftTableCol {
+    font-weight: bold;
+    width: 16%;
 }

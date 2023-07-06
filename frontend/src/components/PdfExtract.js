@@ -258,7 +258,7 @@ export function PdfExtract(props) {
             <div id="resultBody">
               {(extractState === 'done') && 
                 ((props.url !== '/extracttxt' && <FigureSelect figures={figures} details={figureDetails} url={props.url}/>)
-                || (props.url !== '/extracttxt' && <TextRxnDisplay details={figureDetails}/>))}
+                || (props.url === '/extracttxt' && <TextRxnDisplay details={figureDetails}/>))}
             </div>
           </div>
         </div>

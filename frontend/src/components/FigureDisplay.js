@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import { KetcherDisplay } from './KetcherDisplay';
+import { ChemDrawDisplay } from './ChemDrawDisplay';
 import { FigureImageDisplay } from "./FigureImageDisplay";
 import './FigureDisplay.css';
 
@@ -85,7 +85,7 @@ export class FigureDisplay extends React.Component {
 
                 </div>}
                 <div id="ketcher">
-                    <KetcherDisplay molblock={details['molblocks'][this.state.value]} image={details["subfigures"][this.state.value]}/>
+                    <ChemDrawDisplay molblock={details['molblocks'][this.state.value]} image={details["subfigures"][this.state.value]}/>
                 </div>
             </div>
 

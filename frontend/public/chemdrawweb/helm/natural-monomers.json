@@ -1,0 +1,1908 @@
+[
+  {
+    "id": 12,
+    "name": "Alanine",
+    "naturalAnalog": "A",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  Marvin  06250814262D          \n\n  7  6  0  0  1  0            999 V2000\n    5.4886   -3.0482    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    6.2031   -3.4608    0.0000 C   0  0  1  0  0  0  0  0  0  0  0  0\n    6.9176   -3.0483    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    6.2030   -4.2858    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n    6.9177   -2.2233    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n    7.6321   -3.4609    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n    5.4886   -4.6983    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n  2  1  1  1  0  0  0\n  4  2  1  0  0  0  0\n  2  3  1  0  0  0  0\n  3  5  2  0  0  0  0\n  3  6  1  0  0  0  0\n  4  7  1  0  0  0  0\nM  RGP  2   6   2   7   1\nM  END\n\n$$$$\n",
+    "symbol": "A",
+    "smiles": "C[C@H](N[H:1])C([OH:2])=O",
+    "author": "Pistoia Alliance",
+    "topologyType": "alpha",
+    "stereoType": "l",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "O[*:2]",
+        "capGroupName": "OH"
+      }
+    ]
+  },
+  {
+    "id": 115,
+    "name": "Arginine",
+    "naturalAnalog": "R",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  Marvin  08190814412D          \n\n 13 12  0  0  1  0            999 V2000\n    8.4822   -2.8352    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    7.7677   -3.2478    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0\n    7.0532   -2.8351    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    6.3388   -3.2477    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    5.6244   -2.8351    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    7.7676   -4.0214    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n    8.4822   -2.0102    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n    4.9099   -3.2477    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n    4.1954   -2.8351    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    4.1954   -2.0101    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n    3.4810   -3.2477    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n    9.1967   -3.2477    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n    6.9708   -4.2349    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n  7  1  2  0  0  0  0\n  1  2  1  0  0  0  0\n  1 12  1  0  0  0  0\n  2  6  1  0  0  0  0\n  2  3  1  1  0  0  0\n  3  4  1  0  0  0  0\n  4  5  1  0  0  0  0\n  5  8  1  0  0  0  0\n  8  9  1  0  0  0  0\n  9 11  1  0  0  0  0\n  9 10  2  0  0  0  0\n  6 13  1  0  0  0  0\nM  RGP  2  12   2  13   1\nM  END\n\n$$$$\n",
+    "symbol": "R",
+    "smiles": "NC(=N)NCCC[C@H](N[H:1])C([OH:2])=O",
+    "author": "Pistoia Alliance",
+    "topologyType": "alpha",
+    "stereoType": "l",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "O[*:2]",
+        "capGroupName": "OH"
+      }
+    ]
+  },
+  {
+    "id": 208,
+    "name": "Arginine",
+    "naturalAnalog": "R",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  ChemDraw06032117432D\n\n  0  0  0     0  0              0 V3000\nM  V30 BEGIN CTAB\nM  V30 COUNTS 14 13 0 0 1\nM  V30 BEGIN ATOM\nM  V30 1 C 1.111765 -1.636387 0.000000 0\nM  V30 2 C 0.389632 -1.237272 0.000000 0\nM  V30 3 C 0.374442 -0.412275 0.000000 0\nM  V30 4 C -0.347639 -0.013245 0.000000 0\nM  V30 5 C -0.362863 0.811612 0.000000 0\nM  V30 6 N -0.273074 -1.636387 0.000000 0\nM  V30 7 O 1.111765 -2.461396 0.000000 0\nM  V30 8 N -1.084995 1.210729 0.000000 0\nM  V30 9 C -1.100270 2.035672 0.000000 0\nM  V30 10 N -0.393589 2.461396 0.000000 0\nM  V30 11 N -1.822349 2.434701 0.000000 0\nM  V30 12 R1 -0.995042 -1.237157 0.000000 0\nM  V30 13 R2 1.822349 -1.217228 0.000000 0\nM  V30 14 R3 0.320882 2.048896 0.000000 0\nM  V30 END ATOM\nM  V30 BEGIN BOND\nM  V30 1 1 6 12\nM  V30 2 1 1 13\nM  V30 3 2 7 1\nM  V30 4 1 1 2\nM  V30 5 1 2 6\nM  V30 6 1 2 3 CFG=1\nM  V30 7 1 3 4\nM  V30 8 1 4 5\nM  V30 9 1 5 8\nM  V30 10 2 8 9\nM  V30 11 1 9 11\nM  V30 12 1 9 10\nM  V30 13 1 10 14\nM  V30 END BOND\nM  V30 BEGIN COLLECTION\nM  V30 MDLV30/STEABS ATOMS=(1 2)\nM  V30 END COLLECTION\nM  V30 END CTAB\nM  END\n",
+    "symbol": "R",
+    "smiles": "O=C([C@H](CCC/N=C(N)/N[H:3])N)[OH:2]",
+    "author": "Pistoia Alliance",
+    "version": 2,
+    "topologyType": "alpha",
+    "stereoType": "l",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "O[*:2]",
+        "capGroupName": "OH"
+      },
+      {
+        "alternateId": "R3-H",
+        "id": 0,
+        "label": "R3",
+        "capGroupSMILES": "[*:3][H]",
+        "capGroupName": "H"
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "name": "Asparagine",
+    "naturalAnalog": "N",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  Marvin  08190815142D          \n\n 10  9  0  0  1  0            999 V2000\n    6.9268   -2.8241    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    6.2123   -3.2366    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0\n    5.4978   -2.8241    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    6.9268   -1.9991    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n    6.2123   -4.0616    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n    4.7834   -3.2366    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    4.0690   -2.8242    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n    4.7834   -4.0616    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n    7.6413   -3.2366    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n    5.6290   -4.6450    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n  4  1  2  0  0  0  0\n  1  2  1  0  0  0  0\n  1  9  1  0  0  0  0\n  2  5  1  0  0  0  0\n  2  3  1  1  0  0  0\n  3  6  1  0  0  0  0\n  6  8  1  0  0  0  0\n  6  7  2  0  0  0  0\n  5 10  1  0  0  0  0\nM  RGP  2   9   2  10   1\nM  END\n\n$$$$\n",
+    "symbol": "N",
+    "smiles": "NC(=O)C[C@H](N[H:1])C([OH:2])=O",
+    "author": "Pistoia Alliance",
+    "topologyType": "alpha",
+    "stereoType": "l",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "O[*:2]",
+        "capGroupName": "OH"
+      }
+    ]
+  },
+  {
+    "id": 206,
+    "name": "Asparagine",
+    "naturalAnalog": "N",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n ChemDraw06012112522D\n\n  0  0  0     0  0              0 V3000\nM  V30 BEGIN CTAB\nM  V30 COUNTS 11 10 0 0 1\nM  V30 BEGIN ATOM\nM  V30 1 C 1.071858 -0.825038 0.000000 0\nM  V30 2 C 0.357270 -0.412470 0.000000 0\nM  V30 3 C 0.357241 0.412667 0.000000 0\nM  V30 4 O 1.071858 -1.650149 0.000000 0\nM  V30 5 N -0.357291 -0.825038 0.000000 0\nM  V30 6 C -0.357297 0.825149 0.000000 0\nM  V30 7 O -0.357362 1.650149 0.000000 0\nM  V30 8 N -1.071858 0.412581 0.000000 0\nM  V30 9 R1 -1.071769 -0.412550 0.000000 0\nM  V30 10 R2 1.786329 -0.412538 0.000000 0\nM  V30 11 R3 -1.786329 0.825081 0.000000 0\nM  V30 END ATOM\nM  V30 BEGIN BOND\nM  V30 1 1 5 9\nM  V30 2 1 1 10\nM  V30 3 2 4 1\nM  V30 4 1 1 2\nM  V30 5 1 2 5\nM  V30 6 1 2 3 CFG=1\nM  V30 7 1 3 6\nM  V30 8 1 6 8\nM  V30 9 2 6 7\nM  V30 10 1 8 11\nM  V30 END BOND\nM  V30 BEGIN COLLECTION\nM  V30 MDLV30/STEABS ATOMS=(1 2)\nM  V30 END COLLECTION\nM  V30 END CTAB\nM  END\n",
+    "symbol": "N",
+    "smiles": "N([H:3])C(=O)C[C@H](N[H:1])C([OH:2])=O",
+    "author": "Pistoia Alliance",
+    "version": 2,
+    "topologyType": "alpha",
+    "stereoType": "l",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "O[*:2]",
+        "capGroupName": "OH"
+      },
+      {
+        "alternateId": "R3-H",
+        "id": 0,
+        "label": "R3",
+        "capGroupSMILES": "[*:3][H]",
+        "capGroupName": "H"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Aspartic acid",
+    "naturalAnalog": "D",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  Marvin  12021015502D          \n\n 10  9  0  0  1  0            999 V2000\n    7.4800   -2.7926    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    6.7655   -3.2050    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0\n    6.0510   -2.7925    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    5.3365   -3.2049    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    4.6220   -2.7924    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n    5.3364   -4.0299    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n    7.4801   -1.9676    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n    6.7654   -4.0300    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n    8.1945   -3.2052    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n    6.0510   -4.4425    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n  7  1  2  0  0  0  0\n  1  2  1  0  0  0  0\n  1  9  1  0  0  0  0\n  2  8  1  0  0  0  0\n  2  3  1  1  0  0  0\n  3  4  1  0  0  0  0\n  4  6  1  0  0  0  0\n  4  5  2  0  0  0  0\n  8 10  1  0  0  0  0\nM  RGP  3   6   3   9   2  10   1\nM  END\n\n$$$$\n",
+    "symbol": "D",
+    "smiles": "[H:1]N[C@@H](CC([OH:3])=O)C([OH:2])=O",
+    "author": "Pistoia Alliance",
+    "topologyType": "alpha",
+    "stereoType": "l",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "O[*:2]",
+        "capGroupName": "OH"
+      },
+      {
+        "alternateId": "R3-OH",
+        "id": 0,
+        "label": "R3",
+        "capGroupSMILES": "O[*:3]",
+        "capGroupName": "OH"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Cysteine",
+    "naturalAnalog": "C",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  Marvin  12021015502D          \n\n  9  8  0  0  1  0            999 V2000\n    0.8481    0.4124    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    0.1336    0.0000    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0\n   -0.5808    0.4126    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.2952    0.0001    0.0000 S   0  0  0  0  0  0  0  0  0  0  0  0\n    0.1335   -0.8249    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n    0.8482    1.2374    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n    1.5625   -0.0001    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n   -0.5810   -1.2374    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n   -2.0097    0.4126    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n  6  1  2  0  0  0  0\n  1  2  1  0  0  0  0\n  1  7  1  0  0  0  0\n  2  5  1  0  0  0  0\n  2  3  1  1  0  0  0\n  3  4  1  0  0  0  0\n  5  8  1  0  0  0  0\n  4  9  1  0  0  0  0\nM  RGP  3   7   2   8   1   9   3\nM  END\n\n$$$$\n",
+    "symbol": "C",
+    "smiles": "[H:1]N[C@@H](CS[H:3])C([OH:2])=O",
+    "author": "Pistoia Alliance",
+    "topologyType": "alpha",
+    "stereoType": "l",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "O[*:2]",
+        "capGroupName": "OH"
+      },
+      {
+        "alternateId": "R3-H",
+        "id": 0,
+        "label": "R3",
+        "capGroupSMILES": "[*:3][H]",
+        "capGroupName": "H"
+      }
+    ]
+  },
+  {
+    "id": 114,
+    "name": "Glutamine",
+    "naturalAnalog": "Q",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  Marvin  08190815272D          \n\n 11 10  0  0  1  0            999 V2000\n    2.8012   -4.0307    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    2.0867   -4.4433    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0\n    1.3722   -4.0307    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    0.6578   -4.4433    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    2.8013   -3.2057    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.7711   -4.4432    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n    2.0867   -5.2683    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.0565   -3.2056    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.0566   -4.0306    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    3.5157   -4.4432    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n    1.3722   -5.6808    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n  5  1  2  0  0  0  0\n  1  2  1  0  0  0  0\n  1 10  1  0  0  0  0\n  2  7  1  0  0  0  0\n  2  3  1  1  0  0  0\n  3  4  1  0  0  0  0\n  4  9  1  0  0  0  0\n  9  6  1  0  0  0  0\n  9  8  2  0  0  0  0\n  7 11  1  0  0  0  0\nM  RGP  2  10   2  11   1\nM  END\n\n$$$$\n",
+    "symbol": "Q",
+    "smiles": "NC(=O)CC[C@H](N[H:1])C([OH:2])=O",
+    "author": "Pistoia Alliance",
+    "topologyType": "alpha",
+    "stereoType": "l",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "O[*:2]",
+        "capGroupName": "OH"
+      }
+    ]
+  },
+  {
+    "id": 207,
+    "name": "Glutamine",
+    "naturalAnalog": "Q",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  ChemDraw06022112522D\n\n  0  0  0     0  0              0 V3000\nM  V30 BEGIN CTAB\nM  V30 COUNTS 12 11 0 0 1\nM  V30 BEGIN ATOM\nM  V30 1 C 1.786093 0.412488 0.000000 0\nM  V30 2 C 1.071614 -0.000099 0.000000 0\nM  V30 3 C 0.357135 0.412488 0.000000 0\nM  V30 4 C -0.357244 -0.000099 0.000000 0\nM  V30 5 O 1.786192 1.237463 0.000000 0\nM  V30 6 N -1.786100 0.000000 0.000000 0\nM  V30 7 N 1.071614 -0.825075 0.000000 0\nM  V30 8 O -1.071522 1.237563 0.000000 0\nM  V30 9 C -1.071622 0.412588 0.000000 0\nM  V30 10 R2 2.500571 0.000000 0.000000 0\nM  V30 11 R1 0.357135 -1.237563 0.000000 0\nM  V30 12 R3 -2.500571 0.412500 0.000000 0\nM  V30 END ATOM\nM  V30 BEGIN BOND\nM  V30 1 2 5 1\nM  V30 2 1 1 2\nM  V30 3 1 1 10\nM  V30 4 1 2 7\nM  V30 5 1 2 3 CFG=1\nM  V30 6 1 3 4\nM  V30 7 1 4 9\nM  V30 8 1 9 6\nM  V30 9 2 9 8\nM  V30 10 1 7 11\nM  V30 11 1 6 12\nM  V30 END BOND\nM  V30 END CTAB\nM  END\n",
+    "symbol": "Q",
+    "smiles": "N([H:3])C(=O)CC[C@H](N[H:1])C([OH:2])=O",
+    "author": "Pistoia Alliance",
+    "version": 2,
+    "topologyType": "alpha",
+    "stereoType": "l",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "O[*:2]",
+        "capGroupName": "OH"
+      },
+      {
+        "alternateId": "R3-H",
+        "id": 0,
+        "label": "R3",
+        "capGroupSMILES": "[*:3][H]",
+        "capGroupName": "H"
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "name": "Glutamic acid",
+    "naturalAnalog": "E",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  Marvin  12021015512D          \n\n 11 10  0  0  1  0            999 V2000\n    0.8787   -0.2594    0.0000 C   0  0  1  0  0  0  0  0  0  0  0  0\n    0.1643    0.1532    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.5503   -0.2592    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.2646    0.1534    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    1.5933    0.1530    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.9792   -0.2590    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n   -1.2645    0.9784    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n    1.5934    0.9780    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n    0.8786   -1.0844    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n    2.3077   -0.2596    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n    0.1641   -1.4969    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n  5  1  1  0  0  0  0\n  1  9  1  0  0  0  0\n  1  2  1  1  0  0  0\n  2  3  1  0  0  0  0\n  3  4  1  0  0  0  0\n  4  7  2  0  0  0  0\n  4  6  1  0  0  0  0\n  5  8  2  0  0  0  0\n  5 10  1  0  0  0  0\n  9 11  1  0  0  0  0\nM  RGP  3   6   3  10   2  11   1\nM  END\n\n$$$$\n",
+    "symbol": "E",
+    "smiles": "[H:1]N[C@@H](CCC([OH:3])=O)C([OH:2])=O",
+    "author": "Pistoia Alliance",
+    "topologyType": "alpha",
+    "stereoType": "l",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "O[*:2]",
+        "capGroupName": "OH"
+      },
+      {
+        "alternateId": "R3-OH",
+        "id": 0,
+        "label": "R3",
+        "capGroupSMILES": "O[*:3]",
+        "capGroupName": "OH"
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "name": "Glycine",
+    "naturalAnalog": "G",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  Marvin  08190815292D          \n\n  6  5  0  0  0  0            999 V2000\n   -0.7189   -0.6069    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.0044   -0.1945    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.0043    0.6304    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.7190   -1.4318    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n    0.7101   -0.6071    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n   -1.4335   -1.8443    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n  4  1  1  0  0  0  0\n  1  2  1  0  0  0  0\n  2  3  2  0  0  0  0\n  2  5  1  0  0  0  0\n  4  6  1  0  0  0  0\nM  RGP  2   5   2   6   1\nM  END\n\n$$$$\n",
+    "symbol": "G",
+    "smiles": "[H:1]NCC([OH:2])=O",
+    "author": "Pistoia Alliance",
+    "topologyType": "alpha",
+    "stereoType": "undetermined",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "O[*:2]",
+        "capGroupName": "OH"
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "name": "Histidine",
+    "naturalAnalog": "H",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  Marvin  08190815312D          \n\n 12 12  0  0  1  0            999 V2000\n    1.2557    0.4210    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    0.5412    0.0086    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0\n   -0.1733    0.4211    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.8878    0.0087    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.1685   -0.3674    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.9114   -0.8159    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.6648    0.2860    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.7029   -1.0484    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n    0.5411   -0.8164    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n    1.2558    1.2461    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n    1.9702    0.0084    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n   -0.1733   -1.2289    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n 10  1  2  0  0  0  0\n  1  2  1  0  0  0  0\n  1 11  1  0  0  0  0\n  2  9  1  0  0  0  0\n  2  3  1  1  0  0  0\n  3  4  1  0  0  0  0\n  6  4  2  0  0  0  0\n  7  4  1  0  0  0  0\n  7  5  2  0  0  0  0\n  5  8  1  0  0  0  0\n  8  6  1  0  0  0  0\n  9 12  1  0  0  0  0\nM  RGP  2  11   2  12   1\nM  END\n\n$$$$\n",
+    "symbol": "H",
+    "smiles": "[H:1]N[C@@H](CC1=CNC=N1)C([OH:2])=O",
+    "author": "Pistoia Alliance",
+    "topologyType": "alpha",
+    "stereoType": "l",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "O[*:2]",
+        "capGroupName": "OH"
+      }
+    ]
+  },
+  {
+    "id": 202,
+    "name": "Histidine",
+    "naturalAnalog": "H",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  ChemDraw06022113132D\n\n  0  0  0     0  0              0 V3000\nM  V30 BEGIN CTAB\nM  V30 COUNTS 13 13 0 0 1\nM  V30 BEGIN ATOM\nM  V30 1 C 1.354851 0.720595 0.000000 0\nM  V30 2 C 0.640350 0.308195 0.000000 0\nM  V30 3 C -0.074150 0.720695 0.000000 0\nM  V30 4 C -0.788651 0.308295 0.000000 0\nM  V30 5 C -2.069351 -0.067806 0.000000 0\nM  V30 6 C -0.812251 -0.516306 0.000000 0\nM  V30 7 N -1.565651 0.585595 0.000000 0\nM  V30 8 N -1.603751 -0.748806 0.000000 0\nM  V30 9 N 0.640250 -0.516806 0.000000 0\nM  V30 10 O 1.354951 1.545695 0.000000 0\nM  V30 11 R2 2.069351 0.307995 0.000000 0\nM  V30 12 R1 -0.074150 -0.929306 0.000000 0\nM  V30 13 R3 -1.817277 -1.545695 0.000000 0\nM  V30 END ATOM\nM  V30 BEGIN BOND\nM  V30 1 2 10 1\nM  V30 2 1 1 2\nM  V30 3 1 1 11\nM  V30 4 1 2 9\nM  V30 5 1 2 3 CFG=1\nM  V30 6 1 3 4\nM  V30 7 2 6 4\nM  V30 8 1 7 4\nM  V30 9 2 7 5\nM  V30 10 1 5 8\nM  V30 11 1 8 6\nM  V30 12 1 9 12\nM  V30 13 1 8 13\nM  V30 END BOND\nM  V30 END CTAB\nM  END\n",
+    "symbol": "H",
+    "smiles": "[H:1]N[C@@H](CC1=CN([H:3])C=N1)C([OH:2])=O",
+    "author": "Pistoia Alliance",
+    "version": 2,
+    "topologyType": "alpha",
+    "stereoType": "l",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "O[*:2]",
+        "capGroupName": "OH"
+      },
+      {
+        "alternateId": "R3-H",
+        "id": 0,
+        "label": "R3",
+        "capGroupSMILES": "[*:3][H]",
+        "capGroupName": "H"
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "name": "Isoleucine",
+    "naturalAnalog": "I",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "Untitled Document-1\n  ChemDraw11201809542D\n\n 11 10  0  0  1  0  0  0  0  0999 V2000\n   -1.0717    0.0002    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.7862    0.4127    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    0.3572   -0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    1.0718    0.4124    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    1.0719    1.2374    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n    0.3571   -0.8251    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.3572    0.4126    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.3571    1.2376    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    1.7862   -0.0002    0.0000 R2  0  0  0  0  0  0  0  0  0  0  0  0\n   -0.3574   -1.2376    0.0000 R1  0  0  0  0  0  0  0  0  0  0  0  0\n    1.0717   -0.4125    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n  1  7  1  0      \n  1  2  1  0      \n  3  7  1  0      \n  3  6  1  0      \n  3  4  1  0      \n  4  5  2  0      \n  4  9  1  0      \n  7  8  1  6      \n  6 10  1  0      \n  3 11  1  6      \nM  END\n",
+    "symbol": "I",
+    "smiles": "CC[C@H](C)[C@](C([OH:2])=O)([H])N[H:1]",
+    "author": "Pistoia Alliance",
+    "topologyType": "alpha",
+    "stereoType": "l",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "O[*:2]",
+        "capGroupName": "OH"
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "name": "Leucine",
+    "naturalAnalog": "L",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  Marvin  08200815002D          \n\n 10  9  0  0  1  0            999 V2000\n   -2.7541    2.1476    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -3.4686    0.9102    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -3.4686    1.7352    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -4.1830    2.1477    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.0397    1.7351    0.0000 C   0  0  1  0  0  0  0  0  0  0  0  0\n   -1.3250    2.1476    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.3250    2.9726    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.0397    0.9101    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.6105    1.7350    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n   -2.7542    0.4976    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n  3  1  1  0  0  0  0\n  5  1  1  1  0  0  0\n  3  2  1  0  0  0  0\n  3  4  1  0  0  0  0\n  5  8  1  0  0  0  0\n  5  6  1  0  0  0  0\n  6  7  2  0  0  0  0\n  6  9  1  0  0  0  0\n  8 10  1  0  0  0  0\nM  RGP  2   9   2  10   1\nM  END\n\n$$$$\n",
+    "symbol": "L",
+    "smiles": "CC(C)C[C@H](N[H:1])C([OH:2])=O",
+    "author": "Pistoia Alliance",
+    "topologyType": "alpha",
+    "stereoType": "l",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "O[*:2]",
+        "capGroupName": "OH"
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "name": "Lysine",
+    "naturalAnalog": "K",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  Marvin  12021015522D          \n\n 12 11  0  0  1  0            999 V2000\n   -1.2102    2.0919    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.9248    1.6794    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0\n   -2.6392    2.0920    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -3.3538    1.6795    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -4.0682    2.0920    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -4.7828    1.6795    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -5.4972    2.0921    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.9248    0.8544    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.2102    2.9169    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.4958    1.6794    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n   -2.6393    0.4419    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n   -6.2117    1.6796    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n  9  1  2  0  0  0  0\n  1  2  1  0  0  0  0\n  1 10  1  0  0  0  0\n  2  8  1  0  0  0  0\n  2  3  1  1  0  0  0\n  3  4  1  0  0  0  0\n  4  5  1  0  0  0  0\n  5  6  1  0  0  0  0\n  6  7  1  0  0  0  0\n  8 11  1  0  0  0  0\n  7 12  1  0  0  0  0\nM  RGP  3  10   2  11   1  12   3\nM  END\n\n$$$$\n",
+    "symbol": "K",
+    "smiles": "[H:1]N[C@@H](CCCCN[H:3])C([OH:2])=O",
+    "author": "Pistoia Alliance",
+    "topologyType": "alpha",
+    "stereoType": "l",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "O[*:2]",
+        "capGroupName": "OH"
+      },
+      {
+        "alternateId": "R3-H",
+        "id": 0,
+        "label": "R3",
+        "capGroupSMILES": "[*:3][H]",
+        "capGroupName": "H"
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "name": "Methionine",
+    "naturalAnalog": "M",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  Marvin  08190815482D          \n\n 10  9  0  0  1  0            999 V2000\n   -4.1128    0.8183    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -4.8273   -0.4191    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -4.1127    1.6433    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n   -4.8272    0.4059    0.0000 C   0  0  1  0  0  0  0  0  0  0  0  0\n   -5.5418    0.8185    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -6.2563    0.4061    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -7.6852    0.4062    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -6.9707    0.8186    0.0000 S   0  0  0  0  0  0  0  0  0  0  0  0\n   -3.3983    0.4057    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n   -5.5418   -0.8316    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n  3  1  2  0  0  0  0\n  1  4  1  0  0  0  0\n  1  9  1  0  0  0  0\n  4  2  1  0  0  0  0\n  4  5  1  1  0  0  0\n  5  6  1  0  0  0  0\n  6  8  1  0  0  0  0\n  8  7  1  0  0  0  0\n  2 10  1  0  0  0  0\nM  RGP  2   9   2  10   1\nM  END\n\n$$$$\n",
+    "symbol": "M",
+    "smiles": "CSCC[C@H](N[H:1])C([OH:2])=O",
+    "author": "Pistoia Alliance",
+    "topologyType": "alpha",
+    "stereoType": "l",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "O[*:2]",
+        "capGroupName": "OH"
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Phenylalanine",
+    "naturalAnalog": "F",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  Marvin  08190815502D          \n\n 13 13  0  0  1  0            999 V2000\n   -3.6075    2.0774    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -4.3219    1.6650    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -4.3220    0.8400    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -3.6077    0.4274    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.8931    0.8398    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.8930    1.6648    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.1785    2.0772    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.4640    1.6646    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0\n   -1.4641    0.8396    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.7495    2.0770    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.7493    2.9021    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.0351    1.6644    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n   -2.1786    0.4271    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n  1  2  1  0  0  0  0\n  1  6  2  0  0  0  0\n  2  3  2  0  0  0  0\n  3  4  1  0  0  0  0\n  4  5  2  0  0  0  0\n  5  6  1  0  0  0  0\n  6  7  1  0  0  0  0\n  8  7  1  1  0  0  0\n  8  9  1  0  0  0  0\n  8 10  1  0  0  0  0\n 10 11  2  0  0  0  0\n 10 12  1  0  0  0  0\n  9 13  1  0  0  0  0\nM  RGP  2  12   2  13   1\nM  END\n\n$$$$\n",
+    "symbol": "F",
+    "smiles": "[H:1]N[C@@H](CC1=CC=CC=C1)C([OH:2])=O",
+    "author": "Pistoia Alliance",
+    "topologyType": "alpha",
+    "stereoType": "l",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "O[*:2]",
+        "capGroupName": "OH"
+      }
+    ]
+  },
+  {
+    "id": 106,
+    "name": "Proline",
+    "naturalAnalog": "P",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  Marvin  08190815522D          \n\n  9  9  0  0  1  0            999 V2000\n   -3.4704    1.8073    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -3.9525    1.1377    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -3.4647    0.4725    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.6812    0.7308    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.6848    1.5558    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0\n   -1.9703    1.9683    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.9703    2.7933    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.2558    1.5558    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n   -2.0978    0.1474    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n  1  2  1  0  0  0  0\n  5  1  1  1  0  0  0\n  2  3  1  0  0  0  0\n  3  4  1  0  0  0  0\n  4  5  1  0  0  0  0\n  5  6  1  0  0  0  0\n  6  7  2  0  0  0  0\n  6  8  1  0  0  0  0\n  4  9  1  0  0  0  0\nM  RGP  2   8   2   9   1\nM  END\n\n$$$$\n",
+    "symbol": "P",
+    "smiles": "[H:1]N1CCC[C@H]1C([OH:2])=O",
+    "author": "Pistoia Alliance",
+    "topologyType": "alpha",
+    "stereoType": "l",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "O[*:2]",
+        "capGroupName": "OH"
+      }
+    ]
+  },
+  {
+    "id": 116,
+    "name": "Serine",
+    "naturalAnalog": "S",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  Marvin  08190820582D          \n\n  8  7  0  0  1  0            999 V2000\n   -2.0394    2.5340    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.0394    3.3589    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.7539    1.2964    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.7539    2.1214    0.0000 C   0  0  1  0  0  0  0  0  0  0  0  0\n   -3.4683    2.5340    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -4.1827    2.1215    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.3249    2.1215    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n   -3.4684    0.8839    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n  2  1  2  0  0  0  0\n  1  4  1  0  0  0  0\n  1  7  1  0  0  0  0\n  4  3  1  0  0  0  0\n  4  5  1  1  0  0  0\n  5  6  1  0  0  0  0\n  3  8  1  0  0  0  0\nM  RGP  2   7   2   8   1\nM  END\n\n$$$$\n",
+    "symbol": "S",
+    "smiles": "OC[C@H](N[H:1])C([OH:2])=O",
+    "author": "Pistoia Alliance",
+    "topologyType": "alpha",
+    "stereoType": "l",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "O[*:2]",
+        "capGroupName": "OH"
+      }
+    ]
+  },
+  {
+    "id": 209,
+    "name": "Serine",
+    "naturalAnalog": "S",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  ChemDraw05272111442D\n\n  0  0  0     0  0              0 V3000\nM  V30 BEGIN CTAB\nM  V30 COUNTS 9 8 0 0 1\nM  V30 BEGIN ATOM\nM  V30 1 C 1.112845 0.412601 0.000000 0\nM  V30 2 O 1.112845 1.237500 0.000000 0\nM  V30 3 N 0.398344 -0.825000 0.000000 0\nM  V30 4 C 0.398344 0.000000 0.000000 0\nM  V30 5 C -0.316056 0.412601 0.000000 0\nM  V30 6 O -1.030455 0.000101 0.000000 0\nM  V30 7 R2 1.827344 0.000101 0.000000 0\nM  V30 8 R1 -0.316156 -1.237500 0.000000 0\nM  V30 9 R3 -1.827344 0.213627 0.000000 0\nM  V30 END ATOM\nM  V30 BEGIN BOND\nM  V30 1 2 2 1\nM  V30 2 1 1 4\nM  V30 3 1 1 7\nM  V30 4 1 4 3\nM  V30 5 1 4 5 CFG=1\nM  V30 6 1 5 6\nM  V30 7 1 3 8\nM  V30 8 1 6 9\nM  V30 END BOND\nM  V30 END CTAB\nM  END\n",
+    "symbol": "S",
+    "smiles": "O=C([OH:2])[C@H](CO([H:3]))N[H:1]",
+    "author": "Pistoia Alliance",
+    "version": 2,
+    "topologyType": "alpha",
+    "stereoType": "l",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "O[*:2]",
+        "capGroupName": "OH"
+      },
+      {
+        "alternateId": "R3-H",
+        "id": 0,
+        "label": "R3",
+        "capGroupSMILES": "[*:3][H]",
+        "capGroupName": "H"
+      }
+    ]
+  },
+  {
+    "id": 121,
+    "name": "Threonine",
+    "naturalAnalog": "T",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "Untitled Document-2\n  ChemDraw11201810102D\n\n 10  9  0  0  1  0  0  0  0  0999 V2000\n    0.7145    0.4126    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.0001   -0.8251    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n    0.7146    1.2375    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n    0.0000   -0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.4289    0.0002    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.7145    0.4127    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.7144    1.2376    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n    1.4289    0.0001    0.0000 R2  0  0  0  0  0  0  0  0  0  0  0  0\n   -0.7146   -1.2376    0.0000 R1  0  0  0  0  0  0  0  0  0  0  0  0\n    0.7145   -0.4125    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n  3  1  2  0      \n  4  1  1  0      \n  1  8  1  0      \n  4  2  1  0      \n  4  6  1  0      \n  6  5  1  0      \n  6  7  1  1      \n  2  9  1  0      \n  4 10  1  6      \nM  END\n",
+    "symbol": "T",
+    "smiles": "O=C([OH:2])[C@@]([C@H](O)C)([H])N[H:1]",
+    "author": "Pistoia Alliance",
+    "topologyType": "alpha",
+    "stereoType": "l",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "O[*:2]",
+        "capGroupName": "OH"
+      }
+    ]
+  },
+  {
+    "id": 210,
+    "name": "Threonine",
+    "naturalAnalog": "T",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  ChemDraw06022114312D\n\n  0  0  0     0  0              0 V3000\nM  V30 BEGIN CTAB\nM  V30 COUNTS 11 10 0 0 1\nM  V30 BEGIN ATOM\nM  V30 1 C 0.714478 0.120906 0.000000 0\nM  V30 2 N -0.000100 -1.116757 0.000000 0\nM  V30 3 O 0.714578 0.945782 0.000000 0\nM  V30 4 C -0.000000 -0.291681 0.000000 0\nM  V30 5 C -1.428858 -0.291482 0.000000 0\nM  V30 6 C -0.714479 0.121006 0.000000 0\nM  V30 7 O -0.714379 0.945882 0.000000 0\nM  V30 8 R2 1.428858 -0.291582 0.000000 0\nM  V30 9 R1 -0.714578 -1.529245 0.000000 0\nM  V30 10 H 0.714478 -0.704169 0.000000 0\nM  V30 11 R3 -1.297742 1.529245 0.000000 0\nM  V30 END ATOM\nM  V30 BEGIN BOND\nM  V30 1 2 3 1\nM  V30 2 1 4 1\nM  V30 3 1 1 8\nM  V30 4 1 4 2\nM  V30 5 1 4 6\nM  V30 6 1 6 5\nM  V30 7 1 6 7 CFG=1\nM  V30 8 1 2 9\nM  V30 9 1 4 10 CFG=3\nM  V30 10 1 7 11\nM  V30 END BOND\nM  V30 END CTAB\nM  END\n",
+    "symbol": "T",
+    "smiles": "O=C([OH:2])[C@@]([C@H](O([H:3]))C)([H])N[H:1]",
+    "author": "Pistoia Alliance",
+    "version": 2,
+    "topologyType": "alpha",
+    "stereoType": "l",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "O[*:2]",
+        "capGroupName": "OH"
+      },
+      {
+        "alternateId": "R3-H",
+        "id": 0,
+        "label": "R3",
+        "capGroupSMILES": "[*:3][H]",
+        "capGroupName": "H"
+      }
+    ]
+  },
+  {
+    "id": 128,
+    "name": "Tryptophan",
+    "naturalAnalog": "W",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  Marvin  08190820412D          \n\n 16 17  0  0  1  0            999 V2000\n   -0.4698    2.4303    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.4698    3.2553    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.1843    1.1927    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.1843    2.0177    0.0000 C   0  0  1  0  0  0  0  0  0  0  0  0\n   -1.8988    2.4303    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.6133    2.0177    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.6271    1.1929    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -3.3935    2.2860    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -3.8895    1.6267    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -3.7164    3.0451    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -4.5353    3.1451    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -5.0313    2.4859    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -4.7084    1.7267    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -3.4159    0.9513    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n    0.2447    2.0178    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n   -1.8988    0.7802    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n  2  1  2  0  0  0  0\n  1  4  1  0  0  0  0\n  1 15  1  0  0  0  0\n  4  3  1  0  0  0  0\n  4  5  1  1  0  0  0\n  5  6  1  0  0  0  0\n  7  6  2  0  0  0  0\n  8  6  1  0  0  0  0\n 14  7  1  0  0  0  0\n  8  9  2  0  0  0  0\n  8 10  1  0  0  0  0\n  9 14  1  0  0  0  0\n 13  9  1  0  0  0  0\n 10 11  2  0  0  0  0\n 11 12  1  0  0  0  0\n 12 13  2  0  0  0  0\n  3 16  1  0  0  0  0\nM  RGP  2  15   2  16   1\nM  END\n\n$$$$\n",
+    "symbol": "W",
+    "smiles": "[H:1]N[C@@H](CC1=CNC2=C1C=CC=C2)C([OH:2])=O",
+    "author": "Pistoia Alliance",
+    "topologyType": "alpha",
+    "stereoType": "l",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "O[*:2]",
+        "capGroupName": "OH"
+      }
+    ]
+  },
+  {
+    "id": 211,
+    "name": "Tryptophan",
+    "naturalAnalog": "W",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  ChemDraw06022113392D\n\n  0  0  0     0  0              0 V3000\nM  V30 BEGIN CTAB\nM  V30 COUNTS 17 18 0 0 1\nM  V30 BEGIN ATOM\nM  V30 1 C 1.923499 0.725445 0.000000 0\nM  V30 2 O 1.923499 1.550444 0.000000 0\nM  V30 3 N 1.208999 -0.512155 0.000000 0\nM  V30 4 C 1.208999 0.312845 0.000000 0\nM  V30 5 C 0.494500 0.725445 0.000000 0\nM  V30 6 C -0.220000 0.312845 0.000000 0\nM  V30 7 C -0.233800 -0.511955 0.000000 0\nM  V30 8 C -1.000200 0.581145 0.000000 0\nM  V30 9 C -1.496200 -0.078155 0.000000 0\nM  V30 10 C -1.323100 1.340245 0.000000 0\nM  V30 11 C -2.142000 1.440244 0.000000 0\nM  V30 12 C -2.637999 0.781045 0.000000 0\nM  V30 13 C -2.315100 0.021845 0.000000 0\nM  V30 14 N -1.022600 -0.753555 0.000000 0\nM  V30 15 R2 2.637999 0.312945 0.000000 0\nM  V30 16 R1 0.494500 -0.924655 0.000000 0\nM  V30 17 R3 -1.236126 -1.550444 0.000000 0\nM  V30 END ATOM\nM  V30 BEGIN BOND\nM  V30 1 2 2 1\nM  V30 2 1 1 4\nM  V30 3 1 1 15\nM  V30 4 1 4 3\nM  V30 5 1 4 5 CFG=1\nM  V30 6 1 5 6\nM  V30 7 2 7 6\nM  V30 8 1 8 6\nM  V30 9 1 14 7\nM  V30 10 2 8 9\nM  V30 11 1 8 10\nM  V30 12 1 9 14\nM  V30 13 1 13 9\nM  V30 14 2 10 11\nM  V30 15 1 11 12\nM  V30 16 2 12 13\nM  V30 17 1 3 16\nM  V30 18 1 14 17\nM  V30 END BOND\nM  V30 END CTAB\nM  END\n",
+    "symbol": "W",
+    "smiles": "[H:1]N[C@@H](CC1=CN([H:3])C2=C1C=CC=C2)C([OH:2])=O",
+    "author": "Pistoia Alliance",
+    "version": 2,
+    "topologyType": "alpha",
+    "stereoType": "l",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "O[*:2]",
+        "capGroupName": "OH"
+      },
+      {
+        "alternateId": "R3-H",
+        "id": 0,
+        "label": "R3",
+        "capGroupSMILES": "[*:3][H]",
+        "capGroupName": "H"
+      }
+    ]
+  },
+  {
+    "id": 130,
+    "name": "Tyrosine",
+    "naturalAnalog": "Y",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  Marvin  08190820432D          \n\n 14 14  0  0  1  0            999 V2000\n   -2.8122    1.4277    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -3.5268    0.1903    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.8121    2.2527    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n   -3.5267    1.0153    0.0000 C   0  0  1  0  0  0  0  0  0  0  0  0\n   -4.2412    1.4279    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -4.9557    1.0154    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -5.6701    1.4280    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -6.3846    1.0155    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -5.6702   -0.2220    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -4.9558    0.1904    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -6.3847    0.1905    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -7.0992   -0.2219    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.0977    1.0151    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n   -4.2412   -0.2222    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n  3  1  2  0  0  0  0\n  1  4  1  0  0  0  0\n  1 13  1  0  0  0  0\n  4  2  1  0  0  0  0\n  4  5  1  1  0  0  0\n  5  6  1  0  0  0  0\n 10  6  1  0  0  0  0\n  7  6  2  0  0  0  0\n  7  8  1  0  0  0  0\n  8 11  2  0  0  0  0\n 11  9  1  0  0  0  0\n  9 10  2  0  0  0  0\n 11 12  1  0  0  0  0\n  2 14  1  0  0  0  0\nM  RGP  2  13   2  14   1\nM  END\n\n$$$$\n",
+    "symbol": "Y",
+    "smiles": "OC1=CC=C(C[C@H](N[H:1])C([OH:2])=O)C=C1",
+    "author": "Pistoia Alliance",
+    "topologyType": "alpha",
+    "stereoType": "l",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "O[*:2]",
+        "capGroupName": "OH"
+      }
+    ]
+  },
+  {
+    "id": 212,
+    "name": "Tyrosine",
+    "naturalAnalog": "Y",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  ChemDraw06022113462D\n\n  0  0  0     0  0              0 V3000\nM  V30 BEGIN CTAB\nM  V30 COUNTS 15 15 0 0 1\nM  V30 BEGIN ATOM\nM  V30 1 C 1.786249 0.824800 0.000000 0\nM  V30 2 N 1.071650 -0.412600 0.000000 0\nM  V30 3 O 1.786350 1.649799 0.000000 0\nM  V30 4 C 1.071750 0.412400 0.000000 0\nM  V30 5 C 0.357249 0.825000 0.000000 0\nM  V30 6 C -0.357250 0.412500 0.000000 0\nM  V30 7 C -1.071650 0.825100 0.000000 0\nM  V30 8 C -1.786150 0.412600 0.000000 0\nM  V30 9 C -1.071750 -0.824900 0.000000 0\nM  V30 10 C -0.357350 -0.412500 0.000000 0\nM  V30 11 C -1.786250 -0.412400 0.000000 0\nM  V30 12 O -2.500749 -0.824799 0.000000 0\nM  V30 13 R2 2.500749 0.412200 0.000000 0\nM  V30 14 R1 0.357249 -0.825100 0.000000 0\nM  V30 15 R3 -2.500749 -1.649799 0.000000 0\nM  V30 END ATOM\nM  V30 BEGIN BOND\nM  V30 1 2 3 1\nM  V30 2 1 1 4\nM  V30 3 1 1 13\nM  V30 4 1 4 2\nM  V30 5 1 4 5 CFG=1\nM  V30 6 1 5 6\nM  V30 7 1 10 6\nM  V30 8 2 7 6\nM  V30 9 1 7 8\nM  V30 10 2 8 11\nM  V30 11 1 11 9\nM  V30 12 2 9 10\nM  V30 13 1 11 12\nM  V30 14 1 2 14\nM  V30 15 1 12 15\nM  V30 END BOND\nM  V30 END CTAB\nM  END\n",
+    "symbol": "Y",
+    "smiles": "O([H:3])C1=CC=C(C[C@H](N[H:1])C([OH:2])=O)C=C1",
+    "author": "Pistoia Alliance",
+    "version": 2,
+    "topologyType": "alpha",
+    "stereoType": "l",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "O[*:2]",
+        "capGroupName": "OH"
+      },
+      {
+        "alternateId": "R3-H",
+        "id": 0,
+        "label": "R3",
+        "capGroupSMILES": "[*:3][H]",
+        "capGroupName": "H"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "name": "L-Selenocysteine",
+    "naturalAnalog": "U",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "2018-11-08T09:06:26Z",
+    "molfile": "\r  ChemDraw11081814362D\r\r  9  8  0  0  1  0  0  0  0  0999 V2000\r    0.6304    0.2234    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\r    0.2432   -0.4470    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\r    0.2432   -0.0001    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\r   -0.1437    0.2234    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\r   -0.5309   -0.0001    0.0000 Se  0  0  0  0  0  0  0  0  0  0  0  0\r    0.6304    0.6703    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\r    1.0171   -0.0001    0.0000 R2  0  0  0  0  0  0  0  0  0  0  0  0\r   -0.1437   -0.6703    0.0000 R1  0  0  0  0  0  0  0  0  0  0  0  0\r   -1.0171    0.2809    0.0000 R3  0  0  0  0  0  0  0  0  0  0  0  0\r  3  2  1  1      \r  1  3  1  0      \r  3  4  1  0      \r  4  5  1  0      \r  1  6  2  0      \r  1  7  1  0      \r  2  8  1  0      \r  5  9  1  0      \rM  END\r",
+    "symbol": "U",
+    "smiles": "O=C([H:2])[C@H](C[Se][H:3])N[H:1]",
+    "author": "PerkinElmer Inc.",
+    "order": 1,
+    "topologyType": "alpha",
+    "stereoType": "l",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "[*:2]O",
+        "capGroupName": "OH"
+      },
+      {
+        "alternateId": "R3-H",
+        "id": 0,
+        "label": "R3",
+        "capGroupSMILES": "[*:3][H]",
+        "capGroupName": "H"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "L-Pyrrolysine",
+    "naturalAnalog": "O",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "2018-11-08T09:06:26Z",
+    "molfile": "\r  ChemDraw11081814362D\r\r 19 19  0  0  1  0  0  0  0  0999 V2000\r   -1.8190    0.5826    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\r   -1.9579    0.1577    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\r   -1.5968   -0.1057    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\r   -1.2349    0.1563    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\r   -1.3721    0.5818    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\r   -1.1089    0.9428    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\r   -0.8100    0.0177    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\r   -0.4778    0.3156    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\r   -0.7179   -0.4190    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\r    1.2101   -0.1976    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\r    1.3256   -0.6280    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\r   -0.2947   -0.5573    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\r    0.0378   -0.2592    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\r    0.4624   -0.3981    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\r    0.7787   -0.0818    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\r    1.5264    0.1184    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\r    1.4106    0.5501    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\r    1.9579    0.0026    0.0000 R2  0  0  0  0  0  0  0  0  0  0  0  0\r    1.0105   -0.9428    0.0000 R1  0  0  0  0  0  0  0  0  0  0  0  0\r  1  2  1  0      \r  2  3  2  0      \r  3  4  1  0      \r  4  5  1  0      \r  5  1  1  0      \r  5  6  1  1      \r  4  7  1  6      \r  7  8  2  0      \r  7  9  1  0      \r  9 12  1  0      \r 15 10  1  0      \r 10 16  1  0      \r 10 11  1  1      \r 12 13  1  0      \r 13 14  1  0      \r 14 15  1  0      \r 16 17  2  0      \r 16 18  1  0      \r 11 19  1  0      \rM  END\r",
+    "symbol": "O",
+    "smiles": "C[C@H]1[C@H](C(NCCCC[C@H](N[H:1])C([H:2])=O)=O)N=CC1",
+    "author": "PerkinElmer Inc.",
+    "order": 1,
+    "topologyType": "alpha",
+    "stereoType": "l",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "[*:2]O",
+        "capGroupName": "OH"
+      }
+    ]
+  },
+  {
+    "id": 127,
+    "name": "Valine",
+    "naturalAnalog": "V",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  Marvin  08190820502D          \n\n  9  8  0  0  1  0            999 V2000\n   -5.2963    0.6040    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -6.0107    0.1915    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0\n   -6.7252    1.4290    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -6.7252    0.6040    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -7.4396    0.1915    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -5.2963    1.4290    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n   -6.0107   -0.6335    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -4.5818    0.1915    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n   -6.7252   -1.0460    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n  6  1  2  0  0  0  0\n  1  2  1  0  0  0  0\n  1  8  1  0  0  0  0\n  2  7  1  0  0  0  0\n  2  4  1  1  0  0  0\n  4  3  1  0  0  0  0\n  4  5  1  0  0  0  0\n  7  9  1  0  0  0  0\nM  RGP  2   8   2   9   1\nM  END\n\n$$$$\n",
+    "symbol": "V",
+    "smiles": "CC(C)[C@H](N[H:1])C([OH:2])=O",
+    "author": "Pistoia Alliance",
+    "topologyType": "alpha",
+    "stereoType": "l",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "O[*:2]",
+        "capGroupName": "OH"
+      }
+    ]
+  },
+  {
+    "id": 186,
+    "name": "Thymine",
+    "naturalAnalog": "T",
+    "polymerType": "RNA",
+    "monomerType": "Branch",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  Marvin  06150820542D          \n\n 10 10  0  0  0  0            999 V2000\n    5.8512   -2.0140    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    6.5686   -2.4215    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    6.5744   -3.2465    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    5.8628   -3.6641    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n    5.1454   -3.2565    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    5.1396   -2.4315    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n    5.8455   -1.1891    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n    4.4339   -3.6740    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n    5.8686   -4.4891    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n    7.3655   -2.2080    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n  1  7  2  0  0  0  0\n  1  6  1  0  0  0  0\n  1  2  1  0  0  0  0\n  2  3  2  0  0  0  0\n  3  4  1  0  0  0  0\n  4  5  1  0  0  0  0\n  4  9  1  0  0  0  0\n  5  8  2  0  0  0  0\n  5  6  1  0  0  0  0\n  2 10  1  0  0  0  0\nM  RGP  1   9   1\nM  END\n\n$$$$\n",
+    "symbol": "T",
+    "smiles": "Cc1cn([H:1])c(=O)[nH]c1=O",
+    "author": "Pistoia Alliance",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      }
+    ]
+  },
+  {
+    "id": 146,
+    "name": "Adenine",
+    "naturalAnalog": "A",
+    "polymerType": "RNA",
+    "monomerType": "Branch",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  Marvin  06150816552D          \n\n 11 12  0  0  0  0            999 V2000\n   -4.0674   -0.7795    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -3.3529   -1.1920    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -3.3529   -2.0170    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -4.0674   -2.4295    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -4.7818   -2.0170    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -4.7818   -1.1920    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.6384   -2.4295    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.9240   -2.0170    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.9240   -1.1920    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -4.0674    0.0455    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.6384   -3.2545    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n  1 10  1  0  0  0  0\n  1  6  2  0  0  0  0\n  1  2  1  0  0  0  0\n  9  2  1  0  0  0  0\n  2  3  2  0  0  0  0\n  7  3  1  0  0  0  0\n  3  4  1  0  0  0  0\n  4  5  2  0  0  0  0\n  5  6  1  0  0  0  0\n  7  8  1  0  0  0  0\n  7 11  1  0  0  0  0\n  8  9  2  0  0  0  0\nM  RGP  1  11   1\nM  END\n\n$$$$\n",
+    "symbol": "A",
+    "smiles": "Nc1ncnc2n([H:1])cnc12",
+    "author": "Pistoia Alliance",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      }
+    ]
+  },
+  {
+    "id": 168,
+    "name": "Guanine",
+    "naturalAnalog": "G",
+    "polymerType": "RNA",
+    "monomerType": "Branch",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  Marvin  06150820502D          \n\n 12 13  0  0  0  0            999 V2000\n   -1.7509   -3.8489    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.0364   -4.2614    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.0364   -5.0864    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.7509   -5.4989    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.4654   -5.0864    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.4654   -4.2614    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.3220   -5.4989    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n    0.3925   -5.0864    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    0.3925   -4.2614    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.7509   -3.0239    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n   -3.1798   -5.4989    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.3220   -6.3239    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n  1 10  2  0  0  0  0\n  1  6  1  0  0  0  0\n  1  2  1  0  0  0  0\n  9  2  1  0  0  0  0\n  2  3  2  0  0  0  0\n  7  3  1  0  0  0  0\n  3  4  1  0  0  0  0\n  4  5  2  0  0  0  0\n  5  6  1  0  0  0  0\n  5 11  1  0  0  0  0\n  7  8  1  0  0  0  0\n  7 12  1  0  0  0  0\n  8  9  2  0  0  0  0\nM  RGP  1  12   1\nM  END\n\n$$$$\n",
+    "symbol": "G",
+    "smiles": "Nc1nc2n([H:1])cnc2c(=O)[nH]1",
+    "author": "Pistoia Alliance",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      }
+    ]
+  },
+  {
+    "id": 153,
+    "name": "Cytosine",
+    "naturalAnalog": "C",
+    "polymerType": "RNA",
+    "monomerType": "Branch",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  Marvin  06150820522D          \n\n  9  9  0  0  0  0            999 V2000\n   -1.3611   -7.5896    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.6466   -8.0021    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.6466   -8.8271    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.3611   -9.2396    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.0755   -8.8271    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.0755   -8.0021    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.3611   -6.7646    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.7900   -9.2396    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.3611  -10.0646    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n  1  2  1  0  0  0  0\n  1  6  2  0  0  0  0\n  1  7  1  0  0  0  0\n  2  3  2  0  0  0  0\n  3  4  1  0  0  0  0\n  4  5  1  0  0  0  0\n  4  9  1  0  0  0  0\n  5  6  1  0  0  0  0\n  5  8  2  0  0  0  0\nM  RGP  1   9   1\nM  END\n\n$$$$\n",
+    "symbol": "C",
+    "smiles": "Nc1ccn([H:1])c(=O)n1",
+    "author": "Pistoia Alliance",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      }
+    ]
+  },
+  {
+    "id": 188,
+    "name": "Uracil",
+    "naturalAnalog": "U",
+    "polymerType": "RNA",
+    "monomerType": "Branch",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  Marvin  06150820512D          \n\n  9  9  0  0  0  0            999 V2000\n   -1.2138  -11.7383    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.4993  -12.1508    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.4993  -12.9758    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.2138  -13.3884    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.9283  -12.9758    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.9283  -12.1508    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.2138  -10.9133    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.6427  -13.3883    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.2138  -14.2134    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n  1  7  2  0  0  0  0\n  1  6  1  0  0  0  0\n  1  2  1  0  0  0  0\n  2  3  2  0  0  0  0\n  3  4  1  0  0  0  0\n  4  5  1  0  0  0  0\n  4  9  1  0  0  0  0\n  5  8  2  0  0  0  0\n  5  6  1  0  0  0  0\nM  RGP  1   9   1\nM  END\n\n$$$$\n",
+    "symbol": "U",
+    "smiles": "[H:1]n1ccc(=O)[nH]c1=O",
+    "author": "Pistoia Alliance",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Inosine",
+    "naturalAnalog": "I",
+    "polymerType": "RNA",
+    "monomerType": "Branch",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  Marvin  04281008022D          \n\n 11 12  0  0  0  0            999 V2000\n   -4.0674   -0.7795    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -3.3529   -1.1920    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -3.3529   -2.0170    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -4.0674   -2.4295    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -4.7818   -2.0170    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -4.7818   -1.1920    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.6384   -2.4295    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.9240   -2.0170    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.9240   -1.1920    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -4.0674    0.0455    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.6384   -3.2545    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n  1 10  2  0  0  0  0\n  1  6  1  0  0  0  0\n  1  2  1  0  0  0  0\n  9  2  1  0  0  0  0\n  2  3  2  0  0  0  0\n  7  3  1  0  0  0  0\n  3  4  1  0  0  0  0\n  4  5  2  0  0  0  0\n  5  6  1  0  0  0  0\n  7  8  1  0  0  0  0\n  7 11  1  0  0  0  0\n  8  9  2  0  0  0  0\nM  RGP  1  11   1\nM  END\n\n$$$$\n",
+    "symbol": "I",
+    "smiles": "[H:1]n1cnc2c1nc[nH]c2=O",
+    "author": "Pistoia Alliance",
+    "order": 1,
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      }
+    ]
+  },
+  {
+    "id": 182,
+    "name": "Ribose",
+    "naturalAnalog": "R",
+    "polymerType": "RNA",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  Marvin  06150820452D          \n\n 12 12  0  0  1  0            999 V2000\n    1.4617    2.2807    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n    0.7479    1.8672    0.0000 C   0  0  1  0  0  0  0  0  0  0  0  0\n    2.1768    1.8692    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0\n    0.9625    1.0707    0.0000 C   0  0  2  0  0  0  0  0  0  0  0  0\n    1.9644    1.0721    0.0000 C   0  0  1  0  0  0  0  0  0  0  0  0\n    0.9637    0.2457    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n    1.9656    0.2471    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n    0.5994    2.7216    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    2.1756    2.9004    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n    0.1279    3.0752    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.6971    3.2298    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n    1.6650   -0.3083    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n  1  2  1  0  0  0  0\n  1  3  1  0  0  0  0\n  2  4  1  0  0  0  0\n  2  8  1  1  0  0  0\n  3  5  1  0  0  0  0\n  3  9  1  1  0  0  0\n  4  5  1  0  0  0  0\n  4  6  1  6  0  0  0\n  5  7  1  6  0  0  0\n  6 12  1  0  0  0  0\n  8 10  1  0  0  0  0\n 10 11  1  0  0  0  0\nM  RGP  3   9   3  11   1  12   2\nM  END\n\n$$$$\n",
+    "symbol": "R",
+    "smiles": "O[C@H]1[C@H]([OH:3])O[C@H](CO[H:1])[C@H]1O[H:2]",
+    "author": "Pistoia Alliance",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-H",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "[*:2][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R3-OH",
+        "id": 0,
+        "label": "R3",
+        "capGroupSMILES": "O[*:3]",
+        "capGroupName": "OH"
+      }
+    ]
+  },
+  {
+    "id": 270,
+    "name": "Deoxyribose",
+    "naturalAnalog": "D",
+    "polymerType": "RNA",
+    "monomerType": "Backbone",
+    "createDate": "2018-11-08T09:06:26Z",
+    "molfile": "\r  ChemDraw11081814362D\r\r 11 11  0  0  1  0  0  0  0  0999 V2000\r    0.0338   -0.2485    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\r    0.5756   -0.2485    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\r    0.7428    0.2669    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\r    0.3047    0.5851    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\r   -0.1337    0.2669    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\r   -0.6487    0.4341    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\r    1.2581    0.4341    0.0000 R3  0  0  0  0  0  0  0  0  0  0  0  0\r   -0.2846   -0.6865    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\r   -0.7890    0.9574    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\r   -0.2846   -1.2283    0.0000 R2  0  0  0  0  0  0  0  0  0  0  0  0\r   -1.2581    1.2283    0.0000 R1  0  0  0  0  0  0  0  0  0  0  0  0\r  1  2  1  0      \r  2  3  1  0      \r  3  4  1  0      \r  4  5  1  0      \r  5  1  1  0      \r  5  6  1  1      \r  3  7  1  1      \r  1  8  1  6      \r  6  9  1  0      \r  8 10  1  0      \r  9 11  1  0      \rM  END\r",
+    "symbol": "D",
+    "smiles": "[H:3][C@H]1C[C@H](O[H:2])[C@@H](CO[H:1])O1",
+    "author": "PerkinElmer Inc.",
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-H",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "[*:2][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R3-OH",
+        "id": 0,
+        "label": "R3",
+        "capGroupSMILES": "[*:3]O",
+        "capGroupName": "OH"
+      }
+    ]
+  },
+  {
+    "id": 177,
+    "name": "Phosphate",
+    "naturalAnalog": "P",
+    "polymerType": "RNA",
+    "monomerType": "Backbone",
+    "createDate": "Tue Jul 31 17:13:57 CEST 2018",
+    "molfile": "\n  Marvin  06150820472D          \n\n  5  4  0  0  0  0            999 V2000\n    0.1179    0.7366    0.0000 P   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.7071    0.7366    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n    0.1179    1.5616    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n    0.9429    0.7366    0.0000 R#  0  0  0  0  0  0  0  0  0  0  0  0\n    0.1179   -0.0884    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n  1  2  1  0  0  0  0\n  1  3  2  0  0  0  0\n  1  4  1  0  0  0  0\n  1  5  1  0  0  0  0\nM  RGP  2   2   1   4   2\nM  END\n\n$$$$\n",
+    "symbol": "P",
+    "smiles": "OP([OH:1])([OH:2])=O",
+    "author": "Pistoia Alliance",
+    "rgroups": [
+      {
+        "alternateId": "R1-OH",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "O[*:1]",
+        "capGroupName": "OH"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "O[*:2]",
+        "capGroupName": "OH"
+      }
+    ]
+  },
+  {
+    "id": 213,
+    "name": "D,N",
+    "naturalAnalog": "",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "2022-06-10T10:28:59Z",
+    "molfile": "\r\n  ChemDraw06102206282D\r\n\r\n  3  2  0  0  0  0  0  0  0  0999 V2000\r\n    0.0000    0.0000    0.0000 R1  0  0  0  0  0  0  0  0  0  0  0  0\r\n    0.0000    0.0000    0.0000 A   0  0  0  0  0  0  0  0  0  0  0  0\r\n    0.0000    0.0000    0.0000 R2  0  0  0  0  0  0  0  0  0  0  0  0\r\n  1  2  1  0        0\r\n  2  3  1  0        0\r\nM  END\r\n",
+    "symbol": "B",
+    "smiles": "[R1][*][R2]",
+    "author": "PerkinElmer Inc.",
+    "topologyType": "all",
+    "stereoType": "all",
+    "collectionType": "Or",
+    "collectionMembers": [
+      {
+        "symbol": "D",
+        "weight": 1.0
+      },
+      {
+        "symbol": "N",
+        "weight": 1.0
+      }
+    ],
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "[*:2]O",
+        "capGroupName": "OH"
+      }
+    ]
+  },
+  {
+    "id": 214,
+    "name": "L,I",
+    "naturalAnalog": "",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "2022-06-10T10:28:59Z",
+    "molfile": "\r\n  ChemDraw06102206282D\r\n\r\n  3  2  0  0  0  0  0  0  0  0999 V2000\r\n    0.0000    0.0000    0.0000 R1  0  0  0  0  0  0  0  0  0  0  0  0\r\n    0.0000    0.0000    0.0000 A   0  0  0  0  0  0  0  0  0  0  0  0\r\n    0.0000    0.0000    0.0000 R2  0  0  0  0  0  0  0  0  0  0  0  0\r\n  1  2  1  0        0\r\n  2  3  1  0        0\r\nM  END\r\n",
+    "symbol": "J",
+    "smiles": "[R1][*][R2]",
+    "author": "PerkinElmer Inc.",
+    "topologyType": "all",
+    "stereoType": "all",
+    "collectionType": "Or",
+    "collectionMembers": [
+      {
+        "symbol": "L",
+        "weight": 1.0
+      },
+      {
+        "symbol": "I",
+        "weight": 1.0
+      }
+    ],
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "[*:2]O",
+        "capGroupName": "OH"
+      }
+    ]
+  },
+  {
+    "id": 215,
+    "name": "A,C,D,E,F,G,H,I,K,L,M,N,O,P,Q,R,S,T,U,V,W,Y",
+    "naturalAnalog": "",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "2022-06-10T10:28:59Z",
+    "molfile": "\r\n  ChemDraw06102206282D\r\n\r\n  3  2  0  0  0  0  0  0  0  0999 V2000\r\n    0.0000    0.0000    0.0000 R1  0  0  0  0  0  0  0  0  0  0  0  0\r\n    0.0000    0.0000    0.0000 A   0  0  0  0  0  0  0  0  0  0  0  0\r\n    0.0000    0.0000    0.0000 R2  0  0  0  0  0  0  0  0  0  0  0  0\r\n  1  2  1  0        0\r\n  2  3  1  0        0\r\nM  END\r\n",
+    "symbol": "X",
+    "smiles": "[R1][*][R2]",
+    "author": "PerkinElmer Inc.",
+    "topologyType": "all",
+    "stereoType": "all",
+    "collectionType": "Or",
+    "collectionMembers": [
+      {
+        "symbol": "A",
+        "weight": 1.0
+      },
+      {
+        "symbol": "C",
+        "weight": 1.0
+      },
+      {
+        "symbol": "D",
+        "weight": 1.0
+      },
+      {
+        "symbol": "E",
+        "weight": 1.0
+      },
+      {
+        "symbol": "F",
+        "weight": 1.0
+      },
+      {
+        "symbol": "G",
+        "weight": 1.0
+      },
+      {
+        "symbol": "H",
+        "weight": 1.0
+      },
+      {
+        "symbol": "I",
+        "weight": 1.0
+      },
+      {
+        "symbol": "K",
+        "weight": 1.0
+      },
+      {
+        "symbol": "L",
+        "weight": 1.0
+      },
+      {
+        "symbol": "M",
+        "weight": 1.0
+      },
+      {
+        "symbol": "N",
+        "weight": 1.0
+      },
+      {
+        "symbol": "O",
+        "weight": 1.0
+      },
+      {
+        "symbol": "P",
+        "weight": 1.0
+      },
+      {
+        "symbol": "Q",
+        "weight": 1.0
+      },
+      {
+        "symbol": "R",
+        "weight": 1.0
+      },
+      {
+        "symbol": "S",
+        "weight": 1.0
+      },
+      {
+        "symbol": "T",
+        "weight": 1.0
+      },
+      {
+        "symbol": "U",
+        "weight": 1.0
+      },
+      {
+        "symbol": "V",
+        "weight": 1.0
+      },
+      {
+        "symbol": "W",
+        "weight": 1.0
+      },
+      {
+        "symbol": "Y",
+        "weight": 1.0
+      }
+    ],
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "[*:2]O",
+        "capGroupName": "OH"
+      }
+    ]
+  },
+  {
+    "id": 216,
+    "name": "E,Q",
+    "naturalAnalog": "",
+    "polymerType": "PEPTIDE",
+    "monomerType": "Backbone",
+    "createDate": "2022-06-10T10:28:59Z",
+    "molfile": "\r\n  ChemDraw06102206282D\r\n\r\n  3  2  0  0  0  0  0  0  0  0999 V2000\r\n    0.0000    0.0000    0.0000 R1  0  0  0  0  0  0  0  0  0  0  0  0\r\n    0.0000    0.0000    0.0000 A   0  0  0  0  0  0  0  0  0  0  0  0\r\n    0.0000    0.0000    0.0000 R2  0  0  0  0  0  0  0  0  0  0  0  0\r\n  1  2  1  0        0\r\n  2  3  1  0        0\r\nM  END\r\n",
+    "symbol": "Z",
+    "smiles": "[R1][*][R2]",
+    "author": "PerkinElmer Inc.",
+    "topologyType": "all",
+    "stereoType": "all",
+    "collectionType": "Or",
+    "collectionMembers": [
+      {
+        "symbol": "E",
+        "weight": 1.0
+      },
+      {
+        "symbol": "Q",
+        "weight": 1.0
+      }
+    ],
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      },
+      {
+        "alternateId": "R2-OH",
+        "id": 0,
+        "label": "R2",
+        "capGroupSMILES": "[*:2]O",
+        "capGroupName": "OH"
+      }
+    ]
+  },
+  {
+    "id": 217,
+    "name": "A,G,I",
+    "naturalAnalog": "",
+    "polymerType": "RNA",
+    "monomerType": "Branch",
+    "createDate": "2022-06-10T10:28:59Z",
+    "molfile": "\r\n  ChemDraw06102206282D\r\n\r\n  2  1  0  0  0  0  0  0  0  0999 V2000\r\n    0.0000    0.0000    0.0000 R1  0  0  0  0  0  0  0  0  0  0  0  0\r\n    0.0000    0.0000    0.0000 A   0  0  0  0  0  0  0  0  0  0  0  0\r\n  1  2  1  0        0\r\nM  END\r\n",
+    "symbol": "R",
+    "smiles": "[R1][*]",
+    "author": "PerkinElmer Inc.",
+    "collectionType": "Or",
+    "collectionMembers": [
+      {
+        "symbol": "A",
+        "weight": 1.0
+      },
+      {
+        "symbol": "G",
+        "weight": 1.0
+      },
+      {
+        "symbol": "I",
+        "weight": 1.0
+      }
+    ],
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      }
+    ]
+  },
+  {
+    "id": 218,
+    "name": "C,T,U",
+    "naturalAnalog": "",
+    "polymerType": "RNA",
+    "monomerType": "Branch",
+    "createDate": "2022-06-10T10:28:59Z",
+    "molfile": "\r\n  ChemDraw06102206282D\r\n\r\n  2  1  0  0  0  0  0  0  0  0999 V2000\r\n    0.0000    0.0000    0.0000 R1  0  0  0  0  0  0  0  0  0  0  0  0\r\n    0.0000    0.0000    0.0000 A   0  0  0  0  0  0  0  0  0  0  0  0\r\n  1  2  1  0        0\r\nM  END\r\n",
+    "symbol": "Y",
+    "smiles": "[R1][*]",
+    "author": "PerkinElmer Inc.",
+    "collectionType": "Or",
+    "collectionMembers": [
+      {
+        "symbol": "C",
+        "weight": 1.0
+      },
+      {
+        "symbol": "T",
+        "weight": 1.0
+      },
+      {
+        "symbol": "U",
+        "weight": 1.0
+      }
+    ],
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      }
+    ]
+  },
+  {
+    "id": 219,
+    "name": "G,T,U,I",
+    "naturalAnalog": "",
+    "polymerType": "RNA",
+    "monomerType": "Branch",
+    "createDate": "2022-06-10T10:28:59Z",
+    "molfile": "\r\n  ChemDraw06102206282D\r\n\r\n  2  1  0  0  0  0  0  0  0  0999 V2000\r\n    0.0000    0.0000    0.0000 R1  0  0  0  0  0  0  0  0  0  0  0  0\r\n    0.0000    0.0000    0.0000 A   0  0  0  0  0  0  0  0  0  0  0  0\r\n  1  2  1  0        0\r\nM  END\r\n",
+    "symbol": "K",
+    "smiles": "[R1][*]",
+    "author": "PerkinElmer Inc.",
+    "collectionType": "Or",
+    "collectionMembers": [
+      {
+        "symbol": "G",
+        "weight": 1.0
+      },
+      {
+        "symbol": "T",
+        "weight": 1.0
+      },
+      {
+        "symbol": "U",
+        "weight": 1.0
+      },
+      {
+        "symbol": "I",
+        "weight": 1.0
+      }
+    ],
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      }
+    ]
+  },
+  {
+    "id": 220,
+    "name": "A,C",
+    "naturalAnalog": "",
+    "polymerType": "RNA",
+    "monomerType": "Branch",
+    "createDate": "2022-06-10T10:28:59Z",
+    "molfile": "\r\n  ChemDraw06102206282D\r\n\r\n  2  1  0  0  0  0  0  0  0  0999 V2000\r\n    0.0000    0.0000    0.0000 R1  0  0  0  0  0  0  0  0  0  0  0  0\r\n    0.0000    0.0000    0.0000 A   0  0  0  0  0  0  0  0  0  0  0  0\r\n  1  2  1  0        0\r\nM  END\r\n",
+    "symbol": "M",
+    "smiles": "[R1][*]",
+    "author": "PerkinElmer Inc.",
+    "collectionType": "Or",
+    "collectionMembers": [
+      {
+        "symbol": "A",
+        "weight": 1.0
+      },
+      {
+        "symbol": "C",
+        "weight": 1.0
+      }
+    ],
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      }
+    ]
+  },
+  {
+    "id": 221,
+    "name": "C,G",
+    "naturalAnalog": "",
+    "polymerType": "RNA",
+    "monomerType": "Branch",
+    "createDate": "2022-06-10T10:28:59Z",
+    "molfile": "\r\n  ChemDraw06102206282D\r\n\r\n  2  1  0  0  0  0  0  0  0  0999 V2000\r\n    0.0000    0.0000    0.0000 R1  0  0  0  0  0  0  0  0  0  0  0  0\r\n    0.0000    0.0000    0.0000 A   0  0  0  0  0  0  0  0  0  0  0  0\r\n  1  2  1  0        0\r\nM  END\r\n",
+    "symbol": "S",
+    "smiles": "[R1][*]",
+    "author": "PerkinElmer Inc.",
+    "collectionType": "Or",
+    "collectionMembers": [
+      {
+        "symbol": "C",
+        "weight": 1.0
+      },
+      {
+        "symbol": "G",
+        "weight": 1.0
+      }
+    ],
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      }
+    ]
+  },
+  {
+    "id": 222,
+    "name": "A,T,U,I",
+    "naturalAnalog": "",
+    "polymerType": "RNA",
+    "monomerType": "Branch",
+    "createDate": "2022-06-10T10:28:59Z",
+    "molfile": "\r\n  ChemDraw06102206282D\r\n\r\n  2  1  0  0  0  0  0  0  0  0999 V2000\r\n    0.0000    0.0000    0.0000 R1  0  0  0  0  0  0  0  0  0  0  0  0\r\n    0.0000    0.0000    0.0000 A   0  0  0  0  0  0  0  0  0  0  0  0\r\n  1  2  1  0        0\r\nM  END\r\n",
+    "symbol": "W",
+    "smiles": "[R1][*]",
+    "author": "PerkinElmer Inc.",
+    "collectionType": "Or",
+    "collectionMembers": [
+      {
+        "symbol": "A",
+        "weight": 1.0
+      },
+      {
+        "symbol": "T",
+        "weight": 1.0
+      },
+      {
+        "symbol": "U",
+        "weight": 1.0
+      },
+      {
+        "symbol": "I",
+        "weight": 1.0
+      }
+    ],
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      }
+    ]
+  },
+  {
+    "id": 223,
+    "name": "C,G,T,U,I",
+    "naturalAnalog": "",
+    "polymerType": "RNA",
+    "monomerType": "Branch",
+    "createDate": "2022-06-10T10:28:59Z",
+    "molfile": "\r\n  ChemDraw06102206282D\r\n\r\n  2  1  0  0  0  0  0  0  0  0999 V2000\r\n    0.0000    0.0000    0.0000 R1  0  0  0  0  0  0  0  0  0  0  0  0\r\n    0.0000    0.0000    0.0000 A   0  0  0  0  0  0  0  0  0  0  0  0\r\n  1  2  1  0        0\r\nM  END\r\n",
+    "symbol": "B",
+    "smiles": "[R1][*]",
+    "author": "PerkinElmer Inc.",
+    "collectionType": "Or",
+    "collectionMembers": [
+      {
+        "symbol": "C",
+        "weight": 1.0
+      },
+      {
+        "symbol": "G",
+        "weight": 1.0
+      },
+      {
+        "symbol": "T",
+        "weight": 1.0
+      },
+      {
+        "symbol": "U",
+        "weight": 1.0
+      },
+      {
+        "symbol": "I",
+        "weight": 1.0
+      }
+    ],
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      }
+    ]
+  },
+  {
+    "id": 224,
+    "name": "A,G,T,U,I",
+    "naturalAnalog": "",
+    "polymerType": "RNA",
+    "monomerType": "Branch",
+    "createDate": "2022-06-10T10:28:59Z",
+    "molfile": "\r\n  ChemDraw06102206282D\r\n\r\n  2  1  0  0  0  0  0  0  0  0999 V2000\r\n    0.0000    0.0000    0.0000 R1  0  0  0  0  0  0  0  0  0  0  0  0\r\n    0.0000    0.0000    0.0000 A   0  0  0  0  0  0  0  0  0  0  0  0\r\n  1  2  1  0        0\r\nM  END\r\n",
+    "symbol": "D",
+    "smiles": "[R1][*]",
+    "author": "PerkinElmer Inc.",
+    "collectionType": "Or",
+    "collectionMembers": [
+      {
+        "symbol": "A",
+        "weight": 1.0
+      },
+      {
+        "symbol": "G",
+        "weight": 1.0
+      },
+      {
+        "symbol": "T",
+        "weight": 1.0
+      },
+      {
+        "symbol": "U",
+        "weight": 1.0
+      },
+      {
+        "symbol": "I",
+        "weight": 1.0
+      }
+    ],
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      }
+    ]
+  },
+  {
+    "id": 225,
+    "name": "A,C,T,U,I",
+    "naturalAnalog": "",
+    "polymerType": "RNA",
+    "monomerType": "Branch",
+    "createDate": "2022-06-10T10:28:59Z",
+    "molfile": "\r\n  ChemDraw06102206282D\r\n\r\n  2  1  0  0  0  0  0  0  0  0999 V2000\r\n    0.0000    0.0000    0.0000 R1  0  0  0  0  0  0  0  0  0  0  0  0\r\n    0.0000    0.0000    0.0000 A   0  0  0  0  0  0  0  0  0  0  0  0\r\n  1  2  1  0        0\r\nM  END\r\n",
+    "symbol": "H",
+    "smiles": "[R1][*]",
+    "author": "PerkinElmer Inc.",
+    "collectionType": "Or",
+    "collectionMembers": [
+      {
+        "symbol": "A",
+        "weight": 1.0
+      },
+      {
+        "symbol": "C",
+        "weight": 1.0
+      },
+      {
+        "symbol": "T",
+        "weight": 1.0
+      },
+      {
+        "symbol": "U",
+        "weight": 1.0
+      },
+      {
+        "symbol": "I",
+        "weight": 1.0
+      }
+    ],
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      }
+    ]
+  },
+  {
+    "id": 226,
+    "name": "A,C,G,I",
+    "naturalAnalog": "",
+    "polymerType": "RNA",
+    "monomerType": "Branch",
+    "createDate": "2022-06-10T10:28:59Z",
+    "molfile": "\r\n  ChemDraw06102206282D\r\n\r\n  2  1  0  0  0  0  0  0  0  0999 V2000\r\n    0.0000    0.0000    0.0000 R1  0  0  0  0  0  0  0  0  0  0  0  0\r\n    0.0000    0.0000    0.0000 A   0  0  0  0  0  0  0  0  0  0  0  0\r\n  1  2  1  0        0\r\nM  END\r\n",
+    "symbol": "V",
+    "smiles": "[R1][*]",
+    "author": "PerkinElmer Inc.",
+    "collectionType": "Or",
+    "collectionMembers": [
+      {
+        "symbol": "A",
+        "weight": 1.0
+      },
+      {
+        "symbol": "C",
+        "weight": 1.0
+      },
+      {
+        "symbol": "G",
+        "weight": 1.0
+      },
+      {
+        "symbol": "I",
+        "weight": 1.0
+      }
+    ],
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      }
+    ]
+  },
+  {
+    "id": 227,
+    "name": "A,C,T,G,U,I",
+    "naturalAnalog": "",
+    "polymerType": "RNA",
+    "monomerType": "Branch",
+    "createDate": "2022-06-10T10:28:59Z",
+    "molfile": "\r\n  ChemDraw06102206282D\r\n\r\n  2  1  0  0  0  0  0  0  0  0999 V2000\r\n    0.0000    0.0000    0.0000 R1  0  0  0  0  0  0  0  0  0  0  0  0\r\n    0.0000    0.0000    0.0000 A   0  0  0  0  0  0  0  0  0  0  0  0\r\n  1  2  1  0        0\r\nM  END\r\n",
+    "symbol": "N",
+    "smiles": "[R1][*]",
+    "author": "PerkinElmer Inc.",
+    "collectionType": "Or",
+    "collectionMembers": [
+      {
+        "symbol": "A",
+        "weight": 1.0
+      },
+      {
+        "symbol": "C",
+        "weight": 1.0
+      },
+      {
+        "symbol": "T",
+        "weight": 1.0
+      },
+      {
+        "symbol": "G",
+        "weight": 1.0
+      },
+      {
+        "symbol": "U",
+        "weight": 1.0
+      },
+      {
+        "symbol": "I",
+        "weight": 1.0
+      }
+    ],
+    "rgroups": [
+      {
+        "alternateId": "R1-H",
+        "id": 0,
+        "label": "R1",
+        "capGroupSMILES": "[*:1][H]",
+        "capGroupName": "H"
+      }
+    ]
+  }
+]

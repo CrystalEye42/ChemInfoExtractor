@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE CDXML SYSTEM "http://www.cambridgesoft.com/xml/cdxml.dtd" >
+<CDXML
+ CreationProgram="ChemDraw 13.0.0.410"
+ BoundingBox="223.51 160.57 306.45 242.92"
+ WindowPosition="-2147483648 -1073741824"
+ WindowSize="1073741824 1073741824"
+ FractionalWidths="yes"
+ InterpretChemically="yes"
+ ShowAtomQuery="yes"
+ ShowAtomStereo="no"
+ ShowAtomEnhancedStereo="yes"
+ ShowAtomNumber="no"
+ ShowBondQuery="yes"
+ ShowBondRxn="yes"
+ ShowBondStereo="no"
+ ShowTerminalCarbonLabels="no"
+ ShowNonTerminalCarbonLabels="no"
+ HideImplicitHydrogens="no"
+ LabelFont="3"
+ LabelSize="10"
+ LabelFace="96"
+ CaptionFont="4"
+ CaptionSize="12"
+ HashSpacing="2.7"
+ MarginWidth="2"
+ LineWidth="1"
+ BoldWidth="4"
+ BondLength="30"
+ BondSpacing="12"
+ ChainAngle="120"
+ LabelJustification="Auto"
+ CaptionJustification="Left"
+ AminoAcidTermini="HOH"
+ ShowSequenceTermini="yes"
+ ShowSequenceBonds="yes"
+ PrintMargins="36 36 36 36"
+ color="0"
+ bgcolor="1"
+><colortable>
+<color r="1" g="1" b="1"/>
+<color r="0" g="0" b="0"/>
+<color r="1" g="0" b="0"/>
+<color r="1" g="1" b="0"/>
+<color r="0" g="1" b="0"/>
+<color r="0" g="1" b="1"/>
+<color r="0" g="0" b="1"/>
+<color r="1" g="0" b="1"/>
+</colortable><fonttable>
+<font id="3" charset="iso-8859-1" name="Arial"/>
+<font id="4" charset="iso-8859-1" name="Times New Roman"/>
+</fonttable><page
+ id="1152"
+ BoundingBox="0 0 540 720"
+ HeaderPosition="36"
+ FooterPosition="36"
+ PrintTrimMarks="yes"
+ HeightPages="1"
+ WidthPages="1"
+><fragment
+ id="1145"
+ BoundingBox="223.51 160.57 306.45 242.92"
+><n
+ id="1134"
+ p="275.72 194.15"
+ Z="13"
+/><n
+ id="1136"
+ p="249.74 209.15"
+ Z="14"
+/><n
+ id="1138"
+ p="223.76 194.15"
+ Z="15"
+ AS="N"
+/><n
+ id="1140"
+ p="275.72 164.15"
+ Z="16"
+ Element="8"
+ NumHydrogens="0"
+ NeedsClean="yes"
+ AS="N"
+><t
+ p="271.81 167.82"
+ BoundingBox="271.81 160.57 279.56 167.92"
+ LabelJustification="Left"
+><s font="3" size="10" face="96">O</s></t></n><n
+ id="1144"
+ p="249.74 239.15"
+ Z="17"
+ Element="8"
+ NumHydrogens="1"
+ NeedsClean="yes"
+ AS="N"
+><t
+ p="245.83 242.82"
+ BoundingBox="245.83 235.57 260.78 242.92"
+ LabelJustification="Left"
+ LabelAlignment="Left"
+><s font="3" size="10" face="96">OH</s></t></n><n
+ id="1142"
+ p="301.7 209.15"
+ Z="23"
+ NodeType="ExternalConnectionPoint"
+ ExternalConnectionType="Diamond"
+ AS="N"
+/><b
+ id="1146"
+ Z="18"
+ B="1136"
+ E="1144"
+ BS="N"
+/><b
+ id="1147"
+ Z="19"
+ B="1136"
+ E="1138"
+ BS="N"
+/><b
+ id="1148"
+ Z="20"
+ B="1134"
+ E="1142"
+ BS="N"
+/><b
+ id="1149"
+ Z="21"
+ B="1134"
+ E="1140"
+ Order="2"
+/><b
+ id="1150"
+ Z="22"
+ B="1134"
+ E="1136"
+ BS="N"
+/></fragment></page></CDXML>

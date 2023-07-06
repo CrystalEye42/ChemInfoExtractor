@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE CDXML SYSTEM "http://www.cambridgesoft.com/xml/cdxml.dtd" >
+<CDXML
+ CreationProgram="ChemDraw 16.0.0.82"
+ Name="Clipware, part 2.ctp"
+ BoundingBox="212.62 9.58 299.53 150.88"
+ WindowPosition="0 -2147483648"
+ WindowSize="1073741824 0"
+ FractionalWidths="yes"
+ InterpretChemically="yes"
+ ShowAtomQuery="yes"
+ ShowAtomStereo="no"
+ ShowAtomEnhancedStereo="yes"
+ ShowAtomNumber="no"
+ ShowResidueID="no"
+ ShowBondQuery="yes"
+ ShowBondRxn="yes"
+ ShowBondStereo="no"
+ ShowTerminalCarbonLabels="no"
+ ShowNonTerminalCarbonLabels="no"
+ HideImplicitHydrogens="no"
+ LabelFont="3"
+ LabelSize="10"
+ LabelFace="96"
+ CaptionFont="4"
+ CaptionSize="12"
+ HashSpacing="2.70"
+ MarginWidth="2"
+ LineWidth="1"
+ BoldWidth="4"
+ BondLength="28.35"
+ BondSpacing="12"
+ ChainAngle="120"
+ LabelJustification="Auto"
+ CaptionJustification="Left"
+ AminoAcidTermini="HOH"
+ ShowSequenceTermini="yes"
+ ShowSequenceBonds="yes"
+ ResidueWrapCount="40"
+ ResidueBlockCount="10"
+ ResidueZigZag="yes"
+ NumberResidueBlocks="no"
+ PrintMargins="36 36 36 36"
+ MacPrintInfo="0003000001200120000000000B6808A0FF84FF880BE409180367052803FC0002000001200120000000000B6808A0000100640064000000010001010100000001270F000100010000000000000000000000000002001901900000000000600000000000000000000100000000000000000000000000000000"
+ ChemPropName=""
+ ChemPropFormula="Chemical Formula: "
+ ChemPropExactMass="Exact Mass: "
+ ChemPropMolWt="Molecular Weight: "
+ ChemPropMOverZ="m/z: "
+ ChemPropAnalysis="Elemental Analysis: "
+ ChemPropBoilingPt="Boiling Point: "
+ ChemPropMeltingPt="Melting Point: "
+ ChemPropCritTemp="Critical Temp: "
+ ChemPropCritPres="Critical Pres: "
+ ChemPropCritVol="Critical Vol: "
+ ChemPropGibbs="Gibbs Energy: "
+ ChemPropLogP="Log P: "
+ ChemPropMR="MR: "
+ ChemPropHenry="Henry&apos;s Law: "
+ ChemPropEForm="Heat of Form: "
+ ChemProptPSA="tPSA: "
+ ChemPropCLogP="CLogP: "
+ ChemPropCMR="CMR: "
+ ChemPropLogS="LogS: "
+ ChemPropPKa="pKa: "
+ ChemPropID=""
+ color="0"
+ bgcolor="1"
+ RxnAutonumberStart="1"
+ RxnAutonumberConditions="no"
+ RxnAutonumberStyle="Roman"
+ RxnAutonumberFormat="(#)"
+><colortable>
+<color r="1" g="1" b="1"/>
+<color r="0" g="0" b="0"/>
+<color r="1" g="0" b="0"/>
+<color r="1" g="1" b="0"/>
+<color r="0" g="1" b="0"/>
+<color r="0" g="1" b="1"/>
+<color r="0" g="0" b="1"/>
+<color r="1" g="0" b="1"/>
+<color r="0.8980" g="0.8980" b="0.8980"/>
+</colortable><fonttable>
+<font id="3" charset="iso-8859-1" name="Arial"/>
+<font id="4" charset="iso-8859-1" name="Times New Roman"/>
+</fonttable><page
+ id="22014"
+ BoundingBox="0 0 540 720"
+ HeaderPosition="36"
+ FooterPosition="36"
+ PrintTrimMarks="yes"
+ HeightPages="1"
+ WidthPages="1"
+><group
+ id="14016"
+ BoundingBox="212.62 9.58 299.53 150.88"
+ Z="1"
+ Integral="yes"
+><curve
+ id="13618"
+ Z="2"
+ ArrowheadType="Solid"
+ CurvePoints="262.61 28.59 262.61 28.59 279.58 35.45 294.01 39.34 294.84 37.29 295.67 35.24 282.59 28.01 265.61 21.16 248.64 14.30 234.21 10.40 233.38 12.46 232.55 14.51 245.64 21.73 262.61 28.59 262.61 28.59"
+/><curve
+ id="13619"
+ Z="3"
+ ArrowheadType="Solid"
+ CurvePoints="261.58 30.64 261.58 30.64 280.74 38.38 297.17 42.43 298.28 39.70 299.38 36.96 284.75 28.46 265.58 20.72 246.42 12.98 229.99 8.92 228.89 11.66 227.78 14.40 242.42 22.89 261.58 30.64 261.58 30.64"
+/><curve
+ id="13620"
+ Z="4"
+ ArrowheadType="Solid"
+ CurvePoints="230.46 14.33 230.46 14.33 230.46 14.33 239.41 74.41 239.61 75.92 239.82 77.43 239.99 77.50 239.36 79.08 238.72 80.66 213.87 142.17 213.87 142.17 213.87 142.17"
+/><curve
+ id="13621"
+ Z="5"
+ ArrowheadType="Solid"
+ CurvePoints="296.03 40.83 296.03 40.83 296.03 40.83 247.85 77.83 246.66 78.77 245.46 79.71 245.28 79.64 244.65 81.22 244.01 82.80 217.01 149.63 217.01 149.63 217.01 149.63"
+/><curve
+ id="13622"
+ Z="6"
+ ArrowheadType="Solid"
+ CurvePoints="214.47 146.22 214.47 146.22 215.26 148.30 216.31 149.83 216.82 149.63 217.34 149.44 217.12 147.60 216.34 145.52 215.55 143.44 214.50 141.91 213.98 142.10 213.47 142.29 213.69 144.14 214.47 146.22 214.47 146.22"
+/></group></page></CDXML>

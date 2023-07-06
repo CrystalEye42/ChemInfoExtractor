@@ -59,7 +59,7 @@ h5 {
   }
   
 #resultBody{
-overflow-y: auto;
+overflow-y: hidden;
 overflow-x: hidden;
 }
 

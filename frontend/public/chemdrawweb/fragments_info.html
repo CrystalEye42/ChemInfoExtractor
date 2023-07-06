@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <!-- Keeps the mobile browsers from reporting they are larger than they actually are -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <!-- On Apple devices on orientation change will automatically adjust size of webpage to fill screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Fragments Info</title>
+    <script type="text/javascript" src="script/jqueryui/js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="script/jqueryui/js/jquery-ui-1.12.0.min.js"></script>
+    <!-- <link rel="stylesheet" -->
+    <!-- 	href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"> -->
+    <link rel="stylesheet" href="script/jqueryui/css/ui-lightness/jquery-ui-1.12.0.css" />
+    <style>
+      body {
+        font-family: "Trebuchet MS", "Helvetica", "Arial", "Verdana", "sans-serif";
+        font-size: 62.5%;
+      }
+
+      #feedback {
+        font-size: 1.4em;
+      }
+
+      #selectable .ui-selecting {
+        background: #feca40;
+      }
+
+      #selectable .ui-selected {
+        background: #f39814;
+        color: white;
+      }
+
+      #selectable {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 60%;
+        padding: 0;
+      }
+
+      #selectable li {
+        margin: 3px;
+        padding: 0.4em;
+        font-size: 1.4em;
+        height: 18px;
+      }
+    </style>
+    <script>
+      $(function () {
+        $("#selectable").selectable({
+          stop: function () {
+            var result = $("#select-result").empty();
+            var feedback = $("#feedback");
+            var cdxml = $("#cdxml");
+            $(".ui-selected", this).each(function () {
+              var index = $("#selectable li").index(this);
+              result.attr("src", window.opener.fragmentsInfo[index].image);
+              cdxml.val(window.opener.fragmentsInfo[index].cdxml);
+              feedback.css("line-height", feedback.height() + result.height() + "px");
+            });
+          }
+        });
+
+        if (
+          window.opener &&
+          window.opener.fragmentsInfo &&
+          window.opener.fragmentsInfo.length > 0
+        ) {
+          var selectable = $("#selectable");
+          var feedback = $("#feedback");
+          var cdxml = $("#cdxml");
+          for (var i = 0; i < window.opener.fragmentsInfo.length; i++) {
+            var li = $('<li class="ui-widget-content"></li>');
+            li.append(i + 1);
+            selectable.append(li);
+          }
+          feedback.height($("#selectdiv").height());
+          var result = $("#select-result").empty();
+          result.attr("src", window.opener.fragmentsInfo[0].image);
+          cdxml.val(window.opener.fragmentsInfo[0].cdxml);
+          selectable.find(".ui-widget-content")[0].classList.add("ui-selected");
+          feedback.css("line-height", feedback.height() + result.height() + "px");
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+      <div align="center" id="feedback" style="float: left; width: 40%; min-height: 150px">
+        <img id="select-result" style="max-width: 150px; max-height: 150px" />
+      </div>
+
+      <div id="selectdiv" style="float: left; width: 60%; min-height: 150px">
+        <ol id="selectable"></ol>
+      </div>
+    </div>
+    <div style="padding-top: 200px">
+      <textarea id="cdxml" style="height: 200px; width: 100%"></textarea>
+    </div>
+  </body>
+</html>

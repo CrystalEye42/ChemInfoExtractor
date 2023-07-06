@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE CDXML SYSTEM "http://www.cambridgesoft.com/xml/cdxml.dtd" >
+<CDXML
+ CreationProgram="ChemDraw 13.0.0.410"
+ BoundingBox="119.45 253.47 328.3 333.8"
+ WindowPosition="-2147483648 -1073741824"
+ WindowSize="1073741824 1073741824"
+ FractionalWidths="yes"
+ InterpretChemically="yes"
+ ShowAtomQuery="yes"
+ ShowAtomStereo="no"
+ ShowAtomEnhancedStereo="yes"
+ ShowAtomNumber="no"
+ ShowBondQuery="yes"
+ ShowBondRxn="yes"
+ ShowBondStereo="no"
+ ShowTerminalCarbonLabels="no"
+ ShowNonTerminalCarbonLabels="no"
+ HideImplicitHydrogens="no"
+ LabelFont="3"
+ LabelSize="10"
+ LabelFace="96"
+ CaptionFont="4"
+ CaptionSize="12"
+ HashSpacing="2.7"
+ MarginWidth="2"
+ LineWidth="1"
+ BoldWidth="4"
+ BondLength="30"
+ BondSpacing="12"
+ ChainAngle="120"
+ LabelJustification="Auto"
+ CaptionJustification="Left"
+ AminoAcidTermini="HOH"
+ ShowSequenceTermini="yes"
+ ShowSequenceBonds="yes"
+ PrintMargins="36 36 36 36"
+ color="0"
+ bgcolor="1"
+><colortable>
+<color r="1" g="1" b="1"/>
+<color r="0" g="0" b="0"/>
+<color r="1" g="0" b="0"/>
+<color r="1" g="1" b="0"/>
+<color r="0" g="1" b="0"/>
+<color r="0" g="1" b="1"/>
+<color r="0" g="0" b="1"/>
+<color r="1" g="0" b="1"/>
+</colortable><fonttable>
+<font id="3" charset="iso-8859-1" name="Arial"/>
+<font id="4" charset="iso-8859-1" name="Times New Roman"/>
+</fonttable><page
+ id="2023"
+ BoundingBox="0 0 540 720"
+ HeaderPosition="36"
+ FooterPosition="36"
+ PrintTrimMarks="yes"
+ HeightPages="1"
+ WidthPages="1"
+><fragment
+ id="2001"
+ BoundingBox="119.45 253.47 328.3 333.8"
+><n
+ id="1970"
+ p="223.87 299.05"
+ Z="37"
+ Element="15"
+ NumHydrogens="0"
+ NeedsClean="yes"
+><t
+ p="220.36 302.63"
+ BoundingBox="220.36 295.48 227.01 302.63"
+ LabelJustification="Left"
+ LabelAlignment="Left"
+><s font="3" size="10" face="96">P</s></t></n><n
+ id="1972"
+ p="223.87 269.05"
+ Z="38"
+ Element="8"
+ NumHydrogens="0"
+ NeedsClean="yes"
+ AS="N"
+><t
+ p="219.97 272.73"
+ BoundingBox="219.97 265.48 227.72 272.83"
+ LabelJustification="Left"
+><s font="3" size="10" face="96">O</s></t></n><n
+ id="1974"
+ p="249.86 314.05"
+ Z="39"
+ Element="8"
+ NumHydrogens="0"
+ NeedsClean="yes"
+ AS="N"
+><t
+ p="245.95 317.73"
+ BoundingBox="245.95 310.48 253.7 317.83"
+ LabelJustification="Left"
+><s font="3" size="10" face="96">O</s></t></n><n
+ id="1976"
+ p="275.84 299.05"
+ Z="40"
+/><n
+ id="1978"
+ p="275.84 269.05"
+ Z="41"
+ AS="N"
+/><n
+ id="1980"
+ p="301.82 254.05"
+ Z="42"
+ AS="N"
+/><n
+ id="1982"
+ p="327.8 269.05"
+ Z="43"
+ AS="N"
+/><n
+ id="1984"
+ p="327.8 299.05"
+ Z="44"
+ AS="N"
+/><n
+ id="1986"
+ p="301.82 314.05"
+ Z="45"
+ AS="N"
+/><n
+ id="1988"
+ p="197.89 314.05"
+ Z="46"
+ Element="8"
+ NumHydrogens="0"
+ NeedsClean="yes"
+ AS="N"
+><t
+ p="193.99 317.73"
+ BoundingBox="193.99 310.48 201.74 317.83"
+ LabelJustification="Left"
+><s font="3" size="10" face="96">O</s></t></n><n
+ id="1990"
+ p="171.91 299.05"
+ Z="47"
+/><n
+ id="1992"
+ p="145.93 314.05"
+ Z="48"
+ AS="N"
+/><n
+ id="1994"
+ p="119.95 299.05"
+ Z="49"
+ AS="N"
+/><n
+ id="1996"
+ p="119.95 269.05"
+ Z="50"
+ AS="N"
+/><n
+ id="1998"
+ p="145.93 254.05"
+ Z="51"
+ AS="N"
+/><n
+ id="2000"
+ p="171.91 269.05"
+ Z="52"
+ AS="N"
+/><n
+ id="2020"
+ p="223.87 329.05"
+ Z="70"
+ NodeType="ExternalConnectionPoint"
+ ExternalConnectionType="Diamond"
+/><b
+ id="2002"
+ Z="53"
+ B="1998"
+ E="2000"
+ BS="N"
+/><b
+ id="2003"
+ Z="54"
+ B="1996"
+ E="1998"
+ Order="2"
+ BondCircularOrdering="0 2004 2002 0"
+/><b
+ id="2004"
+ Z="55"
+ B="1994"
+ E="1996"
+ BS="N"
+/><b
+ id="2005"
+ Z="56"
+ B="1992"
+ E="1994"
+ Order="2"
+ BondCircularOrdering="0 2007 2004 0"
+/><b
+ id="2006"
+ Z="57"
+ B="1990"
+ E="2000"
+ Order="2"
+ BondCircularOrdering="2007 2008 0 2002"
+/><b
+ id="2007"
+ Z="58"
+ B="1990"
+ E="1992"
+ BS="N"
+/><b
+ id="2008"
+ Z="59"
+ B="1988"
+ E="1990"
+ BS="N"
+/><b
+ id="2009"
+ Z="60"
+ B="1984"
+ E="1986"
+ BS="N"
+/><b
+ id="2010"
+ Z="61"
+ B="1982"
+ E="1984"
+ Order="2"
+ BondCircularOrdering="0 2011 2009 0"
+/><b
+ id="2011"
+ Z="62"
+ B="1980"
+ E="1982"
+ BS="N"
+/><b
+ id="2012"
+ Z="63"
+ B="1978"
+ E="1980"
+ Order="2"
+ BondCircularOrdering="0 2014 2011 0"
+/><b
+ id="2013"
+ Z="64"
+ B="1976"
+ E="1986"
+ Order="2"
+ BondCircularOrdering="2014 2015 0 2009"
+/><b
+ id="2014"
+ Z="65"
+ B="1976"
+ E="1978"
+ BS="N"
+/><b
+ id="2015"
+ Z="66"
+ B="1974"
+ E="1976"
+ BS="N"
+/><b
+ id="2016"
+ Z="67"
+ B="1970"
+ E="1988"
+ BS="N"
+/><b
+ id="2017"
+ Z="68"
+ B="1970"
+ E="1974"
+ BS="N"
+/><b
+ id="2018"
+ Z="69"
+ B="1970"
+ E="1972"
+ Order="2"
+/><b
+ id="2021"
+ Z="71"
+ B="1970"
+ E="2020"
+/></fragment></page></CDXML>

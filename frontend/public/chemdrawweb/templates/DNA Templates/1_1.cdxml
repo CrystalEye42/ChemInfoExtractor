@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE CDXML SYSTEM "http://www.cambridgesoft.com/xml/cdxml.dtd" >
+<CDXML
+ CreationProgram="ChemDraw 14.0.1.9"
+ Name="DNA Templates.ctp"
+ BoundingBox="238.24 144.61 277.24 159.60"
+ WindowPosition="0 0"
+ WindowSize="-2147483648 0"
+ WindowIsZoomed="yes"
+ FractionalWidths="yes"
+ InterpretChemically="yes"
+ ShowAtomQuery="yes"
+ ShowAtomStereo="no"
+ ShowAtomEnhancedStereo="yes"
+ ShowAtomNumber="no"
+ ShowResidueID="no"
+ ShowBondQuery="yes"
+ ShowBondRxn="yes"
+ ShowBondStereo="no"
+ ShowTerminalCarbonLabels="no"
+ ShowNonTerminalCarbonLabels="no"
+ HideImplicitHydrogens="no"
+ LabelFont="3"
+ LabelSize="10"
+ LabelFace="96"
+ CaptionFont="4"
+ CaptionSize="12"
+ HashSpacing="2.70"
+ MarginWidth="2"
+ LineWidth="1"
+ BoldWidth="4"
+ BondLength="28.35"
+ BondSpacing="12"
+ ChainAngle="120"
+ LabelJustification="Auto"
+ CaptionJustification="Left"
+ AminoAcidTermini="HOH"
+ ShowSequenceTermini="yes"
+ ShowSequenceBonds="yes"
+ ResidueWrapCount="40"
+ ResidueBlockCount="10"
+ ResidueZigZag="yes"
+ NumberResidueBlocks="no"
+ PrintMargins="36 36 36 36"
+ MacPrintInfo="0003000002D002D0000000001C841590FECAFED41DBA16BC0367052803FC0002000002D002D0000000001C841590000100640064000000010001010100000001270F000100010000000000000000000000000002001901900000000000600000000000000000000100000000000000000000000000000000"
+ ChemPropName=""
+ ChemPropFormula="Chemical Formula: "
+ ChemPropExactMass="Exact Mass: "
+ ChemPropMolWt="Molecular Weight: "
+ ChemPropMOverZ="m/z: "
+ ChemPropAnalysis="Elemental Analysis: "
+ ChemPropBoilingPt="Boiling Point: "
+ ChemPropMeltingPt="Melting Point: "
+ ChemPropCritTemp="Critical Temp: "
+ ChemPropCritPres="Critical Pres: "
+ ChemPropCritVol="Critical Vol: "
+ ChemPropGibbs="Gibbs Energy: "
+ ChemPropLogP="Log P: "
+ ChemPropMR="MR: "
+ ChemPropHenry="Henry&apos;s Law: "
+ ChemPropEForm="Heat of Form: "
+ ChemProptPSA="tPSA: "
+ ChemPropCLogP="CLogP: "
+ ChemPropCMR="CMR: "
+ ChemPropLogS="LogS: "
+ ChemPropPKa="pKa: "
+ color="0"
+ bgcolor="1"
+><colortable>
+<color r="1" g="1" b="1"/>
+<color r="0" g="0" b="0"/>
+<color r="1" g="0" b="0"/>
+<color r="1" g="1" b="0"/>
+<color r="0" g="1" b="0"/>
+<color r="0" g="1" b="1"/>
+<color r="0" g="0" b="1"/>
+<color r="1" g="0" b="1"/>
+</colortable><fonttable>
+<font id="3" charset="iso-8859-1" name="Arial"/>
+<font id="4" charset="iso-8859-1" name="Times New Roman"/>
+</fonttable><page
+ id="1114"
+ BoundingBox="0 0 540 720"
+ HeaderPosition="36"
+ FooterPosition="36"
+ PrintTrimMarks="yes"
+ HeightPages="1"
+ WidthPages="1"
+><fragment
+ id="993"
+ BoundingBox="238.24 144.61 277.24 159.60"
+ Z="1"
+><n
+ id="3"
+ p="244.74 152.50"
+ Z="2"
+ Warning="An atom in this label has an invalid valence."
+ NodeType="Fragment"
+ AS="N"
+><fragment
+ id="1115"
+><n
+ id="995"
+ p="31.64 1.90"
+ Z="4"
+ Element="1"
+ NumHydrogens="0"
+ Isotope="2"
+ NeedsClean="yes"
+><t
+ p="28.04 5.80"
+ BoundingBox="28.04 -2.54 35.26 5.80"
+ LabelJustification="Left"
+><s font="3" size="10" face="96">D</s></t></n><n
+ id="996"
+ p="7.09 -12.28"
+ Z="5"
+ Element="7"
+ NumHydrogens="0"
+ NeedsClean="yes"
+><t
+ p="3.49 -8.38"
+ BoundingBox="3.49 -16.72 10.71 -8.38"
+ LabelJustification="Left"
+><s font="3" size="10" face="96">N</s></t></n><n
+ id="997"
+ p="-17.46 1.90"
+ Z="6"
+ NodeType="GenericNickname"
+ NumHydrogens="0"
+ NeedsClean="yes"
+ GenericNickname="A"
+><t
+ p="-20.79 5.80"
+ BoundingBox="-20.79 -2.54 -14.12 5.80"
+ LabelJustification="Left"
+><s font="3" size="10" face="96">A</s></t></n><b
+ id="998"
+ Z="7"
+ B="995"
+ E="996"
+/><b
+ id="999"
+ Z="8"
+ B="996"
+ E="997"
+/></fragment><t
+ p="238.24 159.60"
+ BoundingBox="238.24 144.61 277.24 159.60"
+ LabelJustification="Left"
+ LabelAlignment="Left"
+><s font="3" size="18" face="1">DNA</s></t></n></fragment></page></CDXML>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE CDXML SYSTEM "http://www.cambridgesoft.com/xml/cdxml.dtd" >
+<CDXML
+ CreationProgram="ChemDraw 16.0.0.82"
+ Name="Clipware, part 2.ctp"
+ BoundingBox="214.12 0.44 283.80 199.07"
+ WindowPosition="0 -2147483648"
+ WindowSize="1073741824 0"
+ FractionalWidths="yes"
+ InterpretChemically="yes"
+ ShowAtomQuery="yes"
+ ShowAtomStereo="no"
+ ShowAtomEnhancedStereo="yes"
+ ShowAtomNumber="no"
+ ShowResidueID="no"
+ ShowBondQuery="yes"
+ ShowBondRxn="yes"
+ ShowBondStereo="no"
+ ShowTerminalCarbonLabels="no"
+ ShowNonTerminalCarbonLabels="no"
+ HideImplicitHydrogens="no"
+ LabelFont="3"
+ LabelSize="10"
+ LabelFace="96"
+ CaptionFont="4"
+ CaptionSize="12"
+ HashSpacing="2.70"
+ MarginWidth="2"
+ LineWidth="1"
+ BoldWidth="4"
+ BondLength="28.35"
+ BondSpacing="12"
+ ChainAngle="120"
+ LabelJustification="Auto"
+ CaptionJustification="Left"
+ AminoAcidTermini="HOH"
+ ShowSequenceTermini="yes"
+ ShowSequenceBonds="yes"
+ ResidueWrapCount="40"
+ ResidueBlockCount="10"
+ ResidueZigZag="yes"
+ NumberResidueBlocks="no"
+ PrintMargins="36 36 36 36"
+ MacPrintInfo="0003000001200120000000000B6808A0FF84FF880BE409180367052803FC0002000001200120000000000B6808A0000100640064000000010001010100000001270F000100010000000000000000000000000002001901900000000000600000000000000000000100000000000000000000000000000000"
+ ChemPropName=""
+ ChemPropFormula="Chemical Formula: "
+ ChemPropExactMass="Exact Mass: "
+ ChemPropMolWt="Molecular Weight: "
+ ChemPropMOverZ="m/z: "
+ ChemPropAnalysis="Elemental Analysis: "
+ ChemPropBoilingPt="Boiling Point: "
+ ChemPropMeltingPt="Melting Point: "
+ ChemPropCritTemp="Critical Temp: "
+ ChemPropCritPres="Critical Pres: "
+ ChemPropCritVol="Critical Vol: "
+ ChemPropGibbs="Gibbs Energy: "
+ ChemPropLogP="Log P: "
+ ChemPropMR="MR: "
+ ChemPropHenry="Henry&apos;s Law: "
+ ChemPropEForm="Heat of Form: "
+ ChemProptPSA="tPSA: "
+ ChemPropCLogP="CLogP: "
+ ChemPropCMR="CMR: "
+ ChemPropLogS="LogS: "
+ ChemPropPKa="pKa: "
+ ChemPropID=""
+ color="0"
+ bgcolor="1"
+ RxnAutonumberStart="1"
+ RxnAutonumberConditions="no"
+ RxnAutonumberStyle="Roman"
+ RxnAutonumberFormat="(#)"
+><colortable>
+<color r="1" g="1" b="1"/>
+<color r="0" g="0" b="0"/>
+<color r="1" g="0" b="0"/>
+<color r="1" g="1" b="0"/>
+<color r="0" g="1" b="0"/>
+<color r="0" g="1" b="1"/>
+<color r="0" g="0" b="1"/>
+<color r="1" g="0" b="1"/>
+<color r="0.8980" g="0.8980" b="0.8980"/>
+</colortable><fonttable>
+<font id="3" charset="iso-8859-1" name="Arial"/>
+<font id="4" charset="iso-8859-1" name="Times New Roman"/>
+</fonttable><page
+ id="22014"
+ BoundingBox="0 0 540 720"
+ HeaderPosition="36"
+ FooterPosition="36"
+ PrintTrimMarks="yes"
+ HeightPages="1"
+ WidthPages="1"
+><group
+ id="13966"
+ BoundingBox="214.12 0.44 283.80 199.07"
+ Z="1"
+ Integral="yes"
+><curve
+ id="12630"
+ Z="2"
+ ArrowheadType="Solid"
+ CurvePoints="249.13 7.90 249.13 7.90 265.56 7.90 278.88 6.56 278.88 4.90 278.88 3.24 265.56 1.90 249.13 1.90 232.70 1.90 219.38 3.24 219.38 4.90 219.38 6.56 232.70 7.90 249.13 7.90 249.13 7.90"
+/><curve
+ id="12631"
+ Z="3"
+ ArrowheadType="Solid"
+ CurvePoints="248.96 9.61 248.96 9.61 267.51 9.61 282.55 7.81 282.55 5.61 282.55 3.40 267.51 1.61 248.96 1.61 230.41 1.61 215.37 3.40 215.37 5.61 215.37 7.81 230.41 9.61 248.96 9.61 248.96 9.61"
+/><curve
+ id="12632"
+ Z="4"
+ ArrowheadType="Solid"
+ CurvePoints="217.57 7.02 217.57 7.02 217.57 7.02 244.81 59.71 245.57 61.03 246.32 62.35 246.51 62.35 246.51 64.05 246.51 65.75 246.51 191.94 246.51 191.94 246.51 191.94"
+/><curve
+ id="12633"
+ Z="5"
+ ArrowheadType="Solid"
+ CurvePoints="281.06 7.02 281.06 7.02 281.06 7.02 253.90 59.71 253.14 61.03 252.39 62.35 252.20 62.35 252.20 64.05 252.20 65.75 252.20 197.67 252.20 197.67 252.20 197.67"
+/><curve
+ id="12634"
+ Z="6"
+ ArrowheadType="Solid"
+ CurvePoints="248.58 195.46 248.58 195.46 250.09 197.09 251.63 198.11 252.03 197.74 252.44 197.37 251.55 195.75 250.04 194.12 248.54 192.49 247 191.47 246.59 191.84 246.19 192.21 247.08 193.83 248.58 195.46 248.58 195.46"
+/></group></page></CDXML>

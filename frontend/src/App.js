@@ -10,10 +10,14 @@ import { ImageExtract } from "./components/ImageExtract";
 import { About } from "./components/About";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import {Helmet} from "react-helmet";
 
 function App() {
   return (
     <div className="App">
+      <Helmet>
+        <script src="./chemdrawweb/chemdrawweb.js"></script>
+      </Helmet>
       <Router>
         <div>
           <Navbar bg="dark" variant="dark" className="px-2">

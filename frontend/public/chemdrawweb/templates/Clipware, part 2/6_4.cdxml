@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE CDXML SYSTEM "http://www.cambridgesoft.com/xml/cdxml.dtd" >
+<CDXML
+ CreationProgram="ChemDraw 16.0.0.82"
+ Name="Clipware, part 2.ctp"
+ BoundingBox="208.59 9.48 305.76 130.91"
+ WindowPosition="0 -2147483648"
+ WindowSize="1073741824 0"
+ FractionalWidths="yes"
+ InterpretChemically="yes"
+ ShowAtomQuery="yes"
+ ShowAtomStereo="no"
+ ShowAtomEnhancedStereo="yes"
+ ShowAtomNumber="no"
+ ShowResidueID="no"
+ ShowBondQuery="yes"
+ ShowBondRxn="yes"
+ ShowBondStereo="no"
+ ShowTerminalCarbonLabels="no"
+ ShowNonTerminalCarbonLabels="no"
+ HideImplicitHydrogens="no"
+ LabelFont="3"
+ LabelSize="10"
+ LabelFace="96"
+ CaptionFont="4"
+ CaptionSize="12"
+ HashSpacing="2.70"
+ MarginWidth="2"
+ LineWidth="1"
+ BoldWidth="4"
+ BondLength="28.35"
+ BondSpacing="12"
+ ChainAngle="120"
+ LabelJustification="Auto"
+ CaptionJustification="Left"
+ AminoAcidTermini="HOH"
+ ShowSequenceTermini="yes"
+ ShowSequenceBonds="yes"
+ ResidueWrapCount="40"
+ ResidueBlockCount="10"
+ ResidueZigZag="yes"
+ NumberResidueBlocks="no"
+ PrintMargins="36 36 36 36"
+ MacPrintInfo="0003000001200120000000000B6808A0FF84FF880BE409180367052803FC0002000001200120000000000B6808A0000100640064000000010001010100000001270F000100010000000000000000000000000002001901900000000000600000000000000000000100000000000000000000000000000000"
+ ChemPropName=""
+ ChemPropFormula="Chemical Formula: "
+ ChemPropExactMass="Exact Mass: "
+ ChemPropMolWt="Molecular Weight: "
+ ChemPropMOverZ="m/z: "
+ ChemPropAnalysis="Elemental Analysis: "
+ ChemPropBoilingPt="Boiling Point: "
+ ChemPropMeltingPt="Melting Point: "
+ ChemPropCritTemp="Critical Temp: "
+ ChemPropCritPres="Critical Pres: "
+ ChemPropCritVol="Critical Vol: "
+ ChemPropGibbs="Gibbs Energy: "
+ ChemPropLogP="Log P: "
+ ChemPropMR="MR: "
+ ChemPropHenry="Henry&apos;s Law: "
+ ChemPropEForm="Heat of Form: "
+ ChemProptPSA="tPSA: "
+ ChemPropCLogP="CLogP: "
+ ChemPropCMR="CMR: "
+ ChemPropLogS="LogS: "
+ ChemPropPKa="pKa: "
+ ChemPropID=""
+ color="0"
+ bgcolor="1"
+ RxnAutonumberStart="1"
+ RxnAutonumberConditions="no"
+ RxnAutonumberStyle="Roman"
+ RxnAutonumberFormat="(#)"
+><colortable>
+<color r="1" g="1" b="1"/>
+<color r="0" g="0" b="0"/>
+<color r="1" g="0" b="0"/>
+<color r="1" g="1" b="0"/>
+<color r="0" g="1" b="0"/>
+<color r="0" g="1" b="1"/>
+<color r="0" g="0" b="1"/>
+<color r="1" g="0" b="1"/>
+<color r="0.8980" g="0.8980" b="0.8980"/>
+</colortable><fonttable>
+<font id="3" charset="iso-8859-1" name="Arial"/>
+<font id="4" charset="iso-8859-1" name="Times New Roman"/>
+</fonttable><page
+ id="22014"
+ BoundingBox="0 0 540 720"
+ HeaderPosition="36"
+ FooterPosition="36"
+ PrintTrimMarks="yes"
+ HeightPages="1"
+ WidthPages="1"
+><group
+ id="14012"
+ BoundingBox="208.59 9.48 305.76 130.91"
+ Z="1"
+ Integral="yes"
+><curve
+ id="13604"
+ Z="2"
+ ArrowheadType="Solid"
+ CurvePoints="255.34 36.05 255.34 36.05 278.74 45.51 298.84 50.40 300.22 46.98 301.60 43.55 283.75 33.11 260.35 23.66 236.94 14.20 216.85 9.31 215.47 12.73 214.08 16.15 231.94 26.59 255.34 36.05 255.34 36.05"
+/><curve
+ id="13605"
+ Z="3"
+ ArrowheadType="Solid"
+ CurvePoints="254.07 38.69 254.07 38.69 280.21 49.25 302.79 54.38 304.51 50.13 306.22 45.89 286.42 33.89 260.28 23.33 234.13 12.77 211.55 7.64 209.84 11.89 208.12 16.13 227.93 28.13 254.07 38.69 254.07 38.69"
+/><curve
+ id="13606"
+ Z="4"
+ ArrowheadType="Solid"
+ CurvePoints="300.69 51.45 300.69 51.45 300.69 51.45 246.67 93.83 244.91 95.16 243.15 96.49 239.60 98.72 236.70 105.91 233.79 113.09 227.71 128.16 227.71 128.16 227.71 128.16"
+/><curve
+ id="13607"
+ Z="5"
+ ArrowheadType="Solid"
+ CurvePoints="211.67 15.48 211.67 15.48 211.67 15.48 221.09 83.49 221.43 85.67 221.77 87.85 222.78 91.92 219.87 99.11 216.97 106.29 210.88 121.36 210.88 121.36 210.88 121.36"
+/><curve
+ id="13608"
+ Z="6"
+ ArrowheadType="Solid"
+ CurvePoints="210.66 121.88 210.66 121.88 209.99 123.53 213.23 126.38 217.88 128.26 222.53 130.14 226.84 130.33 227.51 128.69 227.51 128.69"
+/><curve
+ id="13609"
+ Z="7"
+ ArrowheadType="Solid"
+ CurvePoints="227.51 128.69 227.51 128.69 228.17 127.05 224.94 124.19 220.28 122.31 215.63 120.43 211.32 120.24 210.66 121.88 210.66 121.88"
+/></group></page></CDXML>

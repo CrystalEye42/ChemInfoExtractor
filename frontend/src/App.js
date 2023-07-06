@@ -20,7 +20,7 @@ function App() {
             <Nav className="mr-auto">
               <Nav.Link href="/molscribe">MolScribe</Nav.Link>
               <Nav.Link href="/rxnscribe">RxnScribe</Nav.Link>
-              <Nav.Link href="/chenrxnextractor">ChemRxnExtractor</Nav.Link>
+              <Nav.Link href="/chemrxnextractor">ChemRxnExtractor</Nav.Link>
             </Nav>
           </Navbar>
 
@@ -30,7 +30,7 @@ function App() {
 
             <Route path="/rxnscribe" element={<PdfExtract url="/extractrxn" />}/>
 
-            <Route path="/chenrxnextractor" element={<PdfExtract url="/extracttxt" />}/>
+            <Route path="/chemrxnextractor" element={<PdfExtract url="/extracttxt" />}/>
 
             <Route path="/" element={<About/>}/>
           </Routes>

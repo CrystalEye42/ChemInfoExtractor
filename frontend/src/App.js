@@ -6,7 +6,6 @@ import {
 } from "react-router-dom"
 import { Navbar, Nav } from "react-bootstrap";
 import { PdfExtract } from "./components/PdfExtract";
-import { ImageExtract } from "./components/ImageExtract";
 import { About } from "./components/About";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -21,7 +20,7 @@ function App() {
             <Nav className="mr-auto">
               <Nav.Link href="/molscribe">MolScribe</Nav.Link>
               <Nav.Link href="/rxnscribe">RxnScribe</Nav.Link>
-              <Nav.Link href="/figure">ChemRxnExtractor</Nav.Link>
+              <Nav.Link href="/chenrxnextractor">ChemRxnExtractor</Nav.Link>
             </Nav>
           </Navbar>
 
@@ -29,9 +28,9 @@ function App() {
 
             <Route path="/molscribe" element={<PdfExtract url="/extract" />}/>
 
-            <Route path="/figure" element={<ImageExtract/>}/>
-
             <Route path="/rxnscribe" element={<PdfExtract url="/extractrxn" />}/>
+
+            <Route path="/chenrxnextractor" element={<PdfExtract url="/extracttxt" />}/>
 
             <Route path="/" element={<About/>}/>
           </Routes>

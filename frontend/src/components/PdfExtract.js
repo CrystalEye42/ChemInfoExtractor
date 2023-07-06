@@ -16,6 +16,7 @@ import './PdfExtract.css';
 // Import url for sending requests
 import { base_url } from "../config";
 import { FigureSelect } from './FigureSelect';
+import { TextRxnDisplay } from './TextRxnDisplay'
 import { FakeProgress } from './FakeProgress';
 
 export function PdfExtract(props) {
@@ -118,18 +119,24 @@ export function PdfExtract(props) {
 
   // set the values of Figures and FigureDetails
   const setFiguresFromResponse = (response) => {
-    setFigures(response.map(curr => getFigureName(curr["image_path"])));
-    setFigureDetails(response.reduce((dict, curr) => {
-      const key = getFigureName(curr["image_path"]);
-      dict[key] = {
-        "figure": curr["image"],
-        // The "||" is here to handle responses from both extract and extractrxn
-        "subfigures": curr["images"] || [],
-        "molblocks": curr["molblocks"] || [],
-        "reactions" : curr["reactions"] || [],
-      };
-      return dict;
-    }, {}));
+    if (props.url === '/extracttxt') {
+      console.log(response);
+      // process response
+    }
+    else {
+      setFigures(response.map(curr => getFigureName(curr["image_path"])));
+      setFigureDetails(response.reduce((dict, curr) => {
+        const key = getFigureName(curr["image_path"]);
+        dict[key] = {
+          "figure": curr["image"],
+          // The "||" is here to handle responses from both extract and extractrxn
+          "subfigures": curr["images"] || [],
+          "molblocks": curr["molblocks"] || [],
+          "reactions" : curr["reactions"] || [],
+        };
+        return dict;
+      }, {}));
+    }
   };
 
   // send post request containing pdf file
@@ -142,7 +149,7 @@ export function PdfExtract(props) {
     const request = new XMLHttpRequest();
     request.onreadystatechange = function () {
       if (request.readyState === 4) { 
-	if (request.status === 200) {
+        if (request.status === 200) {
           setPdfError('');
           setPdfFile(pdfFile);
           const response = JSON.parse(request.response);
@@ -249,7 +256,9 @@ export function PdfExtract(props) {
               </a>
             </div>
             <div id="resultBody">
-              {(extractState === 'done') && <FigureSelect figures={figures} details={figureDetails} url={props.url} />}
+              {(extractState === 'done') && 
+                ((props.url !== '/extracttxt' && <FigureSelect figures={figures} details={figureDetails} url={props.url}/>)
+                || (props.url !== '/extracttxt' && <TextRxnDisplay details={figureDetails}/>))}
             </div>
           </div>
         </div>

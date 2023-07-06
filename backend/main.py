@@ -172,6 +172,21 @@ class RxnExtractor(Resource):
         os.system('rm '+ f.filename.replace(" ", r"\ "))
         return results
 
+class TextRxnExtractor(Resource):
+    def post(self):
+        f = request.files['file']
+        file = open(f.filename, "wb")
+        file.write(f.read())
+        file.close()
+
+        num_pages = None
+        if 'num_pages' in request.form:
+            num_pages = int(request.form['num_pages'])
+        results = 'not implemented yet'
+
+        os.system('rm '+ f.filename.replace(" ", r"\ "))
+        return results
+
 
 class SendEmail(Resource):
     def post(self):
@@ -186,6 +201,7 @@ api.add_resource(Extractor, '/extract')
 api.add_resource(ImageExtractor, '/extractimage')
 api.add_resource(MolExtractor, '/extractmol')
 api.add_resource(RxnExtractor, '/extractrxn')
+api.add_resource(TextRxnExtractor, '/extracttxt')
 api.add_resource(SendEmail, '/sendemail')
 
 if __name__ == '__main__':

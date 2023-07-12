@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            ChemDraw JS interface
+        </title>
+        <link rel="stylesheet" href="./chemdraw.css">
+        <script
+            src="./chemdrawweb/chemdrawweb.js">
+        </script>
+    </head>
+    <body>
+        <div
+            id="chemdrawjs-container"
+            style="position: absolute; left:0; top: 0; width: 640px; height: 500px;">
+        </div>
+        <script>
+            var client;
+
+            var chemdrawjsAttached = function (chemdraw) {
+                client = chemdraw;
+            };
+
+            var chemdrawjsFailed = function (error) {
+                alert(error);
+            };
+
+            perkinelmer.ChemdrawWebManager.attach({
+                id: 'chemdrawjs-container',
+                callback: chemdrawjsAttached,
+                errorCallback: chemdrawjsFailed,
+                licenseUrl: './ChemDraw-JS-License.xml'
+            });
+        </script>
+    </body>
+</html>

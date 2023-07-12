@@ -1,0 +1,18 @@
+.cdd.cddroot .cdd-toolbar-container {
+    max-width: 640px;
+    overflow-x: scroll;
+}
+
+.cdd.cddroot .cdd-chemdraw-panel-container {
+    max-width: 640px;
+}
+
+.cdd.cddroot .cdd-panel-root {
+    max-width: 640px;
+    overflow: hidden;
+}
+
+.cdd.cddroot {
+    max-width: 640px!important;
+    overflow: hidden!important;
+}

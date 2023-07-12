@@ -11,64 +11,46 @@ export class ChemDrawDisplay extends React.Component {
       scroll: true,
       smiles: null,
       smilesChanged: false,
-      chemdraw: null,
     };
     this.refFrame = React.createRef();
     this.display = this.display.bind(this);
     this.startPolling = this.startPolling.bind(this);
     this.checkSmiles = this.checkSmiles.bind(this);
     this.reportPrediction = this.reportPrediction.bind(this);
-    this.chemdrawjsAttached = this.chemdrawjsAttached.bind(this);
-  }
-
-  componentDidMount() {
-    setInterval(this.checkSmiles, 1000);
-    
-    perkinelmer.ChemdrawWebManager.attach({
-      id: 'chemdrawjs-container',
-      callback: this.chemdrawjsAttached,
-      errorCallback: this.chemdrawjsFailed,
-      licenseUrl: './ChemDraw-JS-License.xml'
-    });
-    this.startPolling();
   }
   
-  chemdrawjsAttached(chemdraw) {
-    console.log(chemdraw);
-    this.setState({chemdraw: chemdraw});
-    this.startPolling();
-  } 
-
-  chemdrawjsFailed() {
-  }
-
   startPolling() {
-    if (this.props && this.props.molblock && this.state.chemdraw) {
-      this.state.chemdraw.loadMOL(this.props.molblock, (result, error) => {
-        if (error) {
-          console.log(error);
-        }
-      });
+    const client = this.getClient();
+    if (client) {
+      client.setViewOnly();
+      client.loadConfigFromUrl('./chemdrawweb/configuration.json')
+      this.display();
+      return;
     }
-
-    setTimeout(this.startPolling, 100);
+    setTimeout(this.startPolling, 1000);
   }
 
-  getKetcher() {
+  getClient() {
     const iframe = document.getElementById("iframe");
-    if (!iframe || !iframe.contentWindow) return;
-    return iframe.contentWindow.ketcher;
+    console.log(iframe);
+    if (!iframe || !iframe.contentWindow) {
+      return;
+    }
+    return iframe.contentWindow.client;
   }
 
   async display() {
     const content = this.props.molblock;
-    const ketcher = this.getKetcher();
-    if (!ketcher) return;
+    const client = this.getClient();
+    console.log(client);
+    if (!client) return;
 
-    ketcher.editor.render.options.autoScale = true;
-    ketcher.editor.render.options.autoScaleMargin = 10;
-    ketcher.setSettings({ fontsz: 18 });
-    ketcher.setMolecule(content).then(() => {
+    client.loadMOL(content, (result, error) => {
+      client.fitToContainer();
+      client.zoomToContainer();
+      if (error) {
+        alert(error);
+      }
       if (this.state.scroll) {
         document.getElementById("results").scrollTo(0, 0);
       }
@@ -119,30 +101,19 @@ export class ChemDrawDisplay extends React.Component {
   render() {
     return (
       <div>
-        {!this.props.molblock && <p>No Mol block predicted</p>}
-        <div id="chemdrawjs-container" style={{height:"400px", width:"600px"}}> </div>
-        <div className="container">
-          <div className="row">
-            <button
-              id="reportPrediction"
-              type="button"
-              className="btn btn-secondary btn-ketcher col-sm"
-              onClick={this.reportPrediction}
-            >
-              Report Incorrect Prediction
-            </button>
-            {this.state.smilesChanged && (
-              <button
-                id="reportEditedPrediction"
-                type="button"
-                className="btn btn-primary btn-ketcher col-sm"
-                onClick={this.reportPrediction}
-              >
-                Submit Fixes to Prediction
-              </button>
-            )}
-          </div>
-        </div>
+        <iframe
+          id="iframe"
+          title="myiframe"
+          ref={this.refFrame}
+          onLoad={() => {
+            this.setState({ scroll: true });
+            this.startPolling();
+          }}
+          src="./chemdraw.html"
+          sandbox="allow-scripts allow-same-origin"
+          width="640"
+          height="500"
+        ></iframe>
       </div>
     );
   }

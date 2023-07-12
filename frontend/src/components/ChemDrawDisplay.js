@@ -47,7 +47,6 @@ export class ChemDrawDisplay extends React.Component {
 
     client.loadMOL(content, (result, error) => {
       client.fitToContainer();
-      client.zoomToContainer();
       if (error) {
         alert(error);
       }

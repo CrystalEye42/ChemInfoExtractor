@@ -38,6 +38,8 @@ export function PdfExtract(props) {
 
   const [extractLimited, setExtractLimited] = useState(true);
 
+  const [fetchingExample, setFetchingExample] = useState(false);
+
   const inputFileRef = React.useRef();
 
   // handle file onChange event
@@ -97,6 +99,7 @@ export function PdfExtract(props) {
     }
     // eslint-disable-next-line no-restricted-globals
     const file = `${location.origin}/${exampleFileName}`;
+    setFetchingExample(true);
     const response = await fetch(file);
     const example = await response.blob();
     setPdfData(example);
@@ -106,6 +109,7 @@ export function PdfExtract(props) {
       setPdfError('');
       setPdfFile(e.target.result);
       setExtractState('ready');
+      setFetchingExample(false);
     }
   }
 
@@ -142,7 +146,7 @@ export function PdfExtract(props) {
     const request = new XMLHttpRequest();
     request.onreadystatechange = function () {
       if (request.readyState === 4) { 
-	if (request.status === 200) {
+        if (request.status === 200) {
           setPdfError('');
           setPdfFile(pdfFile);
           const response = JSON.parse(request.response);
@@ -150,10 +154,13 @@ export function PdfExtract(props) {
           setFiguresFromResponse(response);
           setExtractState('done');
         }
+        else if (request.status === 413) {
+          alert('File uploaded is too large');
+          setExtractState('unready');
+        }
         else {
           alert('Something went wrong with the backend. Please contact wang7776@mit.edu');
           setPdfError('Something went wrong with the backend. Please contact wang7776@mit.edu');
-          setExtractState('unready');
         }
       }
     }
@@ -208,7 +215,7 @@ export function PdfExtract(props) {
                 <option value="example3.pdf">acs.joc.2c00749</option>
               </select>
             </div>}
-
+            {fetchingExample && <div className="loader"></div>}
             {(extractState === 'loading') && <FakeProgress seconds={30} />}
           </div>
 

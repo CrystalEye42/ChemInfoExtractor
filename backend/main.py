@@ -15,7 +15,7 @@ from dotenv import load_dotenv
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail, Email, To, Content
 
-from chemescribe import ChemEScribe
+from openchemie import OpenChemIE
 
 FROM_EMAIL = "guyzyl@mit.edu"
 TO_EMAIL = "guyzyl@mit.edu"
@@ -27,7 +27,7 @@ app = Flask(__name__)
 CORS(app)
 api = Api(app)
 
-model = ChemEScribe()
+model = OpenChemIE()
 
 def get_byte_image(image):
     if type(image) == np.ndarray:
@@ -39,7 +39,7 @@ def get_byte_image(image):
 
 
 def run_models(pdf_path, num_pages=None):
-    outputs = model.extract_mol_info_from_pdf(pdf_path, num_pages=num_pages)
+    outputs = model.extract_molecules_from_pdf(pdf_path, num_pages=num_pages)
     results = []
 
     for i, figure in enumerate(outputs):
@@ -69,7 +69,7 @@ def run_models(pdf_path, num_pages=None):
 
 
 def run_rxn_models(pdf_path, num_pages=None):
-    results = model.extract_rxn_info_from_pdf(pdf_path, num_pages=num_pages)
+    results = model.extract_reactions_from_pdf(pdf_path, num_pages=num_pages)
     for i, figure in enumerate(results):
         figure['image_path'] = f'figure-{i}.png'
         figure['image'] = get_byte_image(figure['figure'])
@@ -77,45 +77,7 @@ def run_rxn_models(pdf_path, num_pages=None):
     return results
 
 
-def run_models_on_image(img_path):
-    image = cv2.imread(img_path)
-    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-    output = model.extract_mol_info_from_figures([image])[0]
-    mol_bboxes = []
-    mol_scores = []
-    smiles = []
-    molblocks = []
-    sub_images = []
-    for mol in output['molecules']:
-        mol_bboxes.append(mol['bbox'])
-        mol_scores.append(mol['score'])
-        smiles.append(mol['smiles'])
-        molblocks.append(mol['molfile'])
-        sub_images.append(get_byte_image(mol['image']))
-    results = {
-        'image': get_byte_image(output['image']),
-        'images': list(zip(sub_images, smiles, mol_bboxes, mol_scores)),
-        'smiles': smiles,
-        'molblocks': molblocks
-    }
-    return results
-
-
-def run_models_on_molecule(img_path):
-    # predict smiles
-    image = cv2.imread(img_path)
-    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-    output = model.extract_mol_info_from_figures([image])[0]
-    #store the results
-
-    results = {}
-    for mol in output['molecules'][:1]:
-        results['smiles'] = mol['smiles']
-        results['molblocks'] = mol['molfile']
-    return results
-
-
-class Extractor(Resource):
+class MolExtractor(Resource):
     def post(self):
         f = request.files['file']
         file = open(f.filename, "wb")
@@ -126,32 +88,6 @@ class Extractor(Resource):
         if 'num_pages' in request.form:
             num_pages = int(request.form['num_pages'])
         results = run_models(f.filename, num_pages=num_pages)
-
-        os.system('rm '+ f.filename.replace(" ", r"\ "))
-        return results
-
-
-class ImageExtractor(Resource):
-    def post(self):
-        f = request.files['file']
-        file = open(f.filename, "wb")
-        file.write(f.read())
-        file.close()
-
-        results = run_models_on_image(f.filename)
-
-        os.system('rm '+ f.filename.replace(" ", r"\ "))
-        return results
-
-
-class MolExtractor(Resource):
-    def post(self):
-        f = request.files['file']
-        file = open(f.filename, "wb")
-        file.write(f.read())
-        file.close()
-
-        results = run_models_on_molecule(f.filename)
 
         os.system('rm '+ f.filename.replace(" ", r"\ "))
         return results
@@ -182,7 +118,7 @@ class TextRxnExtractor(Resource):
         num_pages = None
         if 'num_pages' in request.form:
             num_pages = int(request.form['num_pages'])
-        results = 'not implemented yet'
+        results = model.extract_reactions_from_pdf_text(f.filename, num_pages=num_pages)
 
         os.system('rm '+ f.filename.replace(" ", r"\ "))
         return results
@@ -197,9 +133,7 @@ class SendEmail(Resource):
         return response.status_code
 
 
-api.add_resource(Extractor, '/extract')
-api.add_resource(ImageExtractor, '/extractimage')
-api.add_resource(MolExtractor, '/extractmol')
+api.add_resource(MolExtractor, '/extract')
 api.add_resource(RxnExtractor, '/extractrxn')
 api.add_resource(TextRxnExtractor, '/extracttxt')
 api.add_resource(SendEmail, '/sendemail')

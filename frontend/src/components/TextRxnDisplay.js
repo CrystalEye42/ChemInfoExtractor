@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import { render } from "@testing-library/react";
-import './FigureDisplay.css'; // or whatever css file you want to use
+import './FigureDisplay.css'; // or whatever new css file you want to use
 
 export class TextRxnDisplay extends React.Component {
     constructor(props) {
@@ -14,6 +14,8 @@ export class TextRxnDisplay extends React.Component {
 
     render() {
         // preprocess what to display
+        console.log(this.props.details)
+
         return (<>Edit this</>)
     }
 }

@@ -120,8 +120,7 @@ export function PdfExtract(props) {
   // set the values of Figures and FigureDetails
   const setFiguresFromResponse = (response) => {
     if (props.url === '/extracttxt') {
-      console.log(response);
-      // process response
+      setFigureDetails(response);
     }
     else {
       setFigures(response.map(curr => getFigureName(curr["image_path"])));

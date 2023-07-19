@@ -40,6 +40,8 @@ export function MolExtract(props) {
 
   const [fetchingExample, setFetchingExample] = useState(false);
 
+  const [showPdf, setShowPdf] = useState(true);
+
   const inputFileRef = React.useRef();
 
   // handle file onChange event
@@ -79,6 +81,7 @@ export function MolExtract(props) {
             setResponseData(response);
             setFiguresFromResponse(response);
             setExtractState('done');
+            setShowPdf(false);
           }
         } catch (error) {
           setPdfError('Bad file shape');
@@ -152,6 +155,7 @@ export function MolExtract(props) {
           setResponseData(response);
           setFiguresFromResponse(response);
           setExtractState('done');
+          setShowPdf(false);
         }
         else if (request.status === 413) {
           alert('File uploaded is too large');
@@ -219,9 +223,8 @@ export function MolExtract(props) {
           </div>
 
           <br></br>
-          <h4>View PDF</h4>
-
-          <div>
+          {showPdf && <div>
+            <button type="button" className='btn btn-secondary' onClick={()=>setShowPdf(false)}>Hide Pdf</button>
             {/* View PDF */}
             <div className="viewer">
 
@@ -237,23 +240,27 @@ export function MolExtract(props) {
               {/* render this if we have pdfFile state null   */}
               {!pdfFile && <div style={{alignItems: "center", height: "100%"}}><p>No file is selected yet</p></div>}
             </div>
+          </div>}
+          {!showPdf && <button type="button" className='btn btn-secondary' onClick={()=>setShowPdf(true)}>Show Pdf</button>}
+
           </div>
+          <div className='col'>
+            <div id="resultButtons" style={{marginTop:30}}>
+              <button type="button" className='btn btn-secondary' onClick={clickForm}>Load Results</button>
+              <input type='file' ref={inputFileRef} style={{display:'none'}}
+                onChangeCapture={handleJSON}></input>
+              <a
+                href={`data:text/json;charset=utf-8,${encodeURIComponent(
+                  JSON.stringify(responseData)
+                )}`}
+                download="export.json"
+                >
+                <button type="button" className='btn btn-secondary' style={{marginLeft:"3px"}} disabled={extractState !== 'done'}>Save Results</button>
+              </a>
+            </div>
           </div>
           <div>
             <div id="molresults">
-              <div id="resultButtons">
-                <button type="button" className='btn btn-secondary' onClick={clickForm}>Load Results</button>
-                <input type='file' ref={inputFileRef} style={{display:'none'}}
-                  onChangeCapture={handleJSON}></input>
-                <a
-                  href={`data:text/json;charset=utf-8,${encodeURIComponent(
-                    JSON.stringify(responseData)
-                  )}`}
-                  download="export.json"
-                  >
-                  <button type="button" className='btn btn-secondary' style={{marginLeft:"3px"}} disabled={extractState !== 'done'}>Save Results</button>
-                </a>
-              </div>
               <div id="resultBody">
                 {(extractState === 'done') && <MolFigureSelect figures={figures} details={figureDetails}/>}
               </div>

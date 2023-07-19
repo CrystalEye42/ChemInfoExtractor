@@ -60,6 +60,13 @@ span{
   overflow-wrap: break-word;
 }
 
+#molresults{
+  margin-top: 30px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+}
+
 #resultButtons{
   text-align: right;
 }

@@ -7,6 +7,7 @@ import {
 import { Navbar, Nav } from "react-bootstrap";
 import { PdfExtract } from "./components/PdfExtract";
 import { ImageExtract } from "./components/ImageExtract";
+import { MolExtract } from "./components/MolExtract"
 import { About } from "./components/About";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -31,7 +32,7 @@ function App() {
 
           <Routes>
 
-            <Route path="/molscribe" element={<PdfExtract url="/extract" />}/>
+            <Route path="/molscribe" element={<MolExtract url="/extract" />}/>
 
             <Route path="/figure" element={<ImageExtract/>}/>
 

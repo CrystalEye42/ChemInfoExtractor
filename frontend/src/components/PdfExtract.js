@@ -147,7 +147,7 @@ export function PdfExtract(props) {
     }
     const request = new XMLHttpRequest();
     request.onreadystatechange = function () {
-      if (request.readyState === 4) { 
+      if (request.readyState === 4) {
         if (request.status === 200) {
           setPdfError('');
           setPdfFile(pdfFile);
@@ -187,7 +187,7 @@ export function PdfExtract(props) {
             <div>
               <input type='file' className="form-control"
               onChange={handleFile}></input>
-              <button type="button" className="btn btn-primary" onClick={extractFile} 
+              <button type="button" className="btn btn-primary" onClick={extractFile}
                 disabled={extractState !== 'ready'}>Extract</button>
             </div>
             {/* we will display error message in case user select some file

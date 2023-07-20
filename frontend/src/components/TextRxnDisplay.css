@@ -88,33 +88,6 @@ span {
      background: rgb(255, 204, 0);
 }
 
-[data-entity][data-entity="work_of_art"] {
-     background: rgba(255, 204, 0, 0.2);
-     border-color: rgb(255, 204, 0);
-}
-
-[data-entity][data-entity="work_of_art"]::after {
-     background: rgb(255, 204, 0);
-}
-
-[data-entity][data-entity="language"] {
-     background: rgba(255, 204, 0, 0.2);
-     border-color: rgb(255, 204, 0);
-}
-
-[data-entity][data-entity="language"]::after {
-     background: rgb(255, 204, 0);
-}
-
-[data-entity][data-entity="date"] {
-     background: rgba(47, 187, 171, 0.2);
-     border-color: rgb(47, 187, 171);
-}
-
-[data-entity][data-entity="date"]::after {
-     background: rgb(47, 187, 171);
-}
-
 [data-entity][data-entity="time"] {
      background: rgba(47, 187, 171, 0.2);
      border-color: rgb(47, 187, 171);
@@ -130,42 +103,6 @@ span {
 }
 
 [data-entity][data-entity="solvent"]::after {
-     background: rgb(153, 153, 153);
-}
-
-[data-entity][data-entity="money"] {
-     background: rgba(153, 153, 153, 0.2);
-     border-color: rgb(153, 153, 153);
-}
-
-[data-entity][data-entity="money"]::after {
-     background: rgb(153, 153, 153);
-}
-
-[data-entity][data-entity="quantity"] {
-     background: rgba(153, 153, 153, 0.2);
-     border-color: rgb(153, 153, 153);
-}
-
-[data-entity][data-entity="quantity"]::after {
-     background: rgb(153, 153, 153);
-}
-
-[data-entity][data-entity="ordinal"] {
-     background: rgba(153, 153, 153, 0.2);
-     border-color: rgb(153, 153, 153);
-}
-
-[data-entity][data-entity="ordinal"]::after {
-     background: rgb(153, 153, 153);
-}
-
-[data-entity][data-entity="cardinal"] {
-     background: rgba(153, 153, 153, 0.2);
-     border-color: rgb(153, 153, 153);
-}
-
-[data-entity][data-entity="cardinal"]::after {
      background: rgb(153, 153, 153);
 }
 

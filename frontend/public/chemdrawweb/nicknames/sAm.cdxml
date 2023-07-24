@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE CDXML SYSTEM "http://www.cambridgesoft.com/xml/cdxml.dtd" >
+<CDXML
+ CreationProgram="ChemDraw 12.0d717"
+ Name="sAm.cdxml"
+ BoundingBox="217.69 335.95 322.31 384.05"
+ WindowPosition="0 0"
+ WindowSize="0 0"
+ WindowIsZoomed="yes"
+ FractionalWidths="yes"
+ InterpretChemically="yes"
+ ShowAtomQuery="yes"
+ ShowAtomStereo="no"
+ ShowAtomEnhancedStereo="yes"
+ ShowAtomNumber="no"
+ ShowBondQuery="yes"
+ ShowBondRxn="yes"
+ ShowBondStereo="no"
+ ShowTerminalCarbonLabels="no"
+ ShowNonTerminalCarbonLabels="no"
+ HideImplicitHydrogens="no"
+ LabelFont="3"
+ LabelSize="10"
+ LabelFace="96"
+ CaptionFont="4"
+ CaptionSize="12"
+ HashSpacing="2.7"
+ MarginWidth="2"
+ LineWidth="1"
+ BoldWidth="4"
+ BondLength="30"
+ BondSpacing="12"
+ ChainAngle="120"
+ LabelJustification="Auto"
+ CaptionJustification="Left"
+ AminoAcidTermini="HOH"
+ ShowSequenceTermini="yes"
+ ShowSequenceBonds="yes"
+ PrintMargins="36 36 36 36"
+ MacPrintInfo="000300000258025800000000190D1357FFA9FFB21971139E0367052803FC000200000258025800000000190D1357000100640064000000010001010100000001270F000100010000000000000000000000000002001901900000000000600000000000000000000100000000000000000000000000000000"
+ color="0"
+ bgcolor="1"
+><colortable>
+<color r="1" g="1" b="1"/>
+<color r="0" g="0" b="0"/>
+</colortable><fonttable>
+<font id="3" charset="iso-8859-1" name="Arial"/>
+<font id="4" charset="iso-8859-1" name="Times New Roman"/>
+</fonttable><page
+ id="4916"
+ BoundingBox="0 0 540 720"
+ HeaderPosition="36"
+ FooterPosition="36"
+ PrintTrimMarks="yes"
+ HeightPages="1"
+ WidthPages="1"
+><fragment
+ id="4901"
+ BoundingBox="217.69 335.95 322.31 384.05"
+><n
+ id="4898"
+ p="273.02 341.55"
+ Z="13"
+ AS="N"
+/><n
+ id="4900"
+ p="297.52 355.65"
+ Z="14"
+ AS="N"
+/><n
+ id="4902"
+ p="322.07 341.55"
+ Z="15"
+ AS="N"
+/><n
+ id="4904"
+ p="248.42 355.7"
+ Z="16"
+/><n
+ id="4906"
+ p="248.42 384.05"
+ Z="17"
+ AS="N"
+/><n
+ id="4912"
+ p="222.44 340.7"
+ Z="22"
+ NodeType="ExternalConnectionPoint"
+ AS="N"
+/><b
+ id="4908"
+ Z="18"
+ B="4898"
+ E="4900"
+ BS="N"
+/><b
+ id="4909"
+ Z="19"
+ B="4900"
+ E="4902"
+ BS="N"
+/><b
+ id="4910"
+ Z="20"
+ B="4898"
+ E="4904"
+ BS="N"
+/><b
+ id="4911"
+ Z="21"
+ B="4906"
+ E="4904"
+ BS="N"
+/><b
+ id="4914"
+ Z="23"
+ B="4904"
+ E="4912"
+ BS="N"
+/></fragment></page></CDXML>

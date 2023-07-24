@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE CDXML SYSTEM "http://www.cambridgesoft.com/xml/cdxml.dtd" >
+<CDXML
+ CreationProgram="ChemDraw 16.0.0.82"
+ Name="Functional Groups.ctp"
+ BoundingBox="173.70 48.50 223.40 91.48"
+ WindowPosition="0 -2147483648"
+ WindowSize="1073741824 0"
+ FractionalWidths="yes"
+ InterpretChemically="yes"
+ ShowAtomQuery="yes"
+ ShowAtomStereo="no"
+ ShowAtomEnhancedStereo="yes"
+ ShowAtomNumber="no"
+ ShowResidueID="no"
+ ShowBondQuery="yes"
+ ShowBondRxn="yes"
+ ShowBondStereo="no"
+ ShowTerminalCarbonLabels="no"
+ ShowNonTerminalCarbonLabels="no"
+ HideImplicitHydrogens="no"
+ LabelFont="3"
+ LabelSize="10"
+ LabelFace="96"
+ CaptionFont="4"
+ CaptionSize="12"
+ HashSpacing="2.70"
+ MarginWidth="2"
+ LineWidth="1"
+ BoldWidth="4"
+ BondLength="28.35"
+ BondSpacing="12"
+ ChainAngle="120"
+ LabelJustification="Auto"
+ CaptionJustification="Left"
+ AminoAcidTermini="HOH"
+ ShowSequenceTermini="yes"
+ ShowSequenceBonds="yes"
+ ResidueWrapCount="40"
+ ResidueBlockCount="10"
+ ResidueZigZag="yes"
+ NumberResidueBlocks="no"
+ PrintMargins="36 36 36 36"
+ MacPrintInfo="000300000001000100000000000A000700000000000A0008036704B003C0000200000001000100000000000A0007000100640064000000010001010100FF0001270F000100010000000000000000000000000002001901900000000000400000000000000000000100000000000000000000000000000000"
+ ChemPropName=""
+ ChemPropFormula="Chemical Formula: "
+ ChemPropExactMass="Exact Mass: "
+ ChemPropMolWt="Molecular Weight: "
+ ChemPropMOverZ="m/z: "
+ ChemPropAnalysis="Elemental Analysis: "
+ ChemPropBoilingPt="Boiling Point: "
+ ChemPropMeltingPt="Melting Point: "
+ ChemPropCritTemp="Critical Temp: "
+ ChemPropCritPres="Critical Pres: "
+ ChemPropCritVol="Critical Vol: "
+ ChemPropGibbs="Gibbs Energy: "
+ ChemPropLogP="Log P: "
+ ChemPropMR="MR: "
+ ChemPropHenry="Henry&apos;s Law: "
+ ChemPropEForm="Heat of Form: "
+ ChemProptPSA="tPSA: "
+ ChemPropCLogP="CLogP: "
+ ChemPropCMR="CMR: "
+ ChemPropLogS="LogS: "
+ ChemPropPKa="pKa: "
+ ChemPropID=""
+ color="0"
+ bgcolor="1"
+ RxnAutonumberStart="1"
+ RxnAutonumberConditions="no"
+ RxnAutonumberStyle="Roman"
+ RxnAutonumberFormat="(#)"
+><colortable>
+<color r="1" g="1" b="1"/>
+<color r="0" g="0" b="0"/>
+<color r="1" g="0" b="0"/>
+<color r="1" g="1" b="0"/>
+<color r="0" g="1" b="0"/>
+<color r="0" g="1" b="1"/>
+<color r="0" g="0" b="1"/>
+<color r="1" g="0" b="1"/>
+</colortable><fonttable>
+<font id="3" charset="iso-8859-1" name="Arial"/>
+<font id="4" charset="iso-8859-1" name="Times New Roman"/>
+</fonttable><page
+ id="589"
+ BoundingBox="0 0 504 648"
+ HeaderPosition="36"
+ FooterPosition="36"
+ PrintTrimMarks="yes"
+ HeightPages="1"
+ WidthPages="1"
+><group
+ id="471"
+ BoundingBox="173.70 48.50 223.40 91.48"
+ Z="10"
+><fragment
+ id="472"
+ BoundingBox="173.70 48.50 223.40 91.48"
+ Z="11"
+><n
+ id="323"
+ p="173.95 91"
+ Z="12"
+ AS="N"
+/><n
+ id="325"
+ p="198.55 76.85"
+ Z="13"
+ Element="15"
+ NumHydrogens="0"
+ NeedsClean="yes"
+><t
+ p="195.22 80.75"
+ BoundingBox="195.22 73.05 201.89 80.75"
+ LabelJustification="Left"
+><s font="3" size="10" face="96">P</s></t></n><n
+ id="327"
+ p="223.15 91.05"
+ Z="15"
+ AS="N"
+/><n
+ id="329"
+ p="198.65 48.50"
+ Z="17"
+ AS="N"
+/><b
+ id="332"
+ Z="14"
+ B="323"
+ E="325"
+ BS="N"
+/><b
+ id="333"
+ Z="16"
+ B="325"
+ E="327"
+ BS="N"
+/><b
+ id="334"
+ Z="18"
+ B="325"
+ E="329"
+ BS="N"
+/></fragment></group><annotation
+ Keyword="Name"
+ Content="trimethylphosphane"
+/></page></CDXML>

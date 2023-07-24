@@ -42,6 +42,8 @@
 
 #ketcher{
     clear: both;
+    margin-top: 10px;
+    border: 1px solid lightgray;
 }
 
 select{
@@ -59,7 +61,7 @@ h5 {
   }
   
 #resultBody{
-overflow-y: auto;
+overflow-y: hidden;
 overflow-x: hidden;
 }
 

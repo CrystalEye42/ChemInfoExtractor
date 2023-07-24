@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE CDXML SYSTEM "http://www.cambridgesoft.com/xml/cdxml.dtd" >
+<CDXML
+ CreationProgram="ChemDraw 12.0d717"
+ Name="t-Am.cdxml"
+ BoundingBox="229.48 333.77 309.67 386.23"
+ WindowPosition="0 0"
+ WindowSize="0 0"
+ WindowIsZoomed="yes"
+ FractionalWidths="yes"
+ InterpretChemically="yes"
+ ShowAtomQuery="yes"
+ ShowAtomStereo="no"
+ ShowAtomEnhancedStereo="yes"
+ ShowAtomNumber="no"
+ ShowBondQuery="yes"
+ ShowBondRxn="yes"
+ ShowBondStereo="no"
+ ShowTerminalCarbonLabels="no"
+ ShowNonTerminalCarbonLabels="no"
+ HideImplicitHydrogens="no"
+ LabelFont="3"
+ LabelSize="10"
+ LabelFace="96"
+ CaptionFont="4"
+ CaptionSize="12"
+ HashSpacing="2.7"
+ MarginWidth="2"
+ LineWidth="1"
+ BoldWidth="4"
+ BondLength="30"
+ BondSpacing="12"
+ ChainAngle="120"
+ LabelJustification="Auto"
+ CaptionJustification="Left"
+ AminoAcidTermini="HOH"
+ ShowSequenceTermini="yes"
+ ShowSequenceBonds="yes"
+ PrintMargins="36 36 36 36"
+ MacPrintInfo="000300000258025800000000190D1357FFA9FFB21971139E0367052803FC000200000258025800000000190D1357000100640064000000010001010100000001270F000100010000000000000000000000000002001901900000000000600000000000000000000100000000000000000000000000000000"
+ color="0"
+ bgcolor="1"
+><colortable>
+<color r="1" g="1" b="1"/>
+<color r="0" g="0" b="0"/>
+</colortable><fonttable>
+<font id="3" charset="iso-8859-1" name="Arial"/>
+<font id="4" charset="iso-8859-1" name="Times New Roman"/>
+</fonttable><page
+ id="5020"
+ BoundingBox="0 0 540 720"
+ HeaderPosition="36"
+ FooterPosition="36"
+ PrintTrimMarks="yes"
+ HeightPages="1"
+ WidthPages="1"
+><fragment
+ id="5005"
+ BoundingBox="229.48 333.77 309.67 386.23"
+><n
+ id="5002"
+ p="294.23 360"
+ Z="13"
+ AS="N"
+/><n
+ id="5004"
+ p="264.23 360"
+ Z="14"
+/><n
+ id="5006"
+ p="249.23 334.02"
+ Z="15"
+ AS="N"
+/><n
+ id="5008"
+ p="309.23 385.98"
+ Z="16"
+ AS="N"
+/><n
+ id="5010"
+ p="249.23 385.98"
+ Z="17"
+ AS="N"
+/><n
+ id="5016"
+ p="234.23 360"
+ Z="22"
+ NodeType="ExternalConnectionPoint"
+ AS="N"
+/><b
+ id="5012"
+ Z="18"
+ B="5002"
+ E="5004"
+ BS="N"
+/><b
+ id="5013"
+ Z="19"
+ B="5004"
+ E="5006"
+ BS="N"
+/><b
+ id="5014"
+ Z="20"
+ B="5002"
+ E="5008"
+ BS="N"
+/><b
+ id="5015"
+ Z="21"
+ B="5004"
+ E="5010"
+ BS="N"
+/><b
+ id="5018"
+ Z="23"
+ B="5004"
+ E="5016"
+ BS="N"
+/></fragment></page></CDXML>

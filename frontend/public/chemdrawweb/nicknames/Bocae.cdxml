@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE CDXML SYSTEM "http://www.cambridgesoft.com/xml/cdxml.dtd" >
+<CDXML
+ CreationProgram="ChemDraw 13.0.0.410"
+ BoundingBox="48.44 223.05 235.31 285.95"
+ WindowPosition="-2147483648 -1073741824"
+ WindowSize="1073741824 1073741824"
+ FractionalWidths="yes"
+ InterpretChemically="yes"
+ ShowAtomQuery="yes"
+ ShowAtomStereo="no"
+ ShowAtomEnhancedStereo="yes"
+ ShowAtomNumber="no"
+ ShowBondQuery="yes"
+ ShowBondRxn="yes"
+ ShowBondStereo="no"
+ ShowTerminalCarbonLabels="no"
+ ShowNonTerminalCarbonLabels="no"
+ HideImplicitHydrogens="no"
+ LabelFont="3"
+ LabelSize="10"
+ LabelFace="96"
+ CaptionFont="4"
+ CaptionSize="12"
+ HashSpacing="2.7"
+ MarginWidth="2"
+ LineWidth="1"
+ BoldWidth="4"
+ BondLength="30"
+ BondSpacing="12"
+ ChainAngle="120"
+ LabelJustification="Auto"
+ CaptionJustification="Left"
+ AminoAcidTermini="HOH"
+ ShowSequenceTermini="yes"
+ ShowSequenceBonds="yes"
+ PrintMargins="36 36 36 36"
+ color="0"
+ bgcolor="1"
+><colortable>
+<color r="1" g="1" b="1"/>
+<color r="0" g="0" b="0"/>
+<color r="1" g="0" b="0"/>
+<color r="1" g="1" b="0"/>
+<color r="0" g="1" b="0"/>
+<color r="0" g="1" b="1"/>
+<color r="0" g="0" b="1"/>
+<color r="1" g="0" b="1"/>
+</colortable><fonttable>
+<font id="3" charset="iso-8859-1" name="Arial"/>
+<font id="4" charset="iso-8859-1" name="Times New Roman"/>
+</fonttable><page
+ id="537"
+ BoundingBox="0 0 540 720"
+ HeaderPosition="36"
+ FooterPosition="36"
+ PrintTrimMarks="yes"
+ HeightPages="1"
+ WidthPages="1"
+><fragment
+ id="522"
+ BoundingBox="48.44 223.05 235.31 285.95"
+><n
+ id="503"
+ p="79.17 271.63"
+ Z="23"
+ NumHydrogens="2"
+ NeedsClean="yes"
+ AS="N"
+><t
+ p="75.58 275.3"
+ BoundingBox="75.58 268.05 86.94 285.95"
+ LabelJustification="Left"
+ LabelAlignment="Below"
+ LineStarts="2 4"
+><s font="3" size="10" face="96">CH2</s></t></n><n
+ id="505"
+ p="105.15 256.63"
+ Z="24"
+ AS="N"
+/><n
+ id="507"
+ p="131.13 271.63"
+ Z="25"
+ Element="7"
+ NumHydrogens="1"
+ NeedsClean="yes"
+ AS="N"
+><t
+ p="127.54 275.2"
+ BoundingBox="127.54 268.05 134.74 283.55"
+ LabelJustification="Left"
+ LabelAlignment="Below"
+ LineStarts="2 3"
+><s font="3" size="10" face="96">NH</s></t></n><n
+ id="509"
+ p="157.12 256.63"
+ Z="26"
+/><n
+ id="511"
+ p="157.12 226.63"
+ Z="27"
+ Element="8"
+ NumHydrogens="0"
+ NeedsClean="yes"
+ AS="N"
+><t
+ p="153.21 230.3"
+ BoundingBox="153.21 223.05 160.96 230.4"
+ LabelJustification="Left"
+><s font="3" size="10" face="96">O</s></t></n><n
+ id="513"
+ p="183.1 271.63"
+ Z="28"
+ Element="8"
+ NumHydrogens="0"
+ NeedsClean="yes"
+ AS="N"
+><t
+ p="179.19 275.3"
+ BoundingBox="179.19 268.05 186.94 275.4"
+ LabelJustification="Left"
+><s font="3" size="10" face="96">O</s></t></n><n
+ id="515"
+ p="209.08 256.63"
+ Z="29"
+/><n
+ id="517"
+ p="209.08 226.63"
+ Z="30"
+ AS="N"
+/><n
+ id="519"
+ p="235.06 241.63"
+ Z="31"
+ AS="N"
+/><n
+ id="521"
+ p="235.06 271.63"
+ Z="32"
+ AS="N"
+/><n
+ id="534"
+ p="53.19 256.63"
+ Z="42"
+ NodeType="ExternalConnectionPoint"
+ ExternalConnectionType="Diamond"
+/><b
+ id="523"
+ Z="33"
+ B="515"
+ E="521"
+ BS="N"
+/><b
+ id="524"
+ Z="34"
+ B="515"
+ E="519"
+ BS="N"
+/><b
+ id="525"
+ Z="35"
+ B="515"
+ E="517"
+ BS="N"
+/><b
+ id="526"
+ Z="36"
+ B="513"
+ E="515"
+ BS="N"
+/><b
+ id="527"
+ Z="37"
+ B="509"
+ E="513"
+ BS="N"
+/><b
+ id="528"
+ Z="38"
+ B="509"
+ E="511"
+ Order="2"
+/><b
+ id="529"
+ Z="39"
+ B="507"
+ E="509"
+ BS="N"
+/><b
+ id="530"
+ Z="40"
+ B="505"
+ E="507"
+ BS="N"
+/><b
+ id="531"
+ Z="41"
+ B="503"
+ E="505"
+ BS="N"
+/><b
+ id="535"
+ Z="43"
+ B="503"
+ E="534"
+/></fragment></page></CDXML>

@@ -10,7 +10,6 @@
   border-radius: 50%;
   width: 16px;
   height: 16px;
-  float:left;
   margin: 0px 20px;
   animation: spin 2s linear infinite;
 }
@@ -21,9 +20,8 @@
 }
 
 form{
-  margin-top: 30px; 
   margin-right: 0px;
-  margin-bottom: 0px;
+  margin-bottom: -20px;
 }
 
 .viewer{
@@ -50,6 +48,12 @@ span{
 
 #spacer{
   width: 0px;
+}
+
+.justifyleft{
+  display: flex;
+  justify-content: left;
+   align-items: center;
 }
 
 #results{
@@ -79,5 +83,5 @@ span{
 select{
   display: inline !important;
   margin-left: 10px !important;
-  width: 20% !important;
+  width: 90% !important;
 }

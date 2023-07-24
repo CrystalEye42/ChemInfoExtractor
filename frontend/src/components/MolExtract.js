@@ -51,6 +51,7 @@ export function MolExtract(props) {
     if (selectedFile) {
       if (selectedFile && allowedFiles.includes(selectedFile.type)) {
         setPdfData(selectedFile);
+        setShowPdf(true);
         let reader = new FileReader();
         reader.readAsDataURL(selectedFile);
         reader.onloadend = (e) => {
@@ -61,7 +62,7 @@ export function MolExtract(props) {
       }
       else {
         setPdfData('');
-        setPdfError('Not a valid pdf: Please select only PDF');
+        setPdfError('Not a valid file: Please select only PDF');
         setPdfFile('');
         setExtractState('unready');
       }
@@ -106,6 +107,7 @@ export function MolExtract(props) {
     const response = await fetch(file);
     const example = await response.blob();
     setPdfData(example);
+    setShowPdf(true);
     let reader = new FileReader();
     reader.readAsDataURL(example);
     reader.onloadend = (e) => {
@@ -182,12 +184,31 @@ export function MolExtract(props) {
   return (
     <div className="container">
       <div className="row justify-content-md-center">
-        {/* Upload PDF */}
         <div className='col'>
-          <form>
-
+          <form style={{marginTop:30}}>
             <h3>Upload PDF</h3>
-            <br></br>
+          </form>
+        </div>
+        <div className='col'>
+          <div id="resultButtons" style={{marginTop:30}}>
+            <button type="button" className='btn btn-secondary' onClick={clickForm}>Load Results</button>
+            <input type='file' ref={inputFileRef} style={{display:'none'}}
+              onChangeCapture={handleJSON}></input>
+            <a
+              href={`data:text/json;charset=utf-8,${encodeURIComponent(
+                JSON.stringify(responseData)
+              )}`}
+              download="export.json"
+              >
+              <button type="button" className='btn btn-secondary' style={{marginLeft:"3px"}} disabled={extractState !== 'done'}>Save Results</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="row justify-content-md-left" style={{marginTop:5}}>
+        {/* Upload PDF */}
+        <div className='col-md-auto'>
+          <form>
             <div>
               <input type='file' className="form-control"
               onChange={handleFile}></input>
@@ -201,73 +222,50 @@ export function MolExtract(props) {
               <br></br>
             </div>}
             {!pdfError && <br></br>}
-            <span>Limit to first 5 pages </span>
-            <input type="checkbox" checked={extractLimited} onChange={handleLimited}></input>
-            <p></p>
           </form>
+        </div>
+        <div className='col-md-auto'>
+          <b>Example: </b>
+          <select onChange={fetchExample} className="form-select">
+            <option value="" disabled selected>Select</option>
+            <option value="example1.pdf">acs.jmedchem.1c01646</option>
+            <option value="example2.pdf">acs.joc.2c00783</option>
+            <option value="example3.pdf">acs.joc.2c00749</option>
+          </select>
 
-          <div>
-            {/* https://pubs.acs.org/doi/pdf/10.1021/acs.joc.2c00749 */}
-            {(extractState !== 'loading') &&
-            <div>
-              <b>Example: </b>
-              <select onChange={fetchExample} className="form-select">
-                <option value="" disabled selected>Select</option>
-                <option value="example1.pdf">acs.jmedchem.1c01646</option>
-                <option value="example2.pdf">acs.joc.2c00783</option>
-                <option value="example3.pdf">acs.joc.2c00749</option>
-              </select>
-            </div>}
-            {fetchingExample && <div className="loader"></div>}
-            {(extractState === 'loading') && <FakeProgress seconds={30} />}
-          </div>
-
-          <br></br>
-          {showPdf && <div>
-            <button type="button" className='btn btn-secondary' onClick={()=>setShowPdf(false)}>Hide Pdf</button>
-            {/* View PDF */}
-            <div className="viewer">
-
-              {/* render this if we have a pdf file */}
-              {pdfFile && (
-                <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.16.105/build/pdf.worker.min.js">
-                  <Viewer fileUrl={pdfFile}
-                    plugins={[defaultLayoutPluginInstance]}></Viewer>
-                </Worker>
-              )}
-              {/*pdfFile && <PdfDisp file={pdfFile}></PdfDisp>*/}
-
-              {/* render this if we have pdfFile state null   */}
-              {!pdfFile && <div style={{alignItems: "center", height: "100%"}}><p>No file is selected yet</p></div>}
-            </div>
-          </div>}
-          {!showPdf && <button type="button" className='btn btn-secondary' onClick={()=>setShowPdf(true)}>Show Pdf</button>}
-
-          </div>
-          <div className='col'>
-            <div id="resultButtons" style={{marginTop:30}}>
-              <button type="button" className='btn btn-secondary' onClick={clickForm}>Load Results</button>
-              <input type='file' ref={inputFileRef} style={{display:'none'}}
-                onChangeCapture={handleJSON}></input>
-              <a
-                href={`data:text/json;charset=utf-8,${encodeURIComponent(
-                  JSON.stringify(responseData)
-                )}`}
-                download="export.json"
-                >
-                <button type="button" className='btn btn-secondary' style={{marginLeft:"3px"}} disabled={extractState !== 'done'}>Save Results</button>
-              </a>
-            </div>
-          </div>
-          <div>
-            <div id="molresults">
-              <div id="resultBody">
-                {(extractState === 'done') && <MolFigureSelect figures={figures} details={figureDetails}/>}
-              </div>
-            </div>
-          </div>
+          <span style={{marginLeft:20}}>Limit to first 5 pages </span>
+          <input type="checkbox" checked={extractLimited} onChange={handleLimited}></input>
         </div>
       </div>
+      {(extractState === 'loading') && <FakeProgress seconds={30}/>}
+      <div className='justifyleft'>
+        {showPdf && <button type="button" className='btn btn-secondary' style={{marginBottom:4}} onClick={()=>setShowPdf(false)}>Hide PDF</button>}
+        {!showPdf && <button type="button" className='btn btn-secondary' onClick={()=>setShowPdf(true)}>Show Pdf</button>}
+        {fetchingExample && <div className="loader"></div>}
+      </div>
+      {showPdf && <div>
+        {/* View PDF */}
+        <div className="viewer">
+
+          {/* render this if we have a pdf file */}
+          {pdfFile && (
+            <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.16.105/build/pdf.worker.min.js">
+              <Viewer fileUrl={pdfFile}
+                plugins={[defaultLayoutPluginInstance]}></Viewer>
+            </Worker>
+          )}
+          {/*pdfFile && <PdfDisp file={pdfFile}></PdfDisp>*/}
+
+          {/* render this if we have pdfFile state null   */}
+          {!pdfFile && <div style={{alignItems: "center", height: "100%"}}><p>No file is selected yet</p></div>}
+        </div>
+      </div>}
+      <div id="molresults">
+        <div id="resultBody">
+          {(extractState === 'done') && <MolFigureSelect figures={figures} details={figureDetails}/>}
+        </div>
+      </div>
+    </div>
   );
 }
 

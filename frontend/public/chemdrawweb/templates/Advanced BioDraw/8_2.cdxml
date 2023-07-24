@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE CDXML SYSTEM "http://www.cambridgesoft.com/xml/cdxml.dtd" >
+<CDXML
+ CreationProgram="ChemDraw 16.0.0.82"
+ Name="Advanced BioDraw.ctp"
+ BoundingBox="150.49 84.51 209.07 190.03"
+ WindowPosition="0 -2147483648"
+ WindowSize="1073741824 0"
+ FractionalWidths="yes"
+ InterpretChemically="yes"
+ ShowAtomQuery="yes"
+ ShowAtomStereo="no"
+ ShowAtomEnhancedStereo="yes"
+ ShowAtomNumber="no"
+ ShowResidueID="no"
+ ShowBondQuery="yes"
+ ShowBondRxn="yes"
+ ShowBondStereo="no"
+ ShowTerminalCarbonLabels="no"
+ ShowNonTerminalCarbonLabels="no"
+ HideImplicitHydrogens="no"
+ LabelFont="3"
+ LabelSize="10"
+ LabelFace="96"
+ CaptionFont="4"
+ CaptionSize="12"
+ HashSpacing="2.70"
+ MarginWidth="2"
+ LineWidth="1"
+ BoldWidth="4"
+ BondLength="28.35"
+ BondSpacing="12"
+ ChainAngle="120"
+ LabelJustification="Auto"
+ CaptionJustification="Left"
+ AminoAcidTermini="HOH"
+ ShowSequenceTermini="yes"
+ ShowSequenceBonds="yes"
+ ResidueWrapCount="40"
+ ResidueBlockCount="10"
+ ResidueZigZag="yes"
+ NumberResidueBlocks="no"
+ PrintMargins="36 36 36 36"
+ MacPrintInfo="0003000001200120000000000B6808A0FF84FF880BE409180367052803FC0002000001200120000000000B6808A0000100640064000000010001010100000001270F000100010000000000000000000000000002001901900000000000600000000000000000000100000000000000000000000000000000"
+ ChemPropName=""
+ ChemPropFormula="Chemical Formula: "
+ ChemPropExactMass="Exact Mass: "
+ ChemPropMolWt="Molecular Weight: "
+ ChemPropMOverZ="m/z: "
+ ChemPropAnalysis="Elemental Analysis: "
+ ChemPropBoilingPt="Boiling Point: "
+ ChemPropMeltingPt="Melting Point: "
+ ChemPropCritTemp="Critical Temp: "
+ ChemPropCritPres="Critical Pres: "
+ ChemPropCritVol="Critical Vol: "
+ ChemPropGibbs="Gibbs Energy: "
+ ChemPropLogP="Log P: "
+ ChemPropMR="MR: "
+ ChemPropHenry="Henry&apos;s Law: "
+ ChemPropEForm="Heat of Form: "
+ ChemProptPSA="tPSA: "
+ ChemPropCLogP="CLogP: "
+ ChemPropCMR="CMR: "
+ ChemPropLogS="LogS: "
+ ChemPropPKa="pKa: "
+ ChemPropID=""
+ color="0"
+ bgcolor="1"
+ RxnAutonumberStart="1"
+ RxnAutonumberConditions="no"
+ RxnAutonumberStyle="Roman"
+ RxnAutonumberFormat="(#)"
+><colortable>
+<color r="1" g="1" b="1"/>
+<color r="0" g="0" b="0"/>
+<color r="1" g="0" b="0"/>
+<color r="1" g="1" b="0"/>
+<color r="0" g="1" b="0"/>
+<color r="0" g="1" b="1"/>
+<color r="0" g="0" b="1"/>
+<color r="1" g="0" b="1"/>
+<color r="0.5059" g="0.0235" b="0.1255"/>
+<color r="0.6706" g="0.0235" b="0.1608"/>
+<color r="0.0706" g="0.1686" b="0.3686"/>
+<color r="0.1059" g="0.2549" b="0.5686"/>
+<color r="0.0902" g="0.2196" b="0.4941"/>
+<color r="0.6000" g="0.6510" b="0.7216"/>
+<color r="0.4588" g="0.4980" b="0.5529"/>
+<color r="0.3804" g="0.4118" b="0.4588"/>
+<color r="0.5333" g="0.5765" b="0.6392"/>
+<color r="0.5020" g="0.5412" b="0.6039"/>
+<color r="0.5294" g="0.7961" b="0.3961"/>
+<color r="0.4784" g="0.7176" b="0.3569"/>
+<color r="0.6549" g="0.8706" b="0.5216"/>
+<color r="0.4196" g="0.6314" b="0.3137"/>
+<color r="0.8353" g="0.5333" b="0.2392"/>
+<color r="0.8353" g="0.6431" b="0.4353"/>
+<color r="0.7569" g="0.4196" b="0.0902"/>
+<color r="0.8392" g="0.8235" b="0.1529"/>
+<color r="0.8392" g="0.8392" b="0.5059"/>
+<color r="0.5569" g="0.5804" b="0.7843"/>
+<color r="0.3529" g="0.3686" b="0.4980"/>
+<color r="0.4902" g="0.5098" b="0.6902"/>
+<color r="0.4157" g="0.4353" b="0.5882"/>
+<color r="0.7843" g="0.6431" b="0.8353"/>
+<color r="0.4471" g="0.3608" b="0.4706"/>
+<color r="0.6784" g="0.5529" b="0.7176"/>
+<color r="0.5647" g="0.4588" b="0.5961"/>
+<color r="0.6824" g="0.5176" b="0.4941"/>
+<color r="0.8588" g="0.6549" b="0.6235"/>
+<color r="0.6392" g="0.4863" b="0.4627"/>
+<color r="0.6784" g="0.5176" b="0.4941"/>
+<color r="0.4902" g="0.3725" b="0.3569"/>
+<color r="0.9843" g="0.7490" b="0.7137"/>
+<color r="0.5882" g="0.4471" b="0.4235"/>
+<color r="0.6078" g="0.5333" b="0.5882"/>
+<color r="0.7333" g="0.6118" b="0.7020"/>
+<color r="0.8275" g="0.7373" b="0.7647"/>
+<color r="0.5608" g="0.4510" b="0.5294"/>
+<color r="0.4039" g="0.4980" b="0.6353"/>
+<color r="0.3608" g="0.4471" b="0.5686"/>
+<color r="0.4706" g="0.5765" b="0.7373"/>
+<color r="0.6157" g="0.6627" b="0.7373"/>
+<color r="0.6431" g="0.6980" b="0.7765"/>
+<color r="0.3294" g="0.4039" b="0.5176"/>
+<color r="0.9216" g="0.8745" b="0.8863"/>
+<color r="0.8196" g="0.6745" b="0.7843"/>
+<color r="0.6745" g="0.5569" b="0.6431"/>
+<color r="0.7490" g="0.6196" b="0.7216"/>
+<color r="0.5804" g="0.4784" b="0.5529"/>
+<color r="0.5961" g="0.4941" b="0.5725"/>
+<color r="0.3373" g="0.5255" b="0.1529"/>
+<color r="0.3882" g="0.6510" b="0.3608"/>
+<color r="0.6784" g="0.9020" b="0.6157"/>
+<color r="0.3451" g="0.5804" b="0.3216"/>
+<color r="0.3255" g="0.5529" b="0.3020"/>
+<color r="0.8314" g="0.5843" b="0.2627"/>
+<color r="0.7451" g="0.5255" b="0.2353"/>
+<color r="0.6824" g="0.4510" b="0.2745"/>
+<color r="0.5373" g="0.3490" b="0.2118"/>
+<color r="0.9059" g="0.6353" b="0.2863"/>
+<color r="1" g="0.5020" b="0"/>
+<color r="0.8157" g="0.8157" b="0"/>
+<color r="0.8510" g="0.4157" b="0"/>
+</colortable><fonttable>
+<font id="3" charset="iso-8859-1" name="Arial"/>
+<font id="4" charset="iso-8859-1" name="Times New Roman"/>
+</fonttable><page
+ id="17077"
+ BoundingBox="0 0 540 720"
+ HeaderPosition="36"
+ FooterPosition="36"
+ PrintTrimMarks="yes"
+ HeightPages="1"
+ WidthPages="1"
+><group
+ id="15975"
+ BoundingBox="150.49 84.51 209.07 190.03"
+ Z="1"
+ Integral="yes"
+><graphic
+ id="15976"
+ BoundingBox="201.75 134.08 180.03 134.08"
+ Z="11"
+ color="70"
+ GraphicType="Oval"
+ OvalType="Shaded"
+ Center3D="180.03 134.08 0"
+ MajorAxisEnd3D="201.75 134.08 0"
+ MinorAxisEnd3D="180.03 142.56 0"
+/><graphic
+ id="15977"
+ BoundingBox="179.55 130.77 179.55 108.27"
+ Z="12"
+ color="70"
+ GraphicType="Oval"
+ OvalType=""
+ FadePercent="300"
+ Center3D="179.55 108.27 0"
+ MajorAxisEnd3D="179.55 130.77 0"
+ MinorAxisEnd3D="166.86 108.27 0"
+/><graphic
+ id="15978"
+ BoundingBox="195.40 132.76 195.40 110.25"
+ Z="13"
+ color="70"
+ GraphicType="Oval"
+ OvalType=""
+ FadePercent="300"
+ Center3D="195.40 110.25 0"
+ MajorAxisEnd3D="195.40 132.76 0"
+ MinorAxisEnd3D="182.72 110.25 0"
+/><graphic
+ id="15979"
+ BoundingBox="164.16 132.43 164.16 109.92"
+ Z="14"
+ color="70"
+ GraphicType="Oval"
+ OvalType=""
+ FadePercent="300"
+ Center3D="164.16 109.92 0"
+ MajorAxisEnd3D="164.16 132.43 0"
+ MinorAxisEnd3D="151.48 109.92 0"
+/><graphic
+ id="15980"
+ BoundingBox="167.42 135.41 167.42 112.90"
+ Z="15"
+ color="70"
+ GraphicType="Oval"
+ OvalType=""
+ FadePercent="300"
+ Center3D="167.42 112.90 0"
+ MajorAxisEnd3D="167.42 135.41 0"
+ MinorAxisEnd3D="154.75 112.90 0"
+/><graphic
+ id="15981"
+ BoundingBox="193.07 136.40 193.07 113.89"
+ Z="16"
+ color="70"
+ GraphicType="Oval"
+ OvalType=""
+ FadePercent="300"
+ Center3D="193.07 113.89 0"
+ MajorAxisEnd3D="193.07 136.40 0"
+ MinorAxisEnd3D="180.39 113.89 0"
+/><graphic
+ id="15982"
+ BoundingBox="180.01 139.71 180.01 117.20"
+ Z="17"
+ color="70"
+ GraphicType="Oval"
+ OvalType=""
+ FadePercent="300"
+ Center3D="180.01 117.20 0"
+ MajorAxisEnd3D="180.01 139.71 0"
+ MinorAxisEnd3D="167.33 117.20 0"
+/><curve
+ id="15983"
+ Z="10"
+ color="70"
+ FillType="Solid"
+ CurveType="129"
+ ArrowheadType="Solid"
+ Closed="yes"
+ CurvePoints="158.31 133.75 158.31 133.75 158.31 133.75 158.31 181.08 159.31 183.73 160.31 186.38 170.60 189.36 181.89 188.70 193.18 188.03 201.41 186.05 201.41 184.39 203.59 180.75 201.82 134.41 201.82 134.41 201.82 134.41 188.20 138.39 180.56 137.72 172.92 137.06"
+/><annotation
+ Keyword="GUID"
+ Content="00822175-0C4A-41FE-B77C-0526E9660CFF"
+/></group><annotation
+ Keyword="GUID"
+ Content="00822175-0C4A-41FE-B77C-0526E9660CFF"
+/><annotation
+ Keyword="Name"
+ Content="ATP Synthase (2)"
+/></page></CDXML>

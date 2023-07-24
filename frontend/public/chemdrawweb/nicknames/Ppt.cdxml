@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE CDXML SYSTEM "http://www.cambridgesoft.com/xml/cdxml.dtd" >
+<CDXML
+ CreationProgram="ChemDraw 13.0.0.410"
+ BoundingBox="117.68 122.32 274.57 216.48"
+ WindowPosition="-2147483648 -1073741824"
+ WindowSize="1073741824 1073741824"
+ FractionalWidths="yes"
+ InterpretChemically="yes"
+ ShowAtomQuery="yes"
+ ShowAtomStereo="no"
+ ShowAtomEnhancedStereo="yes"
+ ShowAtomNumber="no"
+ ShowBondQuery="yes"
+ ShowBondRxn="yes"
+ ShowBondStereo="no"
+ ShowTerminalCarbonLabels="no"
+ ShowNonTerminalCarbonLabels="no"
+ HideImplicitHydrogens="no"
+ LabelFont="3"
+ LabelSize="10"
+ LabelFace="96"
+ CaptionFont="4"
+ CaptionSize="12"
+ HashSpacing="2.7"
+ MarginWidth="2"
+ LineWidth="1"
+ BoldWidth="4"
+ BondLength="30"
+ BondSpacing="12"
+ ChainAngle="120"
+ LabelJustification="Auto"
+ CaptionJustification="Left"
+ AminoAcidTermini="HOH"
+ ShowSequenceTermini="yes"
+ ShowSequenceBonds="yes"
+ PrintMargins="36 36 36 36"
+ color="0"
+ bgcolor="1"
+><colortable>
+<color r="1" g="1" b="1"/>
+<color r="0" g="0" b="0"/>
+<color r="1" g="0" b="0"/>
+<color r="1" g="1" b="0"/>
+<color r="0" g="1" b="0"/>
+<color r="0" g="1" b="1"/>
+<color r="0" g="0" b="1"/>
+<color r="1" g="0" b="1"/>
+</colortable><fonttable>
+<font id="3" charset="iso-8859-1" name="Arial"/>
+<font id="4" charset="iso-8859-1" name="Times New Roman"/>
+</fonttable><page
+ id="3878"
+ BoundingBox="0 0 540 720"
+ HeaderPosition="36"
+ FooterPosition="36"
+ PrintTrimMarks="yes"
+ HeightPages="1"
+ WidthPages="1"
+><fragment
+ id="3858"
+ BoundingBox="117.68 122.32 274.57 216.48"
+><n
+ id="3831"
+ p="196.13 155.9"
+ Z="33"
+ Element="15"
+ NumHydrogens="0"
+ NeedsClean="yes"
+><t
+ p="192.61 159.47"
+ BoundingBox="192.61 152.32 199.26 159.47"
+ LabelJustification="Left"
+ LabelAlignment="Left"
+><s font="3" size="10" face="96">P</s></t></n><n
+ id="3833"
+ p="196.13 125.9"
+ Z="34"
+ Element="16"
+ NumHydrogens="0"
+ NeedsClean="yes"
+ AS="N"
+><t
+ p="192.77 129.57"
+ BoundingBox="192.77 122.32 199.42 129.67"
+ LabelJustification="Left"
+><s font="3" size="10" face="96">S</s></t></n><n
+ id="3835"
+ p="170.14 170.9"
+ Z="35"
+/><n
+ id="3837"
+ p="170.14 200.9"
+ Z="36"
+ AS="N"
+/><n
+ id="3839"
+ p="144.16 215.9"
+ Z="37"
+ AS="N"
+/><n
+ id="3841"
+ p="118.18 200.9"
+ Z="38"
+ AS="N"
+/><n
+ id="3843"
+ p="118.18 170.9"
+ Z="39"
+ AS="N"
+/><n
+ id="3845"
+ p="144.16 155.9"
+ Z="40"
+ AS="N"
+/><n
+ id="3847"
+ p="222.11 170.9"
+ Z="41"
+/><n
+ id="3849"
+ p="248.09 155.9"
+ Z="42"
+ AS="N"
+/><n
+ id="3851"
+ p="274.07 170.9"
+ Z="43"
+ AS="N"
+/><n
+ id="3853"
+ p="274.07 200.9"
+ Z="44"
+ AS="N"
+/><n
+ id="3855"
+ p="248.09 215.9"
+ Z="45"
+ AS="N"
+/><n
+ id="3857"
+ p="222.11 200.9"
+ Z="46"
+ AS="N"
+/><n
+ id="3875"
+ p="196.12 185.9"
+ Z="62"
+ NodeType="ExternalConnectionPoint"
+ ExternalConnectionType="Diamond"
+/><b
+ id="3859"
+ Z="47"
+ B="3855"
+ E="3857"
+ BS="N"
+/><b
+ id="3860"
+ Z="48"
+ B="3853"
+ E="3855"
+ Order="2"
+ BondCircularOrdering="0 3861 3859 0"
+/><b
+ id="3861"
+ Z="49"
+ B="3851"
+ E="3853"
+ BS="N"
+/><b
+ id="3862"
+ Z="50"
+ B="3849"
+ E="3851"
+ Order="2"
+ BondCircularOrdering="0 3864 3861 0"
+/><b
+ id="3863"
+ Z="51"
+ B="3847"
+ E="3857"
+ Order="2"
+ BondCircularOrdering="3864 3871 0 3859"
+/><b
+ id="3864"
+ Z="52"
+ B="3847"
+ E="3849"
+ BS="N"
+/><b
+ id="3865"
+ Z="53"
+ B="3843"
+ E="3845"
+ BS="N"
+/><b
+ id="3866"
+ Z="54"
+ B="3841"
+ E="3843"
+ Order="2"
+ BondCircularOrdering="0 3867 3865 0"
+/><b
+ id="3867"
+ Z="55"
+ B="3839"
+ E="3841"
+ BS="N"
+/><b
+ id="3868"
+ Z="56"
+ B="3837"
+ E="3839"
+ Order="2"
+ BondCircularOrdering="0 3870 3867 0"
+/><b
+ id="3869"
+ Z="57"
+ B="3835"
+ E="3845"
+ Order="2"
+ BondCircularOrdering="3870 3872 0 3865"
+/><b
+ id="3870"
+ Z="58"
+ B="3835"
+ E="3837"
+ BS="N"
+/><b
+ id="3871"
+ Z="59"
+ B="3831"
+ E="3847"
+ BS="N"
+/><b
+ id="3872"
+ Z="60"
+ B="3831"
+ E="3835"
+ BS="N"
+/><b
+ id="3873"
+ Z="61"
+ B="3831"
+ E="3833"
+ Order="2"
+/><b
+ id="3876"
+ Z="63"
+ B="3831"
+ E="3875"
+/></fragment></page></CDXML>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE CDXML SYSTEM "http://www.cambridgesoft.com/xml/cdxml.dtd" >
+<CDXML
+ CreationProgram="ChemDraw 12.0d717"
+ Name="C7H15.cdxml"
+ BoundingBox="176.51 349.84 363.49 370.16"
+ WindowPosition="0 0"
+ WindowSize="0 0"
+ WindowIsZoomed="yes"
+ FractionalWidths="yes"
+ InterpretChemically="yes"
+ ShowAtomQuery="yes"
+ ShowAtomStereo="no"
+ ShowAtomEnhancedStereo="yes"
+ ShowAtomNumber="no"
+ ShowBondQuery="yes"
+ ShowBondRxn="yes"
+ ShowBondStereo="no"
+ ShowTerminalCarbonLabels="no"
+ ShowNonTerminalCarbonLabels="no"
+ HideImplicitHydrogens="no"
+ LabelFont="3"
+ LabelSize="10"
+ LabelFace="96"
+ CaptionFont="4"
+ CaptionSize="12"
+ HashSpacing="2.7"
+ MarginWidth="2"
+ LineWidth="1"
+ BoldWidth="4"
+ BondLength="30"
+ BondSpacing="12"
+ ChainAngle="120"
+ LabelJustification="Auto"
+ CaptionJustification="Left"
+ AminoAcidTermini="HOH"
+ ShowSequenceTermini="yes"
+ ShowSequenceBonds="yes"
+ PrintMargins="36 36 36 36"
+ MacPrintInfo="000300000258025800000000190D1357FFA9FFB21971139E0367052803FC000200000258025800000000190D1357000100640064000000010001010100000001270F000100010000000000000000000000000002001901900000000000600000000000000000000100000000000000000000000000000000"
+ color="0"
+ bgcolor="1"
+><colortable>
+<color r="1" g="1" b="1"/>
+<color r="0" g="0" b="0"/>
+</colortable><fonttable>
+<font id="3" charset="iso-8859-1" name="Arial"/>
+<font id="4" charset="iso-8859-1" name="Times New Roman"/>
+</fonttable><page
+ id="1934"
+ BoundingBox="0 0 540 720"
+ HeaderPosition="36"
+ FooterPosition="36"
+ PrintTrimMarks="yes"
+ HeightPages="1"
+ WidthPages="1"
+><fragment
+ id="1913"
+ BoundingBox="176.51 349.84 363.49 370.16"
+><n
+ id="1910"
+ p="176.76 350.41"
+ Z="17"
+ AS="N"
+/><n
+ id="1912"
+ p="202.76 365.41"
+ Z="18"
+ AS="N"
+/><n
+ id="1914"
+ p="228.76 350.41"
+ Z="19"
+ AS="N"
+/><n
+ id="1916"
+ p="254.76 365.41"
+ Z="20"
+ AS="N"
+/><n
+ id="1918"
+ p="280.76 350.41"
+ Z="21"
+ AS="N"
+/><n
+ id="1920"
+ p="306.76 365.41"
+ Z="22"
+ AS="N"
+/><n
+ id="1922"
+ p="332.76 350.41"
+ Z="23"
+ AS="N"
+/><n
+ id="1930"
+ p="358.74 365.41"
+ Z="30"
+ NodeType="ExternalConnectionPoint"
+ AS="N"
+/><b
+ id="1924"
+ Z="24"
+ B="1910"
+ E="1912"
+ BS="N"
+/><b
+ id="1925"
+ Z="25"
+ B="1912"
+ E="1914"
+ BS="N"
+/><b
+ id="1926"
+ Z="26"
+ B="1914"
+ E="1916"
+ BS="N"
+/><b
+ id="1927"
+ Z="27"
+ B="1916"
+ E="1918"
+ BS="N"
+/><b
+ id="1928"
+ Z="28"
+ B="1918"
+ E="1920"
+ BS="N"
+/><b
+ id="1929"
+ Z="29"
+ B="1920"
+ E="1922"
+ BS="N"
+/><b
+ id="1932"
+ Z="31"
+ B="1922"
+ E="1930"
+ BS="N"
+/></fragment></page></CDXML>

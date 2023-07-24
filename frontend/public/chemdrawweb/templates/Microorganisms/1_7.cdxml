@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE CDXML SYSTEM "http://www.cambridgesoft.com/xml/cdxml.dtd" >
+<CDXML
+ CreationProgram="ChemDraw 16.0.0.82"
+ Name="Microorganisms.ctp"
+ BoundingBox="217.21 144.39 300.29 265.11"
+ WindowPosition="0 -2147483648"
+ WindowSize="1073741824 -2147483648"
+ FractionalWidths="yes"
+ InterpretChemically="yes"
+ ShowAtomQuery="yes"
+ ShowAtomStereo="no"
+ ShowAtomEnhancedStereo="yes"
+ ShowAtomNumber="no"
+ ShowResidueID="no"
+ ShowBondQuery="yes"
+ ShowBondRxn="yes"
+ ShowBondStereo="no"
+ ShowTerminalCarbonLabels="no"
+ ShowNonTerminalCarbonLabels="no"
+ HideImplicitHydrogens="no"
+ LabelFont="3"
+ LabelSize="10"
+ LabelFace="96"
+ CaptionFont="4"
+ CaptionSize="12"
+ HashSpacing="2.70"
+ MarginWidth="2"
+ LineWidth="1"
+ BoldWidth="4"
+ BondLength="28.35"
+ BondSpacing="12"
+ ChainAngle="120"
+ LabelJustification="Auto"
+ CaptionJustification="Left"
+ AminoAcidTermini="HOH"
+ ShowSequenceTermini="yes"
+ ShowSequenceBonds="yes"
+ ResidueWrapCount="40"
+ ResidueBlockCount="10"
+ ResidueZigZag="yes"
+ NumberResidueBlocks="no"
+ PrintMargins="36 36 36 36"
+ MacPrintInfo="0003000001200120000000000B6808A0FF84FF880BE409180367052803FC0002000001200120000000000B6808A0000100640064000000010001010100000001270F000100010000000000000000000000000002001901900000000000600000000000000000000100000000000000000000000000000000"
+ ChemPropName=""
+ ChemPropFormula="Chemical Formula: "
+ ChemPropExactMass="Exact Mass: "
+ ChemPropMolWt="Molecular Weight: "
+ ChemPropMOverZ="m/z: "
+ ChemPropAnalysis="Elemental Analysis: "
+ ChemPropBoilingPt="Boiling Point: "
+ ChemPropMeltingPt="Melting Point: "
+ ChemPropCritTemp="Critical Temp: "
+ ChemPropCritPres="Critical Pres: "
+ ChemPropCritVol="Critical Vol: "
+ ChemPropGibbs="Gibbs Energy: "
+ ChemPropLogP="Log P: "
+ ChemPropMR="MR: "
+ ChemPropHenry="Henry&apos;s Law: "
+ ChemPropEForm="Heat of Form: "
+ ChemProptPSA="tPSA: "
+ ChemPropCLogP="CLogP: "
+ ChemPropCMR="CMR: "
+ ChemPropLogS="LogS: "
+ ChemPropPKa="pKa: "
+ ChemPropID=""
+ color="0"
+ bgcolor="1"
+ RxnAutonumberStart="1"
+ RxnAutonumberConditions="no"
+ RxnAutonumberStyle="Roman"
+ RxnAutonumberFormat="(#)"
+><colortable>
+<color r="1" g="1" b="1"/>
+<color r="0" g="0" b="0"/>
+<color r="1" g="0" b="0"/>
+<color r="1" g="1" b="0"/>
+<color r="0" g="1" b="0"/>
+<color r="0" g="1" b="1"/>
+<color r="0" g="0" b="1"/>
+<color r="1" g="0" b="1"/>
+<color r="0.1569" g="0.8353" b="0.8000"/>
+<color r="0.4706" g="0.8902" b="0.8706"/>
+<color r="0.1451" g="0.7608" b="0.7255"/>
+<color r="0.5059" g="0.8510" b="0.8706"/>
+<color r="0" g="0.6353" b="0.6353"/>
+<color r="1" g="0.5569" b="0.5569"/>
+<color r="1" g="0.7765" b="0.7765"/>
+<color r="1" g="0.4706" b="0.4706"/>
+<color r="1" g="0.3059" b="0.3059"/>
+<color r="0.6902" g="0" b="0"/>
+<color r="0.8510" g="0" b="0"/>
+<color r="0.0706" g="0.1608" b="0.3608"/>
+<color r="0.5059" g="0.0157" b="0.1255"/>
+<color r="0.6706" g="0.0157" b="0.1608"/>
+<color r="0.1059" g="0.2510" b="0.5608"/>
+<color r="0" g="0.5020" b="0.7451"/>
+<color r="0.6902" g="0.9020" b="1"/>
+<color r="1" g="0.9059" b="0.9059"/>
+<color r="0.7059" g="0" b="0"/>
+<color r="1" g="0.8706" b="0.8706"/>
+<color r="0.2706" g="0" b="0"/>
+<color r="0.5020" g="0.5020" b="0"/>
+<color r="0.9961" g="0.2902" b="0.9961"/>
+<color r="0.7765" g="0" b="0.7765"/>
+<color r="1" g="0.6157" b="1"/>
+<color r="0.5569" g="1" b="0.5569"/>
+<color r="0.7765" g="1" b="0.7765"/>
+<color r="0.4706" g="1" b="0.4706"/>
+<color r="0.3059" g="1" b="0.3059"/>
+<color r="0" g="0.6902" b="0"/>
+<color r="0" g="0.8510" b="0"/>
+<color r="0" g="0.4941" b="0"/>
+<color r="0" g="0.4157" b="0"/>
+<color r="0.4941" g="1" b="0.4941"/>
+<color r="0" g="0.2941" b="0"/>
+<color r="1" g="0.7255" b="0.7255"/>
+<color r="1" g="0.6157" b="0.6157"/>
+<color r="1" g="0.4902" b="0.4902"/>
+<color r="0.4902" g="0" b="0"/>
+<color r="0" g="0.6706" b="1"/>
+<color r="0.6588" g="0.8863" b="1"/>
+<color r="0" g="0.6196" b="0.9176"/>
+</colortable><fonttable>
+<font id="3" charset="iso-8859-1" name="Arial"/>
+<font id="4" charset="iso-8859-1" name="Times New Roman"/>
+</fonttable><page
+ id="3182"
+ BoundingBox="0 0 540 720"
+ HeaderPosition="36"
+ FooterPosition="36"
+ PrintTrimMarks="yes"
+ HeightPages="1"
+ WidthPages="1"
+><group
+ id="1440"
+ BoundingBox="217.21 144.39 300.29 265.11"
+ Z="1"
+ Integral="yes"
+><group
+ id="1441"
+ BoundingBox="235.59 144.39 283.72 194.73"
+ Z="2"
+ Integral="yes"
+><curve
+ id="1442"
+ Z="48"
+ color="35"
+ FillType="Solid"
+ CurveType="129"
+ ArrowheadType="Solid"
+ Closed="yes"
+ CurvePoints="282.28 157.25 282.28 157.25 282.28 157.25 271.20 176.88 271.20 176.88 271.20 176.88 282.13 180.62 282.13 180.62 282.13 180.62"
+/><curve
+ id="1443"
+ Z="49"
+ color="36"
+ FillType="Solid"
+ CurveType="129"
+ ArrowheadType="Solid"
+ Closed="yes"
+ CurvePoints="259.80 155.87 259.80 155.87 259.80 155.87 282.20 157.11 282.20 157.11 282.20 157.11 271.42 176.75 271.42 176.75 271.42 176.75"
+/><curve
+ id="1444"
+ Z="50"
+ color="37"
+ FillType="Solid"
+ CurveType="129"
+ ArrowheadType="Solid"
+ Closed="yes"
+ CurvePoints="248.11 176.82 248.11 176.82 248.11 176.82 259.73 155.93 259.73 155.93 259.73 155.93 271.34 176.68 271.34 176.68 271.34 176.68"
+/><curve
+ id="1445"
+ Z="51"
+ color="37"
+ FillType="Solid"
+ CurveType="129"
+ ArrowheadType="Solid"
+ Closed="yes"
+ CurvePoints="271.28 177.02 271.28 177.02 271.28 177.02 282.47 180.62 282.47 180.62 282.47 180.62 259.80 193.48 259.80 193.48 259.80 193.48"
+/><curve
+ id="1446"
+ Z="52"
+ color="38"
+ FillType="Solid"
+ CurveType="129"
+ ArrowheadType="Solid"
+ Closed="yes"
+ CurvePoints="237.11 156.97 237.11 156.97 237.11 156.97 259.66 155.87 259.66 155.87 259.66 155.87 248.05 176.61 248.05 176.61 248.05 176.61"
+/><curve
+ id="1447"
+ Z="53"
+ color="38"
+ FillType="Solid"
+ CurveType="129"
+ ArrowheadType="Solid"
+ Closed="yes"
+ CurvePoints="248.05 176.75 248.05 176.75 248.05 176.75 271.28 176.88 271.28 176.88 271.28 176.88 259.80 193.48 259.80 193.48 259.80 193.48"
+/><curve
+ id="1448"
+ Z="54"
+ color="39"
+ FillType="Solid"
+ CurveType="129"
+ ArrowheadType="Solid"
+ Closed="yes"
+ CurvePoints="236.92 180.76 236.92 180.76 236.92 180.76 247.97 176.88 247.97 176.88 247.97 176.88 259.73 193.48 259.73 193.48 259.73 193.48"
+/><curve
+ id="1449"
+ Z="55"
+ color="40"
+ FillType="Solid"
+ CurveType="129"
+ ArrowheadType="Solid"
+ Closed="yes"
+ CurvePoints="237.05 157.11 237.05 157.11 237.05 157.11 237.05 180.90 237.05 180.90 237.05 180.90 248.11 176.88 248.11 176.88 248.11 176.88"
+/><curve
+ id="1450"
+ Z="56"
+ color="35"
+ FillType="Solid"
+ CurveType="129"
+ ArrowheadType="Solid"
+ Closed="yes"
+ CurvePoints="259.66 145.77 259.66 145.77 259.66 145.77 259.66 155.73 259.66 155.73 259.66 155.73 282.34 157.11 282.34 157.11 282.34 157.11"
+/><curve
+ id="1451"
+ Z="57"
+ color="37"
+ FillType="Solid"
+ CurveType="129"
+ ArrowheadType="Solid"
+ Closed="yes"
+ CurvePoints="259.66 145.64 259.66 145.64 259.66 145.64 236.97 156.97 236.97 156.97 236.97 156.97 259.80 155.87 259.80 155.87 259.80 155.87"
+/><curve
+ id="1452"
+ Z="58"
+ color="6"
+ CurveType="1"
+ ArrowheadType="Solid"
+ Closed="yes"
+ CurvePoints="282.34 157.25 282.34 157.25 282.34 157.25 271.28 176.88 271.28 176.88 271.28 176.88 282.20 180.62 282.20 180.62 282.20 180.62"
+/><curve
+ id="1453"
+ Z="59"
+ color="6"
+ CurveType="1"
+ ArrowheadType="Solid"
+ Closed="yes"
+ CurvePoints="259.80 155.87 259.80 155.87 259.80 155.87 282.20 157.11 282.20 157.11 282.20 157.11 271.42 176.75 271.42 176.75 271.42 176.75"
+/><curve
+ id="1454"
+ Z="60"
+ color="6"
+ CurveType="1"
+ ArrowheadType="Solid"
+ Closed="yes"
+ CurvePoints="248.05 176.88 248.05 176.88 248.05 176.88 259.66 156 259.66 156 259.66 156 271.28 176.75 271.28 176.75 271.28 176.75"
+/><curve
+ id="1455"
+ Z="61"
+ color="6"
+ CurveType="1"
+ ArrowheadType="Solid"
+ Closed="yes"
+ CurvePoints="271.28 177.02 271.28 177.02 271.28 177.02 282.47 180.62 282.47 180.62 282.47 180.62 259.80 193.48 259.80 193.48 259.80 193.48"
+/><curve
+ id="1456"
+ Z="62"
+ color="6"
+ CurveType="1"
+ ArrowheadType="Solid"
+ Closed="yes"
+ CurvePoints="237.11 156.97 237.11 156.97 237.11 156.97 259.66 155.87 259.66 155.87 259.66 155.87 248.05 176.61 248.05 176.61 248.05 176.61"
+/><curve
+ id="1457"
+ Z="63"
+ color="6"
+ CurveType="1"
+ ArrowheadType="Solid"
+ Closed="yes"
+ CurvePoints="248.05 176.75 248.05 176.75 248.05 176.75 271.28 176.88 271.28 176.88 271.28 176.88 259.80 193.48 259.80 193.48 259.80 193.48"
+/><curve
+ id="1458"
+ Z="64"
+ color="6"
+ CurveType="1"
+ ArrowheadType="Solid"
+ Closed="yes"
+ CurvePoints="236.84 180.76 236.84 180.76 236.84 180.76 247.91 176.88 247.91 176.88 247.91 176.88 259.66 193.48 259.66 193.48 259.66 193.48"
+/><curve
+ id="1459"
+ Z="65"
+ color="6"
+ CurveType="1"
+ ArrowheadType="Solid"
+ Closed="yes"
+ CurvePoints="236.97 157.11 236.97 157.11 236.97 157.11 236.97 180.90 236.97 180.90 236.97 180.90 248.05 176.88 248.05 176.88 248.05 176.88"
+/><curve
+ id="1460"
+ Z="66"
+ color="6"
+ CurveType="1"
+ ArrowheadType="Solid"
+ Closed="yes"
+ CurvePoints="259.66 145.77 259.66 145.77 259.66 145.77 259.66 155.73 259.66 155.73 259.66 155.73 282.34 157.11 282.34 157.11 282.34 157.11"
+/><curve
+ id="1461"
+ Z="67"
+ color="6"
+ CurveType="1"
+ ArrowheadType="Solid"
+ Closed="yes"
+ CurvePoints="259.66 145.69 259.66 145.69 259.66 145.69 236.97 157.04 236.97 157.04 236.97 157.04 259.80 155.93 259.80 155.93 259.80 155.93"
+/></group><graphic
+ id="1462"
+ BoundingBox="262.28 237.88 254.45 195.52"
+ Z="68"
+ color="6"
+ GraphicType="Rectangle"
+ RectangleType="Plain"
+ FadePercent="300"
+ Center3D="258.37 216.70 0"
+ MajorAxisEnd3D="262.28 216.70 0"
+ MinorAxisEnd3D="258.37 237.88 0"
+/><graphic
+ id="1463"
+ BoundingBox="268.96 195.55 248.15 188.84"
+ Z="90"
+ color="6"
+ GraphicType="Rectangle"
+ RectangleType="RoundEdge"
+ CornerRadius="600"
+ FadePercent="300"
+ Center3D="258.56 192.20 0"
+ MajorAxisEnd3D="268.96 192.20 0"
+ MinorAxisEnd3D="258.56 195.55 0"
+/><curve
+ id="1464"
+ Z="69"
+ color="6"
+ ArrowheadType="Solid"
+ CurvePoints="234.79 263.86 234.79 263.86 234.79 263.86 240.74 244.56 240.74 244.56 240.74 244.56 249.28 244.93 249.28 244.93 249.28 244.93"
+/><curve
+ id="1465"
+ Z="70"
+ color="6"
+ ArrowheadType="Solid"
+ CurvePoints="218.46 262.01 218.46 262.01 218.46 262.01 234.06 233.79 234.06 233.79 234.06 233.79 248.54 241.21 248.54 241.21 248.54 241.21"
+/><curve
+ id="1466"
+ Z="71"
+ color="6"
+ ArrowheadType="Solid"
+ CurvePoints="229.22 256.81 229.22 256.81 229.22 256.81 247.06 230.45 247.06 230.45 247.06 230.45 252.99 238.61 252.99 238.61 252.99 238.61"
+/><curve
+ id="1467"
+ Z="72"
+ color="6"
+ ArrowheadType="Solid"
+ CurvePoints="281.95 263.86 281.95 263.86 281.95 263.86 276.39 245.30 276.39 245.30 276.39 245.30 267.11 244.93 267.11 244.93 267.11 244.93"
+/><curve
+ id="1468"
+ Z="73"
+ color="6"
+ ArrowheadType="Solid"
+ CurvePoints="299.04 262.38 299.04 262.38 299.04 262.38 283.07 234.16 283.07 234.16 283.07 234.16 267.85 241.58 267.85 241.58 267.85 241.58"
+/><curve
+ id="1469"
+ Z="74"
+ color="6"
+ ArrowheadType="Solid"
+ CurvePoints="287.89 256.45 287.89 256.45 287.89 256.45 270.81 230.08 270.81 230.08 270.81 230.08 264.13 238.61 264.13 238.61 264.13 238.61"
+/><curve
+ id="1470"
+ Z="75"
+ color="6"
+ ArrowheadType="Solid"
+ CurvePoints="255.36 202.69 254.43 202.87 253.50 203.06 251.36 203.16 251.73 204.73 252.10 206.31 255.65 206.21 258.42 206.21 261.21 206.21 264.55 206.68 265.01 205.20 265.48 203.72 263.06 203.34 262.33 203.24 261.58 203.16"
+/><curve
+ id="1471"
+ Z="76"
+ color="6"
+ ArrowheadType="Solid"
+ CurvePoints="255.46 194.29 254.53 194.47 253.60 194.66 251.46 194.75 251.84 196.33 252.21 197.90 255.73 197.82 258.52 197.82 261.30 197.82 264.65 198.29 265.11 196.79 265.58 195.30 263.17 194.94 262.41 194.85 261.67 194.75"
+/><curve
+ id="1472"
+ Z="77"
+ color="6"
+ ArrowheadType="Solid"
+ CurvePoints="255.36 197.12 254.43 197.31 253.50 197.49 251.36 197.59 251.73 199.16 252.10 200.75 255.65 200.64 258.42 200.64 261.21 200.64 264.55 201.12 265.01 199.63 265.48 198.15 263.06 197.76 262.33 197.68 261.58 197.59"
+/><curve
+ id="1473"
+ Z="78"
+ color="6"
+ ArrowheadType="Solid"
+ CurvePoints="255.36 199.81 254.43 200 253.50 200.19 251.36 200.28 251.73 201.85 252.10 203.43 255.65 203.34 258.42 203.34 261.21 203.34 264.55 203.80 265.01 202.32 265.48 200.83 263.06 200.46 262.33 200.37 261.58 200.28"
+/><curve
+ id="1474"
+ Z="79"
+ color="6"
+ ArrowheadType="Solid"
+ CurvePoints="255.40 205.39 254.47 205.57 253.55 205.76 251.42 205.84 251.79 207.43 252.16 209.01 255.68 208.91 258.47 208.91 261.26 208.91 264.59 209.37 265.07 207.88 265.52 206.40 263.11 206.03 262.36 205.94 261.63 205.84"
+/><curve
+ id="1475"
+ Z="80"
+ color="6"
+ ArrowheadType="Solid"
+ CurvePoints="255.36 208.17 254.43 208.36 253.50 208.53 251.36 208.64 251.73 210.21 252.10 211.79 255.65 211.69 258.42 211.69 261.21 211.69 264.55 212.16 265.01 210.68 265.48 209.20 263.06 208.81 262.33 208.72 261.58 208.64"
+/><curve
+ id="1476"
+ Z="81"
+ color="6"
+ ArrowheadType="Solid"
+ CurvePoints="255.36 211.05 254.43 211.24 253.50 211.41 251.36 211.51 251.73 213.09 252.10 214.67 255.65 214.57 258.42 214.57 261.21 214.57 264.55 215.04 265.01 213.55 265.48 212.07 263.06 211.69 262.33 211.61 261.58 211.51"
+/><curve
+ id="1477"
+ Z="82"
+ color="6"
+ ArrowheadType="Solid"
+ CurvePoints="255.36 213.92 254.43 214.11 253.50 214.29 251.36 214.39 251.73 215.96 252.10 217.54 255.65 217.45 258.42 217.45 261.21 217.45 264.55 217.92 265.01 216.43 265.48 214.94 263.06 214.57 262.33 214.48 261.58 214.39"
+/><curve
+ id="1478"
+ Z="83"
+ color="6"
+ ArrowheadType="Solid"
+ CurvePoints="255.36 216.80 254.43 216.99 253.50 217.17 251.36 217.26 251.73 218.84 252.10 220.41 255.65 220.33 258.42 220.33 261.21 220.33 264.55 220.80 265.01 219.32 265.48 217.81 263.06 217.45 262.33 217.36 261.58 217.26"
+/><curve
+ id="1479"
+ Z="84"
+ color="6"
+ ArrowheadType="Solid"
+ CurvePoints="255.36 219.58 254.43 219.77 253.50 219.96 251.36 220.04 251.73 221.63 252.10 223.21 255.65 223.12 258.42 223.12 261.21 223.12 264.55 223.57 265.01 222.09 265.48 220.60 263.06 220.24 262.33 220.14 261.58 220.04"
+/><curve
+ id="1480"
+ Z="85"
+ color="6"
+ ArrowheadType="Solid"
+ CurvePoints="255.36 222.45 254.43 222.64 253.50 222.84 251.36 222.93 251.73 224.50 252.10 226.08 255.65 226 258.42 226 261.21 226 264.55 226.45 265.01 224.97 265.48 223.48 263.06 223.12 262.33 223.01 261.58 222.93"
+/><curve
+ id="1481"
+ Z="86"
+ color="6"
+ ArrowheadType="Solid"
+ CurvePoints="255.36 225.16 254.43 225.34 253.50 225.53 251.36 225.62 251.73 227.20 252.10 228.78 255.65 228.68 258.42 228.68 261.21 228.68 264.55 229.15 265.01 227.66 265.48 226.18 263.06 225.81 262.33 225.71 261.58 225.62"
+/><curve
+ id="1482"
+ Z="87"
+ color="6"
+ ArrowheadType="Solid"
+ CurvePoints="255.31 228.04 254.39 228.22 253.46 228.41 251.32 228.49 251.70 230.08 252.06 231.65 255.59 231.56 258.39 231.56 261.16 231.56 264.51 232.02 264.96 230.53 265.44 229.05 263.03 228.68 262.28 228.60 261.52 228.49"
+/><curve
+ id="1483"
+ Z="88"
+ color="6"
+ ArrowheadType="Solid"
+ CurvePoints="255.36 230.72 254.43 230.91 253.50 231.09 251.36 231.19 251.73 232.76 252.10 234.34 255.65 234.25 258.42 234.25 261.21 234.25 264.55 234.72 265.01 233.24 265.48 231.74 263.06 231.38 262.33 231.28 261.58 231.19"
+/><curve
+ id="1484"
+ Z="89"
+ color="6"
+ ArrowheadType="Solid"
+ CurvePoints="255.36 233.50 254.43 233.69 253.50 233.89 251.36 233.97 251.73 235.56 252.10 237.13 255.65 237.05 258.42 237.05 261.21 237.05 264.55 237.50 265.01 236.02 265.48 234.53 263.06 234.16 262.33 234.06 261.58 233.97"
+/><curve
+ id="1485"
+ Z="91"
+ color="6"
+ CurveType="1"
+ ArrowheadType="Solid"
+ FadePercent="300"
+ Closed="yes"
+ CurvePoints="247.42 242.70 247.42 242.70 247.42 242.70 250.76 246.41 252.62 246.78 254.47 247.17 261.91 247.53 263.76 247.17 265.62 246.78 269.33 242.70 269.33 242.70 269.33 242.70 265.25 238.61 263.03 238.25 260.80 237.88 255.96 237.50 254.11 237.88 252.24 238.25"
+/><curve
+ id="1486"
+ Z="92"
+ color="6"
+ ArrowheadType="Solid"
+ CurvePoints="255.36 235.93 254.43 236.10 253.50 236.29 251.36 236.38 251.73 237.97 252.10 239.54 255.65 239.46 258.42 239.46 261.21 239.46 264.55 239.92 265.01 238.43 265.48 236.94 263.06 236.57 262.33 236.49 261.58 236.38"
+/></group><annotation
+ Keyword="Name"
+ Content="Bacteriophage"
+/></page></CDXML>

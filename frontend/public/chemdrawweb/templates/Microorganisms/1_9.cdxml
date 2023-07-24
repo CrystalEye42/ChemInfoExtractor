@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE CDXML SYSTEM "http://www.cambridgesoft.com/xml/cdxml.dtd" >
+<CDXML
+ CreationProgram="ChemDraw 16.0.0.82"
+ Name="Microorganisms.ctp"
+ BoundingBox="153.22 94.74 365.85 247.81"
+ WindowPosition="0 -2147483648"
+ WindowSize="1073741824 -2147483648"
+ FractionalWidths="yes"
+ InterpretChemically="yes"
+ ShowAtomQuery="yes"
+ ShowAtomStereo="no"
+ ShowAtomEnhancedStereo="yes"
+ ShowAtomNumber="no"
+ ShowResidueID="no"
+ ShowBondQuery="yes"
+ ShowBondRxn="yes"
+ ShowBondStereo="no"
+ ShowTerminalCarbonLabels="no"
+ ShowNonTerminalCarbonLabels="no"
+ HideImplicitHydrogens="no"
+ LabelFont="3"
+ LabelSize="10"
+ LabelFace="96"
+ CaptionFont="4"
+ CaptionSize="12"
+ HashSpacing="2.70"
+ MarginWidth="2"
+ LineWidth="1"
+ BoldWidth="4"
+ BondLength="28.35"
+ BondSpacing="12"
+ ChainAngle="120"
+ LabelJustification="Auto"
+ CaptionJustification="Left"
+ AminoAcidTermini="HOH"
+ ShowSequenceTermini="yes"
+ ShowSequenceBonds="yes"
+ ResidueWrapCount="40"
+ ResidueBlockCount="10"
+ ResidueZigZag="yes"
+ NumberResidueBlocks="no"
+ PrintMargins="36 36 36 36"
+ MacPrintInfo="0003000001200120000000000B6808A0FF84FF880BE409180367052803FC0002000001200120000000000B6808A0000100640064000000010001010100000001270F000100010000000000000000000000000002001901900000000000600000000000000000000100000000000000000000000000000000"
+ ChemPropName=""
+ ChemPropFormula="Chemical Formula: "
+ ChemPropExactMass="Exact Mass: "
+ ChemPropMolWt="Molecular Weight: "
+ ChemPropMOverZ="m/z: "
+ ChemPropAnalysis="Elemental Analysis: "
+ ChemPropBoilingPt="Boiling Point: "
+ ChemPropMeltingPt="Melting Point: "
+ ChemPropCritTemp="Critical Temp: "
+ ChemPropCritPres="Critical Pres: "
+ ChemPropCritVol="Critical Vol: "
+ ChemPropGibbs="Gibbs Energy: "
+ ChemPropLogP="Log P: "
+ ChemPropMR="MR: "
+ ChemPropHenry="Henry&apos;s Law: "
+ ChemPropEForm="Heat of Form: "
+ ChemProptPSA="tPSA: "
+ ChemPropCLogP="CLogP: "
+ ChemPropCMR="CMR: "
+ ChemPropLogS="LogS: "
+ ChemPropPKa="pKa: "
+ ChemPropID=""
+ color="0"
+ bgcolor="1"
+ RxnAutonumberStart="1"
+ RxnAutonumberConditions="no"
+ RxnAutonumberStyle="Roman"
+ RxnAutonumberFormat="(#)"
+><colortable>
+<color r="1" g="1" b="1"/>
+<color r="0" g="0" b="0"/>
+<color r="1" g="0" b="0"/>
+<color r="1" g="1" b="0"/>
+<color r="0" g="1" b="0"/>
+<color r="0" g="1" b="1"/>
+<color r="0" g="0" b="1"/>
+<color r="1" g="0" b="1"/>
+<color r="0.1569" g="0.8353" b="0.8000"/>
+<color r="0.4706" g="0.8902" b="0.8706"/>
+<color r="0.1451" g="0.7608" b="0.7255"/>
+<color r="0.5059" g="0.8510" b="0.8706"/>
+<color r="0" g="0.6353" b="0.6353"/>
+<color r="1" g="0.5569" b="0.5569"/>
+<color r="1" g="0.7765" b="0.7765"/>
+<color r="1" g="0.4706" b="0.4706"/>
+<color r="1" g="0.3059" b="0.3059"/>
+<color r="0.6902" g="0" b="0"/>
+<color r="0.8510" g="0" b="0"/>
+<color r="0.0706" g="0.1608" b="0.3608"/>
+<color r="0.5059" g="0.0157" b="0.1255"/>
+<color r="0.6706" g="0.0157" b="0.1608"/>
+<color r="0.1059" g="0.2510" b="0.5608"/>
+<color r="0" g="0.5020" b="0.7451"/>
+<color r="0.6902" g="0.9020" b="1"/>
+<color r="1" g="0.9059" b="0.9059"/>
+<color r="0.7059" g="0" b="0"/>
+<color r="1" g="0.8706" b="0.8706"/>
+<color r="0.2706" g="0" b="0"/>
+<color r="0.5020" g="0.5020" b="0"/>
+<color r="0.9961" g="0.2902" b="0.9961"/>
+<color r="0.7765" g="0" b="0.7765"/>
+<color r="1" g="0.6157" b="1"/>
+<color r="0.5569" g="1" b="0.5569"/>
+<color r="0.7765" g="1" b="0.7765"/>
+<color r="0.4706" g="1" b="0.4706"/>
+<color r="0.3059" g="1" b="0.3059"/>
+<color r="0" g="0.6902" b="0"/>
+<color r="0" g="0.8510" b="0"/>
+<color r="0" g="0.4941" b="0"/>
+<color r="0" g="0.4157" b="0"/>
+<color r="0.4941" g="1" b="0.4941"/>
+<color r="0" g="0.2941" b="0"/>
+<color r="1" g="0.7255" b="0.7255"/>
+<color r="1" g="0.6157" b="0.6157"/>
+<color r="1" g="0.4902" b="0.4902"/>
+<color r="0.4902" g="0" b="0"/>
+<color r="0" g="0.6706" b="1"/>
+<color r="0.6588" g="0.8863" b="1"/>
+<color r="0" g="0.6196" b="0.9176"/>
+</colortable><fonttable>
+<font id="3" charset="iso-8859-1" name="Arial"/>
+<font id="4" charset="iso-8859-1" name="Times New Roman"/>
+</fonttable><page
+ id="3182"
+ BoundingBox="0 0 540 720"
+ HeaderPosition="36"
+ FooterPosition="36"
+ PrintTrimMarks="yes"
+ HeightPages="1"
+ WidthPages="1"
+><group
+ id="37"
+ BoundingBox="153.22 94.74 365.85 247.81"
+ Z="1"
+ Integral="yes"
+><graphic
+ id="1562"
+ BoundingBox="311.68 161.21 292.53 161.21"
+ Z="33"
+ color="47"
+ GraphicType="Oval"
+ OvalType="Circle Shaded"
+ Center3D="292.53 161.21 0"
+ MajorAxisEnd3D="311.68 161.21 0"
+ MinorAxisEnd3D="292.53 180.36 0"
+/><graphic
+ id="1563"
+ BoundingBox="202.80 202.36 197.91 202.36"
+ Z="34"
+ color="48"
+ GraphicType="Oval"
+ OvalType="Circle Shaded"
+ Center3D="197.91 202.36 0"
+ MajorAxisEnd3D="202.80 202.36 0"
+ MinorAxisEnd3D="197.91 207.24 0"
+/><graphic
+ id="1564"
+ BoundingBox="270.77 135.17 261.84 135.17"
+ Z="35"
+ color="48"
+ GraphicType="Oval"
+ OvalType="Circle"
+ FadePercent="300"
+ Center3D="261.84 135.17 0"
+ MajorAxisEnd3D="270.77 135.17 0"
+ MinorAxisEnd3D="261.84 144.10 0"
+/><graphic
+ id="1565"
+ BoundingBox="249.29 121.46 246.97 121.46"
+ Z="36"
+ color="46"
+ GraphicType="Oval"
+ OvalType="Circle"
+ FadePercent="300"
+ Center3D="246.97 121.46 0"
+ MajorAxisEnd3D="249.29 121.46 0"
+ MinorAxisEnd3D="246.97 123.78 0"
+/><graphic
+ id="1566"
+ BoundingBox="233.53 111.46 227.90 111.46"
+ Z="37"
+ color="46"
+ GraphicType="Oval"
+ OvalType="Circle"
+ FadePercent="300"
+ Center3D="227.90 111.46 0"
+ MajorAxisEnd3D="233.53 111.46 0"
+ MinorAxisEnd3D="227.90 117.08 0"
+/><graphic
+ id="1567"
+ BoundingBox="304.62 115.18 301.83 115.18"
+ Z="38"
+ color="46"
+ GraphicType="Oval"
+ OvalType="Circle"
+ FadePercent="300"
+ Center3D="301.83 115.18 0"
+ MajorAxisEnd3D="304.62 115.18 0"
+ MinorAxisEnd3D="301.83 117.97 0"
+/><graphic
+ id="1568"
+ BoundingBox="334.60 119.60 332.05 119.60"
+ Z="39"
+ color="46"
+ GraphicType="Oval"
+ OvalType="Circle"
+ FadePercent="300"
+ Center3D="332.05 119.60 0"
+ MajorAxisEnd3D="334.60 119.60 0"
+ MinorAxisEnd3D="332.05 122.15 0"
+/><graphic
+ id="1569"
+ BoundingBox="317.28 130.29 312.06 130.29"
+ Z="40"
+ color="46"
+ GraphicType="Oval"
+ OvalType="Circle"
+ FadePercent="300"
+ Center3D="312.06 130.29 0"
+ MajorAxisEnd3D="317.28 130.29 0"
+ MinorAxisEnd3D="312.06 135.51 0"
+/><graphic
+ id="1570"
+ BoundingBox="290.67 134.71 288.35 134.71"
+ Z="41"
+ color="46"
+ GraphicType="Oval"
+ OvalType="Circle"
+ FadePercent="300"
+ Center3D="288.35 134.71 0"
+ MajorAxisEnd3D="290.67 134.71 0"
+ MinorAxisEnd3D="288.35 137.03 0"
+/><graphic
+ id="1571"
+ BoundingBox="314.99 144.47 311.36 144.47"
+ Z="42"
+ color="46"
+ GraphicType="Oval"
+ OvalType="Circle"
+ FadePercent="300"
+ Center3D="311.36 144.47 0"
+ MajorAxisEnd3D="314.99 144.47 0"
+ MinorAxisEnd3D="311.36 148.10 0"
+/><graphic
+ id="1572"
+ BoundingBox="331.79 155.63 324.61 155.63"
+ Z="43"
+ color="46"
+ GraphicType="Oval"
+ OvalType="Circle"
+ FadePercent="300"
+ Center3D="324.61 155.63 0"
+ MajorAxisEnd3D="331.79 155.63 0"
+ MinorAxisEnd3D="324.61 162.81 0"
+/><graphic
+ id="1573"
+ BoundingBox="318.10 174.69 315.08 174.69"
+ Z="44"
+ color="46"
+ GraphicType="Oval"
+ OvalType="Circle"
+ FadePercent="300"
+ Center3D="315.08 174.69 0"
+ MajorAxisEnd3D="318.10 174.69 0"
+ MinorAxisEnd3D="315.08 177.72 0"
+/><graphic
+ id="1574"
+ BoundingBox="307.27 200.50 301.13 200.50"
+ Z="45"
+ color="46"
+ GraphicType="Oval"
+ OvalType="Circle"
+ FadePercent="300"
+ Center3D="301.13 200.50 0"
+ MajorAxisEnd3D="307.27 200.50 0"
+ MinorAxisEnd3D="301.13 206.64 0"
+/><graphic
+ id="1575"
+ BoundingBox="316.47 188.87 313.68 188.87"
+ Z="46"
+ color="46"
+ GraphicType="Oval"
+ OvalType="Circle"
+ FadePercent="300"
+ Center3D="313.68 188.87 0"
+ MajorAxisEnd3D="316.47 188.87 0"
+ MinorAxisEnd3D="313.68 191.66 0"
+/><graphic
+ id="1576"
+ BoundingBox="288.87 190.73 284.16 190.73"
+ Z="47"
+ color="46"
+ GraphicType="Oval"
+ OvalType="Circle"
+ FadePercent="300"
+ Center3D="284.16 190.73 0"
+ MajorAxisEnd3D="288.87 190.73 0"
+ MinorAxisEnd3D="284.16 195.44 0"
+/><graphic
+ id="1577"
+ BoundingBox="269.05 216.31 264.63 216.31"
+ Z="48"
+ color="46"
+ GraphicType="Oval"
+ OvalType="Circle"
+ FadePercent="300"
+ Center3D="264.63 216.31 0"
+ MajorAxisEnd3D="269.05 216.31 0"
+ MinorAxisEnd3D="264.63 220.72 0"
+/><graphic
+ id="1578"
+ BoundingBox="269.51 231.18 266.49 231.18"
+ Z="49"
+ color="46"
+ GraphicType="Oval"
+ OvalType="Circle"
+ FadePercent="300"
+ Center3D="266.49 231.18 0"
+ MajorAxisEnd3D="269.51 231.18 0"
+ MinorAxisEnd3D="266.49 234.20 0"
+/><graphic
+ id="1579"
+ BoundingBox="245.71 213.52 241.39 213.52"
+ Z="50"
+ color="46"
+ GraphicType="Oval"
+ OvalType="Circle"
+ FadePercent="300"
+ Center3D="241.39 213.52 0"
+ MajorAxisEnd3D="245.71 213.52 0"
+ MinorAxisEnd3D="241.39 217.84 0"
+/><graphic
+ id="1580"
+ BoundingBox="234.18 224.90 231.62 224.90"
+ Z="51"
+ color="46"
+ GraphicType="Oval"
+ OvalType="Circle"
+ FadePercent="300"
+ Center3D="231.62 224.90 0"
+ MajorAxisEnd3D="234.18 224.90 0"
+ MinorAxisEnd3D="231.62 227.46 0"
+/><graphic
+ id="1581"
+ BoundingBox="211.40 213.28 209.07 213.28"
+ Z="52"
+ color="46"
+ GraphicType="Oval"
+ OvalType="Circle"
+ FadePercent="300"
+ Center3D="209.07 213.28 0"
+ MajorAxisEnd3D="211.40 213.28 0"
+ MinorAxisEnd3D="209.07 215.61 0"
+/><graphic
+ id="1582"
+ BoundingBox="193.08 213.75 189.78 213.75"
+ Z="53"
+ color="46"
+ GraphicType="Oval"
+ OvalType="Circle"
+ FadePercent="300"
+ Center3D="189.78 213.75 0"
+ MajorAxisEnd3D="193.08 213.75 0"
+ MinorAxisEnd3D="189.78 217.05 0"
+/><graphic
+ id="1583"
+ BoundingBox="217.21 150.98 212.79 150.98"
+ Z="54"
+ color="46"
+ GraphicType="Oval"
+ OvalType="Circle"
+ FadePercent="300"
+ Center3D="212.79 150.98 0"
+ MajorAxisEnd3D="217.21 150.98 0"
+ MinorAxisEnd3D="212.79 155.40 0"
+/><graphic
+ id="1584"
+ BoundingBox="229.06 167.25 226.27 167.25"
+ Z="55"
+ color="46"
+ GraphicType="Oval"
+ OvalType="Circle"
+ FadePercent="300"
+ Center3D="226.27 167.25 0"
+ MajorAxisEnd3D="229.06 167.25 0"
+ MinorAxisEnd3D="226.27 170.04 0"
+/><graphic
+ id="1585"
+ BoundingBox="265.52 162.37 256.27 162.37"
+ Z="56"
+ color="46"
+ GraphicType="Oval"
+ OvalType="Circle"
+ FadePercent="300"
+ Center3D="256.27 162.37 0"
+ MajorAxisEnd3D="265.52 162.37 0"
+ MinorAxisEnd3D="256.27 171.62 0"
+/><graphic
+ id="1586"
+ BoundingBox="267 188.67 251.82 188.67"
+ Z="57"
+ color="48"
+ GraphicType="Oval"
+ OvalType="Filled"
+ Center3D="251.82 188.67 0"
+ MajorAxisEnd3D="267 188.67 0"
+ MinorAxisEnd3D="251.82 198.42 0"
+/><graphic
+ id="1587"
+ BoundingBox="263.93 131.69 260.92 131.69"
+ Z="58"
+ color="46"
+ GraphicType="Oval"
+ OvalType="Circle"
+ FadePercent="300"
+ Center3D="260.92 131.69 0"
+ MajorAxisEnd3D="263.93 131.69 0"
+ MinorAxisEnd3D="260.92 134.71 0"
+/><graphic
+ id="1588"
+ BoundingBox="265.56 137.03 261.14 137.03"
+ Z="59"
+ color="46"
+ GraphicType="Oval"
+ OvalType="Circle Shaded"
+ Center3D="261.14 137.03 0"
+ MajorAxisEnd3D="265.56 137.03 0"
+ MinorAxisEnd3D="261.14 141.45 0"
+/><curve
+ id="36"
+ Z="31"
+ color="45"
+ FillType="Shaded"
+ CurveType="257"
+ ArrowheadType="Solid"
+ Closed="yes"
+ CurvePoints="322.72 100.32 318.23 114.15 311.28 135.59 319.88 108.03 314 104.03 310.01 101.31 292.83 108.22 292.83 108.22 292.83 108.22 277.24 115.38 272.65 115.38 267.42 115.38 254.18 97.06 248.99 96.12 246.25 95.63 235.41 99.14 234.30 98.60 222.09 92.67 214.28 98.13 210.88 100.82 202.41 107.48 208.18 123.06 216.61 124.27 230.31 126.24 241.86 125.71 238.78 136.62 234.79 150.69 216.99 142.20 212.38 139.83 199.42 133.16 195.14 138.01 193.69 140.32 190.45 145.51 196.67 151.67 198.17 153.16 201.42 156.37 192.01 152.31 193.19 159.33 194.19 165.26 201.89 163.02 206.15 163.53 212.38 164.27 215 174.89 211.13 174.89 203.16 174.89 190.19 191.09 180.74 192.66 158.57 196.37 152.84 208.79 154.83 215.13 158.32 226.24 194.14 221.83 189.95 222.78 186.72 223.53 209.86 233.98 216.86 222.54 241.02 183.04 203.17 239.83 210.13 243.28 218.60 247.48 232.55 239.82 235.04 238.83 238.51 237.46 260.50 218 248.49 228.71 246 230.94 259.94 225.66 256.71 231.92 250.48 244.02 254.86 246.22 259.20 246.49 271.16 247.23 274.45 243.29 275.39 239.08 276.39 234.64 276.40 221.47 279.88 220.57 284.61 219.33 293.39 228.44 300.30 226.49 309.02 224.02 307.46 209.50 310.76 204.27 312.01 202.29 333.88 199.76 336.42 197.60 338.16 196.12 333.68 195 333.68 191.68 333.68 190.44 337.92 186.49 337.92 184.02 337.92 179.09 324.71 181.08 324.71 173.90 324.71 166.25 358 157.07 362.58 149.95 364.32 147.23 366.31 144.02 363.07 135.63 359.84 127.24 354.36 113.29 337.67 129.21 304.53 160.81 346.88 126.24 347.88 111.19 348.62 99.92"
+/><curve
+ id="1589"
+ Z="32"
+ color="46"
+ FillType="Solid"
+ CurveType="129"
+ ArrowheadType="Solid"
+ Closed="yes"
+ CurvePoints="319.96 103.33 315.78 116.34 309.29 136.53 317.32 110.59 311.82 106.81 308.10 104.26 292.07 110.76 292.07 110.76 292.07 110.76 277.52 117.50 273.23 117.50 268.35 117.50 256 100.25 251.15 99.37 248.59 98.91 238.48 102.20 237.43 101.70 226.04 96.12 218.76 101.26 215.58 103.79 207.68 110.06 213.06 124.73 220.93 125.87 233.71 127.73 244.50 127.23 241.62 137.50 237.90 150.75 221.28 142.75 216.98 140.52 204.89 134.24 200.89 138.81 199.54 140.99 196.52 145.86 202.32 151.67 203.73 153.07 206.75 156.09 197.97 152.27 199.08 158.88 200.01 164.46 207.19 162.36 211.17 162.84 216.98 163.53 219.43 173.53 215.82 173.53 208.38 173.53 196.27 188.78 187.45 190.27 166.76 193.75 161.42 205.45 163.28 211.42 166.53 221.89 199.96 217.73 196.05 218.63 193.03 219.33 214.63 229.17 221.16 218.40 243.71 181.20 208.39 234.67 214.89 237.92 222.79 241.88 235.81 234.67 238.13 233.74 241.37 232.44 261.89 214.12 250.69 224.21 248.36 226.30 261.36 221.33 258.35 227.23 252.55 238.62 256.63 240.69 260.68 240.95 271.84 241.64 274.91 237.94 275.79 233.97 276.72 229.79 276.74 217.39 279.98 216.54 284.39 215.38 292.59 223.96 299.04 222.11 307.17 219.79 305.72 206.12 308.80 201.19 309.96 199.33 330.38 196.95 332.75 194.92 334.38 193.52 330.19 192.46 330.19 189.34 330.19 188.17 334.14 184.45 334.14 182.13 334.14 177.48 321.82 179.36 321.82 172.60 321.82 165.39 352.89 156.75 357.16 150.05 358.78 147.50 360.64 144.47 357.62 136.57 354.60 128.66 349.49 115.53 333.91 130.52 302.99 160.28 342.51 127.73 343.44 113.55 344.13 102.95"
+/></group><annotation
+ Keyword="Name"
+ Content="Amoeba"
+/></page></CDXML>

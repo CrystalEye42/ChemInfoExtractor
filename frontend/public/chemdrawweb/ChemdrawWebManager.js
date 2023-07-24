@@ -1,0 +1,1 @@
+console.warn("File ChemdrawWebManager.js is not needed anymore."),console.warn("File chemdrawweb.nocache.js is renamed to chemdrawweb.js.");

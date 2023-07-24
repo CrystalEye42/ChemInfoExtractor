@@ -1,0 +1,109 @@
+/* Define CSS classes for different word categories */
+.normal-word {
+  color: black;
+}
+
+span {
+  display: inline-block; /* Ensures each word occupies its own space */
+}
+
+.entities {
+     line-height: 2;
+     font: 18px Helvetica, Arial, sans-serif;
+}
+
+[data-entity] {
+     padding: 0.25em 0.35em;
+     margin: 0px 0.25em;
+     line-height: 1;
+     display: inline-block;
+     border-radius: 0.25em;
+     border: 1px solid;
+}
+
+[data-entity]::after {
+     box-sizing: border-box;
+     content: attr(data-entity);
+     font-size: 0.6em;
+     line-height: 1;
+     padding: 0.35em;
+     border-radius: 0.35em;
+     text-transform: uppercase;
+     display: inline-block;
+     vertical-align: middle;
+     margin: 0px 0px 0.1rem 0.5rem;
+}
+
+[data-entity][data-entity="reaction"] {
+     background: rgba(166, 226, 45, 0.2);
+     border-color: rgb(166, 226, 45);
+}
+
+[data-entity][data-entity="reaction"]::after {
+     background: rgb(166, 226, 45);
+}
+
+[data-entity][data-entity="reagent"] {
+     background: rgba(224, 0, 132, 0.2);
+     border-color: rgb(244, 60, 192);
+}
+
+[data-entity][data-entity="reagent"]::after {
+     background: rgb(244, 60, 192);
+}
+
+[data-entity][data-entity="product"] {
+     background: rgba(67, 198, 252, 0.2);
+     border-color: rgb(67, 198, 252);
+}
+
+[data-entity][data-entity="product"]::after {
+     background: rgb(67, 198, 252);
+}
+
+[data-entity][data-entity="temperature"] {
+     background: rgba(253, 151, 32, 0.2);
+     border-color: rgb(253, 151, 32);
+}
+
+[data-entity][data-entity="temperature"]::after {
+     background: rgb(253, 151, 32);
+}
+
+[data-entity][data-entity="reactants"] {
+     background: rgba(142, 125, 255, 0.2);
+     border-color: rgb(142, 125, 255);
+}
+
+[data-entity][data-entity="reactants"]::after {
+     background: rgb(142, 125, 255);
+}
+
+[data-entity][data-entity="yield"] {
+     background: rgba(255, 204, 0, 0.2);
+     border-color: rgb(255, 204, 0);
+}
+
+[data-entity][data-entity="yield"]::after {
+     background: rgb(255, 204, 0);
+}
+
+[data-entity][data-entity="time"] {
+     background: rgba(47, 187, 171, 0.2);
+     border-color: rgb(47, 187, 171);
+}
+
+[data-entity][data-entity="time"]::after {
+     background: rgb(47, 187, 171);
+}
+
+[data-entity][data-entity="solvent"] {
+     background: rgba(153, 153, 153, 0.2);
+     border-color: rgb(153, 153, 153);
+}
+
+[data-entity][data-entity="solvent"]::after {
+     background: rgb(153, 153, 153);
+}
+
+/* Add more classes for other categories as necessary */

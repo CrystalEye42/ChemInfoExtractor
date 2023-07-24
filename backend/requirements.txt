@@ -8,4 +8,4 @@ opencv-python-headless==4.5.4.60
 python-dotenv
 tensorboardx
 sendgrid
-ChemEScribe @ git+https://github.com/CrystalEye42/ChemEScribe.git
+OpenChemIE @ git+https://github.com/CrystalEye42/OpenChemIE.git

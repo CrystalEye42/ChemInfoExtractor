@@ -16,6 +16,7 @@ import './PdfExtract.css';
 // Import url for sending requests
 import { base_url } from "../config";
 import { FigureSelect } from './FigureSelect';
+import { TextRxnDisplay } from './TextRxnDisplay'
 import { FakeProgress } from './FakeProgress';
 
 export function PdfExtract(props) {
@@ -127,18 +128,23 @@ export function PdfExtract(props) {
 
   // set the values of Figures and FigureDetails
   const setFiguresFromResponse = (response) => {
-    setFigures(response.map(curr => getFigureName(curr["image_path"])));
-    setFigureDetails(response.reduce((dict, curr) => {
-      const key = getFigureName(curr["image_path"]);
-      dict[key] = {
-        "figure": curr["image"],
-        // The "||" is here to handle responses from both extract and extractrxn
-        "subfigures": curr["images"] || [],
-        "molblocks": curr["molblocks"] || [],
-        "reactions" : curr["reactions"] || [],
-      };
-      return dict;
-    }, {}));
+    if (props.url === '/extracttxt') {
+      setFigureDetails(response);
+    }
+    else {
+      setFigures(response.map(curr => getFigureName(curr["image_path"])));
+      setFigureDetails(response.reduce((dict, curr) => {
+        const key = getFigureName(curr["image_path"]);
+        dict[key] = {
+          "figure": curr["image"],
+          // The "||" is here to handle responses from both extract and extractrxn
+          "subfigures": curr["images"] || [],
+          "molblocks": curr["molblocks"] || [],
+          "reactions" : curr["reactions"] || [],
+        };
+        return dict;
+      }, {}));
+    }
   };
 
   // send post request containing pdf file
@@ -150,7 +156,7 @@ export function PdfExtract(props) {
     }
     const request = new XMLHttpRequest();
     request.onreadystatechange = function () {
-      if (request.readyState === 4) { 
+      if (request.readyState === 4) {
         if (request.status === 200) {
           setPdfError('');
           setPdfFile(pdfFile);
@@ -213,7 +219,7 @@ export function PdfExtract(props) {
             <div>
               <input type='file' className="form-control"
               onChange={handleFile}></input>
-              <button type="button" className="btn btn-primary" onClick={extractFile} 
+              <button type="button" className="btn btn-primary" onClick={extractFile}
                 disabled={extractState !== 'ready'}>Extract</button>
             </div>
             {/* we will display error message in case user select some file
@@ -234,7 +240,7 @@ export function PdfExtract(props) {
             <option value="example3.pdf">acs.joc.2c00749</option>
           </select>
 
-          <span style={{marginLeft:20}}>Limit to first 5 pages </span>
+          <span style={{marginLeft:20, marginRight:10}}>Limit to first 5 pages </span>
           <input type="checkbox" checked={extractLimited} onChange={handleLimited}></input>
         </div>
       </div>
@@ -265,7 +271,9 @@ export function PdfExtract(props) {
         </div>}
         <div className='col-md-auto' id="results">
           <div id="resultBody">
-            {(extractState === 'done') && <FigureSelect figures={figures} details={figureDetails} url={props.url} />}
+            {(extractState === 'done') && 
+             ((props.url !== '/extracttxt' && <FigureSelect figures={figures} details={figureDetails} url={props.url}/>)
+              || (props.url === '/extracttxt' && <TextRxnDisplay details={figureDetails}/>))}
           </div>
         </div>
       </div>

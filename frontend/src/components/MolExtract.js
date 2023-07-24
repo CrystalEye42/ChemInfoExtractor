@@ -233,7 +233,7 @@ export function MolExtract(props) {
             <option value="example3.pdf">acs.joc.2c00749</option>
           </select>
 
-          <span style={{marginLeft:20}}>Limit to first 5 pages </span>
+          <span style={{marginLeft:20, marginRight:10}}>Limit to first 5 pages </span>
           <input type="checkbox" checked={extractLimited} onChange={handleLimited}></input>
         </div>
       </div>

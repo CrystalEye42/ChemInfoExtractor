@@ -108,6 +108,12 @@ export function MolExtract(props) {
     const example = await response.blob();
     setPdfData(example);
     setShowPdf(true);
+    const fileInput = document.getElementById("fileInput");
+    console.log(fileInput.files);
+    const dataTransfer = new DataTransfer();
+    dataTransfer.items.add(new File([example], exampleFileName));
+    fileInput.files = dataTransfer.files;
+
     let reader = new FileReader();
     reader.readAsDataURL(example);
     reader.onloadend = (e) => {
@@ -210,7 +216,7 @@ export function MolExtract(props) {
         <div className='col-md-auto'>
           <form>
             <div>
-              <input type='file' className="form-control"
+              <input type='file' className="form-control" id="fileInput"
               onChange={handleFile}></input>
               <button type="button" className="btn btn-primary" onClick={extractFile} 
                 disabled={extractState !== 'ready'}>Extract</button>
@@ -228,9 +234,9 @@ export function MolExtract(props) {
           <b>Example: </b>
           <select onChange={fetchExample} className="form-select">
             <option value="" disabled selected>Select</option>
-            <option value="example1.pdf">acs.jmedchem.1c01646</option>
-            <option value="example2.pdf">acs.joc.2c00783</option>
-            <option value="example3.pdf">acs.joc.2c00749</option>
+            <option value="acs.jmedchem.1c01646.pdf">acs.jmedchem.1c01646</option>
+            <option value="acs.joc.2c00783.pdf">acs.joc.2c00783</option>
+            <option value="acs.joc.2c00749.pdf">acs.joc.2c00749</option>
           </select>
 
           <span style={{marginLeft:20, marginRight:10}}>Limit to first 5 pages </span>

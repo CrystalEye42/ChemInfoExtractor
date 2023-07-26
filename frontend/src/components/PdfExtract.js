@@ -253,7 +253,7 @@ export function PdfExtract(props) {
       {(extractState === 'loading') && <FakeProgress seconds={30}/>}
       <div className='justifyleft'>
         {showPdf && <button type="button" className='btn btn-secondary' style={{marginBottom:6}} onClick={()=>setShowPdf(false)}>Hide PDF</button>}
-        {!showPdf && <button type="button" className='btn btn-secondary' onClick={()=>setShowPdf(true)}>Show Pdf</button>}
+        {!showPdf && <button type="button" className='btn btn-secondary' onClick={()=>setShowPdf(true)}>Show PDF</button>}
         {fetchingExample && <div className="loader"></div>}
       </div>
       <div className="row justify-content-md-center">

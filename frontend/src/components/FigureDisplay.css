@@ -5,11 +5,15 @@
 #imagedisp{
     overflow-y: auto;
     text-align: center;
+    display: flex;
+    justify-content: left;
+    border: 1px solid lightgray;
 }
 
 #mainimg{
-    max-width: 100%;
+    max-width: 560px;
     max-height: 600px;
+    width: 100%;
 }
 
 #wrapper-inner{
@@ -77,13 +81,21 @@ overflow-x: hidden;
 
 table {
     text-align: left;
-    max-width: 100%;
+    max-width: 50%;
     word-wrap: break-word;
     overflow-wrap: break-word;
     table-layout: fixed;
+    margin-bottom: 0 !important;
 }
 
 #leftTableCol {
     font-weight: bold;
-    width: 16%;
+    width: 20%;
+}
+
+#tableElement {
+    max-height: 120px;
+    word-wrap: break-word;
+    display: block;
+    overflow-y: scroll;
 }

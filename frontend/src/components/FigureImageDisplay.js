@@ -86,19 +86,20 @@ export class FigureImageDisplay extends React.Component {
             const result = row
                 .map((item) => item.smiles)
                 .filter((smiles) => smiles)
-                .map((smiles, i) => <td key={i}>{smiles}</td>);
+                .map((smiles, i) => <td id="tableElement" key={i}>{smiles}</td>);
             if (result.length === 0) {
-                return [<td key={0}></td>];
+                return [<td id="tableElement" key={0}></td>];
             }
             return result
         }
         const rowToCellsConds = (row) => {
             const result = row
+                .filter((item) => item.text)
                 .map((item) => item.text.join("\n"))
                 .filter((text) => text)
-                .map((text, i) => <td key={i}>{text}</td>);
+                .map((text, i) => <td id="tableElement" key={i}>{text}</td>);
             if (result.length === 0) {
-                return [<td key={0}></td>];
+                return [<td id="tableElement" key={0}></td>];
             }
             return result
         }
@@ -112,17 +113,17 @@ export class FigureImageDisplay extends React.Component {
                         <td id="leftTableCol" rowSpan={reactantCells.length} style={{backgroundColor:'rgba(255, 0, 0, 0.20)'}}>Reactants</td>
                         {reactantCells[0]}
                     </tr>
-                    {reactantCells.slice(1).map((item, i) => <tr key={i}>{item}</tr>)}
+                    {reactantCells.slice(1).map((item, i) => <tr id="tableElement" key={i}>{item}</tr>)}
                     <tr>
                         <td id="leftTableCol" rowSpan={conditionCells.length} style={{backgroundColor:'rgba(0, 255, 0, 0.20)'}}>Conditions</td>
                         {conditionCells[0]}
                     </tr>
-                    {conditionCells.slice(1).map((item, i) => <tr key={i}>{item}</tr>)}
+                    {conditionCells.slice(1).map((item, i) => <tr id="tableElement" key={i}>{item}</tr>)}
                     <tr>
                         <td id="leftTableCol" rowSpan={productCells.length} style={{backgroundColor:'rgba(0, 0, 255, 0.20)'}}>Products</td>
                         {productCells[0]}
                     </tr>
-                    {productCells.slice(1).map((item, i) => <tr key={i}>{item}</tr>)}
+                    {productCells.slice(1).map((item, i) => <tr id="tableElement" key={i}>{item}</tr>)}
                 </tbody>
             </table>
         );

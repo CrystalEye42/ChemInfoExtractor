@@ -14,8 +14,9 @@ import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 // Import library for modifying pdf
 import './PdfExtract.css';
 // Import url for sending requests
-import { base_url } from "../config";
+import { force_limit, base_url } from "../config";
 import { MolFigureSelect } from './MolFigureSelect';
+import { FigureSelect } from './FigureSelect'
 import { FakeProgress } from './FakeProgress';
 
 export function MolExtract(props) {
@@ -108,6 +109,12 @@ export function MolExtract(props) {
     const example = await response.blob();
     setPdfData(example);
     setShowPdf(true);
+    const fileInput = document.getElementById("fileInput");
+    console.log(fileInput.files);
+    const dataTransfer = new DataTransfer();
+    dataTransfer.items.add(new File([example], exampleFileName));
+    fileInput.files = dataTransfer.files;
+
     let reader = new FileReader();
     reader.readAsDataURL(example);
     reader.onloadend = (e) => {
@@ -131,10 +138,10 @@ export function MolExtract(props) {
     setFigureDetails(response.reduce((dict, curr) => {
       const key = getFigureName(curr["image_path"]);
       dict[key] = {
-        "figure": curr["image"],
-        "subfigures": curr["images"],
-        "molblocks": curr["molblocks"],
-        "reactions" : curr["reactions"],
+        "figure": curr["image"] || [],
+        "subfigures": curr["images"] || [],
+        "molblocks": curr["molblocks"] || [],
+        "reactions" : curr["reactions"] || [],
       };
       return dict;
     }, {}));
@@ -172,7 +179,7 @@ export function MolExtract(props) {
     setPdfError('');
     setPdfFile(pdfFile);
     setExtractState('loading');
-    request.open("POST", base_url + "/extract");
+    request.open("POST", base_url + props.url);
     request.send(formData);
   };
 
@@ -210,7 +217,7 @@ export function MolExtract(props) {
         <div className='col-md-auto'>
           <form>
             <div>
-              <input type='file' className="form-control"
+              <input type='file' className="form-control" id="fileInput"
               onChange={handleFile}></input>
               <button type="button" className="btn btn-primary" onClick={extractFile} 
                 disabled={extractState !== 'ready'}>Extract</button>
@@ -228,19 +235,19 @@ export function MolExtract(props) {
           <b>Example: </b>
           <select onChange={fetchExample} className="form-select">
             <option value="" disabled selected>Select</option>
-            <option value="example1.pdf">acs.jmedchem.1c01646</option>
-            <option value="example2.pdf">acs.joc.2c00783</option>
-            <option value="example3.pdf">acs.joc.2c00749</option>
+            <option value="acs.joc.2c00749.pdf">acs.joc.2c00749</option>
+            <option value="acs.joc.1c02185.pdf">acs.joc.1c02185</option>
+            <option value="acs.joc.2c00176.pdf">acs.joc.2c00176</option>
           </select>
 
           <span style={{marginLeft:20, marginRight:10}}>Limit to first 5 pages </span>
-          <input type="checkbox" checked={extractLimited} onChange={handleLimited}></input>
+          <input type="checkbox" checked={extractLimited} disabled={force_limit} onChange={handleLimited}></input>
         </div>
       </div>
       {(extractState === 'loading') && <FakeProgress seconds={30}/>}
       <div className='justifyleft'>
         {showPdf && <button type="button" className='btn btn-secondary' style={{marginBottom:6}} onClick={()=>setShowPdf(false)}>Hide PDF</button>}
-        {!showPdf && <button type="button" className='btn btn-secondary' onClick={()=>setShowPdf(true)}>Show Pdf</button>}
+        {!showPdf && <button type="button" className='btn btn-secondary' onClick={()=>setShowPdf(true)}>Show PDF</button>}
         {fetchingExample && <div className="loader"></div>}
       </div>
       {showPdf && <div>
@@ -262,7 +269,9 @@ export function MolExtract(props) {
       </div>}
       <div id="molresults">
         <div id="resultBody">
-          {(extractState === 'done') && <MolFigureSelect figures={figures} details={figureDetails}/>}
+          {(extractState === 'done') && 
+            ((props.url === '/extractrxn' && <FigureSelect figures={figures} details={figureDetails} url={props.url}/>)
+            ||(props.url === '/extract' && <MolFigureSelect figures={figures} details={figureDetails}/>))}
         </div>
       </div>
     </div>

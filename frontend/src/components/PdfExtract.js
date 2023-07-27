@@ -14,7 +14,7 @@ import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 // Import library for modifying pdf
 import './PdfExtract.css';
 // Import url for sending requests
-import { base_url } from "../config";
+import { base_url, force_limit } from "../config";
 import { FigureSelect } from './FigureSelect';
 import { TextRxnDisplay } from './TextRxnDisplay'
 import { FakeProgress } from './FakeProgress';
@@ -83,7 +83,6 @@ export function PdfExtract(props) {
             setResponseData(response);
             setFiguresFromResponse(response);
             setExtractState('done');
-            setShowPdf(false);
           }
         } catch (error) {
           setPdfError('Bad file shape');
@@ -109,6 +108,12 @@ export function PdfExtract(props) {
     const example = await response.blob();
     setPdfData(example);
     setShowPdf(true);
+    const fileInput = document.getElementById("fileInput");
+    console.log(fileInput.files);
+    const dataTransfer = new DataTransfer();
+    dataTransfer.items.add(new File([example], exampleFileName));
+    fileInput.files = dataTransfer.files;
+
     let reader = new FileReader();
     reader.readAsDataURL(example);
     reader.onloadend = (e) => {
@@ -164,7 +169,6 @@ export function PdfExtract(props) {
           setResponseData(response);
           setFiguresFromResponse(response);
           setExtractState('done');
-          setShowPdf(false);
         }
         else if (request.status === 413) {
           alert('File uploaded is too large');
@@ -217,7 +221,7 @@ export function PdfExtract(props) {
         <div className='col-md-auto'>
           <form>
             <div>
-              <input type='file' className="form-control"
+              <input type='file' className="form-control" id="fileInput"
               onChange={handleFile}></input>
               <button type="button" className="btn btn-primary" onClick={extractFile}
                 disabled={extractState !== 'ready'}>Extract</button>
@@ -235,19 +239,19 @@ export function PdfExtract(props) {
           <b>Example: </b>
           <select onChange={fetchExample} className="form-select">
             <option value="" disabled selected>Select</option>
-            <option value="example1.pdf">acs.jmedchem.1c01646</option>
-            <option value="example2.pdf">acs.joc.2c00783</option>
-            <option value="example3.pdf">acs.joc.2c00749</option>
+            <option value="acs.joc.2c00749.pdf">acs.joc.2c00749</option>
+            <option value="acs.joc.1c02185.pdf">acs.joc.1c02185</option>
+            <option value="acs.joc.2c00176.pdf">acs.joc.2c00176</option>
           </select>
 
           <span style={{marginLeft:20, marginRight:10}}>Limit to first 5 pages </span>
-          <input type="checkbox" checked={extractLimited} onChange={handleLimited}></input>
+          <input type="checkbox" checked={extractLimited} disabled={force_limit} onChange={handleLimited}></input>
         </div>
       </div>
       {(extractState === 'loading') && <FakeProgress seconds={30}/>}
       <div className='justifyleft'>
         {showPdf && <button type="button" className='btn btn-secondary' style={{marginBottom:6}} onClick={()=>setShowPdf(false)}>Hide PDF</button>}
-        {!showPdf && <button type="button" className='btn btn-secondary' onClick={()=>setShowPdf(true)}>Show Pdf</button>}
+        {!showPdf && <button type="button" className='btn btn-secondary' onClick={()=>setShowPdf(true)}>Show PDF</button>}
         {fetchingExample && <div className="loader"></div>}
       </div>
       <div className="row justify-content-md-center">

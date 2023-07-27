@@ -64,7 +64,7 @@ export class MolFigureSelect extends React.Component {
                         </div>}
                         {!this.state.value && <p>No figures extracted.</p>}
                     </div>
-                    <div className="col">
+                    <div className="col" style={{maxWidth:666}}>
                         {displayList}
                     </div>
                 </div>

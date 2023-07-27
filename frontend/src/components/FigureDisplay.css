@@ -1,9 +1,11 @@
 #imagewrap{
     border: 1px solid lightgray;
+    max-width: 560px;
 }
 
 #imagedisp{
     overflow-y: auto;
+    max-width: 560px;
     text-align: center;
 }
 

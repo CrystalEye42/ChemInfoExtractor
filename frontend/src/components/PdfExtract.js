@@ -14,7 +14,7 @@ import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 // Import library for modifying pdf
 import './PdfExtract.css';
 // Import url for sending requests
-import { base_url } from "../config";
+import { base_url, force_limit } from "../config";
 import { FigureSelect } from './FigureSelect';
 import { TextRxnDisplay } from './TextRxnDisplay'
 import { FakeProgress } from './FakeProgress';
@@ -241,13 +241,13 @@ export function PdfExtract(props) {
           <b>Example: </b>
           <select onChange={fetchExample} className="form-select">
             <option value="" disabled selected>Select</option>
-            <option value="acs.jmedchem.1c01646.pdf">acs.jmedchem.1c01646</option>
-            <option value="acs.joc.2c00783.pdf">acs.joc.2c00783</option>
             <option value="acs.joc.2c00749.pdf">acs.joc.2c00749</option>
+            <option value="acs.joc.1c02185.pdf">acs.joc.1c02185</option>
+            <option value="acs.joc.2c00176.pdf">acs.joc.2c00176</option>
           </select>
 
           <span style={{marginLeft:20, marginRight:10}}>Limit to first 5 pages </span>
-          <input type="checkbox" checked={extractLimited} onChange={handleLimited}></input>
+          <input type="checkbox" checked={extractLimited} disabled={force_limit} onChange={handleLimited}></input>
         </div>
       </div>
       {(extractState === 'loading') && <FakeProgress seconds={30}/>}

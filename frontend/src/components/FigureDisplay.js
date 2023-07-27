@@ -99,7 +99,7 @@ export class FigureDisplay extends React.Component {
         ));
 
         const figureDisplay = this.props.showmain ? (
-            <div id="imagewrap">
+            <div>
                 {figureDisplays}
             </div>
             ) : (

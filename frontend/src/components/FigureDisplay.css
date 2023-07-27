@@ -1,16 +1,17 @@
 #imagewrap{
     border: 1px solid lightgray;
-    max-width: 560px;
 }
 
 #imagedisp{
     overflow-y: auto;
-    max-width: 560px;
     text-align: center;
+    display: flex;
+    justify-content: left;
+    border: 1px solid lightgray;
 }
 
 #mainimg{
-    max-width: 100%;
+    max-width: 560px;
     max-height: 600px;
 }
 
@@ -79,10 +80,11 @@ overflow-x: hidden;
 
 table {
     text-align: left;
-    max-width: 100%;
+    max-width: 50%;
     word-wrap: break-word;
     overflow-wrap: break-word;
     table-layout: fixed;
+    margin-bottom: 0 !important;
 }
 
 #leftTableCol {

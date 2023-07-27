@@ -33,7 +33,7 @@ function App() {
 
             <Route path="/molscribe" element={<MolExtract url="/extract" />}/>
 
-            <Route path="/rxnscribe" element={<PdfExtract url="/extractrxn" />}/>
+            <Route path="/rxnscribe" element={<MolExtract url="/extractrxn" />}/>
 
             <Route path="/chemrxnextractor" element={<PdfExtract url="/extracttxt" />}/>
 

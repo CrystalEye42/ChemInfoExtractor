@@ -16,6 +16,7 @@ import './PdfExtract.css';
 // Import url for sending requests
 import { force_limit, base_url } from "../config";
 import { MolFigureSelect } from './MolFigureSelect';
+import { FigureSelect } from './FigureSelect'
 import { FakeProgress } from './FakeProgress';
 
 export function MolExtract(props) {
@@ -137,10 +138,10 @@ export function MolExtract(props) {
     setFigureDetails(response.reduce((dict, curr) => {
       const key = getFigureName(curr["image_path"]);
       dict[key] = {
-        "figure": curr["image"],
-        "subfigures": curr["images"],
-        "molblocks": curr["molblocks"],
-        "reactions" : curr["reactions"],
+        "figure": curr["image"] || [],
+        "subfigures": curr["images"] || [],
+        "molblocks": curr["molblocks"] || [],
+        "reactions" : curr["reactions"] || [],
       };
       return dict;
     }, {}));
@@ -178,7 +179,7 @@ export function MolExtract(props) {
     setPdfError('');
     setPdfFile(pdfFile);
     setExtractState('loading');
-    request.open("POST", base_url + "/extract");
+    request.open("POST", base_url + props.url);
     request.send(formData);
   };
 
@@ -268,7 +269,9 @@ export function MolExtract(props) {
       </div>}
       <div id="molresults">
         <div id="resultBody">
-          {(extractState === 'done') && <MolFigureSelect figures={figures} details={figureDetails}/>}
+          {(extractState === 'done') && 
+            ((props.url === '/extractrxn' && <FigureSelect figures={figures} details={figureDetails} url={props.url}/>)
+            ||(props.url === '/extract' && <MolFigureSelect figures={figures} details={figureDetails}/>))}
         </div>
       </div>
     </div>

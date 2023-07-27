@@ -83,7 +83,6 @@ export function PdfExtract(props) {
             setResponseData(response);
             setFiguresFromResponse(response);
             setExtractState('done');
-            setShowPdf(false);
           }
         } catch (error) {
           setPdfError('Bad file shape');
@@ -170,7 +169,6 @@ export function PdfExtract(props) {
           setResponseData(response);
           setFiguresFromResponse(response);
           setExtractState('done');
-          setShowPdf(false);
         }
         else if (request.status === 413) {
           alert('File uploaded is too large');

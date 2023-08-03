@@ -177,6 +177,7 @@ export function PdfExtract(props) {
         else {
           alert('Something went wrong with the backend. Please contact wang7776@mit.edu');
           setPdfError('Something went wrong with the backend. Please contact wang7776@mit.edu');
+          setExtractState('unready');
         }
       }
     }
@@ -245,10 +246,12 @@ export function PdfExtract(props) {
           </select>
 
           <span style={{marginLeft:20, marginRight:10}}>Limit to first 5 pages </span>
-          <input type="checkbox" checked={extractLimited} disabled={force_limit} onChange={handleLimited}></input>
+          <input type="checkbox" checked={extractLimited} title={force_limit && 
+              'All users limited to 5 pages for our API. To avoid the limit, please run and use your own copy of the backend'}
+            disabled={force_limit} onChange={handleLimited}></input>
         </div>
       </div>
-      {(extractState === 'loading') && <FakeProgress seconds={30}/>}
+      {(extractState === 'loading') && <FakeProgress seconds={5}/>}
       <div className='justifyleft'>
         {showPdf && <button type="button" className='btn btn-secondary' style={{marginBottom:6}} onClick={()=>setShowPdf(false)}>Hide PDF</button>}
         {!showPdf && <button type="button" className='btn btn-secondary' onClick={()=>setShowPdf(true)}>Show PDF</button>}

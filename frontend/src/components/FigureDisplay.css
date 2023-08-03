@@ -1,13 +1,8 @@
-#imagewrap{
-    border: 1px solid lightgray;
-}
-
 #imagedisp{
     overflow-y: auto;
     text-align: center;
     display: flex;
     justify-content: left;
-    border: 1px solid lightgray;
 }
 
 #mainimg{
@@ -86,6 +81,8 @@ table {
     overflow-wrap: break-word;
     table-layout: fixed;
     margin-bottom: 0 !important;
+    height: fit-content;
+    border: 1px solid lightgray;
 }
 
 #leftTableCol {
@@ -97,5 +94,5 @@ table {
     max-height: 120px;
     word-wrap: break-word;
     display: block;
-    overflow-y: scroll;
+    overflow-y: auto;
 }

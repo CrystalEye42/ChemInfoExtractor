@@ -56,7 +56,7 @@ export class MolFigureSelect extends React.Component {
                             <div className="btn-group" role="group" aria-label="first group" onChange={this.handleChange}>
                                 {figuresList}
                             </div>
-                            <div id="imagewrap">
+                            <div>
                                 <FigureImageDisplay details={details[this.state.value]} 
                                     value={this.state.molindex} callback={this.updateIndex} url={this.props.url}>
                                 </FigureImageDisplay>

@@ -173,6 +173,7 @@ export function MolExtract(props) {
         else {
           alert('Something went wrong with the backend. Please contact wang7776@mit.edu');
           setPdfError('Something went wrong with the backend. Please contact wang7776@mit.edu');
+          setExtractState('unready');
         }
       }
     }
@@ -241,7 +242,9 @@ export function MolExtract(props) {
           </select>
 
           <span style={{marginLeft:20, marginRight:10}}>Limit to first 5 pages </span>
-          <input type="checkbox" checked={extractLimited} disabled={force_limit} onChange={handleLimited}></input>
+          <input type="checkbox" checked={extractLimited} title={force_limit && 
+              'All users limited to 5 pages for our API. To avoid the limit, please run and use your own copy of the backend'}
+            disabled={force_limit} onChange={handleLimited}></input>
         </div>
       </div>
       {(extractState === 'loading') && <FakeProgress seconds={30}/>}

@@ -7,11 +7,14 @@ import './FigureDisplay.css';
 export class MolFigureDisplay extends React.Component {
     constructor(props) {
         super(props);
+        const currValue = this.props.details["subfigures"].length > 0 ? 0 : -1;
         this.state = {
-            value: this.props.details["subfigures"].length > 0 ? 0 : -1
+            value: currValue,
+            molfile: this.props.details["molblocks"].length > 0 ? this.props.details["molblocks"][currValue] : ""
         };
         this.handleChange = this.handleChange.bind(this);
         this.updateIndex = this.updateIndex.bind(this);
+        this.updateMolfile = this.updateMolfile.bind(this);
         if (this.props.callback) {
             this.props.callback(this.props.details["subfigures"].length > 0 ? 0 : -1);
         }
@@ -26,6 +29,10 @@ export class MolFigureDisplay extends React.Component {
         if (this.props.callback) {
             this.props.callback(value);
         }
+    }
+
+    updateMolfile(molfile) {
+        this.setState({molfile: molfile});
     }
 
     splitReactionsToSubFigures(details) {
@@ -64,14 +71,20 @@ export class MolFigureDisplay extends React.Component {
                     </div>
                     <h5 style={{display:"inline", marginRight:"20px"}}>Molfile</h5>
                     {window.isSecureContext &&
-                        <button type="button" className='btn btn-secondary' 
+                        <button type="button" className='btn btn-secondary' title="Copy to Clipboard"
                             onClick={() => {navigator.clipboard.writeText(details['molblocks'][this.state.value])}}>
-                            Copy
+                            Original
                         </button>}
-
+                    {window.isSecureContext &&
+                        <button type="button" className='btn btn-secondary' title="Copy to Clipboard"
+                            style={{marginLeft:10}}
+                            onClick={() => {navigator.clipboard.writeText(this.state.molfile)}}>
+                            Current
+                        </button>}
                 </div>}
                 <div id="ketcher">
-                    <ChemDrawDisplay molblock={details['molblocks'][this.state.value]} image={details["subfigures"][this.state.value]}/>
+                    <ChemDrawDisplay molblock={details['molblocks'][this.state.value]} image={details["subfigures"][this.state.value]}
+                        setMolfileCallback={this.updateMolfile}/>
                 </div>
             </div>
 

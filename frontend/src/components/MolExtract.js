@@ -243,7 +243,7 @@ export function MolExtract(props) {
 
           <span style={{marginLeft:20, marginRight:10}}>Limit to first 5 pages </span>
           <input type="checkbox" checked={extractLimited} title={force_limit && 
-              'All users limited to 5 pages for our API. To avoid the limit, please run and use your own copy of the backend'}
+              'Limited to 5 pages on our website. To avoid the limit, please deploy a copy of the website on your own machine.'}
             disabled={force_limit} onChange={handleLimited}></input>
         </div>
       </div>

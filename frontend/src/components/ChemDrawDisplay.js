@@ -15,15 +15,18 @@ export class ChemDrawDisplay extends React.Component {
     this.refFrame = React.createRef();
     this.display = this.display.bind(this);
     this.startPolling = this.startPolling.bind(this);
-    this.checkSmiles = this.checkSmiles.bind(this);
+    this.checkMolfile = this.checkMolfile.bind(this);
     this.reportPrediction = this.reportPrediction.bind(this);
+  }
+
+  componentDidMount() {
+    setInterval(this.checkMolfile, 500);
   }
   
   startPolling() {
     const client = this.getClient();
     if (client) {
       client.setViewOnly();
-      client.loadConfigFromUrl('./chemdrawweb/configuration.json')
       this.display();
       return;
     }
@@ -32,7 +35,6 @@ export class ChemDrawDisplay extends React.Component {
 
   getClient() {
     const iframe = document.getElementById("iframe");
-    console.log(iframe);
     if (!iframe || !iframe.contentWindow) {
       return;
     }
@@ -42,10 +44,9 @@ export class ChemDrawDisplay extends React.Component {
   async display() {
     const content = this.props.molblock;
     const client = this.getClient();
-    console.log(client);
     if (!client) return;
 
-    client.loadMOL(content, (result, error) => {
+    await client.api2.drawing.setMOL(content, (result, error) => {
       client.fitToContainer();
       if (error) {
         alert(error);
@@ -57,15 +58,10 @@ export class ChemDrawDisplay extends React.Component {
     });
   }
 
-  async checkSmiles() {
-    const ketcher = this.getKetcher();
-    if (!ketcher) return;
-
-    const newSmiles = await ketcher.getSmiles();
-    const oldSmiles = this.state.smiles;
-    if (newSmiles !== oldSmiles) {
-      this.setState({ smiles: newSmiles, smilesChanged: Boolean(oldSmiles) });
-    }
+  async checkMolfile() {
+    const client = this.getClient();
+    if (!client) return;
+    this.props.setMolfileCallback(await client.api2.drawing.getMOLV2000());
   }
 
   componentDidUpdate(prevProps) {
@@ -121,4 +117,5 @@ export class ChemDrawDisplay extends React.Component {
 ChemDrawDisplay.propTypes = {
   molblock: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  setMolfileCallback: PropTypes.func.isRequired
 };

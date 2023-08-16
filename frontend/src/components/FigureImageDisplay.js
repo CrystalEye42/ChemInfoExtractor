@@ -13,6 +13,13 @@ export class FigureImageDisplay extends React.Component {
             width: 0,
         };
         this.onImgLoad = this.onImgLoad.bind(this);
+        this.onResize = this.onResize.bind(this);
+        window.addEventListener('resize', this.onResize);
+    }
+
+    onResize() {
+        const img = document.getElementById("mainimg");
+        this.setState({height: img.clientHeight, width: img.clientWidth});
     }
 
     onImgLoad({ target: img }) {

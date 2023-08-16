@@ -71,15 +71,10 @@ export class MolFigureDisplay extends React.Component {
                     </div>
                     <h5 style={{display:"inline", marginRight:"20px"}}>Molfile</h5>
                     {window.isSecureContext &&
-                        <button type="button" className='btn btn-secondary' title="Copy to Clipboard"
-                            onClick={() => {navigator.clipboard.writeText(details['molblocks'][this.state.value])}}>
-                            Original
-                        </button>}
-                    {window.isSecureContext &&
-                        <button type="button" className='btn btn-secondary' title="Copy to Clipboard"
+                        <button type="button" className='btn btn-secondary' title="Copy current molfile to Clipboard"
                             style={{marginLeft:10}}
                             onClick={() => {navigator.clipboard.writeText(this.state.molfile)}}>
-                            Current
+                            Copy
                         </button>}
                 </div>}
                 <div id="ketcher">

@@ -1,12 +1,10 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import { render } from "@testing-library/react";
-import './TextRxnDisplay.css'; // or whatever new css file you want to use
+import './TextRxnDisplay.css'; 
 
 export class TextRxnDisplay extends React.Component {
     constructor(props) {
         super(props);
-        // set up whatever states/variables are necessary
         this.patterns = [
           /(?<!\w)h(?=[.,;!?]|$)/g, // for hours
           /(?<!\w)s(?=[.,;!?]|$)/g,  // for seconds
@@ -15,8 +13,11 @@ export class TextRxnDisplay extends React.Component {
           /(?<!\w)hr(?=[.,;!?]|$)/g,
           /(?<!\w)hrs(?=[.,;!?]|$)/g
         ];
+
+        console.log(props.details);
     }
-    // add helper methods
+
+
     cleanTokens(tokens) {
       let new_tokens = [tokens[0]];
       for (let i = 1; i < tokens.length; i++) {
@@ -47,8 +48,6 @@ export class TextRxnDisplay extends React.Component {
     }
 
     render() {
-        // preprocess what to display
-      console.log(this.props.details);
       const { details } = this.props;
 
       return (

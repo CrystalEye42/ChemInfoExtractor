@@ -15,8 +15,8 @@ import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 import './PdfExtract.css';
 // Import url for sending requests
 import { base_url, force_limit } from "../config";
-import { FigureSelect } from './FigureSelect';
-import { TextRxnDisplay } from './TextRxnDisplay'
+import { TextRxnDisplay } from './TextRxnDisplay';
+import { ChemNerDisplay } from './ChemNerDisplay';
 import { FakeProgress } from './FakeProgress';
 
 export function PdfExtract(props) {
@@ -109,7 +109,6 @@ export function PdfExtract(props) {
     setPdfData(example);
     setShowPdf(true);
     const fileInput = document.getElementById("fileInput");
-    console.log(fileInput.files);
     const dataTransfer = new DataTransfer();
     dataTransfer.items.add(new File([example], exampleFileName));
     fileInput.files = dataTransfer.files;
@@ -133,7 +132,8 @@ export function PdfExtract(props) {
 
   // set the values of Figures and FigureDetails
   const setFiguresFromResponse = (response) => {
-    if (props.url === '/extracttxt') {
+    if (props.url === '/extracttxt' || props.url === '/extractner') {
+      console.log(response);
       setFigureDetails(response);
     }
     else {
@@ -279,7 +279,7 @@ export function PdfExtract(props) {
         <div className='col-md-auto' id="results">
           <div id="resultBody">
             {(extractState === 'done') && 
-             ((props.url !== '/extracttxt' && <FigureSelect figures={figures} details={figureDetails} url={props.url}/>)
+             ((props.url === '/extractner' && <ChemNerDisplay details={figureDetails}/>)
               || (props.url === '/extracttxt' && <TextRxnDisplay details={figureDetails}/>))}
           </div>
         </div>

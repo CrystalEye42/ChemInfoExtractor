@@ -110,7 +110,6 @@ export function MolExtract(props) {
     setPdfData(example);
     setShowPdf(true);
     const fileInput = document.getElementById("fileInput");
-    console.log(fileInput.files);
     const dataTransfer = new DataTransfer();
     dataTransfer.items.add(new File([example], exampleFileName));
     fileInput.files = dataTransfer.files;

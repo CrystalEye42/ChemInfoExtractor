@@ -39,7 +39,7 @@ def get_byte_image(image):
 
 
 def run_models(pdf_path, num_pages=None):
-    outputs = model.extract_molecules_from_pdf(pdf_path, num_pages=num_pages)
+    outputs = model.extract_molecules_from_figures_in_pdf(pdf_path, num_pages=num_pages)
     results = []
 
     for i, figure in enumerate(outputs):
@@ -69,7 +69,7 @@ def run_models(pdf_path, num_pages=None):
 
 
 def run_rxn_models(pdf_path, num_pages=None):
-    results = model.extract_reactions_from_pdf(pdf_path, num_pages=num_pages)
+    results = model.extract_reactions_from_figures_in_pdf(pdf_path, num_pages=num_pages)
     for i, figure in enumerate(results):
         figure['image_path'] = f'figure-{i}.png'
         figure['image'] = get_byte_image(figure['figure'])
@@ -118,11 +118,25 @@ class TextRxnExtractor(Resource):
         num_pages = None
         if 'num_pages' in request.form:
             num_pages = int(request.form['num_pages'])
-        results = model.extract_reactions_from_pdf_text(f.filename, num_pages=num_pages)
+        results = model.extract_reactions_from_text_in_pdf(f.filename, num_pages=num_pages)
 
         os.system('rm '+ f.filename.replace(" ", r"\ "))
         return results
 
+class TextMolExtractor(Resource):
+    def post(self):
+        f = request.files['file']
+        file = open(f.filename, "wb")
+        file.write(f.read())
+        file.close()
+
+        num_pages = None
+        if 'num_pages' in request.form:
+            num_pages = int(request.form['num_pages'])
+        results = model.extract_molecules_from_text_in_pdf(f.filename, num_pages=num_pages)
+
+        os.system('rm '+ f.filename.replace(" ", r"\ "))
+        return results
 
 class SendEmail(Resource):
     def post(self):
@@ -136,6 +150,7 @@ class SendEmail(Resource):
 api.add_resource(MolExtractor, '/extract')
 api.add_resource(RxnExtractor, '/extractrxn')
 api.add_resource(TextRxnExtractor, '/extracttxt')
+api.add_resource(TextMolExtractor, '/extractner')
 api.add_resource(SendEmail, '/sendemail')
 
 if __name__ == '__main__':

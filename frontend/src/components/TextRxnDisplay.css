@@ -106,4 +106,80 @@ span {
      background: rgb(153, 153, 153);
 }
 
+
+
+/* ChemNER classes */
+
+[data-entity][data-entity="abbreviation"] {
+     background: rgba(166, 226, 45, 0.2);
+     border-color: rgb(166, 226, 45);
+}
+
+[data-entity][data-entity="abbreviation"]::after {
+     background: rgb(166, 226, 45);
+}
+
+[data-entity][data-entity="family"] {
+     background: rgba(224, 0, 132, 0.2);
+     border-color: rgb(244, 60, 192);
+}
+
+[data-entity][data-entity="family"]::after {
+     background: rgb(244, 60, 192);
+}
+
+[data-entity][data-entity="formula"] {
+     background: rgba(67, 198, 252, 0.2);
+     border-color: rgb(67, 198, 252);
+}
+
+[data-entity][data-entity="formula"]::after {
+     background: rgb(67, 198, 252);
+}
+
+[data-entity][data-entity="identifier"] {
+     background: rgba(253, 151, 32, 0.2);
+     border-color: rgb(253, 151, 32);
+}
+
+[data-entity][data-entity="identifier"]::after {
+     background: rgb(253, 151, 32);
+}
+
+[data-entity][data-entity="multiple"] {
+     background: rgba(142, 125, 255, 0.2);
+     border-color: rgb(142, 125, 255);
+}
+
+[data-entity][data-entity="multiple"]::after {
+     background: rgb(142, 125, 255);
+}
+
+[data-entity][data-entity="systematic"] {
+     background: rgba(255, 204, 0, 0.2);
+     border-color: rgb(255, 204, 0);
+}
+
+[data-entity][data-entity="systematic"]::after {
+     background: rgb(255, 204, 0);
+}
+
+[data-entity][data-entity="trivial"] {
+     background: rgba(47, 187, 171, 0.2);
+     border-color: rgb(47, 187, 171);
+}
+
+[data-entity][data-entity="trivial"]::after {
+     background: rgb(47, 187, 171);
+}
+
+[data-entity][data-entity="no class"] {
+     background: rgba(153, 153, 153, 0.2);
+     border-color: rgb(153, 153, 153);
+}
+
+[data-entity][data-entity="no class"]::after {
+     background: rgb(153, 153, 153);
+}
+
 /* Add more classes for other categories as necessary */

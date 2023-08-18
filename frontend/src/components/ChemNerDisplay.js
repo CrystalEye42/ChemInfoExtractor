@@ -13,8 +13,6 @@ export class ChemNerDisplay extends React.Component {
           /(?<!\w)hr(?=[.,;!?]|$)/g,
           /(?<!\w)hrs(?=[.,;!?]|$)/g
         ];
-
-        console.log(props.details);
     }
 
 
@@ -81,7 +79,6 @@ export class ChemNerDisplay extends React.Component {
                   return accumulator;
                 }, [])
               });
-              console.log(cleanLabeledTokens);
               return (
                 <div key={pageIndex}>
                   {cleanLabeledTokens.length !== 0 && <h3 className="page-header">Page {pageIndex + 1}</h3>}

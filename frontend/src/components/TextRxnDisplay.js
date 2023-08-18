@@ -13,8 +13,6 @@ export class TextRxnDisplay extends React.Component {
           /(?<!\w)hr(?=[.,;!?]|$)/g,
           /(?<!\w)hrs(?=[.,;!?]|$)/g
         ];
-
-        console.log(props.details);
     }
 
 

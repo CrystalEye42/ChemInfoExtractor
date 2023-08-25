@@ -7,10 +7,25 @@
     width: 100%;
 }
 
-#about-paragraph {
+.about-paragraph {
     max-width: 800px;
     text-align:justify;
+    padding-bottom: 15px;
 }
+
+dl {
+    text-align: left;
+}
+
+dt {
+    padding-bottom: 10px;
+    text-decoration: underline;
+}
+
+dd {
+    display: list-item;
+}
+
 
 a {
     text-decoration: none !important;

@@ -7,18 +7,29 @@ export class About extends React.Component {
   }
 
   render() {
-    return (<div id="about-container">
+    return (
+      <div id="about-container">
         <br></br>
         <h1>OpenChemIE</h1>
         <h3>Information Extraction Toolkit for Chemistry Literature</h3>
-        <p>Authors: Yujie Qian, Alex Wang, Vincent Fan, Amber Wang, Guy Zylberberg, Regina Barzilay (MIT CSAIL)</p>
-        <img src='diagram.png'/>
+        <p style={{marginBottom:'0'}}>Yujie Qian, Alex Wang, Vincent Fan, Amber Wang, Guy Zylberberg, Regina Barzilay</p>
+        <i>MIT CSAIL</i>
+        <div className="about-paragraph">
+          <img src='diagram.png' id="diagram"/>
+        </div>
         <div className="about-paragraph">
           OpenChemIE is a toolkit designed for user-friendly extraction of structured data from unstructured chemistry literature. 
           It comprises a set of specialized machine learning models for efficiently analyzing information in text, figures, and tables from PDFs of chemistry
           papers. Here we provide demos for extracting <a href="/molscribe">molecules from figures</a>
-          , <a href="/rxnscribe">reactions from figures</a>, <a href="/chemrxnextractor">reactions from text</a>, 
-          and <a href="/chemner">molecules from text</a>.
+          , <a href="/rxnscribe">reactions from figures</a>, <a href="/chemner">molecules from text</a>, 
+          and <a href="/chemrxnextractor">reactions from text</a>.
+        </div>
+
+        <div className="about-paragraph"> 
+          OpenChemIE is completely open source and is available as
+          a <a href="https://github.com/CrystalEye42/OpenChemIE" target="_blank" rel="noopener noreferrer">Python package</a>. 
+          Additionally, <a href="https://github.com/CrystalEye42/ChemInfoExtractor"
+          target="_blank" rel="noopener noreferrer">this website</a> is open source and can be downloaded and deployed for personal usage. 
         </div>
         
         <dl>
@@ -53,13 +64,6 @@ export class About extends React.Component {
             [<a href="https://github.com/jiangfeng1124/ChemRxnExtractor" target="_blank" rel="noopener noreferrer">Code</a>]
           </dd>
         </dl>
-        
-        <div className="about-paragraph"> 
-          OpenChemIE is completely open source and is available as
-          a <a href="https://github.com/CrystalEye42/OpenChemIE" target="_blank" rel="noopener noreferrer">Python package</a>. 
-          Additionally, <a href="https://github.com/CrystalEye42/ChemInfoExtractor"
-          target="_blank" rel="noopener noreferrer">this website</a> is open source and can be downloaded and deployed for personal usage. 
-        </div>
     </div>);
   }
 }

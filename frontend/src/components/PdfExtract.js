@@ -133,7 +133,6 @@ export function PdfExtract(props) {
   // set the values of Figures and FigureDetails
   const setFiguresFromResponse = (response) => {
     if (props.url === '/extracttxt' || props.url === '/extractner') {
-      console.log(response);
       setFigureDetails(response);
     }
     else {

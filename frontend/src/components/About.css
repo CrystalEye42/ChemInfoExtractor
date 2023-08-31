@@ -7,6 +7,10 @@
     width: 100%;
 }
 
+#diagram {
+    width: 100%;
+}
+
 .about-paragraph {
     max-width: 800px;
     text-align:justify;
@@ -29,4 +33,9 @@ dd {
 
 a {
     text-decoration: none !important;
+}
+
+table {
+    text-align: center;
+    max-width: 600px !important;
 }

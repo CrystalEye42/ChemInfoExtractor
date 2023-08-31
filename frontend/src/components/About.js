@@ -32,38 +32,56 @@ export class About extends React.Component {
           target="_blank" rel="noopener noreferrer">this website</a> is open source and can be downloaded and deployed for personal usage. 
         </div>
         
-        <dl>
-          <dt><b>OpenChemIE Models</b></dt>
-          <dd>
-            MolScribe 
-            [<a href="https://pubs.acs.org/doi/10.1021/acs.jcim.2c01480" target="_blank" rel="noopener noreferrer">Paper</a>]
-            [<a href="https://github.com/thomas0809/MolScribe" target="_blank" rel="noopener noreferrer">Code</a>]
-            [<a href="https://huggingface.co/spaces/yujieq/MolScribe" target="_blank" rel="noopener noreferrer">Demo</a>]
-          </dd>
+        <table className="table">
+          <thead>
+            <tr>
+              <td colSpan={2}>
+                <b>OpenChemIE Models</b>
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>MolScribe</td>
+              <td>
+                [<a href="https://pubs.acs.org/doi/10.1021/acs.jcim.2c01480" target="_blank" rel="noopener noreferrer">Paper</a>]
+                [<a href="https://github.com/thomas0809/MolScribe" target="_blank" rel="noopener noreferrer">Code</a>]
+                [<a href="https://huggingface.co/spaces/yujieq/MolScribe" target="_blank" rel="noopener noreferrer">Demo</a>]
+              </td>
+            </tr>
 
-          <dd>
-            RxnScribe 
-            [<a href="https://pubs.acs.org/doi/10.1021/acs.jcim.3c00439" target="_blank" rel="noopener noreferrer">Paper</a>]
-            [<a href="https://github.com/thomas0809/rxnscribe" target="_blank" rel="noopener noreferrer">Code</a>]
-            [<a href="https://huggingface.co/spaces/yujieq/RxnScribe" target="_blank" rel="noopener noreferrer">Demo</a>]
-          </dd>
+            <tr>
+              <td>RxnScribe</td>
+              <td>
+                [<a href="https://pubs.acs.org/doi/10.1021/acs.jcim.3c00439" target="_blank" rel="noopener noreferrer">Paper</a>]
+                [<a href="https://github.com/thomas0809/rxnscribe" target="_blank" rel="noopener noreferrer">Code</a>]
+                [<a href="https://huggingface.co/spaces/yujieq/RxnScribe" target="_blank" rel="noopener noreferrer">Demo</a>]
+              </td>
+            </tr>
 
-          <dd>
-            MolDet and MolCoref 
-            [<a href="https://github.com/Ozymandias314/MolDetect/tree/main" target="_blank" rel="noopener noreferrer">Code</a>]
-          </dd>
+            <tr>
+              <td>MolDet and MolCoref</td>
+              <td>
+                [<a href="https://github.com/Ozymandias314/MolDetect/tree/main" target="_blank" rel="noopener noreferrer">Code</a>]
+              </td>
+            </tr>
 
-          <dd>
-            ChemNER 
-            [<a href="https://github.com/Ozymandias314/ChemIENER" target="_blank" rel="noopener noreferrer">Code</a>]
-          </dd>
+            <tr>
+              <td>ChemNER</td>
+              <td>
+                [<a href="https://github.com/Ozymandias314/ChemIENER" target="_blank" rel="noopener noreferrer">Code</a>]
+              </td>
+            </tr>
 
-          <dd>
-            ChemRxnExtractor 
-            [<a href="https://pubs.acs.org/doi/pdf/10.1021/acs.jcim.1c00284" target="_blank" rel="noopener noreferrer">Paper</a>]
-            [<a href="https://github.com/jiangfeng1124/ChemRxnExtractor" target="_blank" rel="noopener noreferrer">Code</a>]
-          </dd>
-        </dl>
+            <tr>
+              <td>ChemRxnExtractor</td>
+              <td>
+              [<a href="https://pubs.acs.org/doi/pdf/10.1021/acs.jcim.1c00284" target="_blank" rel="noopener noreferrer">Paper</a>]
+              [<a href="https://github.com/jiangfeng1124/ChemRxnExtractor" target="_blank" rel="noopener noreferrer">Code</a>]
+              </td>
+            </tr>
+          </tbody>
+        </table>
     </div>);
   }
 }

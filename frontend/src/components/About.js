@@ -22,7 +22,7 @@ export class About extends React.Component {
           It comprises a set of specialized machine learning models for efficiently analyzing information in text, figures, and tables from PDFs of chemistry
           papers. Here we provide demos for extracting <a href="/molscribe">molecules from figures</a>
           , <a href="/rxnscribe">reactions from figures</a>, <a href="/chemner">molecules from text</a>, 
-          and <a href="/chemrxnextractor">reactions from text</a>.
+          and <a href="/chemrxnextractor">reactions from text</a>. 
         </div>
 
         <div className="about-paragraph"> 
@@ -30,6 +30,7 @@ export class About extends React.Component {
           a <a href="https://github.com/CrystalEye42/OpenChemIE" target="_blank" rel="noopener noreferrer">Python package</a>. 
           Additionally, <a href="https://github.com/CrystalEye42/ChemInfoExtractor"
           target="_blank" rel="noopener noreferrer">this website</a> is open source and can be downloaded and deployed for personal usage. 
+          This website is best viewed using Chrome or Microsoft Edge. 
         </div>
         
         <table className="table">

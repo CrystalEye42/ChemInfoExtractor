@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import React from 'react';
 import PropTypes from 'prop-types';
 // default layout plugin
@@ -44,6 +44,10 @@ export function MolExtract(props) {
   const [showPdf, setShowPdf] = useState(true);
 
   const inputFileRef = React.useRef();
+
+  useEffect(() => {
+    props.setActive(props.url);
+  }, []);
 
   // handle file onChange event
   const allowedFiles = ['application/pdf'];
@@ -282,4 +286,5 @@ export function MolExtract(props) {
 
 MolExtract.propTypes = {
   url: PropTypes.string.isRequired,
+  setActive: PropTypes.func.isRequired,
 }

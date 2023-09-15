@@ -1,7 +1,9 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import { ChemDrawDisplay } from './ChemDrawDisplay';
+import { KetcherDisplay } from './KetcherDisplay';
 import './FigureDisplay.css';
+import { has_license } from "../config";
 
 // component for dipsplaying an individual result
 export class MolFigureDisplay extends React.Component {
@@ -78,8 +80,10 @@ export class MolFigureDisplay extends React.Component {
                         </button>}
                 </div>}
                 <div id="ketcher">
-                    <ChemDrawDisplay molblock={details['molblocks'][this.state.value]} image={details["subfigures"][this.state.value]}
-                        setMolfileCallback={this.updateMolfile}/>
+                    {!has_license && <KetcherDisplay molblock={details['molblocks'][this.state.value]} image={details["subfigures"][this.state.value]}
+                        setMolfileCallback={this.updateMolfile}/>}
+                    {has_license && <ChemDrawDisplay molblock={details['molblocks'][this.state.value]} image={details["subfigures"][this.state.value]}
+                        setMolfileCallback={this.updateMolfile}/>}
                 </div>
             </div>
 

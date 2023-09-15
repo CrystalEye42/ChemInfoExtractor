@@ -62,6 +62,7 @@ export class KetcherDisplay extends React.Component {
     const oldSmiles = this.state.smiles;
     if (newSmiles !== oldSmiles) {
       this.setState({ smiles: newSmiles, smilesChanged: Boolean(oldSmiles) });
+      this.props.setMolfileCallback(await ketcher.getMolfile());
     }
   }
 
@@ -141,4 +142,5 @@ export class KetcherDisplay extends React.Component {
 KetcherDisplay.propTypes = {
   molblock: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  setMolfileCallback: PropTypes.func.isRequired,
 };

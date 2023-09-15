@@ -44,9 +44,6 @@ export class MolFigureSelect extends React.Component {
                     value={this.state.molindex} callback={this.updateIndex}/>
             )
         }, this);
-        console.log(this.state.value);
-        console.log(details);
-        console.log(details[this.state.value]);
         return (
             <div className="container">
                 <div className="row justify-content-md-center">

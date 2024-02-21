@@ -227,7 +227,7 @@ export function PdfExtract(props) {
             <div>
               <input type='file' className="form-control" id="fileInput"
               onChange={handleFile}></input>
-              <button type="button" className="btn btn-primary" onClick={extractFile}
+              <button type="button" className="btn btn-primary" style={{marginTop:"-3px"}} onClick={extractFile}
                 disabled={extractState !== 'ready'}>Extract</button>
             </div>
             {/* we will display error message in case user select some file

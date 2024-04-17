@@ -18,7 +18,7 @@ export class About extends React.Component {
           <img src='diagram.png' id="diagram"/>
         </div>
         <div className="about-paragraph">
-          OpenChemIE is a toolkit designed for user-friendly extraction of structured data from unstructured chemistry literature. 
+          OpenChemIE [<a href="https://arxiv.org/abs/2404.01462" target="_blank" rel="noopener noreferrer">Paper</a>] is a toolkit designed for user-friendly extraction of structured data from unstructured chemistry literature. 
           It comprises a set of specialized machine learning models for efficiently analyzing information in text, figures, and tables from PDFs of chemistry
           papers. Here we provide demos for extracting <a href="/molscribe">molecules from figures</a>
           , <a href="/rxnscribe">reactions from figures</a>, <a href="/chemner">molecules from text</a>, 

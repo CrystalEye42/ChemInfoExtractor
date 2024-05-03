@@ -112,28 +112,6 @@ export class KetcherDisplay extends React.Component {
           width="640"
           height="500"
         ></iframe>
-        <div className="container">
-          <div className="row">
-            <button
-              id="reportPrediction"
-              type="button"
-              className="btn btn-secondary btn-ketcher col-sm"
-              onClick={this.reportPrediction}
-            >
-              Report Incorrect Prediction
-            </button>
-            {this.state.smilesChanged && (
-              <button
-                id="reportEditedPrediction"
-                type="button"
-                className="btn btn-primary btn-ketcher col-sm"
-                onClick={this.reportPrediction}
-              >
-                Submit Fixes to Prediction
-              </button>
-            )}
-          </div>
-        </div>
       </div>
     );
   }
